@@ -1,0 +1,8 @@
+@import "./index.scss";
+.App {
+  background-color: $deep-purple;
+  height: 100vh;
+  @include font-h1-desktop($white);
+  align-items: center;
+  justify-content: center;
+}
