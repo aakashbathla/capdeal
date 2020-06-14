@@ -1,0 +1,31 @@
+@import "../../../index.scss";
+.explore-properties-header {
+  color: $orange-color;
+  font-size: 24px;
+}
+.explore-properties-image-container {
+  position: relative;
+  .explore-properties-image {
+    width: 100%;
+  }
+  .calculator-title {
+    h3 {
+      position: absolute;
+      padding: 20px;
+      color: white;
+      top: 0;
+    }
+  }
+  .calculator-description {
+    position: absolute;
+    bottom: 0;
+    background-color: $orange-color;
+    color: white;
+    padding: 20px;
+    width: 80%;
+    .calculator-link {
+      display: block;
+      color: $deep-purple;
+    }
+  }
+}
