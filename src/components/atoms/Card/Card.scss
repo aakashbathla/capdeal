@@ -1,0 +1,18 @@
+@import "../../../index.scss";
+.card {
+  padding-left: 20px;
+  &_container {
+    background-color: white;
+    color: $black;
+    &_image {
+      margin-left: -15px;
+      margin-top: 5px;
+    }
+    h4 {
+      color: $black;
+    }
+    .location {
+      color: $grey-color;
+    }
+  }
+}

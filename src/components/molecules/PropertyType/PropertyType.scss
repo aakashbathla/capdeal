@@ -1,0 +1,16 @@
+@import "../../../index.scss";
+.property_type {
+  margin: 0 auto;
+  h1 {
+    color: $orange-color;
+  }
+  span {
+    color: $black;
+  }
+  img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+  }
+}

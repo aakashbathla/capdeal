@@ -1,0 +1,29 @@
+@import "../../../index.scss";
+.resale_properties {
+  background-color: $orange-color;
+  color: $white;
+  padding: 20px 0;
+  min-height: 400px;
+  &_header {
+    color: $white;
+  }
+  &_container {
+    color: $white;
+    .resale_property_type {
+      transform: rotate(270deg);
+      position: relative;
+      top: 185px;
+      li {
+        transform: rotate(180deg);
+        display: inline;
+        padding-right: 20px;
+      }
+    }
+    .resale_property_type_2 {
+      li {
+        display: inline-block;
+        padding-right: 20px;
+      }
+    }
+  }
+}
