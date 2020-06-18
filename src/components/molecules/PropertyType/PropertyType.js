@@ -6,7 +6,7 @@ const PropertyType = () => {
   return (
     <div className="property_type">
       <div className="container">
-        <div className="row">
+        <div className="row property_type_container">
           <div className="col-lg-5">
             <h1>Exclusive</h1>
             <span>Know More</span>

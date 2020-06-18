@@ -8,6 +8,8 @@ import ExploreProperties from "../src/components/molecules/ExploreProperties/Exp
 import ResaleProperties from "../src/components/molecules/ResalePropoerties/ResaleProperties";
 import FeaturedProperties from "../src/components/molecules/FeaturedProperty/FeaturedProperty";
 import PropertyType from "../src/components/molecules/PropertyType/PropertyType";
+import Advertise from "../src/components/molecules/Advertise/Advertise";
+import AdvertiseProperty from "../src/components/molecules/AdvertisedProperty/AdvertisedProperty";
 function App() {
   return (
     <div>
@@ -17,6 +19,8 @@ function App() {
       </div>
       <PropertyType />
       <About />
+      <AdvertiseProperty />
+      <Advertise />
       <FeaturedProperties />
       <ExploreProperties />
       <ResaleProperties />

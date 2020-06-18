@@ -1,19 +1,18 @@
 @import "../../../index.scss";
-.property_type {
-  margin: 0 auto;
+.advertise {
+  padding: 100px 0;
+  position: relative;
   &_container {
-    justify-content: center;
-  }
-  h1 {
-    color: $orange-color;
-  }
-  span {
+    background-color: $light-orange-color;
     color: $black;
+    padding: 20px 40px;
   }
-  img {
+  &_image {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
+    position: absolute;
+    bottom: -20px;
   }
 }
