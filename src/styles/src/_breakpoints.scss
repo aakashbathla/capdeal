@@ -19,6 +19,16 @@
   }
 }
 
+@mixin lg-desktop {
+  /**
+   * Used in exclusive cases, For More info sync up with Praveen
+   * For desktops, from 1280px to 1440px 
+   */
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   /* Small devices (tablets, 768px and up) */
   @media (min-width: 768px) {

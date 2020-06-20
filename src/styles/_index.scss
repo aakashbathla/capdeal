@@ -1,11 +1,9 @@
 @charset 'UTF-8';
-
-@import "./src/variables";
 @import "./vendor/normalize";
+@import "./src/variables";
 @import "./src/colors";
-@import "./src/fonts";
-@import "./src/typography";
 @import "./util/mixins";
+@import "./src/typography";
 @import "./src/breakpoints";
 @import "./src/helpers";
 @import "./src/margin";

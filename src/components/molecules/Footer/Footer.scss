@@ -1,20 +1,80 @@
-@import "../../../index.scss";
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
 .footer-container {
   background-color: $black-3;
   color: $white;
   .footer-container-content {
-    padding: 20px 0;
+    .footer-left-container {
+      @include mobile {
+        order: 2;
+      }
+    }
+    padding: 2rem 0;
+    &-items {
+      @include font-poppins-bold-17($white);
+      @include mobile {
+        @include font-poppins-bold-24($white);
+      }
+    }
+    &-subitems {
+      @include font-poppins-regular-13($white);
+      @include mobile {
+        @include font-poppins-regular-17($white);
+      }
+    }
+  }
+  .footer-right-container {
+    @include mobile {
+      order: 1;
+    }
+    &-logo {
+      max-width: 15rem;
+      @include mobile {
+        max-width: 25rem;
+      }
+    }
+    &-social-links {
+      @include font-poppins-bold-17($white);
+      @include mobile {
+        @include font-poppins-bold-24($white);
+      }
+    }
+    &-content {
+      @include font-poppins-regular-14($white);
+      @include mobile {
+        @include font-poppins-regular-16($white);
+      }
+    }
+    .social-link-list li {
+      display: inline-block;
+      list-style: none;
+      & svg {
+        fill: $white;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding-right: 5px;
+        @include mobile {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
   }
   .input-box-email {
-    height: 50px;
+    height: 5.9rem;
     width: 70%;
-    margin-right: 20px;
+    margin-right: 0.7rem;
   }
   .button-primary {
     color: white;
     background-color: $deep-purple;
-    height: 50px;
+    height: 5.9rem;
     width: 20%;
     border: 0px;
+    @include font-poppins-bold-17($white);
+  }
+  .copyright {
+    @include font-poppins-regular-13($white);
   }
 }

@@ -98,7 +98,7 @@
 
 .hover-dark-underline {
   &:hover {
-    border-bottom: 1px solid $heathrow-purple;
+    border-bottom: 1px solid $deep-purple;
   }
 }
 
@@ -619,28 +619,16 @@ select {
   color: $green;
 }
 
-.yellow {
-  color: $yellow;
+.orange {
+  color: $orange-color;
 }
 
 .red {
   color: $red;
 }
 
-.dark-red {
-  color: $dark-red;
-}
-
-.dark-green {
-  color: $dark-green;
-}
-
-.light-grey {
-  color: $light-grey;
-}
-
-.mid-grey {
-  color: $mid-grey;
+.grey {
+  color: $grey-color;
 }
 
 .white-fill {
@@ -648,31 +636,19 @@ select {
 }
 
 .purple-fill {
-  fill: $heathrow-purple;
-}
-
-.heathrow-purple-background {
-  background-color: $heathrow-purple;
+  fill: $deep-purple;
 }
 
 .deep-purple-background {
   background-color: $deep-purple;
 }
 
-.rewards-premium-background {
-  background-image: linear-gradient(to bottom, #1d0439 28%, #120422 108%);
-}
-
-.light-purple-background {
-  background-color: $light-purple;
-}
-
 .white-background {
   background-color: $white;
 }
 
-.yellow-background {
-  background-color: $yellow;
+.orange-background {
+  background-color: $orange-color;
 }
 
 .green-background {
@@ -684,7 +660,7 @@ select {
 }
 
 .grey-background {
-  background-color: $grey;
+  background-color: $grey-color;
 }
 
 .full-overlay {
@@ -698,7 +674,7 @@ select {
 }
 
 .of-cover {
-  font-family: 'object-fit: cover;';
+  font-family: "object-fit: cover;";
 }
 
 .image-overlay {
@@ -716,12 +692,6 @@ select {
   height: 100%;
   object-fit: cover;
   width: 100%;
-}
-
-.image-background {
-  background: linear-gradient(to right bottom,
-  $heathrow-purple 50%,
-  $deep-purple 50%);
 }
 
 .width-33 {
@@ -790,32 +760,6 @@ select {
   }
 }
 
-/* Styling for terminal filtering button */
-
-.terminal-filter-btn {
-  @include font-super-para-regular($light-purple);
-  background-color: $white;
-  border-color: $light-purple;
-  color: $light-purple;
-
-  &:hover,
-  &:focus {
-    background-color: $light-purple;
-    border-color: $light-purple;
-    color: $white;
-
-    .icon {
-      fill: $white;
-    }
-  }
-
-  &.selected {
-    @include font-super-para-regular($white);
-    background-color: $light-purple;
-    border-color: $light-purple;
-  }
-}
-
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -824,4 +768,13 @@ select {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+@media (min-width: 1920px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1636px;
+  }
 }

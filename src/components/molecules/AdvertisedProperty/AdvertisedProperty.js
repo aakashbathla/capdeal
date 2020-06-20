@@ -66,7 +66,7 @@ const AdvertisedProperty = () => {
                   <span>2BHK-3BHK</span> | <span>1090-1460SF</span>
                 </div>
                 <h6>41.2 Lac to 55.48 Lac</h6>
-              </div>
+              </div> 
             </div>
           </div>
         </div>

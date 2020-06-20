@@ -1,24 +1,57 @@
-@import "../../../index.scss";
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
 .about {
   &_image {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    img {
+      max-height: 50rem;
+    }
   }
   &_content {
     background-color: $orange-color;
     color: $white;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 8rem;
+    @include mobile {
+      padding-top: 3rem;
+    }
+    &_description {
+      padding: 18px 60px;
+      @include font-poppins-bold-13($white);
+    }
+    h1 {
+      @include font-raleway-bold-35($white);
+      text-transform: uppercase;
+    }
+    h6 {
+      padding-top: 15px;
+      @include font-raleway-bold-15($white);
+      @include mobile {
+        @include font-raleway-bold-25($white);
+      }
+    }
     &_details {
       text-align: center;
     }
     &_border {
-      border-radius: 25px;
-      width: 50px;
-      height: 50px;
+      border-radius: 3.5rem;
+      width: 7rem;
+      height: 7rem;
       background-color: $deep-purple;
       margin: 0 auto;
+      &_details {
+        @include font-poppins-regular-10($white);
+        @include mobile {
+          @include font-poppins-regular-20($white);
+        }
+      }
     }
+  }
+  &_mobile_image {
+    max-height: 278px;
+    padding: 0 2rem 2rem 2rem;
   }
 }

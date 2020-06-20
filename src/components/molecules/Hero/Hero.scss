@@ -1,20 +1,30 @@
-@import "../../../index.scss";
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
 .hero-component {
   position: relative;
   .hero-banner-image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    object-fit: cover;
+    object-position: center top;
     width: 100%;
+    min-height: 100vh;
   }
   .hero-component-content-container {
-    color: white;
-    width: 1140px;
+    color: $white;
     margin: 0 auto;
     .hero-component-content {
-      top: 50%;
+      top: 33%;
       position: absolute;
-      width: 30%;
+      @include mobile {
+        width: 80%;
+      }
+      width: 50%;
+      h2 {
+        @include font-raleway-bold-41($white);
+      }
+      p {
+        @include font-poppins-regular-22($white);
+      }
     }
   }
 }

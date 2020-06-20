@@ -1,19 +1,44 @@
-@import "../../../index.scss";
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
 .property_type {
+  padding-top: 98px;
+  padding-bottom: 70px;
   margin: 0 auto;
   &_container {
+    margin: 0 auto;
     justify-content: center;
+    &_link {
+      @include font-poppins-regular-14($black);
+    }
   }
   h1 {
-    color: $orange-color;
+    @include font-raleway-bold-37($orange-color);
   }
   span {
     color: $black;
   }
   img {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     width: 100%;
+    height: 300px;
+  }
+  .tab-link {
+    @include font-raleway-bold-41($orange-color);
+  }
+  li a {
+    text-decoration: none;
+  }
+  li {
+    a.active {
+      border-bottom: 1px solid $orange-color;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    padding-bottom: 2rem;
+  }
+  .tab_content_link {
+    @include font-poppins-regular-22($black);
+    padding-top: 19px;
   }
 }

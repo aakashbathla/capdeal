@@ -17,27 +17,28 @@
   }
 
   /* Firefox */
-  &[type=number] {
+  &[type="number"] {
     -moz-appearance: textfield;
   }
 }
 
-@mixin font-style($font, $letter-spacing, $color) {
+@mixin font-style($font, $letter-spacing, $color, $weight: 700) {
   color: $color;
   font: $font;
+  font-weight: $weight;
   letter-spacing: $letter-spacing;
 }
 
 @mixin download-icon($file-types...) {
   @for $i from 0 to length($file-types) {
-    &[href$='#{nth($file-types, $i + 1)}'] {
+    &[href$="#{nth($file-types, $i + 1)}"] {
       border: 0;
       display: block;
       padding-left: 1.75rem;
       position: relative;
 
       &::before {
-        content: '\2193';
+        content: "\2193";
         font-size: 20px;
         left: 8px;
         position: absolute;
@@ -45,7 +46,7 @@
       }
 
       &::after {
-        content: '\2212';
+        content: "\2212";
         font-size: 20px;
         left: 8px;
         position: absolute;
@@ -123,9 +124,11 @@
     }
 
     .nav-button {
-      background: linear-gradient(to right,
-      $heathrow-purple 50%,
-      $light-grey 50%);
+      background: linear-gradient(
+        to right,
+        $heathrow-purple 50%,
+        $light-grey 50%
+      );
       background-position: right bottom;
       background-size: 200% 100%;
       border: 1px solid $border-color;

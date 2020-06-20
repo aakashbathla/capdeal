@@ -42,16 +42,16 @@ const Navigation = () => {
       <div className={`main-navigation ${activeClass}`}>
         <div className="container">
           <div className="row">
-            <div className="col-xl-2 col-lg-3 col-md-3">
+            <div className="col-xl-2 col-lg-2">
               <div className="logo-area logo-area">
                 <Anchor tp="/#home">
                   <img src={logo} alt="enventer" />
                 </Anchor>
               </div>
             </div>
-            <div className="col-xl-10 col-lg-9 col-md-9">
+            <div className="col-xl-10 col-lg-10">
               <div className="main-menu">
-                <nav className="navbar d-none d-md-block">
+                <nav className="navbar d-none d-lg-block">
                   <ul>
                     {links.map((item, index) => {
                       return (
@@ -63,7 +63,7 @@ const Navigation = () => {
                   </ul>
                 </nav>
               </div>
-              <div className="mobile-menu mean-container d-block d-md-none">
+              <div className="mobile-menu mean-container d-block d-lg-none">
                 <div className="mean-bar">
                   {breadcrumb}
                   <nav className={`mean-nav ${toggle ? "d-block" : "d-none"}`}>
