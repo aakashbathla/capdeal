@@ -51,6 +51,9 @@
 @mixin font-poppins-regular-10($text-color) {
   @include font-style(1rem $Poppins-font-family, 0, $text-color, 400);
 }
+@mixin font-poppins-regular-11($text-color) {
+  @include font-style(1.1rem $Poppins-font-family, 0, $text-color, 400);
+}
 @mixin font-poppins-regular-12($text-color) {
   @include font-style(1.2rem $Poppins-font-family, 0, $text-color, 400);
 }
@@ -78,6 +81,9 @@
 @mixin font-poppins-regular-20($text-color) {
   @include font-style(2rem $Poppins-font-family, 0, $text-color, 400);
 }
+@mixin font-poppins-regular-21($text-color) {
+  @include font-style(2.1rem $Poppins-font-family, 0, $text-color, 400);
+}
 @mixin font-poppins-regular-22($text-color) {
   @include font-style(2.2rem $Poppins-font-family, 0, $text-color, 400);
 }
@@ -91,6 +97,12 @@
   @include font-style(3.1rem $Poppins-font-family, 0, $text-color, 400);
 }
 
+@mixin font-poppins-bold-10($text-color) {
+  @include font-style(1rem $Poppins-font-family, 0, $text-color, 700);
+}
+@mixin font-poppins-bold-12($text-color) {
+  @include font-style(1.2rem $Poppins-font-family, 0, $text-color, 700);
+}
 @mixin font-poppins-bold-13($text-color) {
   @include font-style(1.3rem $Poppins-font-family, 0, $text-color, 700);
 }
@@ -109,6 +121,9 @@
 @mixin font-poppins-bold-20($text-color) {
   @include font-style(2rem $Poppins-font-family, 0, $text-color, 700);
 }
+@mixin font-poppins-bold-21($text-color) {
+  @include font-style(2.1rem $Poppins-font-family, 0, $text-color, 700);
+}
 @mixin font-poppins-bold-22($text-color) {
   @include font-style(2.2rem $Poppins-font-family, 0, $text-color, 700);
 }
@@ -123,6 +138,9 @@
 }
 @mixin font-poppins-bold-30($text-color) {
   @include font-style(3rem $Poppins-font-family, 0, $text-color, 700);
+}
+@mixin font-poppins-bold-62($text-color) {
+  @include font-style(6.2rem $Poppins-font-family, 0, $text-color, 700);
 }
 @mixin font-poppins-bold-86($text-color) {
   @include font-style(8.6rem $Poppins-font-family, 0, $text-color, 700);

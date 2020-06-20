@@ -3,23 +3,23 @@ import "./ExploreProperties.scss";
 import CalculatorImage from "../../../assets/calculator.png";
 const ExploreProperties = () => {
   return (
-    <div className="container explore-properties pt-5 pb-5">
+    <div className="container explore-properties">
       <div className="explore-properties-header">
         Explore Properties using our tools
       </div>
       <div className="row">
-        <div className="col-lg-6">
-          <div>
-            <b>- Calculators</b>
-          </div>
-          <div>- Heatmap</div>
-          <div>- Price Vs Size</div>
-          <div>- Recommen Dation Engine</div>
-          <div>- PMAY Calculator</div>
-          <div>- Tax Calculator</div>
-          <div>- Comparativ Investor Page</div>
+        <div className="col-lg-6 col-md-6 explore-properties-left-container">
+          <ul className="p0">
+            <li className="active">Calculators</li>
+            <li>Heatmap</li>
+            <li>Price Vs Size</li>
+            <li>Recommendation Engine</li>
+            <li>PMAY Calculator</li>
+            <li>Tax Calculator</li>
+            <li>Comparative Investor Page</li>
+          </ul>
         </div>
-        <div className="col-lg-6 explore-properties-image-container">
+        <div className="col-lg-6 col-md-6 explore-properties-image-container">
           <img
             className=" explore-properties-image"
             src={CalculatorImage}

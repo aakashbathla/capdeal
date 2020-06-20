@@ -1,7 +1,30 @@
 @import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+
+.explore-properties {
+  padding-top: 55px;
+  padding-bottom: 72px;
+  &-left-container {
+    .active {
+      @include font-poppins-bold-21($black);
+    }
+    @include font-poppins-regular-21($black);
+    ul {
+      list-style: none;
+      li {
+        @include mobile {
+          display: inline-block;
+        }
+        padding-right: 20px;
+        overflow-x: hidden;
+      }
+    }
+  }
+}
 .explore-properties-header {
-  color: $orange-color;
-  font-size: 24px;
+  @include font-raleway-bold-37($orange-color);
+  padding-bottom: 27px;
 }
 .explore-properties-image-container {
   position: relative;
@@ -12,20 +35,28 @@
     h3 {
       position: absolute;
       padding: 20px;
-      color: white;
       top: 0;
+      @include font-raleway-bold-29($white);
     }
   }
   .calculator-description {
     position: absolute;
     bottom: 0;
     background-color: $orange-color;
-    color: white;
     padding: 20px;
     width: 80%;
+    @include font-poppins-regular-13($white);
+    @include mobile {
+      @include font-poppins-regular-18($white);
+      position: relative;
+      width: 100%;
+    }
     .calculator-link {
       display: block;
-      color: $deep-purple;
+      @include font-poppins-bold-10($deep-purple);
+      @include mobile {
+        @include font-poppins-bold-18($deep-purple);
+      }
     }
   }
 }

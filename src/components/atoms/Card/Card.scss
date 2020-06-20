@@ -1,18 +1,24 @@
 @import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
 .card {
   padding-left: 20px;
   &_container {
     background-color: white;
     color: $black;
     &_image {
-      margin-left: -15px;
+      width: 12rem;
       margin-top: 5px;
+      position: relative;
+      left: -45px;
+      padding-bottom: 5px;
     }
     h4 {
-      color: $black;
+      @include font-poppins-bold-12($black);
+      padding-top: 20px;
     }
     .location {
-      color: $grey-color;
+      @include font-poppins-regular-10($grey-color);
     }
   }
 }

@@ -1,13 +1,52 @@
 @import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
 .advertised_property {
-  padding: 40px 0;
+  padding: 70px 0;
   &_header {
     color: $orange-color;
+    @include font-raleway-bold-37($orange-color);
   }
   &_image {
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+  }
+  &_content {
+    position: relative;
+    @include mobile {
+      width: 80%;
+      margin: 0 auto;
+    }
+    &_detail {
+      position: absolute;
+      bottom: -100px;
+      @include mobile {
+        bottom: 0px;
+      }
+      background: white;
+      width: 100%;
+      border-top-right-radius: 50px;
+      h2,
+      .price {
+        @include font-poppins-bold-14($deep-purple);
+        @include mobile {
+          @include font-poppins-bold-18($deep-purple);
+        }
+      }
+      p {
+        @include font-poppins-regular-11($grey-color);
+      }
+      span.data {
+        @include font-poppins-regular-10($black);
+      }
+      .button {
+        @include font-poppins-bold-10($deep-purple);
+        &.active {
+          @include font-poppins-bold-10($orange-color);
+        }
+      }
+    }
   }
 }

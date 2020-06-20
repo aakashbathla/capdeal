@@ -1,11 +1,40 @@
 @import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+
 .advertise {
-  padding: 100px 0;
+  padding: 300px 0 100px 0;
+  @include mobile {
+    padding: 0;
+  }
   position: relative;
   &_container {
     background-color: $light-orange-color;
-    color: $black;
     padding: 20px 40px;
+    border-radius: 20px;
+    h1 {
+      @include font-raleway-bold-35($black);
+      @include mobile {
+        @include font-raleway-bold-41($black);
+      }
+    }
+    p {
+      @include font-poppins-regular-12($black);
+      @include mobile {
+        @include font-poppins-regular-21($black);
+      }
+    }
+    .number {
+      .header {
+        @include font-poppins-bold-10($black);
+      }
+      h2 {
+        @include font-poppins-bold-62($black);
+      }
+      .link {
+        @include font-poppins-regular-12($black);
+      }
+    }
   }
   &_image {
     background-repeat: no-repeat;
@@ -13,6 +42,9 @@
     background-position: center;
     width: 100%;
     position: absolute;
+    @include mobile {
+      position: relative;
+    }
     bottom: -20px;
   }
 }

@@ -1,6 +1,15 @@
 @import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
 .featureProperty {
   background-color: $orange-color;
   color: $white;
-  padding: 40px 0;
+  margin-top: 55px;
+  padding: 4rem 0;
+  h1 {
+    @include font-raleway-bold-37($white);
+    margin-bottom: 5rem;
+  }
+  .link {
+    @include font-poppins-bold-15($white);
+  }
 }

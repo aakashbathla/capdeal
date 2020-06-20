@@ -1,28 +1,43 @@
 @import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+
 .resale_properties {
   background-color: $orange-color;
   color: $white;
-  padding: 20px 0;
+  padding: 55px 0 20px 0;
   min-height: 400px;
   &_header {
-    color: $white;
+    @include font-raleway-bold-37($white);
+    padding-bottom: 60px;
+    @include mobile {
+      padding-bottom: 0px;
+    }
   }
   &_container {
     color: $white;
     .resale_property_type {
       transform: rotate(270deg);
       position: relative;
-      top: 185px;
+      top: 320px;
       li {
         transform: rotate(180deg);
         display: inline;
         padding-right: 20px;
+        @include font-poppins-regular-18($white);
+        &.active {
+          @include font-poppins-bold-18($white);
+        }
       }
     }
     .resale_property_type_2 {
       li {
         display: inline-block;
         padding-right: 20px;
+        @include font-poppins-regular-21($white);
+        &.active {
+          @include font-poppins-bold-21($white);
+        }
       }
     }
   }
