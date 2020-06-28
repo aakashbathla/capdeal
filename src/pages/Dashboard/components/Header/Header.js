@@ -1,15 +1,15 @@
 import React from "react";
 import Anchor from "components/atoms/Anchor/Anchor";
-//import "./Header.scss";
+import "./Header.css";
 import logo from "assets/logo.png";
 
 const Header = () => {
   return (
-    <nav className="navbar">
+    <nav className="admin navbar">
       <div className="col-12">
         <div className="navbar-header">
           <Anchor to="#" className="bars"></Anchor>
-          <img src={logo} height="30" alt="capdeal" />
+            <Anchor to="/"><img src={logo} height="30" alt="capdeal" /></Anchor>
         </div>
         <ul className="nav navbar-nav navbar-left">
           <li>
@@ -19,7 +19,7 @@ const Header = () => {
           </li>
           <li className="hidden-sm-down">
             <div className="input-group">
-              <input type="text" className="form-control" placeholder="Search..." />
+              <input type="text" className="search" placeholder="Search..." />
               <span className="input-group-addon">
                 <i className="zmdi zmdi-search"></i>
               </span>
@@ -70,11 +70,11 @@ const Header = () => {
                   <ul className="menu tasks list-unstyled">
                     <li>
                       <Anchor to="#">
-                        <div className="progress-container">
+                        <div className="progress-container progress-primary">
                           <span className="progress-badge"> Create new dashboard</span>
                           <div className="progress">
                             <div
-                              className="progress-bar progress-bar-warning"
+                              className="progress-bar progress-primary"
                               role="progressbar"
                               aria-valuenow="45"
                               aria-valuemin="0"
@@ -89,11 +89,11 @@ const Header = () => {
                     </li>
                     <li>
                       <Anchor to="#">
-                        <div className="progress-container progress-warning">
+                        <div className="progress-container progress-info">
                           <span className="progress-badge">Panding Project</span>
                           <div className="progress">
                             <div
-                              className="progress-bar progress-bar-warning"
+                              className="progress-bar progress-bar-info"
                               role="progressbar"
                               aria-valuenow="29"
                               aria-valuemin="0"
@@ -117,7 +117,7 @@ const Header = () => {
             </Anchor>
           </li>
           <li>
-            <Anchor href="" className="mega-menu" data-close="true">
+            <Anchor to="/login" className="mega-menu" data-close="true">
               <i className="zmdi zmdi-power"></i>
             </Anchor>
           </li>
