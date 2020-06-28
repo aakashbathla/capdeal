@@ -1,16 +1,24 @@
 import { connect } from "react-redux";
-import {} from "./actions";
+import { loginWithOtp } from "./actions";
+import { submitOtp } from "./actions";
 import Login from "../../../components/molecules/Login";
 
-export const mapStateToProps = (state) => ({
-  // todos: state.todos
-});
+export const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    showOtpSuccess: state.login.showOtpSuccess,
+    otpSubmitSuccess: state.login.otpSubmitSuccess,
+  };
+};
 
 export const mapDispatchToProps = (dispatch) => {
   return {
-    //inviteAFriend: email => {
-    // dispatch(inviteAFriend(email));
-    //},
+    loginWithOtp: (phone) => {
+      dispatch(loginWithOtp(phone));
+    },
+    submitOtp: (otp, phone) => {
+      dispatch(submitOtp(otp, phone));
+    },
   };
 };
 
