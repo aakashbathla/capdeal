@@ -1,9 +1,9 @@
 import React from "react";
 import "./admin.css";
-import Header from "../../src/components/molecules/Header/Header";
-import SideNav from "../../src/components/molecules/SideNav/SideNav";
+import Header from "./components/Header/Header";
+import SideNav from "./components/SideNav";
 
-function Dashboard() {
+const  Dashboard = (props) => {
   return (
     <div className="theme-capdeal">
       <Header />
@@ -13,7 +13,7 @@ function Dashboard() {
           <div className="row">
             <div className="col-lg-7 col-md-6 col-sm-12">
               <h2>Dashboard
-                <small className="text-muted">Welcome to Dashboard</small>
+                  { props.children }
               </h2>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import React from "react";
-import Anchor from "../../atoms/Anchor/Anchor";
+import Anchor from "components/atoms/Anchor/Anchor";
 //import "./Header.scss";
-import logo from "../../../assets/logo.png";
+import logo from "assets/logo.png";
 
 const Header = () => {
   return (

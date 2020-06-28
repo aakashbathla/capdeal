@@ -1,6 +1,6 @@
 import React from "react";
-import Anchor from "../../atoms/Anchor/Anchor";
-import ProfileImg from "../../../assets/profile_av.jpg";
+import Anchor from "components/atoms/Anchor/Anchor";
+import ProfileImg from "assets/profile_av.jpg";
 //import "./SideNav.scss";
 
 const SideNav = () => {

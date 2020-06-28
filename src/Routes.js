@@ -1,15 +1,21 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import Home from "./App";
+
 import Login from "./components/molecules/Login";
 import NoMatch from "./components/atoms/NoMatch";
-import Dashboard from "./Dashboard/Dashboard";
+
+import Home from 'pages/Home';
+import Dashboard from "pages/Dashboard";
+import User from "pages/Dashboard/User";
+
+
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/home" component={Home} />
       <Route exact path="/login" component={Login} />
-      <Route exact path="/dashboard" component={Dashboard} />
+      <Route path="/dashboard" component={Dashboard}>
+      </Route>
       <Route exact path="/">
         <Redirect to="/home" />
       </Route>
