@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import SideNav from "./components/SideNav";
 
 const  Dashboard = (props) => {
+
   return (
     <div className="theme-capdeal">
       <Header />
@@ -12,9 +13,7 @@ const  Dashboard = (props) => {
         <div className="block-header">
           <div className="row">
             <div className="col-lg-7 col-md-6 col-sm-12">
-              <h2>Dashboard
-                  { props.children }
-              </h2>
+              { props.children }
             </div>
           </div>
         </div>

@@ -1,12 +1,10 @@
-import {React, Component} from 'react';
+import React from 'react'
 
 
-class User extends Component{
-  render() {
-    return(
-      <div>User listing page</div>
-    );
-  }
+const User = () => {
+	return(
+		<p>User listing page</p>
+	)
 };
 
 export default User;
