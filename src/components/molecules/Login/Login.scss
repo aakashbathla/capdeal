@@ -1,0 +1,33 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+.login {
+  background-color: red;
+  height: 100vh;
+  &_wrapper {
+    width: 422px;
+    height: 367px;
+    justify-content: center;
+    background-color: $white;
+    padding: 3.9rem 4.1rem 3.1rem 4.1rem;
+    border: 1px solid $orange-color;
+    &_img {
+      margin: 0 auto;
+    }
+    &_content {
+      padding-top: 1.3rem;
+      &_header {
+        @include font-raleway-bold-21($black);
+      }
+      &_subheader {
+        @include font-poppins-regular-15($black);
+      }
+    }
+    &_already_transacted {
+      @include font-poppins-regular-11($black);
+    }
+    &_already_transacted_link {
+      @include font-poppins-regular-11($orange-color);
+    }
+  }
+}

@@ -41,7 +41,7 @@ const Navigation = () => {
     <header id="home">
       <div className={`main-navigation ${activeClass}`}>
         <div className="container">
-          <div className="row">
+          <div cl assName="row">
             <div className="col-xl-2 col-lg-2">
               <div className="logo-area logo-area">
                 <Anchor tp="/#home">

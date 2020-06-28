@@ -20,7 +20,7 @@ export default [
     id: "contact_us",
   },
   {
-    path: "#blog",
+    path: "/login",
     text: "Login and Posting",
     id: "login_and_posting",
   },

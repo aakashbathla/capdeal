@@ -20,6 +20,9 @@
 @mixin font-raleway-bold-20($text-color) {
   @include font-style(2rem $Raleway-font-family, 0, $text-color, 700);
 }
+@mixin font-raleway-bold-21($text-color) {
+  @include font-style(2.1rem $Raleway-font-family, 0, $text-color, 700);
+}
 @mixin font-raleway-bold-25($text-color) {
   @include font-style(2.5rem $Raleway-font-family, 0, $text-color, 700);
 }
