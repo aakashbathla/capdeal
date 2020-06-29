@@ -7,14 +7,14 @@
     background-size: cover;
     background-position: center;
     img {
-      max-height: 50rem;
+      max-height: 39rem;
     }
   }
   &_content {
     background-color: $orange-color;
     color: $white;
     text-align: center;
-    padding-top: 8rem;
+    padding-top: 3rem;
     @include mobile {
       padding-top: 3rem;
     }

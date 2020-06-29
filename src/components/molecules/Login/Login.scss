@@ -2,22 +2,37 @@
 @import "../../../styles/src/typography";
 @import "../../../styles/src/breakpoints";
 .login {
-  background-color: red;
+  background-color: #fdfdfb;
   height: 100vh;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  &_box {
+    height: calc(100vh - 75px);
+    &_border {
+      border: 12px solid $white;
+      padding:0 !important;
+      border-radius: 4px;
+    }
+  }
+  &_btn {
+    width: 49%;
+  }
+  input {
+    height: 36px;
+  }
   &_wrapper {
-    width: 422px;
-    height: 367px;
-    justify-content: center;
+    padding: 5rem 3.5rem !important;
     background-color: $white;
-    padding: 3.9rem 4.1rem 3.1rem 4.1rem;
-    border: 1px solid $orange-color;
+    border: 1px solid #C98B66;
+    border-radius: 4px;
     &_img {
       margin: 0 auto;
     }
     &_content {
       padding-top: 1.3rem;
       &_header {
-        @include font-raleway-bold-21($black);
+        @include font-raleway-bold-20($deep-purple);
       }
       &_subheader {
         @include font-poppins-regular-15($black);
@@ -30,4 +45,13 @@
       @include font-poppins-regular-11($orange-color);
     }
   }
+}
+
+.btn-outline-primary {
+    color: #C98B66 !important;
+    border-color: #C98B66 !important;
+    &:hover {
+      background-color: #C98B66 !important;
+      color: #fff !important;
+    }
 }
