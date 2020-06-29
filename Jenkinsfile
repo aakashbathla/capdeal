@@ -2,8 +2,6 @@ node {
     checkout scm
 
     stage ('Installing & Running Tests'){
-        sh 'rm -rf package-lock.json'
-        sh 'rm -rf node_modules'
         sh 'npm install'
         sh 'npm run test'
     }
