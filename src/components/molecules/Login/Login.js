@@ -183,8 +183,8 @@ const Login = ({
                 </div>
               </form>
             )}
-            {otpSubmitSuccess && showFacebookSuccess && showGoogleSuccess && (
-              <Redirect to="/dashboard" />
+            {(otpSubmitSuccess || showFacebookSuccess || showGoogleSuccess) && (
+              <Redirect to="/dashboard/user/" />
             )}
           </div>
         </div>
