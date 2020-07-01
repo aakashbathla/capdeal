@@ -7,12 +7,20 @@
   padding-bottom: 72px;
   &-left-container {
     .active {
-      @include font-poppins-bold-21($black);
+      @include font-poppins-bold-20($black-3);
     }
-    @include font-poppins-regular-21($black);
+    @include font-poppins-regular-20($black-3);
     ul {
       list-style: none;
       li {
+        &:before {
+          margin-right: 1rem;
+          display: inline-block;
+          content: "";
+          border-top: 1px solid #909090;
+          width: 1.5rem;
+          vertical-align: super;
+        }
         @include mobile {
           display: inline-block;
         }
@@ -23,7 +31,7 @@
   }
 }
 .explore-properties-header {
-  @include font-raleway-bold-37($orange-color);
+  @include font-raleway-bold-32($orange-color);
   padding-bottom: 27px;
 }
 .explore-properties-image-container {
@@ -36,7 +44,7 @@
       position: absolute;
       padding: 20px;
       top: 0;
-      @include font-raleway-bold-29($white);
+      @include font-raleway-bold-25($white);
     }
   }
   .calculator-description {

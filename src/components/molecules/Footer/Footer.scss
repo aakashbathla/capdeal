@@ -3,6 +3,9 @@
 @import "../../../styles/src/breakpoints";
 .footer-container {
   background-color: $black-3;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: contain;
   color: $white;
   .footer-container-content {
     .footer-left-container {
@@ -10,7 +13,7 @@
         order: 2;
       }
     }
-    padding: 2rem 0;
+    padding: 2.5rem 0 2rem;
     &-items {
       @include font-poppins-bold-17($white);
       @include mobile {
@@ -62,14 +65,15 @@
     }
   }
   .input-box-email {
-    height: 5.9rem;
+    @include font-poppins-bold-14($black)
+    height: 5rem;
     width: 70%;
     margin-right: 0.7rem;
   }
   .button-primary {
     color: white;
     background-color: $deep-purple;
-    height: 5.9rem;
+    height: 5rem;
     width: 20%;
     border: 0px;
     @include font-poppins-bold-17($white);

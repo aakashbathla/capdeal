@@ -54,6 +54,9 @@
 @mixin font-poppins-regular-8($text-color) {
   @include font-style(0.8rem $Poppins-font-family, 0, $text-color, 400);
 }
+@mixin font-poppins-regular-9($text-color) {
+  @include font-style(0.9rem $Poppins-font-family, 0, $text-color, 400);
+}
 @mixin font-poppins-regular-10($text-color) {
   @include font-style(1rem $Poppins-font-family, 0, $text-color, 400);
 }
@@ -103,6 +106,9 @@
   @include font-style(3.1rem $Poppins-font-family, 0, $text-color, 400);
 }
 
+@mixin font-poppins-bold-8($text-color) {
+  @include font-style(0.8rem $Poppins-font-family, 0, $text-color, 700);
+}
 @mixin font-poppins-bold-10($text-color) {
   @include font-style(1rem $Poppins-font-family, 0, $text-color, 700);
 }

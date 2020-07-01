@@ -32,7 +32,7 @@ const ExploreProperties = () => {
             Lorem erat amet kasd accusam elitr clita. Et sit diam ea sed ipsum
             dolor. Consetetur gubergren sit sanctus duo invidunt amet elitr amet
             stet, magna
-            <a href="/" className="calculator-link">
+            <a href="/" className="calculator-link mt-2">
               Know More -
             </a>
           </div>

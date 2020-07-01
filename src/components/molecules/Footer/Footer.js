@@ -4,10 +4,12 @@ import TwitterIcon from "../../../styles/icons/twitter.svg";
 import FacebookIcon from "../../../styles/icons/facebook.svg";
 import LinkedinIcon from "../../../styles/icons/linkedin.svg";
 import InstagramIcon from "../../../styles/icons/instagram.svg";
+import FooterBgImage from "assets/footer-bg.png";
+
 import "./Footer.scss";
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <div className="footer-container" style={{backgroundImage: `url(`+FooterBgImage+`)`}}>
       <div className="container footer-container-content">
         <div className="row m-0">
           <div className="col-lg-6 col-sm-12 col-md-6 footer-left-container">
@@ -105,9 +107,10 @@ const Footer = () => {
               <div className="col-lg-12 p-0 pb-4">
                 <input
                   type="text"
-                  className="input input-box-email no-border p-0"
+                  className="input input-box-email no-border px-3"
+                  placeholder="Enter email"
                 />
-                <button className="button-primary align-middle">Submit</button>
+                <button className="button-primary">Submit</button>
               </div>
             </div>
           </div>

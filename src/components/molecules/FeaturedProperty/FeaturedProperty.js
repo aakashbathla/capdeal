@@ -1,10 +1,11 @@
 import React from "react";
 import "./FeaturedProperty.scss";
+import FeaturedBgImage from "assets/about-bg.png";
 
 import CardVendor from "../../atoms/CardVendor/CardVendor";
 const FeaturedProperty = () => {
   return (
-    <div className="featureProperty">
+    <div className="featureProperty" style={{backgroundImage: `url(`+FeaturedBgImage+`)`}}>
       <div className="container">
         <h1 className="m0">Lorem Ipsum is ready</h1>
         <div className="col-lg-12 p0">

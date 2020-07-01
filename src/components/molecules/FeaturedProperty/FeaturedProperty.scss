@@ -2,12 +2,15 @@
 @import "../../../styles/src/typography";
 .featureProperty {
   background-color: $orange-color;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
   color: $white;
   margin-top: 55px;
   padding: 4rem 0;
   h1 {
-    @include font-raleway-bold-37($white);
-    margin-bottom: 5rem;
+    @include font-raleway-bold-32($white);
+    margin-bottom: 4rem;
   }
   .link {
     @include font-poppins-bold-15($white);

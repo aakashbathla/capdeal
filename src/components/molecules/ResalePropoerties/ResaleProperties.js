@@ -1,13 +1,15 @@
 import React from "react";
 import "./ResaleProperties.scss";
 import Card from "../../atoms/Card/Card";
+import ResaleBgImage from "assets/resale-bg.png";
+
 const ResaleProperties = () => {
   return (
-    <div className="resale_properties">
+    <div className="resale_properties" style={{backgroundImage: `url(`+ResaleBgImage+`)`}}>
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <h1 className="resale_properties_header p0 m0">
+            <h1 className="resale_properties_header m0">
               Resale Properties
             </h1>
           </div>
@@ -28,7 +30,7 @@ const ResaleProperties = () => {
                 <li>Villa</li>
               </ul>
               <div className="col-lg-12">
-                <div className="row">
+                <div className="row mb-2">
                   <div className="col-lg-4 col-md-4 col-12">
                     <Card />
                   </div>
@@ -52,6 +54,9 @@ const ResaleProperties = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-12 text-center pt-4 link">View All</div>
           </div>
         </div>
       </div>
