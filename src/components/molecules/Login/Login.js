@@ -5,12 +5,21 @@ import Logo from "../../../assets/logo.png";
 import bgImage from "assets/login-bg.png";
 import Button from "../../atoms/Button/";
 import { Redirect } from "react-router-dom";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import GoogleLogin from "react-google-login";
+import FacebookIcon from "../../../styles/icons/facebook.svg";
+import GoogleIcon from "../../../styles/icons/google.svg";
+
 import "./Login.scss";
 const Login = ({
   loginWithOtp,
   showOtpSuccess,
+  showFacebookSuccess,
+  showGoogleSuccess,
   otpSubmitSuccess,
   submitOtp,
+  loginWithFacebook,
+  loginWithGoogle,
 }) => {
   console.log(showOtpSuccess);
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -23,8 +32,14 @@ const Login = ({
     evt.preventDefault();
     loginWithOtp(phoneNumber);
   };
+  const responseFacebook = (response) => {
+    loginWithFacebook(response.accessToken);
+  };
+  const responseGoogle = (response) => {
+    loginWithGoogle(response.accessToken);
+  };
   return (
-    <div className="login" style={{backgroundImage: `url(`+bgImage+`)`}}>
+    <div className="login" style={{ backgroundImage: `url(` + bgImage + `)` }}>
       <header>
         <div className="container">
           <div className="row">
@@ -42,7 +57,11 @@ const Login = ({
         <div className="row align-items-center login_box">
           <div className="col-lg-12">
             {!showOtpSuccess && (
-              <form onSubmit={handleSubmit} name="login_with_otp_form" className="d-flex justify-content-center">
+              <form
+                onSubmit={handleSubmit}
+                name="login_with_otp_form"
+                className="d-flex justify-content-center"
+              >
                 <div className="login_box_border col-xs-10 col-md-6 col-lg-5">
                   <div className="login_wrapper">
                     <div className="login_wrapper_img text-center">
@@ -72,10 +91,15 @@ const Login = ({
                       />
                     </div>
                     <div className="login_cta col-xs-12 d-flex justify-content-between">
-                      <Button className="login_btn btn btn-lg btn-outline-primary" type="submit">
+                      <Button
+                        className="login_btn btn btn-lg btn-outline-primary"
+                        type="submit"
+                      >
                         Login With Otp
                       </Button>
-                      <Button className="btn btn-lg btn-outline-primary">Login With Password</Button>
+                      <Button className="btn btn-lg btn-outline-primary">
+                        Login With Password
+                      </Button>
                     </div>
                     <div className="login_wrapper_already_transacted mt-3">
                       Already Transacted with Capdeal?
@@ -83,12 +107,50 @@ const Login = ({
                         Click here to Login
                       </span>
                     </div>
+                    <div className="text-center">
+                      <FacebookLogin
+                        appId="644925052770384"
+                        autoLoad={false}
+                        fields="name,email,picture"
+                        callback={responseFacebook}
+                        render={(renderProps) => (
+                          <button
+                            type="button"
+                            className="facebook-button p0 m0"
+                            onClick={renderProps.onClick}
+                          >
+                            <FacebookIcon />
+                          </button>
+                        )}
+                      />
+                      <GoogleLogin
+                        clientId="83232625599-10s40l54v6qt9bk3stsfhdhcmpvaqnni.apps.googleusercontent.com"
+                        buttonText=""
+                        onSuccess={responseGoogle}
+                        onFailure={responseGoogle}
+                        cookiePolicy={"single_host_origin"}
+                        render={(renderProps) => (
+                          <button
+                            type="button"
+                            className="google-button p0 m0"
+                            onClick={renderProps.onClick}
+                            disabled={renderProps.disabled}
+                          >
+                            <GoogleIcon />
+                          </button>
+                        )}
+                      />
+                    </div>
                   </div>
                 </div>
               </form>
             )}
             {showOtpSuccess && (
-              <form onSubmit={submitOtpFunc} name="submit_otp_form" className="d-flex justify-content-center">
+              <form
+                onSubmit={submitOtpFunc}
+                name="submit_otp_form"
+                className="d-flex justify-content-center"
+              >
                 <div className="login_box_border col-xs-10 col-md-6 col-lg-5">
                   <div className="login_wrapper">
                     <div className="login_wrapper_img text-center">
@@ -110,7 +172,10 @@ const Login = ({
                       />
                     </div>
                     <div className="login_cta text-center">
-                      <Button className="col-6 text-center btn btn-lg btn-outline-primary" type="submit">
+                      <Button
+                        className="col-6 text-center btn btn-lg btn-outline-primary"
+                        type="submit"
+                      >
                         Submit Otp
                       </Button>
                     </div>
@@ -118,7 +183,9 @@ const Login = ({
                 </div>
               </form>
             )}
-            {otpSubmitSuccess && <Redirect to="/dashboard" />}
+            {otpSubmitSuccess && showFacebookSuccess && showGoogleSuccess && (
+              <Redirect to="/dashboard" />
+            )}
           </div>
         </div>
       </div>

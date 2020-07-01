@@ -17,12 +17,16 @@ const Routes = () => {
         </Route>
         <Route exact path="/home" component={Home} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/404" component={NoMatch} />
         <Dashboard>
           <Route
             component={({ match }) => (
-              <div>
+              <Switch>
                 <Route exact path="/dashboard/user" component={User} />
-              </div>
+                <Route component={NoMatch}>
+                  <Redirect to="/404" />
+                </Route>
+              </Switch>
             )}
           />
         </Dashboard>

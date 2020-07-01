@@ -11,7 +11,7 @@
     height: calc(100vh - 75px);
     &_border {
       border: 12px solid $white;
-      padding:0 !important;
+      padding: 0 !important;
       border-radius: 4px;
     }
   }
@@ -24,7 +24,7 @@
   &_wrapper {
     padding: 5rem 3.5rem !important;
     background-color: $white;
-    border: 1px solid #C98B66;
+    border: 1px solid #c98b66;
     border-radius: 4px;
     &_img {
       margin: 0 auto;
@@ -44,14 +44,29 @@
     &_already_transacted_link {
       @include font-poppins-regular-11($orange-color);
     }
+    .facebook-button {
+      border: none;
+      background: none;
+      svg {
+        width: 20px;
+        fill: $facebook-color;
+      }
+    }
+    .google-button {
+      border: none;
+      background: none;
+      svg {
+        width: 20px;
+      }
+    }
   }
 }
 
 .btn-outline-primary {
-    color: #C98B66 !important;
-    border-color: #C98B66 !important;
-    &:hover {
-      background-color: #C98B66 !important;
-      color: #fff !important;
-    }
+  color: #c98b66 !important;
+  border-color: #c98b66 !important;
+  &:hover {
+    background-color: #c98b66 !important;
+    color: #fff !important;
+  }
 }

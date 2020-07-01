@@ -4,10 +4,19 @@ import { buildUrl } from "../../../utils/Utils";
 import {
   loginWithOtpSuccess,
   loginWithOtpError,
+  loginWithFacebookSuccess,
+  loginWithFacebookError,
+  loginWithGoogleSuccess,
+  loginWithGoogleError,
   submitOtpSuccess,
   submitOtpError,
 } from "./actions";
-import { LOGIN_WITH_OTP, SUBMIT_OTP } from "./constants";
+import {
+  LOGIN_WITH_OTP,
+  SUBMIT_OTP,
+  LOGIN_WITH_FACEBOOK,
+  LOGIN_WITH_GOOGLE,
+} from "./constants";
 import apis from "../../../constants/apis/services";
 
 export function* loadLoginWithOtpSaga(phoneNumber) {
@@ -35,6 +44,66 @@ export function* loadLoginWithOtpSaga(phoneNumber) {
     }
   } catch (err) {
     yield put(loginWithOtpError(err));
+  }
+}
+
+export function* loadLoginWithFacebookSaga(accessToken) {
+  console.log("mani");
+  console.log(accessToken);
+  const additionalFetchOptions = (accessToken) => ({
+    method: "POST",
+    data: {
+      provider: "facebook",
+      access_token: accessToken.params,
+    },
+  });
+  const urlOptions = {
+    pathname: apis.socialLogin,
+    urlEncoded: true,
+  };
+  try {
+    const data = yield call(
+      ServiceUtils.fetch,
+      buildUrl(urlOptions),
+      additionalFetchOptions(accessToken),
+      "http://"
+    );
+    if (data.auth_token) {
+      yield put(loginWithFacebookSuccess({ showSuccess: true }));
+    } else {
+      yield put(loginWithFacebookError(data));
+    }
+  } catch (err) {
+    yield put(loginWithFacebookError(err));
+  }
+}
+
+export function* loadLoginWithGoogleSaga(accessToken) {
+  const additionalFetchOptions = (accessToken) => ({
+    method: "POST",
+    data: {
+      provider: "google-oauth2",
+      access_token: accessToken.params,
+    },
+  });
+  const urlOptions = {
+    pathname: apis.socialLogin,
+    urlEncoded: true,
+  };
+  try {
+    const data = yield call(
+      ServiceUtils.fetch,
+      buildUrl(urlOptions),
+      additionalFetchOptions(accessToken),
+      "http://"
+    );
+    if (data.auth_token) {
+      yield put(loginWithGoogleSuccess({ showSuccess: true }));
+    } else {
+      yield put(loginWithGoogleError(data));
+    }
+  } catch (err) {
+    yield put(loginWithGoogleError(err));
   }
 }
 
@@ -72,4 +141,10 @@ export default function* loginWithOtpSagaCap() {
 }
 export function* submitOtpSagaCap() {
   yield takeLatest(SUBMIT_OTP, loadSubmitOtpSaga);
+}
+export function* loginWithFacebookSagaCap() {
+  yield takeLatest(LOGIN_WITH_FACEBOOK, loadLoginWithFacebookSaga);
+}
+export function* loginWithGoogleSagaCap() {
+  yield takeLatest(LOGIN_WITH_GOOGLE, loadLoginWithGoogleSaga);
 }
