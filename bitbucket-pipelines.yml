@@ -4,14 +4,6 @@ pipelines:
   custom: # Pipelines that can only be triggered manually
     staging:
       - step:
-          name: Installing & Running Tests
-          caches:
-            - node
-          script:
-            - rm -rf package-lock.json
-            - rm -rf node_modules
-            - npm install
-      - step:
           name: Build
           script:
             - npm install
