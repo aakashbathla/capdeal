@@ -29,6 +29,9 @@
 @mixin font-raleway-bold-29($text-color) {
   @include font-style(2.9rem $Raleway-font-family, 0, $text-color, 700);
 }
+@mixin font-raleway-bold-32($text-color) {
+  @include font-style(3rem $Raleway-font-family, 0, $text-color, 700);
+}
 @mixin font-raleway-bold-35($text-color) {
   @include font-style(3.5rem $Raleway-font-family, 0, $text-color, 700);
 }

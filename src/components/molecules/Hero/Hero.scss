@@ -20,10 +20,10 @@
       }
       width: 50%;
       h2 {
-        @include font-raleway-bold-41($white);
+        @include font-raleway-bold-37($white);
       }
       p {
-        @include font-poppins-regular-22($white);
+        @include font-poppins-regular-20($white);
       }
     }
   }

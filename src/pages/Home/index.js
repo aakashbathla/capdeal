@@ -7,9 +7,11 @@ import About from "components/molecules/About/About";
 import ExploreProperties from "components/molecules/ExploreProperties/ExploreProperties";
 import ResaleProperties from "components/molecules/ResalePropoerties/ResaleProperties";
 import FeaturedProperties from "components/molecules/FeaturedProperty/FeaturedProperty";
-import PropertyType from "components/molecules/PropertyType/PropertyType";
+//import PropertyType from "components/molecules/PropertyType/PropertyType";
 import Advertise from "components/molecules/Advertise/Advertise";
 import AdvertiseProperty from "components/molecules/AdvertisedProperty/AdvertisedProperty";
+import Features from "components/molecules/Features/Features";
+import SearchBox from "components/molecules/SearchBox/SearchBox";
 
 
 const Home = () => {
@@ -18,8 +20,9 @@ const Home = () => {
       <div className="Header-Background">
         <Navigation />
         <Hero />
+        <SearchBox />
       </div>
-      <PropertyType />
+      <Features />
       <About />
       <AdvertiseProperty />
       <Advertise />

@@ -2,10 +2,15 @@
 @import "../../../styles/src/typography";
 @import "../../../styles/src/breakpoints";
 .advertised_property {
-  padding: 70px 0;
+  margin-top: 70px;
+  padding-top: 35px;
+  min-height: 550px;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
   &_header {
     color: $orange-color;
-    @include font-raleway-bold-37($orange-color);
+    @include font-raleway-bold-32($orange-color);
   }
   &_image {
     width: 100%;

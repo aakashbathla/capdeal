@@ -7,10 +7,10 @@ const Hero = () => {
       <div className="container">
         <div className="hero-component-content-container">
           <div className="hero-component-content">
-            <h2>Eirmod diam duo takimata eirmod at</h2>
+            <h2>Lorem Ipsum is simply</h2>
             <p>
               Et et sed duo consetetur amet sit sit clita dolor. Erat invidunt
-              nonumy erat accusam ut lorem ut lorem rebum,.
+              nonumy erat.
             </p>
           </div>
         </div>

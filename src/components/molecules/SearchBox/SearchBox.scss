@@ -1,0 +1,57 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+
+.searchbox {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  &_wrap {
+    background-color: $white;
+    box-shadow: 0px -1px 5px #00000029;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  label {
+    margin-bottom: 0;
+    margin-left: 14px;
+    padding: 3px 6px;
+    background-color: $white;
+    position: absolute;
+    top: -10px;
+    color: $black;
+  }
+  .form-control {
+    @include font-poppins-regular-10($black)
+    height: 40px;
+    border-radius: 12px;
+    font-size: 13px;
+    border-color: $orange-color;
+  }
+  .btn-outline-primary {
+    @include font-poppins-bold-13($white);
+    color: $deep-purple !important;
+    border-radius: 30px;
+    width: 110px;
+    margin-right: 1.2rem;
+    &:hover {
+      color: $white !important;
+    }
+    &.active {
+      background-color: $orange-color !important;
+      color: #fff !important;
+    }
+  }
+  &_spacing {
+    padding-right: 4rem !important;
+  }
+  &_btn {
+    font-size: 1.6rem !important;
+    font-weight: 600 !important;
+    border-radius: 0 !important;
+    background-color: $orange-color !important;
+    border-color: $orange-color !important;
+    margin-top: -3px;
+    letter-spacing: .12rem;
+  }
+}

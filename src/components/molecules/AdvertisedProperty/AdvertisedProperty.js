@@ -1,9 +1,10 @@
 import React from "react";
 import "./AdvertisedProperty.scss";
-import AdvetisedImage from "../../../assets/advertised_property.png";
+import AdvetisedImage from "assets/advertised_property.png";
+import AdvetisedBgImage from "assets/advertise-bg.png";
 const AdvertisedProperty = () => {
   return (
-    <div className="advertised_property">
+    <div className="advertised_property" style={{backgroundImage: `url(`+AdvetisedBgImage+`)`}}>
       <div className="container">
         <h1 className="advertised_property_header p0 sm-text-center">
           Lorem Ipsum is simply
@@ -17,19 +18,19 @@ const AdvertisedProperty = () => {
                 alt="advertised property"
               />
               <div className="advertised_property_content_detail">
-                <h2>Property Name</h2>
-                <p className="m0">Area Name</p>
-                <div>
+                <h2 className="pl-2">Property Name</h2>
+                <p className="m0 pl-2">Area Name</p>
+                <div className="pl-2">
                   <span className="data">2BHK-3BHK</span>{" "}
                   <span className="px-3 orange">|</span>{" "}
                   <span className="data">1090-1460 SF (Saleable)</span>
                 </div>
-                <h6 className="price">41.2 Lac to 55.48 Lac</h6>
+                <h6 className="price pl-2">41.2 Lac to 55.48 Lac</h6>
                 <div>
-                  <div className="width-50 inline-block p2 text-center button">
+                  <div className="width-50 light-grey-background inline-block p1 text-center button">
                     ShortList
                   </div>
-                  <div className="width-50 deep-purple-background  inline-block p2 text-center active button">
+                  <div className="width-50 deep-purple-background  inline-block p1 text-center active button">
                     Details
                   </div>
                 </div>
@@ -44,19 +45,19 @@ const AdvertisedProperty = () => {
                 alt="advertised property"
               />
               <div className="advertised_property_content_detail">
-                <h2>Property Name</h2>
-                <p className="m0">Area Name</p>
-                <div>
+                <h2 className="pl-2">Property Name</h2>
+                <p className="m0 pl-2">Area Name</p>
+                <div className="pl-2">
                   <span className="data">2BHK-3BHK</span>{" "}
                   <span className="px-3 orange">|</span>{" "}
                   <span className="data">1090-1460 SF (Saleable)</span>
                 </div>
-                <h6 className="price">41.2 Lac to 55.48 Lac</h6>
+                <h6 className="price pl-2">41.2 Lac to 55.48 Lac</h6>
                 <div>
-                  <div className="width-50 inline-block p2 text-center button">
+                  <div className="width-50 light-grey-background inline-block p1 text-center button">
                     ShortList
                   </div>
-                  <div className="width-50 deep-purple-background  inline-block p2 text-center active button">
+                  <div className="width-50 deep-purple-background  inline-block p1 text-center active button">
                     Details
                   </div>
                 </div>
@@ -71,19 +72,19 @@ const AdvertisedProperty = () => {
                 alt="advertised property"
               />
               <div className="advertised_property_content_detail">
-                <h2>Property Name</h2>
-                <p className="m0">Area Name</p>
-                <div>
+                <h2 className="pl-2">Property Name</h2>
+                <p className="m0 pl-2">Area Name</p>
+                <div className="pl-2">
                   <span className="data">2BHK-3BHK</span>{" "}
                   <span className="px-3 orange">|</span>{" "}
                   <span className="data">1090-1460 SF (Saleable)</span>
                 </div>
-                <h6 className="price">41.2 Lac to 55.48 Lac</h6>
+                <h6 className="price pl-2">41.2 Lac to 55.48 Lac</h6>
                 <div>
-                  <div className="width-50 inline-block p2 text-center button">
+                  <div className="width-50 light-grey-background inline-block p1 text-center button">
                     ShortList
                   </div>
-                  <div className="width-50 deep-purple-background  inline-block p2 text-center active button">
+                  <div className="width-50 deep-purple-background  inline-block p1 text-center active button">
                     Details
                   </div>
                 </div>
@@ -98,19 +99,19 @@ const AdvertisedProperty = () => {
                 alt="advertised property"
               />
               <div className="advertised_property_content_detail">
-                <h2>Property Name</h2>
-                <p className="m0">Area Name</p>
-                <div>
+                <h2 className="pl-2">Property Name</h2>
+                <p className="m0 pl-2">Area Name</p>
+                <div className="pl-2">
                   <span className="data">2BHK-3BHK</span>{" "}
                   <span className="px-3 orange">|</span>{" "}
                   <span className="data">1090-1460 SF (Saleable)</span>
                 </div>
-                <h6 className="price">41.2 Lac to 55.48 Lac</h6>
+                <h6 className="price pl-2">41.2 Lac to 55.48 Lac</h6>
                 <div>
-                  <div className="width-50 inline-block p2 text-center button">
+                  <div className="width-50 light-grey-background inline-block p1 text-center button">
                     ShortList
                   </div>
-                  <div className="width-50 deep-purple-background  inline-block p2 text-center active button">
+                  <div className="width-50 deep-purple-background  inline-block p1 text-center active button">
                     Details
                   </div>
                 </div>
