@@ -10,7 +10,7 @@ const Features = () => {
             <h1 className="mb-3">Features</h1>
           </div>
           <div className="col-12">
-            <img src={FeaturesImage} className="img-fluid" />
+            <img src={FeaturesImage} alt="feature" className="img-fluid" />
           </div>
         </div>
       </div>
