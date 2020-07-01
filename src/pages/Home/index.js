@@ -13,7 +13,6 @@ import AdvertiseProperty from "components/molecules/AdvertisedProperty/Advertise
 import Features from "components/molecules/Features/Features";
 import SearchBox from "components/molecules/SearchBox/SearchBox";
 
-
 const Home = () => {
   return (
     <div>
@@ -25,13 +24,13 @@ const Home = () => {
       <Features />
       <About />
       <AdvertiseProperty />
-      <Advertise />
+      {/* <Advertise /> */}
       <FeaturedProperties />
       <ExploreProperties />
       <ResaleProperties />
       <Footer />
     </div>
   );
-}
+};
 
 export default Home;

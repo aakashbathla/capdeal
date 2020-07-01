@@ -109,7 +109,7 @@ const Login = ({
                     </div>
                     <div className="text-center">
                       <FacebookLogin
-                        appId="644925052770384"
+                        appId="1611262495703296"
                         autoLoad={false}
                         fields="name,email,picture"
                         callback={responseFacebook}
