@@ -23,10 +23,17 @@
         top: 20%;
         padding: 0 15px;
       }
+      @include tablet {
+        width: 65%;
+        top: 30%;
+      }
       width: 50%;
       h2 {
         @include font-raleway-bold-52($white);
         @include mobile {
+          @include font-raleway-bold-45($white);
+        }
+        @include tablet {
           @include font-raleway-bold-45($white);
         }
       }
@@ -38,6 +45,9 @@
           @include font-poppins-regular-22($white);
           line-height: 3rem;
           padding-top: 20px;
+        }
+        @include tablet {
+          @include font-poppins-regular-22($white);
         }
       }
     }

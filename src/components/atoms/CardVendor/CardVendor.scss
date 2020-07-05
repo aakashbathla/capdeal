@@ -28,9 +28,6 @@
     @include mobile {
       @include font-poppins-regular-16($black);
     }
-    @include tablet {
-      display: block;
-    }
     @include desktop {
       display: inline-block;
     }

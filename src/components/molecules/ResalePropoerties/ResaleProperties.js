@@ -29,26 +29,24 @@ const ResaleProperties = () => {
                 <li>Independent House</li>
                 <li>Villa</li>
               </ul>
-              <div className="col-lg-12 col-10 offset-1 offset-md-0">
+              <div className="col-lg-12 col-md-12 col-10 offset-1 offset-md-0">
                 <div className="row mb-2">
-                  <div className="col-lg-4 col-md-4 col-12 resale_properties_card">
+                  <div className="col-xl-4 col-md-6 col-12 resale_properties_card">
                     <Card />
                   </div>
-                  <div className="col-lg-4 col-md-4 col-12 resale_properties_card">
+                  <div className="col-xl-4 col-md-6 col-12 resale_properties_card">
                     <Card />
                   </div>
-                  <div className="col-lg-4 col-md-4 col-12 resale_properties_card">
+                  <div className="col-xl-4 col-md-6 col-12 resale_properties_card">
                     <Card />
                   </div>
-                </div>
-                <div className="row">
-                  <div className="col-lg-4 col-md-4 col-12 resale_properties_card">
+                  <div className="col-xl-4 col-md-6 col-12 resale_properties_card">
                     <Card />
                   </div>
-                  <div className="col-lg-4 col-md-4 col-12 d-none d-md-block">
+                  <div className="col-xl-4 col-md-6 col-12 d-none d-md-block">
                     <Card />
                   </div>
-                  <div className="col-lg-4 col-md-4 col-12 d-none d-md-block">
+                  <div className="col-xl-4 col-md-6 col-12 d-none d-md-block">
                     <Card />
                   </div>
                 </div>

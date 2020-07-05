@@ -15,45 +15,45 @@ const Features = () => {
       <div className="features_wrap" style={{backgroundImage: `url(`+FeaturesBgImage+`)`}}>
         <div className="container">
           <div className="row align-items-center m-0">
-            <div className="col features_slash">
+            <div className="col">
               <img src={ZeroBrokerageIcon} alt="brokerage-icon" className="features_img" />
-              <span className="features_text">Zero<br/>Brokerage fees</span>
+              <span className="features_text features_slash">Zero<br/>Brokerage fees</span>
             </div>
-            <div className="col features_slash">
+            <div className="col">
               <img src={LowestPriceIcon} alt="lowest-price" className="features_img" />
-              <span className="features_text">Lowest Price<br/>Guaranteed</span>
+              <span className="features_text features_slash">Lowest Price<br/>Guaranteed</span>
             </div>
-            <div className="col features_slash">
+            <div className="col">
               <img src={CompartiveMarketIcon} alt="compartive-market" className="features_img" />
-              <span className="features_text">Comparative<br/>Market Analysis</span>
+              <span className="features_text features_slash">Comparative<br/>Market Analysis</span>
             </div>
-            <div className="col features_slash slash-none">
+            <div className="col">
               <img src={ExclusiveInventoryIcon} alt="exclusive-inventory" className="features_img" />
-              <span className="features_text">Exclusive<br/>Inventory</span>
+              <span className="features_text features_slash slash-none">Exclusive<br/>Inventory</span>
             </div>
-            <div className="col features_slash d-none d-md-block">
+            <div className="col d-none d-lg-block">
               <img src={ProjectSiteIcon} alt="project-site-icon" className="features_img" />
-              <span className="features_text">Project Site<br/>Visit</span>
+              <span className="features_text features_slash">Project Site<br/>Visit</span>
             </div>
-            <div className="col features_slash d-none d-md-block">
+            <div className="col d-none d-lg-block">
               <img src={HomeLoanIcon} alt="home-loan-icon" className="features_img" />
-              <span className="features_text">Home Loan<br/>& Insurance</span>
+              <span className="features_text features_slash">Home Loan<br/>& Insurance</span>
             </div>
-            <div className="col d-none d-md-block">
+            <div className="col d-none d-lg-block">
               <img src={PostSaleIcon} alt="post-sale-icon" className="features_img" />
               <span className="features_text">Post Sale<br/>Service</span>
             </div>
           </div>
-          <div className="row align-items-center d-flex d-md-none mt-5 pt-3 m-0">
-            <div className="col d-block d-md-none">
+          <div className="row align-items-center d-flex d-lg-none mt-5 pt-3 m-0">
+            <div className="col offset-1">
               <img src={ProjectSiteIcon} alt="project-site-icon" className="features_img" />
               <span className="features_text features_slash">Project Site<br/>Visit</span>
             </div>
-            <div className="col d-block d-md-none">
+            <div className="col">
               <img src={HomeLoanIcon} alt="home-loan-icon" className="features_img" />
               <span className="features_text features_slash">Home Loan<br/>& Insurance</span>
             </div>
-            <div className="col d-block d-md-none">
+            <div className="col">
               <img src={PostSaleIcon} alt="post-sale-icon" className="features_img" />
               <span className="features_text">Post Sale<br/>Service</span>
             </div>

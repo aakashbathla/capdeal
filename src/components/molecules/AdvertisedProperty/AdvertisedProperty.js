@@ -25,9 +25,9 @@ const AdvertisedProperty = () => {
                 <h2 className="pl-2 ml-1 pt-2 mb-0">Property Name</h2>
                 <p className="m0 pl-2 ml-1 pb-3">Area Name</p>
                 <div className="pl-2 ml-1 pb-2">
-                  <span className="data"><img src={BuildingIcon} height="14" className="mr-2" />2BHK-3BHK</span>{" "}
+                  <span className="data"><img src={BuildingIcon} height="14" className="mr-2" alt="icon" />2BHK-3BHK</span>{" "}
                   <span className="px-3 orange">|</span>
-                  <span className="data"><img src={FlagIcon} height="12" className="mr-2" />1090-1460 SF (Saleable)</span>
+                  <span className="data"><img src={FlagIcon} height="12" className="mr-2" alt="icon" />1090-1460 SF (Saleable)</span>
                 </div>
                 <h6 className="price pl-2 ml-1">
                   <CoinIcon height="18" width="18" className="mr-2" />
@@ -55,9 +55,9 @@ const AdvertisedProperty = () => {
                 <h2 className="pl-2 ml-1 pt-2 mb-0">Property Name</h2>
                 <p className="m0 pl-2 ml-1 pb-3">Area Name</p>
                 <div className="pl-2 ml-1 pb-2">
-                  <span className="data"><img src={BuildingIcon} height="14" className="mr-2" />2BHK-3BHK</span>
+                  <span className="data"><img src={BuildingIcon} height="14" className="mr-2" alt="icon" />2BHK-3BHK</span>
                   <span className="px-3 orange">|</span>
-                  <span className="data"><img src={FlagIcon} height="12" className="mr-2" />1090-1460 SF (Saleable)</span>
+                  <span className="data"><img src={FlagIcon} height="12" className="mr-2" alt="icon" />1090-1460 SF (Saleable)</span>
                 </div>
                 <h6 className="price pl-2 ml-1">
                   <CoinIcon height="18" width="18" className="mr-2" />
@@ -85,9 +85,9 @@ const AdvertisedProperty = () => {
                 <h2 className="pl-2 ml-1 pt-2 mb-0">Property Name</h2>
                 <p className="m0 pl-2 ml-1 pb-3">Area Name</p>
                 <div className="pl-2 ml-1 pb-2">
-                  <span className="data"><img src={BuildingIcon} height="14" className="mr-2" />2BHK-3BHK</span>
+                  <span className="data"><img src={BuildingIcon} height="14" className="mr-2" alt="icon" />2BHK-3BHK</span>
                   <span className="px-3 orange">|</span>
-                  <span className="data"><img src={FlagIcon} height="12" className="mr-2" />1090-1460 SF (Saleable)</span>
+                  <span className="data"><img src={FlagIcon} height="12" className="mr-2" alt="icon" />1090-1460 SF (Saleable)</span>
                 </div>
                 <h6 className="price pl-2 ml-1">
                   <CoinIcon height="18" width="18" className="mr-2" />
@@ -115,9 +115,9 @@ const AdvertisedProperty = () => {
                 <h2 className="pl-2 ml-1 pt-2 mb-0">Property Name</h2>
                 <p className="m0 pl-2 ml-1 pb-3">Area Name</p>
                 <div className="pl-2 ml-1 pb-2">
-                  <span className="data"><img src={BuildingIcon} height="14" className="mr-2" />2BHK-3BHK</span>
+                  <span className="data"><img src={BuildingIcon} height="14" className="mr-2" alt="icon" />2BHK-3BHK</span>
                   <span className="px-3 orange">|</span>
-                  <span className="data"><img src={FlagIcon} height="12" className="mr-2" />1090-1460 SF (Saleable)</span>
+                  <span className="data"><img src={FlagIcon} height="12" className="mr-2" alt="icon" />1090-1460 SF (Saleable)</span>
                 </div>
                 <h6 className="price pl-2 ml-1">
                   <CoinIcon height="18" width="18" className="mr-2" />

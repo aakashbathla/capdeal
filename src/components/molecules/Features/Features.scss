@@ -18,32 +18,35 @@
   }
   &_wrap {
     padding: 2.8rem;
+    .col {
+      padding: 0 !important;
+    }
   }
   &_text {
     color: #fff;
     display: inline-block;
     font-size: 1.1rem;
-    width: 77px;
+    width: 7.7rem;
     vertical-align: middle;
     margin-left: .8rem;
     @include mobile {
-      width: 60px;
+      font-size: .9rem;
     }
   }
   &_img {
     height: 28px;
     @include mobile {
-      height: 16px;
+      height: 14px;
     }
   }
   &_slash {
     &:after {
       content: '/';
       color: #fff;
-      font-size: 54px;
+      font-size: 5.4rem;
       position: absolute;
-      right: -3px;
-      top: -17px;
+      right: 1.5rem;
+      top: -1.6rem;
       transform: rotateY(56deg);
     }
     @include mobile {
@@ -51,13 +54,24 @@
       padding-left: 0 !important;
       &:after {
         font-size: 30px;
-        right: 1px;
-        top: -9px;
+        right: 1.3rem;
+        top: -1rem;
+      }
+    }
+    @include tablet {
+      &:after {
+        right: 29px;
       }
     }
   }
 }
 @include mobile {
+  .slash-none {
+    &:after {
+      content: '';
+    }
+  }
+}@include tablet {
   .slash-none {
     &:after {
       content: '';

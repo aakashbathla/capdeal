@@ -73,6 +73,11 @@
       position: relative;
       width: 100%;
     }
+    @include tablet {
+      @include font-poppins-regular-10($white);
+      padding: 10px;
+      bottom: 9px;
+    }
     .calculator-link {
       display: block;
       @include font-poppins-bold-10($deep-purple);

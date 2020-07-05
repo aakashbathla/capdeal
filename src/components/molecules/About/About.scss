@@ -76,4 +76,10 @@
     max-height: 278px;
     padding: 0 2rem 2rem 2rem;
   }
+  @include mobile {
+    background-color: $orange-color;
+  }
+  @include tablet {
+    background-color: $orange-color;
+  }
 }
