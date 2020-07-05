@@ -6,8 +6,11 @@ import CoinIcon from "assets/money.svg";
 import BuildingIcon from "assets/buildings.png";
 import FlagIcon from "assets/flag.png";
 import Slider from "react-slick";
+/* eslint-disable */
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+/* eslint-enable */
+
 import { useMediaQuery } from "react-responsive";
 const AdvertisedProperty = () => {
   const isMobile = useMediaQuery({
