@@ -17,19 +17,21 @@ const Navigation = () => {
     });
   }, []);
 
-  const toggleNav = () => {
+  const toggleNav = (event) => {
+    console.log(event);
+    event.preventDefault();
     setToggle((toggle) => {
       return !toggle;
     });
   };
 
   const breadcrumb = toggle ? (
-    <Anchor className="meanmenu-reveal" onClick={toggleNav}>
+    <Anchor className="meanmenu-reveal" handleLinkClick={toggleNav}>
       X
     </Anchor>
   ) : (
     <>
-      <Anchor className="meanmenu-reveal" onClick={toggleNav}>
+      <Anchor className="meanmenu-reveal" handleLinkClick={toggleNav}>
         <span></span>
         <span></span>
         <span></span>
@@ -56,7 +58,9 @@ const Navigation = () => {
                     {links.map((item, index) => {
                       return (
                         <li key={index} id={item.id}>
-                          <Anchor to={item.path}>{item.text}</Anchor>
+                          <Anchor to={item.path} handleLinkClick={toggleNav}>
+                            {item.text}
+                          </Anchor>
                         </li>
                       );
                     })}
@@ -71,9 +75,7 @@ const Navigation = () => {
                       {links.map((item, index) => {
                         return (
                           <li key={index} id={item.id}>
-                            <Anchor to={item.path} onClick={toggleNav}>
-                              {item.text}
-                            </Anchor>
+                            <Anchor to={item.path}>{item.text}</Anchor>
                           </li>
                         );
                       })}

@@ -8,6 +8,60 @@
   background-position: top left;
   background-repeat: no-repeat;
   background-size: cover;
+  .slick-prev,
+  .slick-next {
+    &::before {
+      color: $orange-color;
+      font-size: 13px;
+    }
+    display: block;
+    position: absolute;
+    z-index: 1;
+    border-radius: 20px;
+    border: 1px solid black;
+    color: $orange-color;
+    top: 105%;
+  }
+  .slick-prev {
+    left: 43%;
+    @include tablet-desktop {
+      display: none !important;
+    }
+    &::before {
+      content: "<";
+    }
+  }
+  .slick-next {
+    @include tablet-desktop {
+      display: none !important;
+    }
+    right: 43%;
+    &::before {
+      content: ">";
+    }
+  }
+  .slick-slider {
+    width: 100%;
+    & li {
+      @include mobile {
+        display: none;
+      }
+      padding-top: 24px;
+      width: 5px;
+      height: 5px;
+      &.slick-active {
+        & button {
+          background-color: $orange-color;
+        }
+      }
+      & button {
+        width: 5px;
+        height: 5px;
+        border-radius: 5px;
+        background-color: black;
+      }
+    }
+  }
   @include mobile {
     margin-top: 0;
   }
