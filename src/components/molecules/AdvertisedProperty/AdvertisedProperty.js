@@ -13,7 +13,6 @@ const AdvertisedProperty = () => {
   const isMobile = useMediaQuery({
     maxWidth: 768,
   });
-  console.log(isMobile);
   const settings = {
     dots: true,
     infinite: true,

@@ -58,9 +58,7 @@ const Navigation = () => {
                     {links.map((item, index) => {
                       return (
                         <li key={index} id={item.id}>
-                          <Anchor to={item.path} handleLinkClick={toggleNav}>
-                            {item.text}
-                          </Anchor>
+                          <Anchor to={item.path}>{item.text}</Anchor>
                         </li>
                       );
                     })}
