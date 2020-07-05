@@ -29,4 +29,10 @@ export default [
     text: "Buy/Sell/Rent",
     id: "buy_sell_rent",
   },
+
+  {
+    path: "#profile",
+    text: "Profile",
+    id: "profile",
+  },
 ];
