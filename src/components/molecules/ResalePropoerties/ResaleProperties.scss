@@ -10,11 +10,24 @@
   color: $white;
   padding: 55px 0 70px 0;
   min-height: 400px;
+  @include mobile {
+    padding: 30px 0 30px 0;
+  }
   &_header {
-    @include font-raleway-bold-32($white);
+    @include font-raleway-bold-35($white);
     padding-bottom: 50px;
     @include mobile {
       padding-bottom: 0px;
+      padding-left: 25px;
+      @include font-raleway-bold-40($white);
+    }
+  }
+  &_card {
+    @include mobile {
+      padding-right: 0 !important;
+      .card {
+        padding-left: 0 !important;
+      }
     }
   }
   &_container {
@@ -22,7 +35,7 @@
     .resale_property_type {
       transform: rotate(270deg);
       position: relative;
-      top: 305px;
+      top: 265px;
       right: 20px;
       li {
         transform: rotate(180deg);
@@ -32,6 +45,10 @@
         &.active {
           @include font-poppins-bold-18($white);
         }
+      }
+      @include mobile {
+        top: 60px;
+        left: -185px;
       }
     }
     .resale_property_type_2 {
@@ -43,6 +60,12 @@
         &.active {
           @include font-poppins-bold-18($white);
         }
+        @include mobile {
+          padding-right: 25px;
+        }
+      }
+      @include mobile {
+        padding-left: 41px;
       }
     }
     .link {

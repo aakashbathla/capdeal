@@ -14,16 +14,19 @@
       }
     }
     padding: 2.5rem 0 2rem;
+    @include mobile {
+      padding: 2.5rem 1.5rem 2rem;;
+    }
     &-items {
-      @include font-poppins-bold-17($white);
+      @include font-poppins-bold-18($white);
       @include mobile {
-        @include font-poppins-bold-24($white);
+        @include font-poppins-bold-18($white);
       }
     }
     &-subitems {
       @include font-poppins-regular-13($white);
       @include mobile {
-        @include font-poppins-regular-17($white);
+        @include font-poppins-regular-12($white);
       }
     }
   }
@@ -38,34 +41,31 @@
       }
     }
     &-social-links {
-      @include font-poppins-bold-17($white);
+      @include font-poppins-bold-18($white);
       @include mobile {
-        @include font-poppins-bold-24($white);
+        @include font-poppins-bold-18($white);
       }
     }
     &-content {
       @include font-poppins-regular-14($white);
       @include mobile {
-        @include font-poppins-regular-16($white);
+        @include font-poppins-regular-12($white);
       }
     }
     .social-link-list li {
       display: inline-block;
       list-style: none;
-      & svg {
-        fill: $white;
-        width: 2.5rem;
-        height: 2.5rem;
-        padding-right: 5px;
+      img {
+        height: 16px;
+        margin-right: 10px;
         @include mobile {
-          width: 3rem;
-          height: 3rem;
+          height: 11px;
         }
       }
     }
   }
   .input-box-email {
-    @include font-poppins-bold-14($black)
+    @include font-poppins-bold-14($black);
     height: 5rem;
     width: 70%;
     margin-right: 0.7rem;
@@ -80,5 +80,8 @@
   }
   .copyright {
     @include font-poppins-regular-13($white);
+    @include mobile {
+      @include font-poppins-regular-10($white);
+    }
   }
 }

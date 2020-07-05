@@ -6,7 +6,7 @@
     padding-right: 0;
     z-index: 1;
     &_wrap {
-      border-top: 26px solid $white;
+      border-top: 30px solid $white;
       border-bottom: 26px solid $white;
       img {
         max-height: 39rem;
@@ -20,31 +20,40 @@
     background-size: cover;
     color: $white;
     text-align: center;
-    padding-top: 5.5rem;
+    padding-top: 7rem;
+    padding-bottom: 5.5rem;
     height: 100%;
     margin-left: 30px;
     @include mobile {
       padding-top: 3rem;
+      margin-left: 0;
     }
     &_description {
       padding: 18px 60px;
-      @include font-poppins-bold-12($white);
+      @include font-poppins-bold-18($white);
     }
     h1 {
-      @include font-raleway-bold-32($white);
+      @include font-raleway-bold-35($white);
       text-transform: uppercase;
+      @include mobile {
+        @include font-raleway-bold-40($white);
+      }
     }
     h6 {
       padding-top: 15px;
-      @include font-raleway-bold-15($white);
+      @include font-raleway-bold-18($white);
       @include mobile {
         @include font-raleway-bold-25($white);
       }
     }
     &_details {
       text-align: center;
-      margin-left: 20px !important;
       margin-right: 20px !important;
+      @include mobile {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        margin-top: 20px;
+      }
     }
     &_border {
       border-radius: 3.5rem;
@@ -53,9 +62,12 @@
       background-color: $deep-purple;
       margin: 0 auto;
       &_details {
-        @include font-poppins-regular-10($white);
+        @include font-poppins-regular-14($white);
         @include mobile {
           @include font-poppins-regular-20($white);
+          border-radius: 4.5rem;
+          width: 9rem;
+          height: 9rem;
         }
       }
     }

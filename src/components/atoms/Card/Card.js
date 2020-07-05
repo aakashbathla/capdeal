@@ -7,11 +7,11 @@ const Card = () => {
     <div className="card mb-4">
       <div className="card_container">
         <div className="row">
-          <div className="col-lg-4 col-md-4 col-4">
+          <div className="col-lg-3 col-md-3 col-3">
             <img className="card_container_image" src={cardImage} alt="card" />
             <span className="title">Residential</span>
           </div>
-          <div className="col-lg-8 col-md-8 col-8 pl-0">
+          <div className="col-lg-8 col-md-8 col-8 pl-0 pl-md-3">
             <h4>167 sq. Yd. Plot in Achutapuram</h4>
             <div className="location">Achutapuram, Vizag</div>
             <div className="row mt-3 mb-3 pb-2">

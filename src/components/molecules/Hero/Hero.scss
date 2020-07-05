@@ -8,6 +8,9 @@
     object-position: center top;
     width: 100%;
     min-height: 100vh;
+    @include mobile {
+      min-height: 75vh;
+    }
   }
   .hero-component-content-container {
     color: $white;
@@ -17,13 +20,25 @@
       position: absolute;
       @include mobile {
         width: 80%;
+        top: 20%;
+        padding: 0 15px;
       }
       width: 50%;
       h2 {
-        @include font-raleway-bold-37($white);
+        @include font-raleway-bold-52($white);
+        @include mobile {
+          @include font-raleway-bold-45($white);
+        }
       }
       p {
-        @include font-poppins-regular-20($white);
+        @include font-poppins-regular-30($white);
+        line-height: 4rem;
+        padding-top: 50px;
+        @include mobile {
+          @include font-poppins-regular-22($white);
+          line-height: 3rem;
+          padding-top: 20px;
+        }
       }
     }
   }

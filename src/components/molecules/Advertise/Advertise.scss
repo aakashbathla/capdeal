@@ -3,19 +3,20 @@
 @import "../../../styles/src/breakpoints";
 
 .advertise {
-  padding: 220px 0 40px 0;
+  background-color: $light-grey-2;
+  padding: 130px 0 60px 0;
   @include mobile {
-    padding: 0;
+    padding: 25px 0;
   }
   position: relative;
   &_container {
     background-color: $light-orange-color;
-    padding: 20px 40px;
+    padding: 25px 40px;
     border-radius: 20px;
     h1 {
       @include font-raleway-bold-35($black);
       @include mobile {
-        @include font-raleway-bold-41($black);
+        @include font-raleway-bold-40($black);
       }
     }
     p {
@@ -27,6 +28,10 @@
     .number {
       .header {
         @include font-poppins-bold-10($black);
+        @include mobile {
+          margin-top: 10px;
+          display: inline-block;
+        }
       }
       h2 {
         @include font-poppins-bold-62($black);
@@ -37,14 +42,14 @@
     }
   }
   &_image {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
     position: absolute;
+    bottom: -25px;
+    right: -12px;
     @include mobile {
       position: relative;
+      width: 100%;
+      bottom: 0;
+      margin-top: 50px;
     }
-    bottom: -20px;
   }
 }

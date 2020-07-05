@@ -5,6 +5,9 @@
 .explore-properties {
   padding-top: 55px;
   padding-bottom: 72px;
+  @include mobile {
+    padding: 30px !important;
+  }
   &-left-container {
     .active {
       @include font-poppins-bold-20($black-3);
@@ -23,6 +26,10 @@
         }
         @include mobile {
           display: inline-block;
+          &:before {
+            margin-right: 0;
+            content: none;
+          }
         }
         padding-right: 20px;
         overflow-x: hidden;
@@ -31,8 +38,11 @@
   }
 }
 .explore-properties-header {
-  @include font-raleway-bold-32($orange-color);
+  @include font-raleway-bold-35($orange-color);
   padding-bottom: 27px;
+  @include mobile {
+    @include font-raleway-bold-40($orange-color);
+  }
 }
 .explore-properties-image-container {
   position: relative;
@@ -45,6 +55,10 @@
       padding: 20px;
       top: 0;
       @include font-raleway-bold-25($white);
+      @include mobile {
+        padding: 15px;
+        @include font-raleway-bold-29($white);
+      }
     }
   }
   .calculator-description {

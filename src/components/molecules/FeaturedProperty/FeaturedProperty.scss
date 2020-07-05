@@ -1,16 +1,21 @@
 @import "../../../styles/src/colors";
 @import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+
 .featureProperty {
   background-color: $orange-color;
   background-position: top right;
   background-repeat: no-repeat;
   background-size: contain;
   color: $white;
-  margin-top: 55px;
-  padding: 4rem 0;
+  padding: 55px 0;
   h1 {
-    @include font-raleway-bold-32($white);
+    @include font-raleway-bold-35($white);
     margin-bottom: 4rem;
+    @include mobile {
+      text-align: center;
+      @include font-raleway-bold-40($white);
+    }
   }
   .link {
     @include font-poppins-bold-15($white);

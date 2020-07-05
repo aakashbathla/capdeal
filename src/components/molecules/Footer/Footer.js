@@ -1,9 +1,9 @@
 import React from "react";
-import Logo from "../../../assets/logo.png";
-import TwitterIcon from "../../../styles/icons/twitter.svg";
-import FacebookIcon from "../../../styles/icons/facebook.svg";
-import LinkedinIcon from "../../../styles/icons/linkedin.svg";
-import InstagramIcon from "../../../styles/icons/instagram.svg";
+import Logo from "assets/logo.png";
+import TwitterIcon from "assets/twitter.png";
+import FacebookIcon from "assets/facebook.png";
+import LinkedinIcon from "assets/linkedin.png";
+import InstagramIcon from "assets/instagram.png";
 import FooterBgImage from "assets/footer-bg.png";
 
 import "./Footer.scss";
@@ -82,16 +82,16 @@ const Footer = () => {
                 <div>
                   <ul className="social-link-list p0">
                     <li>
-                      <TwitterIcon />
+                      <img src={TwitterIcon} alt="icon" />
                     </li>
                     <li>
-                      <FacebookIcon />
+                      <img src={LinkedinIcon} alt="icon" />
                     </li>
                     <li>
-                      <LinkedinIcon />
+                      <img src={FacebookIcon} alt="icon" />
                     </li>
                     <li>
-                      <InstagramIcon />
+                      <img src={InstagramIcon} alt="icon" />
                     </li>
                   </ul>
                 </div>

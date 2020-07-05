@@ -12,9 +12,9 @@ const About = () => {
               <img src={AboutImage} alt="about" />
             </div>
           </div>
-          <div className="col-lg-11 col-md-11 col-sm-12">
+          <div className="col-lg-11 col-md-11 col-sm-12 pl-0 pr-0 pr-md-4">
             <div className="about_content" style={{backgroundImage: `url(`+AboutBgImage+`)`}}>
-              <div className="row">
+              <div className="row m-0">
                 <div className="col-lg-9 col-md-10 col-sm-12 offset-lg-3 offset-md-2">
                   <h1 className="mb0">How We Works</h1>
                   <p className="about_content_description">
@@ -30,7 +30,7 @@ const About = () => {
                   alt="about"
                 />
               </div>
-              <div className="row">
+              <div className="row m-0">
                 <div className="col-lg-9 col-md-10 col-sm-12 offset-lg-3 offset-md-2">
                   <div className="row flex-justify-center pb-4 about_content_details mt-lg-3 mt-md-3">
                     <div className="col-lg-4 col-md-4 col-sm-6 col-6">
@@ -38,7 +38,6 @@ const About = () => {
                       <h6>Lorem Ipsum is ready</h6>
                       <span className="about_content_border_details">
                         Amet elitr sea diam et ipsum. Eirmod sit aliquyam dolor diam.
-                        Elitr invidunt aliquyam accusam magna.
                       </span>
                     </div>
                     <div className="col-lg-4 col-md-4 col-sm-6 col-6">
@@ -46,7 +45,6 @@ const About = () => {
                       <h6>Lorem Ipsum is ready</h6>
                       <span className="about_content_border_details">
                         Amet elitr sea diam et ipsum. Eirmod sit aliquyam dolor diam.
-                        Elitr invidunt aliquyam accusam magna.
                       </span>
                     </div>
                     <div className="col-lg-4 col-md-4 col-sm-6 col-6">
@@ -54,7 +52,6 @@ const About = () => {
                       <h6>Lorem Ipsum is ready</h6>
                       <span className="about_content_border_details">
                         Amet elitr sea diam et ipsum. Eirmod sit aliquyam dolor diam.
-                        Elitr invidunt aliquyam accusam magna.
                       </span>
                     </div>
                   </div>

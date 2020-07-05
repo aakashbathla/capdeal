@@ -17,6 +17,9 @@
 @mixin font-raleway-bold-15($text-color) {
   @include font-style(1.5rem $Raleway-font-family, 0, $text-color, 700);
 }
+@mixin font-raleway-bold-18($text-color) {
+  @include font-style(1.8rem $Raleway-font-family, 0, $text-color, 700);
+}
 @mixin font-raleway-bold-20($text-color) {
   @include font-style(2rem $Raleway-font-family, 0, $text-color, 700);
 }
@@ -38,8 +41,14 @@
 @mixin font-raleway-bold-37($text-color) {
   @include font-style(3.7rem $Raleway-font-family, 0, $text-color, 700);
 }
+@mixin font-raleway-bold-40($text-color) {
+  @include font-style(4rem $Raleway-font-family, 0, $text-color, 700);
+}
 @mixin font-raleway-bold-41($text-color) {
   @include font-style(4.1rem $Raleway-font-family, 0, $text-color, 700);
+}
+@mixin font-raleway-bold-45($text-color) {
+  @include font-style(4.5rem $Raleway-font-family, 0, $text-color, 700);
 }
 @mixin font-raleway-bold-49($text-color) {
   @include font-style(4.9rem $Raleway-font-family, 0, $text-color, 700);

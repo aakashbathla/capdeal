@@ -1,4 +1,5 @@
 @import "../../../styles/src/colors";
+@import "../../../styles/src/breakpoints";
 .navbar ul {
   text-align: right;
 }
@@ -18,7 +19,7 @@
   line-height: 1;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  padding-top: 2.5rem;
+  padding-top: 3rem;
 }
 .navbar ul li a:hover {
   text-decoration: none;
@@ -48,9 +49,13 @@
 }
 .logo-area img {
   max-width: 14rem;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   transition: 0.5s;
   -webkit-transition: 0.5s;
+  @include mobile {
+    padding-top: 1.7rem;
+    padding-bottom: 1.5rem;
+  }
 }
 /* hide the link until viewport size is reached */
 a.meanmenu-reveal {
@@ -83,6 +88,9 @@ a.meanmenu-reveal {
   text-decoration: none;
   top: -0.5rem;
   width: 2.2rem;
+  @include mobile {
+    top: -1.5rem;
+  }
 }
 
 .mean-container a.meanmenu-reveal span {
@@ -223,10 +231,4 @@ a.meanmenu-reveal {
 .mean-container .mean-nav {
   margin-top: 5px;
   background: rgba(50, 54, 87, 0.9);
-}
-@media only screen and (max-width: 574px) and (min-width: 320px) {
-  .logo-area img {
-    padding-top: 2.7rem;
-    padding-bottom: 1rem;
-  }
 }

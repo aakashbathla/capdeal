@@ -3,8 +3,64 @@
 @import "../../../styles/src/breakpoints";
 
 .features {
-  margin-bottom: 3.8rem;
+  padding-top: 2.2rem;
+  padding-bottom: 5.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include mobile {
+    margin-top: 80px;
+  }
   h1 {
     @include font-raleway-bold-32($orange-color);
+    @include mobile {
+      @include font-raleway-bold-40($orange-color);
+    }
+  }
+  &_wrap {
+    padding: 2.8rem;
+  }
+  &_text {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.1rem;
+    width: 77px;
+    vertical-align: middle;
+    margin-left: .8rem;
+    @include mobile {
+      width: 60px;
+    }
+  }
+  &_img {
+    height: 28px;
+    @include mobile {
+      height: 16px;
+    }
+  }
+  &_slash {
+    &:after {
+      content: '/';
+      color: #fff;
+      font-size: 54px;
+      position: absolute;
+      right: -3px;
+      top: -17px;
+      transform: rotateY(56deg);
+    }
+    @include mobile {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+      &:after {
+        font-size: 30px;
+        right: 1px;
+        top: -9px;
+      }
+    }
+  }
+}
+@include mobile {
+  .slash-none {
+    &:after {
+      content: '';
+    }
   }
 }
