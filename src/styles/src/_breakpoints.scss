@@ -28,7 +28,12 @@
     @content;
   }
 }
-
+@mixin sm-laptop {
+  /* Small devices (desktop, 1025 to 1279) */
+  @media (min-width: 992px) and (max-width: 1279px) {
+    @content;
+  }
+}
 @mixin tablet {
   /* Small devices (tablets, 768px and up) */
   @media (min-width: 768px) and (max-width: 991px) {
@@ -57,10 +62,10 @@
   }
 }
 
-/* Use this media query exclusively for iPhone5/SE devices */
+/* Use this media query exclusively for iPhone5/SE and iPhoneX devices */
 @mixin x-small {
-  /* < 360px */
-  @media (max-width: 360px) {
+  /* < 380px */
+  @media (max-width: 380px) {
     @content;
   }
 }

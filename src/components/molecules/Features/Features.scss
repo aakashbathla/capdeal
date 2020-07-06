@@ -21,6 +21,9 @@
     .col {
       padding: 0 !important;
     }
+    @include x-small {
+      padding: 2.8rem 0;
+    }
   }
   &_text {
     color: #fff;
@@ -32,11 +35,17 @@
     @include mobile {
       font-size: .9rem;
     }
+    @include sm-laptop {
+      font-size: 1rem;
+    }
   }
   &_img {
     height: 28px;
     @include mobile {
       height: 14px;
+    }
+    @include sm-laptop {
+      height: 17px;
     }
   }
   &_slash {
@@ -61,6 +70,13 @@
     @include tablet {
       &:after {
         right: 29px;
+      }
+    }
+    @include sm-laptop {
+      &:after {
+        right: .8rem;
+        top: -1.5rem;
+        font-size: 45px;
       }
     }
   }

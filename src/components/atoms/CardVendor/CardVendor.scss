@@ -28,8 +28,14 @@
     @include mobile {
       @include font-poppins-regular-16($black);
     }
+    @include sm-laptop {
+      @include font-poppins-regular-10($black);
+    }
     @include desktop {
       display: inline-block;
+    }
+    @include x-small {
+      @include font-poppins-regular-10($black);
     }
   }
   &_img {

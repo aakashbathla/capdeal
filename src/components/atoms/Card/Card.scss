@@ -16,6 +16,12 @@
       @include mobile {
         left: -9px;
       }
+      @include sm-laptop {
+        left: -40px;
+      }
+      @include x-small {
+        left: -16px;
+      }
     }
     .title {
       @include font-poppins-regular-10($white);
@@ -24,6 +30,9 @@
       left: -18px;
       @include mobile {
         left: 10px;
+      }
+      @include sm-laptop {
+        left: -10px;
       }
     }
     h4 {

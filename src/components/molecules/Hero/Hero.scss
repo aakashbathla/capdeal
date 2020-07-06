@@ -36,6 +36,12 @@
         @include tablet {
           @include font-raleway-bold-45($white);
         }
+        @include sm-laptop {
+          @include font-raleway-bold-41($white);
+        }
+        @include x-small {
+          @include font-raleway-bold-37($white);
+        }
       }
       p {
         @include font-poppins-regular-30($white);
@@ -48,6 +54,12 @@
         }
         @include tablet {
           @include font-poppins-regular-22($white);
+        }
+        @include sm-laptop {
+          @include font-poppins-regular-21($white);
+        }
+        @include x-small {
+          @include font-poppins-regular-18($white);
         }
       }
     }

@@ -28,6 +28,9 @@
       padding-top: 3rem;
       margin-left: 0;
     }
+    @include sm-laptop {
+      margin-left: 65px;
+    }
     &_description {
       padding: 18px 60px;
       @include font-poppins-bold-18($white);
