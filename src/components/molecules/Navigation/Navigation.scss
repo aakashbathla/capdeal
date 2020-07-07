@@ -39,7 +39,7 @@
   right: 0;
   width: 100%;
   z-index: 99;
-  background-color: rgba(33, 32, 71, 1);
+  background-color: $deep-purple;
   -webkit-box-shadow: 0px 0px 4px rgba(2, 5, 21, 0.7);
   box-shadow: 0px 0px 50px rgba(2, 5, 21, 0.7);
   -webkit-transition: all 1s ease 0s;
@@ -96,13 +96,23 @@ a.meanmenu-reveal {
 .mean-container a.meanmenu-reveal span {
   background: $white none repeat scroll 0 0;
   display: block;
-  height: 0.4rem;
-  margin-top: 0.3rem;
+  height: 0.3rem;
+  margin-top: 0.4rem;
+  float: right;
 }
-
+.mean-container a.meanmenu-reveal span:nth-child(1) {
+  width: 3.5rem;
+}
+.mean-container a.meanmenu-reveal span:nth-child(2) {
+  width: 2.5rem;
+}
+.mean-container a.meanmenu-reveal span:nth-child(3) {
+  width: 1.5rem;
+}
 .mean-container .mean-nav {
   background: transparent;
   float: left;
+  padding-bottom: 1.5rem;
   margin-top: 1.8rem;
   width: 100%;
 }
@@ -118,7 +128,8 @@ a.meanmenu-reveal {
   position: relative;
   float: left;
   width: 100%;
-  border-top: 1px solid #ffffff80;
+  font-size: 2.3rem;
+  //border-top: 1px solid #ffffff20;
 }
 
 .mean-container .mean-nav ul li a {
@@ -126,7 +137,7 @@ a.meanmenu-reveal {
   display: block;
   float: left;
   margin: 0;
-  padding: 1.1rem 1px;
+  padding: 1.4rem 1px;
   text-align: left;
   text-decoration: none;
   text-transform: capitalize;
@@ -134,7 +145,7 @@ a.meanmenu-reveal {
 }
 
 .mean-container .mean-nav ul li li a {
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  //border-top: 1px solid #ffffff20;
   opacity: 0.75;
   padding: 10px 10%;
   text-shadow: none;
@@ -221,7 +232,7 @@ a.meanmenu-reveal {
 }
 
 .transparent-header .mean-container a.meanmenu-reveal {
-  border: 1px solid $white;
+  //border: 1px solid #ffffff20;
   color: $white;
 }
 
@@ -230,5 +241,36 @@ a.meanmenu-reveal {
 }
 .mean-container .mean-nav {
   margin-top: 5px;
-  background: rgba(50, 54, 87, 0.9);
+  background: $deep-purple;
+}
+.mobile-menu {
+  background-color: $deep-purple;
+}
+.social-links {
+  transform: rotate(-90deg);
+  width: 12rem;
+  height: 10rem;
+  position: absolute;
+  bottom: 4rem;
+  white-space: nowrap ;
+  span {
+    color: $white;
+    font-size: 1.8rem;
+    margin-right: 1rem;
+  }
+  &_icon {
+    border: 1px solid $white;
+    border-radius: 30px;
+    height: 24px;
+    width: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 5px;
+    i {
+      font-size: 14px;
+      color: $orange-color;
+    }
+  }
 }

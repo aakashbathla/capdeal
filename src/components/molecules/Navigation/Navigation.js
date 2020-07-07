@@ -27,7 +27,7 @@ const Navigation = () => {
 
   const breadcrumb = toggle ? (
     <Anchor className="meanmenu-reveal" handleLinkClick={toggleNav}>
-      X
+      <i class="zmdi zmdi-close"></i>
     </Anchor>
   ) : (
     <>
@@ -51,7 +51,7 @@ const Navigation = () => {
                 </Anchor>
               </div>
             </div>
-            <div className="col-xl-10 col-lg-10">
+            <div className="col-xl-10 col-lg-10 mobile-menu">
               <div className="main-menu">
                 <nav className="navbar d-none d-lg-block">
                   <ul>
@@ -65,20 +65,32 @@ const Navigation = () => {
                   </ul>
                 </nav>
               </div>
-              <div className="mobile-menu mean-container d-block d-lg-none">
+              <div className="mean-container d-block d-lg-none">
                 <div className="mean-bar">
                   {breadcrumb}
-                  <nav className={`mean-nav ${toggle ? "d-block" : "d-none"}`}>
-                    <ul>
-                      {links.map((item, index) => {
-                        return (
-                          <li key={index} id={item.id}>
-                            <Anchor to={item.path}>{item.text}</Anchor>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </nav>
+                  <div className={`row ${toggle ? "d-flex" : "d-none"}`}>
+                    <div className="col-9">
+                      <nav className="mean-nav">
+                        <ul>
+                          {links.map((item, index) => {
+                            return (
+                              <li key={index} id={item.id}>
+                                <Anchor to={item.path}>{item.text}</Anchor>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </nav>
+                    </div>
+                    <div className="col-1">
+                      <div className="social-links">
+                        <span>Follow us on</span>
+                        <span className="social-links_icon"><i class="zmdi zmdi-facebook"></i></span>
+                        <span className="social-links_icon"><i class="zmdi zmdi-twitter"></i></span>
+                        <span className="social-links_icon"><i class="zmdi zmdi-instagram"></i></span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
