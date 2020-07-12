@@ -124,6 +124,7 @@ const Login = ({
                         )}
                       />
                       <GoogleLogin
+                        autoLoad={false}
                         clientId="83232625599-10s40l54v6qt9bk3stsfhdhcmpvaqnni.apps.googleusercontent.com"
                         buttonText=""
                         onSuccess={responseGoogle}
