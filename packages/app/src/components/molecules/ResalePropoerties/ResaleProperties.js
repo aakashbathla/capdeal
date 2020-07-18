@@ -18,8 +18,8 @@ const ResaleProperties = () => {
           <div className="row">
             <div className="col-lg-1">
               <ul className="resale_property_type">
-                <li className="active">Residential</li>
-                <li>Commercial</li>
+                <li>Residential</li>
+                <li className="active">Commercial</li>
               </ul>
             </div>
             <div className="col-lg-11 p0 m0">

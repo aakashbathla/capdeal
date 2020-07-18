@@ -6,6 +6,9 @@
   color: $black;
   border-radius: 5px;
   box-shadow: 0px 3px 6px #00000029;
+  &:hover {
+    box-shadow: 0px 5px 6px #00000070;
+  } 
   @include mobile {
     margin-left: 0;
     margin-right: 0;

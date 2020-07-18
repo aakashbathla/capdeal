@@ -27,7 +27,7 @@ const Navigation = () => {
 
   const breadcrumb = toggle ? (
     <Anchor className="meanmenu-reveal" handleLinkClick={toggleNav}>
-      <i class="zmdi zmdi-close"></i>
+      <i className="zmdi zmdi-close"></i>
     </Anchor>
   ) : (
     <>
@@ -85,9 +85,9 @@ const Navigation = () => {
                     <div className="col-1">
                       <div className="social-links">
                         <span>Follow us on</span>
-                        <span className="social-links_icon"><i class="zmdi zmdi-facebook"></i></span>
-                        <span className="social-links_icon"><i class="zmdi zmdi-twitter"></i></span>
-                        <span className="social-links_icon"><i class="zmdi zmdi-instagram"></i></span>
+                        <span className="social-links_icon"><i className="zmdi zmdi-facebook"></i></span>
+                        <span className="social-links_icon"><i className="zmdi zmdi-twitter"></i></span>
+                        <span className="social-links_icon"><i className="zmdi zmdi-instagram"></i></span>
                       </div>
                     </div>
                   </div>

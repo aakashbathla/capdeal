@@ -46,6 +46,10 @@
         &.active {
           @include font-poppins-bold-18($white);
         }
+        &:hover {
+          @include font-poppins-bold-18($white);
+          cursor: pointer;
+        }
       }
       @include mobile {
         top: 13rem;
@@ -68,6 +72,10 @@
         @include font-poppins-regular-18($white);
         &.active {
           @include font-poppins-bold-18($white);
+        }
+        &:hover {
+          @include font-poppins-bold-18($white);
+          cursor: pointer;
         }
         @include mobile {
           padding-right: 25px;

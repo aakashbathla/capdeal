@@ -1,6 +1,8 @@
 @import "../../../styles/src/colors";
 @import "../../../styles/src/typography";
 @import "../../../styles/src/breakpoints";
+@import "../../../styles/src/fonts";
+
 .advertised_property {
   margin-top: 70px;
   padding-top: 55px;
@@ -8,36 +10,64 @@
   background-position: top left;
   background-repeat: no-repeat;
   background-size: cover;
+  .slick-slide {
+    > .col-12 {
+      &:focus {
+        outline: none;
+      }
+    }
+  }
   .slick-prev,
   .slick-next {
     &::before {
       color: $orange-color;
-      font-size: 13px;
+      font-size: 30px;
+    }
+    &:hover {
+      background: #f5f4f4 !important;
+    }
+    &:focus {
+      background: $white !important;
     }
     display: block;
     position: absolute;
     z-index: 1;
-    border-radius: 20px;
-    border: 1px solid black;
+    height: 45px;
+    width: 45px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(102, 102, 102);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 8px 0px;
+    text-align: center;
+    border-radius: 50%;
     color: $orange-color;
-    top: 105%;
+    top: 46%;
   }
   .slick-prev {
-    left: 43%;
-    @include tablet-desktop {
-      display: none !important;
+    left: -1%;
+    @include sm-desktop {
+      left: -3%;
+    }
+    @include mobile {
+      left: 0%
     }
     &::before {
-      content: "<";
+      content: "\f2fa";
+      padding-right: 6px;
+      font-family: "Material-Design-Iconic-Font";
     }
   }
   .slick-next {
-    @include tablet-desktop {
-      display: none !important;
+    right: -1%;
+    @include sm-desktop {
+      right: -3%;
     }
-    right: 43%;
+    @include mobile {
+      right: 0%
+    }
     &::before {
-      content: ">";
+      content: "\f2fb";
+      padding-left: 5px;
+      font-family: "Material-Design-Iconic-Font";
     }
   }
   .slick-slider {
@@ -82,6 +112,9 @@
   &_content {
     box-shadow: 0px 3px 6px #00000029;
     margin-bottom: 10px;
+    &:hover {
+      box-shadow: 0px 3px 6px #00000060;
+    }
     @include mobile {
       width: 75%;
       margin: 0 auto;
