@@ -28,6 +28,14 @@
     @content;
   }
 }
+@mixin xl-desktop {
+  /**
+   * For desktops, from 1920px
+   */
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
 @mixin sm-laptop {
   /* Small devices (desktop, 1025 to 1279) */
   @media (min-width: 992px) and (max-width: 1279px) {

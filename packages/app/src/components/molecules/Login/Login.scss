@@ -4,28 +4,39 @@
 .login {
   background-color: #fdfdfb;
   height: 100vh;
-  background-position: right;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   &_box {
-    height: calc(100vh - 75px);
+    height: calc(100vh - 11vh);
     &_border {
       border: 12px solid $white;
       padding: 0 !important;
       border-radius: 4px;
+      @include xl-desktop {
+        width: 85%;
+        margin: auto;
+      }
     }
   }
-  &_btn {
-    width: 49%;
+  &_cta {
+    column-gap: 10px;
   }
   input {
     height: 36px;
+    @include font-poppins-regular-12($black);
+  }
+  .input-group-text {
+    @include font-poppins-regular-12($black);
   }
   &_wrapper {
-    padding: 5rem 3.5rem !important;
+    padding: 4rem 3rem 2rem !important;
     background-color: $white;
-    border: 1px solid #c98b66;
+    border: 1px solid $orange-color;
     border-radius: 4px;
+    @include xl-desktop {
+      padding: 4rem 4rem 2rem !important;
+    }
     &_img {
       margin: 0 auto;
     }
@@ -44,29 +55,31 @@
     &_already_transacted_link {
       @include font-poppins-regular-11($orange-color);
     }
-    .facebook-button {
-      border: none;
-      background: none;
-      svg {
-        width: 20px;
-        fill: $facebook-color;
+    &_ortext {
+      @include font-poppins-regular-12($black);
+      &:after, &:before {
+        content:"\00a0\00a0\00a0\00a0\00a0";
+        text-decoration:line-through;
+        color: $orange-color;
       }
     }
-    .google-button {
+    .facebook-button, .google-button {
       border: none;
       background: none;
-      svg {
-        width: 20px;
+      &:focus {
+        outline-width: 0;
       }
     }
   }
 }
 
 .btn-outline-primary {
-  color: #c98b66 !important;
-  border-color: #c98b66 !important;
+  border-color: #ced4da !important;
+  color:$black !important;
+  @include font-poppins-regular-10($black);
   &:hover {
-    background-color: #c98b66 !important;
+    border-color: $orange-color !important;
+    background-color: $orange-color !important;
     color: #fff !important;
   }
 }

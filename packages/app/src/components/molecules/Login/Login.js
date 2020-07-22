@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import Anchor from "components/atoms/Anchor/Anchor";
 import LoginLogo from "../../../assets/login-logo.png";
 import Logo from "../../../assets/logo.png";
-import bgImage from "assets/login-bg.png";
+import bgImage from "assets/login-bg.jpg";
 import Button from "../../atoms/Button/";
 import { Redirect } from "react-router-dom";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 import GoogleLogin from "react-google-login";
-import FacebookIcon from "../../../styles/icons/facebook.svg";
-import GoogleIcon from "../../../styles/icons/google.svg";
 
 import "./Login.scss";
 const Login = ({
@@ -62,7 +60,8 @@ const Login = ({
                 name="login_with_otp_form"
                 className="d-flex justify-content-center"
               >
-                <div className="login_box_border col-xs-10 col-md-6 col-lg-5">
+                <div className="col-xs-10 col-md-6 col-lg-5">
+                  <div className="login_box_border">
                   <div className="login_wrapper">
                     <div className="login_wrapper_img text-center">
                       <img src={LoginLogo} alt="login-logo" />
@@ -90,23 +89,24 @@ const Login = ({
                         onChange={(e) => setPhoneNumber(`+91${e.target.value}`)}
                       />
                     </div>
-                    <div className="login_cta col-xs-12 d-flex justify-content-between">
+                    <div className="login_cta d-flex">
                       <Button
-                        className="login_btn btn btn-lg btn-outline-primary"
+                        className="btn btn-lg btn-outline-primary col"
                         type="submit"
                       >
-                        Login With Otp
+                        Login With OTP
                       </Button>
-                      <Button className="btn btn-lg btn-outline-primary">
+                      <Button className="btn btn-lg btn-outline-primary col">
                         Login With Password
                       </Button>
                     </div>
-                    <div className="login_wrapper_already_transacted mt-3">
+                    <div className="login_wrapper_already_transacted mt-3 pt-1 text-center">
                       Already Transacted with Capdeal?
-                      <span className="login_wrapper_already_transacted_link">
+                      <span className="login_wrapper_already_transacted_link pl-2">
                         Click here to Login
                       </span>
                     </div>
+                    <div className="text-center py-3 login_wrapper_ortext"><span className="px-3">OR</span></div>
                     <div className="text-center">
                       <FacebookLogin
                         appId="1611262495703296"
@@ -119,7 +119,7 @@ const Login = ({
                             className="facebook-button p0 m0"
                             onClick={renderProps.onClick}
                           >
-                            <FacebookIcon />
+                            <span className="orange px-2"><i className="zmdi zmdi-facebook"></i></span>
                           </button>
                         )}
                       />
@@ -137,11 +137,12 @@ const Login = ({
                             onClick={renderProps.onClick}
                             disabled={renderProps.disabled}
                           >
-                            <GoogleIcon />
+                            <span className="orange px-2"><i className="zmdi zmdi-google"></i></span>
                           </button>
                         )}
                       />
                     </div>
+                  </div>
                   </div>
                 </div>
               </form>
@@ -177,7 +178,7 @@ const Login = ({
                         className="col-6 text-center btn btn-lg btn-outline-primary"
                         type="submit"
                       >
-                        Submit Otp
+                        Submit OTP
                       </Button>
                     </div>
                   </div>
