@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import SideNav from "./components/SideNav";
-import "./App.css";
+import Header from "./components/molecules/Header/Header";
+import SideNav from "./components/molecules/SideNav";
+import "./App.scss";
 
 function App(props) {
   return (
