@@ -1,54 +1,58 @@
 import React from "react";
-import ProfileImg from "../../assets/profile_av.jpg";
+import { Link } from 'react-router-dom';
+import { ProSidebar, Menu, MenuItem, SubMenu} from 'react-pro-sidebar';
+import ProfileImg from "assets/profile_av.jpg";
 import "./SideNav.css";
 
 const SideNav = () => {
   return (
+    
     <aside id="leftsidebar" className="sidebar">
-      <div className="menu">
-        <ul className="list">
-          <li>
-            <div className="user-info">
-              <div className="image">
-                <a href="#">
-                  <img src={ProfileImg} alt="User" />
-                </a>
-              </div>
-              <div className="detail">
-                <h4>Michael</h4>
-                <small>Agent</small>
-              </div>
-              <a href="#" title="Events">
-                <i className="zmdi zmdi-calendar"></i>
-              </a>
-              <a href="#" title="Inbox">
-                <i className="zmdi zmdi-email"></i>
-              </a>
-              <a href="#" title="Contact List">
-                <i className="zmdi zmdi-account-box-phone"></i>
-              </a>
-              <a href="#" title="Chat App">
-                <i className="zmdi zmdi-comments"></i>
-              </a>
-              <a href="#" title="Sign out">
-                <i className="zmdi zmdi-power"></i>
-              </a>
-            </div>
-          </li>
-          <li className="active open">
+      <ProSidebar>
+        <div className="user-info">
+          <div className="image">
             <a href="#">
-              <i className="zmdi zmdi-home"></i>
-              <span>Dashboard</span>
+              <img src={ProfileImg} alt="User" />
             </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="zmdi zmdi-accounts-outline"></i>
-              <span>User List</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+          </div>
+          <div className="detail">
+            <h4>Michael</h4>
+            <small>Admin</small>
+          </div>
+        </div>
+        <Menu iconShape="square">
+          <MenuItem icon={<i className="zmdi zmdi-home"></i>}>Dashboard</MenuItem>
+          <SubMenu title="Customer" icon={<i className="zmdi zmdi-accounts"></i>}>
+            <MenuItem><Link to="/app/customer-list">Customer Listings</Link></MenuItem>
+            <MenuItem>Add Customer</MenuItem>
+            <MenuItem>Update Customer</MenuItem>
+            <MenuItem>Delete Customer</MenuItem>
+          </SubMenu>
+          <SubMenu title="Agents" icon={<i className="zmdi zmdi-accounts-outline"></i>}>
+            <MenuItem><Link to="/app/agents-list">Agents Listings</Link></MenuItem>
+            <MenuItem>Add Agents</MenuItem>
+            <MenuItem>Update Agents</MenuItem>
+            <MenuItem>Delete Agents</MenuItem>
+          </SubMenu>
+          <SubMenu title="Property" icon={<i className="zmdi zmdi-city"></i>}>
+            <MenuItem>Add Property</MenuItem>
+            <MenuItem>Update Property</MenuItem>
+            <MenuItem>Delete Property</MenuItem>
+          </SubMenu>
+          <SubMenu title="Project" icon={<i className="zmdi zmdi-city-alt"></i>}>
+            <MenuItem>Add Property</MenuItem>
+            <MenuItem>Update Property</MenuItem>
+            <MenuItem>Delete Property</MenuItem>
+          </SubMenu>
+          <SubMenu title="SEO" icon={<i className="zmdi zmdi-code"></i>}>
+            <MenuItem>Home Page</MenuItem>
+            <MenuItem>Property Page</MenuItem>
+            <MenuItem>Property Detail Page</MenuItem>
+            <MenuItem>About Us Page</MenuItem>
+            <MenuItem>Contact Us Page</MenuItem>
+          </SubMenu>
+        </Menu>
+      </ProSidebar>
     </aside>
   );
 };

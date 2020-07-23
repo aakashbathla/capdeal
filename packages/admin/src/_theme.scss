@@ -2,6 +2,29 @@ $white: #ffffff;
 $blue-400: #262847 !default;
 $blue-500: #0e1033 !default;
 
+$sidebar-bg-color: $white;
+$sidebar-color: black;
+$sidebar-width: 100%;
+$sidebar-collapsed-width: 80px !default;
+$highlight-color: #585858 !default;
+$submenu-bg-color: $white;
+$submenu-bg-color-collapsed: $white;
+$icon-bg-color: transparent !default;
+
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,600,700");
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item {
+  padding: 0px 35px 0px 20px;
+}
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item > div > ul {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.pro-sidebar .pro-menu .pro-menu-item.pro-sub-menu .pro-inner-list-item .pro-inner-item {
+  padding: 6px 30px 6px 20px;
+}
+
 .theme-capdeal .profile-page .profile-sub-header .box-list ul li a:hover,
 .theme-capdeal .menu > ul > li > ul.normal-sub > li a:hover,
 .theme-capdeal .menu > ul > li > ul > li > ul > li a:hover {
@@ -110,4 +133,20 @@ $blue-500: #0e1033 !default;
       }
     }
   }
+}
+
+.card {
+  border: 0 !important;
+}
+.card .body {
+  font-size: 14px;
+  color: #424242;
+  padding: 0 20px;
+  font-weight: 400;
+}
+.table>thead:first-child>tr:first-child>th {
+  border-top: 0;
+}
+.pagination {
+  justify-content: flex-end;
 }
