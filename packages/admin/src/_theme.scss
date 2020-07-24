@@ -150,3 +150,8 @@ $icon-bg-color: transparent !default;
 .pagination {
   justify-content: flex-end;
 }
+.btn-round {
+  height: 40px;
+  width: 40px;
+  border-radius: 30px !important;
+}

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import App from "./App";
 import CustomerList from "components/molecules/CustomerList";
 import AgentsList from "components/molecules/AgentsList";
+import PropertyList from "components/molecules/PropertyList";
 
 // import Login from "./containers/organisms/Login/Login";
 // import NoMatch from "./components/atoms/NoMatch";
@@ -26,6 +27,7 @@ const Routes = () => {
               <Switch>
                 <Route exact path="/app/customer-list" component={CustomerList} />
                 <Route exact path="/app/agents-list" component={AgentsList} />
+                <Route exact path="/app/property-list" component={PropertyList} />
               </Switch>
             )}
           />

@@ -35,6 +35,7 @@ const SideNav = () => {
             <MenuItem>Delete Agents</MenuItem>
           </SubMenu>
           <SubMenu title="Property" icon={<i className="zmdi zmdi-city"></i>}>
+            <MenuItem><Link to="/app/property-list">Property List</Link></MenuItem>
             <MenuItem>Add Property</MenuItem>
             <MenuItem>Update Property</MenuItem>
             <MenuItem>Delete Property</MenuItem>
