@@ -5,6 +5,7 @@ import App from "./App";
 import CustomerList from "components/molecules/CustomerList";
 import AgentsList from "components/molecules/AgentsList";
 import PropertyList from "components/molecules/PropertyList";
+import LoginPage from "components/molecules/Login";
 
 // import Login from "./containers/organisms/Login/Login";
 // import NoMatch from "./components/atoms/NoMatch";
@@ -20,6 +21,7 @@ const Routes = () => {
         <Route exact path="/">
           <Redirect to="/app/customer-list" />
         </Route>
+        <Route exact path="/login" component={LoginPage} />
         <Route exact path="/app" component={App} />
         <App>
           <Route
