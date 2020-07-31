@@ -42,6 +42,16 @@
     &_img {
       margin: 0 auto;
     }
+    &_ortext {
+      &:after, &:before {
+        content:"\00a0\00a0\00a0\00a0\00a0";
+        text-decoration:line-through;
+        color: #c98b66 !important;
+      }
+      span {
+        color: #fff;
+      }
+    }
 
     &_content {
       padding-top: 1.3rem;
@@ -58,6 +68,8 @@
     background-color: #c98b66 !important;
     border-radius: 30px !important;
     margin-top: 1rem;
+    font-size: 1rem;
+    height: 52px;
     &:hover {
       background-color: #a06847 !important;
     }
