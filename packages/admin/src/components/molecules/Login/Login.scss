@@ -43,9 +43,10 @@
       margin: 0 auto;
     }
     &_ortext {
-      &:after, &:before {
-        content:"\00a0\00a0\00a0\00a0\00a0";
-        text-decoration:line-through;
+      &:after,
+      &:before {
+        content: "\00a0\00a0\00a0\00a0\00a0";
+        text-decoration: line-through;
         color: #c98b66 !important;
       }
       span {
@@ -81,6 +82,6 @@
     }
   }
 }
-
-
-
+.error {
+  color: red;
+}

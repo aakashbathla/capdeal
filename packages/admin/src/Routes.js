@@ -5,7 +5,7 @@ import App from "./App";
 import CustomerList from "components/molecules/CustomerList";
 import AgentsList from "components/molecules/AgentsList";
 import PropertyList from "components/molecules/PropertyList";
-import LoginPage from "components/molecules/Login";
+import LoginPage from "containers/organisms/Login/Login";
 
 // import Login from "./containers/organisms/Login/Login";
 // import NoMatch from "./components/atoms/NoMatch";
@@ -19,7 +19,7 @@ const Routes = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Redirect to="/app/customer-list" />
+          <Redirect to="/login" />
         </Route>
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/app" component={App} />
@@ -27,9 +27,17 @@ const Routes = () => {
           <Route
             component={({ match }) => (
               <Switch>
-                <Route exact path="/app/customer-list" component={CustomerList} />
+                <Route
+                  exact
+                  path="/app/customer-list"
+                  component={CustomerList}
+                />
                 <Route exact path="/app/agents-list" component={AgentsList} />
-                <Route exact path="/app/property-list" component={PropertyList} />
+                <Route
+                  exact
+                  path="/app/property-list"
+                  component={PropertyList}
+                />
               </Switch>
             )}
           />
