@@ -4,14 +4,14 @@ pipelines:
   custom: # Pipelines that can only be triggered manually
     staging:
       - step:
-          name: Build
+          name: app build
           script:
             - npm install
-            - REACT_APP_ENVIRONMENT=staging npm run build
+            - REACT_APP_ENVIRONMENT=staging npm run build:app
           artifacts:
             - build/**
       - step:
-          name: Deploy to S3
+          name: Deploy app to S3
           deployment: staging
           script:
             - pipe: atlassian/aws-s3-deploy:0.2.4
@@ -31,6 +31,34 @@ pipelines:
                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
                 AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
                 DISTRIBUTION_ID: $STAGING_DISTRIBUTION_ID
+      - step:
+          name: admin build
+          script:
+            - npm install
+            - REACT_APP_ENVIRONMENT=staging npm run build:admin
+          artifacts:
+            - build/**
+      - step:
+          name: Deploy admin to S3
+          deployment: staging
+          script:
+            - pipe: atlassian/aws-s3-deploy:0.2.4
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                S3_BUCKET: $STAGING_ADMIN_BUCKET_NAME
+                ACL: "public-read"
+                LOCAL_PATH: "build"
+      - step:
+          name: Invalidate admin Cloudfront Cache
+          script:
+            - pipe: atlassian/aws-cloudfront-invalidate:0.1.1
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                DISTRIBUTION_ID: $STAGING_ADMIN_DISTRIBUTION_ID
     production:
       - step:
           name: Installing & Running Tests
@@ -68,13 +96,3 @@ pipelines:
                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
                 AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
                 DISTRIBUTION_ID: $PRODUCTION_DISTRIBUTION_ID
-  branches:
-    master:
-      - step:
-          name: Installing & Running Tests
-          caches:
-            - node
-          script:
-            - rm -rf package-lock.json
-            - rm -rf node_modules
-            - npm install
