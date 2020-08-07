@@ -9,7 +9,7 @@ pipelines:
             - npm install
             - REACT_APP_ENVIRONMENT=staging npm run build:app
           artifacts:
-            - build/**
+            - packages/app/build/**
       - step:
           name: Deploy app to S3
           deployment: staging
@@ -21,7 +21,7 @@ pipelines:
                 AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
                 S3_BUCKET: $STAGING_BUCKET_NAME
                 ACL: "public-read"
-                LOCAL_PATH: './packages/app/build'
+                LOCAL_PATH: 'packages/app/build'
       - step:
           name: Invalidate Cloudfront Cache
           script:
@@ -37,7 +37,7 @@ pipelines:
             - npm install
             - REACT_APP_ENVIRONMENT=staging npm run build:admin
           artifacts:
-            - build/**
+            - packages/admin/build/**
       - step:
           name: Deploy admin to S3
           script:
@@ -48,7 +48,7 @@ pipelines:
                 AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
                 S3_BUCKET: $STAGING_ADMIN_BUCKET_NAME
                 ACL: "public-read"
-                LOCAL_PATH: './packages/admin/build'
+                LOCAL_PATH: 'packages/admin/build'
       - step:
           name: Invalidate admin Cloudfront Cache
           script:
