@@ -14,7 +14,6 @@ pipelines:
           name: Deploy app to S3
           deployment: staging
           script:
-            - cd packages/app
             - pipe: atlassian/aws-s3-deploy:0.2.4
               variables:
                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
@@ -22,7 +21,7 @@ pipelines:
                 AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
                 S3_BUCKET: $STAGING_BUCKET_NAME
                 ACL: "public-read"
-                LOCAL_PATH: "build"
+                LOCAL_PATH: './packages/app/build'
       - step:
           name: Invalidate Cloudfront Cache
           script:
@@ -42,7 +41,6 @@ pipelines:
       - step:
           name: Deploy admin to S3
           script:
-            - cd packages/admin
             - pipe: atlassian/aws-s3-deploy:0.2.4
               variables:
                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
@@ -50,7 +48,7 @@ pipelines:
                 AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
                 S3_BUCKET: $STAGING_ADMIN_BUCKET_NAME
                 ACL: "public-read"
-                LOCAL_PATH: "build"
+                LOCAL_PATH: './packages/admin/build'
       - step:
           name: Invalidate admin Cloudfront Cache
           script:
