@@ -40,7 +40,7 @@ pipelines:
             - build/**
       - step:
           name: Deploy admin to S3
-          deployment: staging
+          deployment: admin staging
           script:
             - pipe: atlassian/aws-s3-deploy:0.2.4
               variables:
