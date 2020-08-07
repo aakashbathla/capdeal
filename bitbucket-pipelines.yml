@@ -21,7 +21,7 @@ pipelines:
                 AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
                 S3_BUCKET: $STAGING_BUCKET_NAME
                 ACL: "public-read"
-                LOCAL_PATH: "build"
+                LOCAL_PATH: "packages/app/build"
       - step:
           name: Invalidate Cloudfront Cache
           script:
@@ -48,7 +48,7 @@ pipelines:
                 AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
                 S3_BUCKET: $STAGING_ADMIN_BUCKET_NAME
                 ACL: "public-read"
-                LOCAL_PATH: "build"
+                LOCAL_PATH: "packages/admin/build"
       - step:
           name: Invalidate admin Cloudfront Cache
           script:
