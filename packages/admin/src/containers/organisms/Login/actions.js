@@ -5,6 +5,9 @@ import {
   SUBMIT_OTP,
   SUBMIT_OTP_SUCCESS,
   SUBMIT_OTP_ERROR,
+  SUBMIT_PASSWORD,
+  SUBMIT_PASSWORD_SUCCESS,
+  SUBMIT_PASSWORD_ERROR,
 } from "./constants";
 export const loginWithOtp = (params) => ({
   type: LOGIN_WITH_OTP,
@@ -28,5 +31,17 @@ export const submitOtpSuccess = (params) => ({
 });
 export const submitOtpError = (params) => ({
   type: SUBMIT_OTP_ERROR,
+  params,
+});
+export const submitPassword = (password, phone) => ({
+  type: SUBMIT_PASSWORD,
+  params: { password: password, phone: phone },
+});
+export const submitPasswordSuccess = (params) => ({
+  type: SUBMIT_PASSWORD_SUCCESS,
+  params,
+});
+export const submitPasswordError = (params) => ({
+  type: SUBMIT_PASSWORD_ERROR,
   params,
 });
