@@ -1,0 +1,93 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+
+.explore-properties {
+  padding-top: 55px;
+  padding-bottom: 72px;
+  @include mobile {
+    padding: 30px !important;
+  }
+  &-left-container {
+    .active {
+      @include font-poppins-bold-20($black-3);
+    }
+    @include font-poppins-regular-20($black-3);
+    ul {
+      list-style: none;
+      li {
+        &:hover {
+          @include font-poppins-bold-20($black-3);
+          cursor: pointer;
+        }
+        &:before {
+          margin-right: 1rem;
+          display: inline-block;
+          content: "";
+          border-top: 1px solid #909090;
+          width: 1.5rem;
+          vertical-align: super;
+        }
+        @include mobile {
+          display: inline-block;
+          &:before {
+            margin-right: 0;
+            content: none;
+          }
+        }
+        padding-right: 20px;
+        overflow-x: hidden;
+      }
+    }
+  }
+}
+.explore-properties-header {
+  @include font-raleway-bold-35($orange-color);
+  padding-bottom: 27px;
+  @include mobile {
+    @include font-raleway-bold-40($orange-color);
+  }
+}
+.explore-properties-image-container {
+  position: relative;
+  .explore-properties-image {
+    width: 100%;
+  }
+  .calculator-title {
+    h3 {
+      position: absolute;
+      padding: 20px;
+      top: 0;
+      @include font-raleway-bold-25($white);
+      @include mobile {
+        padding: 15px;
+        @include font-raleway-bold-29($white);
+      }
+    }
+  }
+  .calculator-description {
+    position: absolute;
+    bottom: 0;
+    background-color: $orange-color;
+    padding: 20px;
+    width: 80%;
+    @include font-poppins-regular-13($white);
+    @include mobile {
+      @include font-poppins-regular-18($white);
+      position: relative;
+      width: 100%;
+    }
+    @include tablet {
+      @include font-poppins-regular-10($white);
+      padding: 10px;
+      bottom: 9px;
+    }
+    .calculator-link {
+      display: block;
+      @include font-poppins-bold-10($deep-purple);
+      @include mobile {
+        @include font-poppins-bold-18($deep-purple);
+      }
+    }
+  }
+}

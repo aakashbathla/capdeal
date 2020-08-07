@@ -1,0 +1,95 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+
+.resale_properties {
+  background-color: $orange-color;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: $white;
+  padding: 55px 0 70px 0;
+  min-height: 400px;
+  @include mobile {
+    padding: 30px 0 30px 0;
+  }
+  &_header {
+    @include font-raleway-bold-35($white);
+    padding-bottom: 50px;
+    @include mobile {
+      padding-bottom: 0px;
+      padding-left: 25px;
+      @include font-raleway-bold-40($white);
+    }
+  }
+  &_card {
+    @include mobile {
+      padding-right: 0 !important;
+      .card {
+        padding-left: 0 !important;
+      }
+    }
+  }
+  &_container {
+    color: $white;
+    .resale_property_type {
+      transform: rotate(-90deg);
+      position: absolute;
+      top: 13rem;
+      left: -7.5rem;
+      padding-left: 0;
+      li {
+        //transform: rotate(180deg);
+        display: inline;
+        padding-right: 20px;
+        @include font-poppins-regular-18($white);
+        &.active {
+          @include font-poppins-bold-18($white);
+        }
+        &:hover {
+          @include font-poppins-bold-18($white);
+          cursor: pointer;
+        }
+      }
+      @include mobile {
+        top: 13rem;
+        left: -9.4rem;
+      }
+      @include tablet {
+        top: 13rem;
+        left: -15.5rem;
+      }
+      @include x-small {
+        top: 16rem;
+        left: -11.4rem;
+      }
+    }
+    .resale_property_type_2 {
+      padding-left: 0;
+      li {
+        display: inline-block;
+        padding-right: 55px;
+        @include font-poppins-regular-18($white);
+        &.active {
+          @include font-poppins-bold-18($white);
+        }
+        &:hover {
+          @include font-poppins-bold-18($white);
+          cursor: pointer;
+        }
+        @include mobile {
+          padding-right: 25px;
+        }
+        @include x-small {
+          padding-right: 20px;
+        }
+      }
+      @include mobile {
+        padding-left: 41px;
+      }
+    }
+    .link {
+      @include font-poppins-bold-15($white);
+    }
+  }
+}

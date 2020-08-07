@@ -1,0 +1,168 @@
+/**
+ * Basic typography style for copy text
+ */
+@import "./fonts";
+
+@mixin font-style($font, $letter-spacing, $color, $weight: 700) {
+  color: $color;
+  font: $font;
+  font-weight: $weight;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin font-raleway-regular-19($text-color) {
+  @include font-style(1.8rem $Raleway-font-family, 0.04rem, $text-color, 400);
+}
+
+@mixin font-raleway-bold-15($text-color) {
+  @include font-style(1.5rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-18($text-color) {
+  @include font-style(1.8rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-20($text-color) {
+  @include font-style(2rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-21($text-color) {
+  @include font-style(2.1rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-25($text-color) {
+  @include font-style(2.5rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-29($text-color) {
+  @include font-style(2.9rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-32($text-color) {
+  @include font-style(3rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-35($text-color) {
+  @include font-style(3.5rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-37($text-color) {
+  @include font-style(3.7rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-40($text-color) {
+  @include font-style(4rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-41($text-color) {
+  @include font-style(4.1rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-45($text-color) {
+  @include font-style(4.5rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-49($text-color) {
+  @include font-style(4.9rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-52($text-color) {
+  @include font-style(5.2rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-raleway-bold-54($text-color) {
+  @include font-style(5.4rem $Raleway-font-family, 0.04rem, $text-color, 700);
+}
+
+@mixin font-poppins-regular-8($text-color) {
+  @include font-style(0.8rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-9($text-color) {
+  @include font-style(0.9rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-10($text-color) {
+  @include font-style(1rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-11($text-color) {
+  @include font-style(1.1rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-12($text-color) {
+  @include font-style(1.2rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-13($text-color) {
+  @include font-style(1.3rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-14($text-color) {
+  @include font-style(1.4rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-15($text-color) {
+  @include font-style(1.5rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-16($text-color) {
+  @include font-style(1.6rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-17($text-color) {
+  @include font-style(1.7rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-18($text-color) {
+  @include font-style(1.8rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-19($text-color) {
+  @include font-style(1.9rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-20($text-color) {
+  @include font-style(2rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-21($text-color) {
+  @include font-style(2.1rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-22($text-color) {
+  @include font-style(2.2rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-28($text-color) {
+  @include font-style(2.8rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-30($text-color) {
+  @include font-style(3rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+@mixin font-poppins-regular-31($text-color) {
+  @include font-style(3.1rem $Poppins-font-family, 0.04rem, $text-color, 400);
+}
+
+@mixin font-poppins-bold-8($text-color) {
+  @include font-style(0.8rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-10($text-color) {
+  @include font-style(1rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-12($text-color) {
+  @include font-style(1.2rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-13($text-color) {
+  @include font-style(1.3rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-14($text-color) {
+  @include font-style(1.4rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-15($text-color) {
+  @include font-style(1.5rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-17($text-color) {
+  @include font-style(1.7rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-18($text-color) {
+  @include font-style(1.8rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-20($text-color) {
+  @include font-style(2rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-21($text-color) {
+  @include font-style(2.1rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-22($text-color) {
+  @include font-style(2.2rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-23($text-color) {
+  @include font-style(2.3rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-24($text-color) {
+  @include font-style(2.4rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-28($text-color) {
+  @include font-style(2.8rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-30($text-color) {
+  @include font-style(3rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-62($text-color) {
+  @include font-style(6.2rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
+@mixin font-poppins-bold-86($text-color) {
+  @include font-style(8.6rem $Poppins-font-family, 0.04rem, $text-color, 700);
+}
