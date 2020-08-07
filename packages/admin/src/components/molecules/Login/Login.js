@@ -75,11 +75,10 @@ const Login = ({
                     mobile_number: Yup.string()
                       .matches(phoneRegExp, "Phone Number is not valid")
                       .max(15, "Must be 15 characters or less")
-                      .required("Required"),
-                    password: Yup.string().matches(
-                      passwordRegExp,
-                      "Invalid Password"
-                    ),
+                      .required("Enter Phone Number"),
+                    password: Yup.string()
+                      .matches(passwordRegExp, "Invalid Password")
+                      .required("Enter Password"),
                   })}
                 >
                   <Form
@@ -163,7 +162,7 @@ const Login = ({
                   validationSchema={Yup.object({
                     otp: Yup.string()
                       .max(4, "Must be 4 characters or less")
-                      .required("Required"),
+                      .required("Enter OTP"),
                   })}
                   onSubmit={(values) => {
                     submitOtp(values.otp, values.mobile_number);
