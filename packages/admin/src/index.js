@@ -1,13 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./Routes";
+import store from "./store";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "jquery";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
+import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store()}>
+    <Router>
+      <Routes />
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );
 

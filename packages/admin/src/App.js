@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import SideNav from "./components/SideNav";
-import "./App.css";
+import Header from "./components/molecules/Header/Header";
+import SideNav from "./components/molecules/SideNav";
+import "./App.scss";
 
 function App(props) {
   return (
@@ -11,7 +11,7 @@ function App(props) {
       <section className="content home">
         <div className="block-header">
           <div className="row">
-            {/* <div className="col-lg-7 col-md-6 col-sm-12">{props.children}</div> */}
+            {props.children}
           </div>
         </div>
       </section>
