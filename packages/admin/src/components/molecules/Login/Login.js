@@ -4,7 +4,7 @@ import Logo from "assets/logo.png";
 import bgImage from "assets/bg-img.jpg";
 import { phoneRegExp, passwordRegExp } from "utils/Utils";
 import Input from "components/atoms/Input";
-import { Formik, Form, useField } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { Redirect } from "react-router";
 

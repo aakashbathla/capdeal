@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import "./Header.css";
 import logo from "assets/logo.png";
@@ -7,14 +8,18 @@ const Header = () => {
     <nav className="admin navbar">
       <div className="col-12">
         <div className="navbar-header">
-          <a href="#" className="bars"></a>
+          <a href="#" className="bars">
+            <span class="sr-only">Menu Bar</span>
+          </a>
           <a href="/">
+            <span class="sr-only">logo</span>
             <img src={logo} height="30" alt="capdeal" />
           </a>
         </div>
         <ul className="nav navbar-nav navbar-left">
           <li>
             <a href="#" className="ls-toggle-btn" data-close="true">
+              <span class="sr-only">icon swap</span>
               <i className="zmdi zmdi-swap"></i>
             </a>
           </li>
@@ -148,6 +153,7 @@ const Header = () => {
           </li>
           <li>
             <a href="/login" className="mega-menu" data-close="true">
+              <span class="sr-only">icon power</span>
               <i className="zmdi zmdi-power"></i>
             </a>
           </li>
