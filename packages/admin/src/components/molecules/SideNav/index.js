@@ -41,9 +41,14 @@ const SideNav = () => {
             <MenuItem>Delete Property</MenuItem>
           </SubMenu>
           <SubMenu title="Project" icon={<i className="zmdi zmdi-city-alt"></i>}>
-            <MenuItem>Add Property</MenuItem>
-            <MenuItem>Update Property</MenuItem>
-            <MenuItem>Delete Property</MenuItem>
+            <MenuItem>Add Project</MenuItem>
+            <MenuItem>Update Project</MenuItem>
+            <MenuItem>Delete Project</MenuItem>
+          </SubMenu>
+          <SubMenu title="Developer" icon={<i className="zmdi zmdi-city"></i>}>
+            <MenuItem><Link to="/app/add-developer">Add Developer</Link></MenuItem>
+            <MenuItem>Update Developer</MenuItem>
+            <MenuItem>Delete Developer</MenuItem>
           </SubMenu>
           <SubMenu title="SEO" icon={<i className="zmdi zmdi-code"></i>}>
             <MenuItem>Home Page</MenuItem>

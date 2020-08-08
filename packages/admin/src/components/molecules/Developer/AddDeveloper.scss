@@ -1,0 +1,51 @@
+.developer_form {
+  .card {
+    margin-bottom: 30px;
+  }
+  .header {
+    color: #424242;
+    padding: 20px 20px 0 20px;
+    position: relative;
+    box-shadow: none;
+    h2 {
+      font-size: 17px;
+      color: #757575;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0;
+      strong {
+        color: #191b3c !important;
+      }
+      &::before {
+        background: #191b3c !important;
+        position: absolute;
+        width: 13px;
+        height: 2px;
+        left: -20px;
+        top: 8px;
+        content: '';
+      }
+    }
+  }
+  .body {
+    font-size: 14px;
+    color: #424242;
+    padding: 20px;
+    font-weight: 400;
+    h3 {
+      font-size: 16px;
+      color: #757575;
+      text-align: center;
+      margin-bottom: 18px;
+      &::after, &::before {
+        content: "\A0\A0\A0\A0\A0";
+        text-decoration: line-through;
+        color: #757575;
+      }
+      span {
+        background-color: #fff;
+        padding: 0 10px;
+      }
+    }
+  }
+}
