@@ -1,8 +1,7 @@
 import React from "react";
 import Input from "components/atoms/Input";
-import { Formik, Form, useField } from "formik";
+import { Formik, Form } from "formik";
 import "./AddDeveloper.scss";
-import propertyImage from "assets/2.jpg";
 
 const AddDeveloper = () => {
   return (
