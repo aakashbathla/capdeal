@@ -154,6 +154,7 @@
     ]
   },
   "devDependencies": {
+    "fork-ts-checker-webpack-plugin": "^5.0.14",
     "lerna": "^3.22.1",
     "plop": "^2.7.1"
   }
