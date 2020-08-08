@@ -6,6 +6,7 @@ import CustomerList from "components/molecules/CustomerList";
 import AgentsList from "components/molecules/AgentsList";
 import PropertyList from "components/molecules/PropertyList";
 import LoginPage from "containers/organisms/Login/Login";
+import AddDeveloper from "components/molecules/Developer";
 
 // import Login from "./containers/organisms/Login/Login";
 // import NoMatch from "./components/atoms/NoMatch";
@@ -37,6 +38,11 @@ const Routes = () => {
                   exact
                   path="/app/property-list"
                   component={PropertyList}
+                />
+                <Route
+                  exact
+                  path="/app/add-developer"
+                  component={AddDeveloper}
                 />
               </Switch>
             )}
