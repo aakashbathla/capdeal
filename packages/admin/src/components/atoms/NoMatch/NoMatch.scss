@@ -1,0 +1,16 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+
+.content {
+  background-position: center;
+  background-size: cover;
+  .row {
+    height: calc(100vh - 101px);
+  }
+  h3 {
+    @include font-poppins-regular-28($white)
+  }
+  span {
+    @include font-poppins-regular-15($white);
+  }
+}

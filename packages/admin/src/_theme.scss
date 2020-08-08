@@ -1,0 +1,157 @@
+$white: #ffffff;
+$blue-400: #262847 !default;
+$blue-500: #0e1033 !default;
+
+$sidebar-bg-color: $white;
+$sidebar-color: black;
+$sidebar-width: 100%;
+$sidebar-collapsed-width: 80px !default;
+$highlight-color: #585858 !default;
+$submenu-bg-color: $white;
+$submenu-bg-color-collapsed: $white;
+$icon-bg-color: transparent !default;
+
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,600,700");
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item {
+  padding: 0px 35px 0px 20px;
+}
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item > div > ul {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.pro-sidebar .pro-menu .pro-menu-item.pro-sub-menu .pro-inner-list-item .pro-inner-item {
+  padding: 6px 30px 6px 20px;
+}
+
+.theme-capdeal .profile-page .profile-sub-header .box-list ul li a:hover,
+.theme-capdeal .menu > ul > li > ul.normal-sub > li a:hover,
+.theme-capdeal .menu > ul > li > ul > li > ul > li a:hover {
+  background-color: $blue-500;
+}
+
+.theme-capdeal {
+  .navbar-brand {
+    color: $blue-500 !important;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $blue-500;
+    }
+  }
+  .navbar {
+    background: linear-gradient(45deg, $blue-400, $blue-500);
+  }
+  .nav {
+    > li {
+      > a {
+        color: $white;
+        &:hover,
+        &:focus {
+          background-color: transparent;
+        }
+      }
+    }
+    .open {
+      > a {
+        background-color: transparent;
+        &:hover,
+        &:focus {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .bars {
+    color: $white;
+  }
+
+  .sidebar {
+    .menu {
+      .list {
+        li.active {
+          background-color: transparent;
+          > :first-child {
+            i,
+            span {
+              color: $blue-500;
+            }
+          }
+        }
+        a {
+          &:hover {
+            color: $blue-500;
+          }
+        }
+      }
+    }
+  }
+  .checkbox input[type="checkbox"]:checked + label::after {
+    border: 1px solid $blue-500;
+  }
+
+  .inbox-widget {
+    .inbox-inner {
+      &:hover {
+        .inbox-img {
+          img {
+            border: 2px solid $blue-500;
+            transition: all 150ms linear;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-tabs {
+    .nav-link.active {
+      border: 1px solid $blue-500 !important;
+    }
+  }
+
+  .card {
+    .header {
+      h2 {
+        &:before {
+          background: $blue-500;
+        }
+        strong {
+          color: $blue-500;
+        }
+      }
+    }
+  }
+
+  .blog-page {
+    .single-blog-post {
+      .img-holder {
+        .date-box {
+          background-color: $blue-500;
+        }
+      }
+    }
+  }
+}
+
+.card {
+  border: 0 !important;
+}
+.card .body {
+  font-size: 14px;
+  color: #424242;
+  padding: 0 20px;
+  font-weight: 400;
+}
+.table>thead:first-child>tr:first-child>th {
+  border-top: 0;
+}
+.pagination {
+  justify-content: flex-end;
+}
+.btn-round {
+  height: 40px;
+  width: 40px;
+  border-radius: 30px !important;
+}

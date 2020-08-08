@@ -1,0 +1,32 @@
+@import "./theme";
+section.content {
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  margin: 60px 0px 15px 250px;
+  padding: 0 20px;
+  z-index: 9;
+  background-color: #e9ecef;
+}
+.block-header {
+  padding: 20px 15px;
+  h2 {
+    margin: 0 !important;
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-family: 'Muli', Arial, Tahoma, sans-serif;
+    font-weight: 600;
+    small {
+      color: #757575;
+      display: block;
+      font-size: 14px;
+    }
+  }
+}
+
