@@ -4,7 +4,7 @@ import Logo from "assets/logo.png";
 import bgImage from "assets/bg-img.jpg";
 import { phoneRegExp, passwordRegExp } from "utils/Utils";
 import Input from "components/atoms/Input";
-import { Formik, Form, useField } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { Redirect } from "react-router";
 
@@ -15,10 +15,12 @@ const Login = ({
   showOtpSuccess,
   otpSubmitSuccess,
   submitOtp,
+  submitPassword,
+  passwordSubmitSuccess,
 }) => {
   const [showPasswordField, setShowPasswordField] = useState(false);
   const formRef = useRef();
-  if (otpSubmitSuccess) {
+  if (otpSubmitSuccess || passwordSubmitSuccess) {
     return <Redirect to="/app/customer-list" />;
   }
   const onPasswordClick = () => {
@@ -30,7 +32,12 @@ const Login = ({
     ) {
       setShowPasswordField(true);
       if (formRef.current.values.password) {
-        console.log(formRef.current.values);
+        console.log(formRef.current.values.password);
+        console.log(formRef.current.values.mobile_number);
+        submitPassword(
+          formRef.current.values.password,
+          formRef.current.values.mobile_number
+        );
       }
     }
   };

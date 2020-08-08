@@ -1,13 +1,16 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import ServiceUtils from "../../../utils/ServiceUtils";
 import { buildUrl } from "../../../utils/Utils";
+import { afterUserSuccess } from "../../../utils/Utils";
 import {
   loginWithOtpSuccess,
   loginWithOtpError,
   submitOtpSuccess,
   submitOtpError,
+  submitPasswordSuccess,
+  submitPasswordError,
 } from "./actions";
-import { LOGIN_WITH_OTP, SUBMIT_OTP } from "./constants";
+import { LOGIN_WITH_OTP, SUBMIT_OTP, SUBMIT_PASSWORD } from "./constants";
 import apis from "../../../constants/apis/services";
 
 export function* loadLoginWithOtpSaga(phoneNumber) {
@@ -67,9 +70,42 @@ export function* loadSubmitOtpSaga(otp) {
   }
 }
 
+export function* loadSubmitPasswordSaga(details) {
+  const additionalFetchOptions = () => ({
+    method: "POST",
+    data: {
+      password: details.params.password,
+      phone_number: details.params.phone,
+    },
+  });
+  const urlOptions = {
+    pathname: apis.submitpassword,
+    urlEncoded: true,
+  };
+  try {
+    const data = yield call(
+      ServiceUtils.fetch,
+      buildUrl(urlOptions),
+      additionalFetchOptions(),
+      "http://"
+    );
+    if (data.auth_token) {
+      afterUserSuccess(data);
+      yield put(submitPasswordSuccess({ showSuccess: true }));
+    } else {
+      yield put(submitPasswordError(data));
+    }
+  } catch (err) {
+    yield put(submitPasswordError(err));
+  }
+}
+
 export default function* loginWithOtpSagaCap() {
   yield takeLatest(LOGIN_WITH_OTP, loadLoginWithOtpSaga);
 }
 export function* submitOtpSagaCap() {
   yield takeLatest(SUBMIT_OTP, loadSubmitOtpSaga);
+}
+export function* submitPasswordSagaCap() {
+  yield takeLatest(SUBMIT_PASSWORD, loadSubmitPasswordSaga);
 }

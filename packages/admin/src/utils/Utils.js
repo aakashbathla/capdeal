@@ -1,3 +1,4 @@
+import { LocalStorageUtil } from "./localstorage";
 export const phoneRegExp = "^(+91[-s]?)?[0]?(91)?[789]d{9}$";
 export const passwordRegExp = "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$";
 export const buildUrl = (options) => {
@@ -21,4 +22,12 @@ export const createUrlSearchParams = (query = {}, urlEncoded = false) => {
     queryParams.push(`${keys[i]}=${qsencoded}`);
   }
   return queryParams.join("&");
+};
+
+export const afterUserSuccess = (userProfile) => {
+  setCookieMethod(userProfile);
+};
+const localStorage = new LocalStorageUtil();
+const setCookieMethod = (userProfile) => {
+  localStorage.saveItem("userProfile", JSON.stringify(userProfile));
 };
