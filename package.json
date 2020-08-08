@@ -59,6 +59,7 @@
     "react-dom": "^16.13.1",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.1.20",
+    "react-pro-sidebar": "^0.4.3",
     "react-redux": "^7.2.0",
     "react-responsive": "^8.1.0",
     "react-router-dom": "^5.2.0",
@@ -155,6 +156,7 @@
   },
   "devDependencies": {
     "fork-ts-checker-webpack-plugin": "^5.0.14",
+    "fork-ts-checker-webpack-plugin-alt": "^0.4.14",
     "lerna": "^3.22.1",
     "plop": "^2.7.1"
   }
