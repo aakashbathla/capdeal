@@ -20,9 +20,11 @@ class ServiceUtils {
       url: `${this.basePath}${url}`,
       withCredentials: false,
       ...additionalFetchOptions,
-      headers: {
-        Authorization: `Token ${token.auth_token}`,
-      },
+      headers: token
+        ? {
+            Authorization: `Token ${token.auth_token}`,
+          }
+        : "",
     };
 
     try {

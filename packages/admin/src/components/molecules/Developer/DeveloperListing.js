@@ -4,6 +4,8 @@ import ServiceUtils from "../../../utils/ServiceUtils";
 import { buildUrl } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 import Listing from "../../atoms/Listing/";
+import "./Developer.scss";
+
 const DeveloperListing = () => {
   const [developerData, setDeveloperData] = useState([]);
   const urlOptions = {
@@ -59,6 +61,7 @@ const DeveloperListing = () => {
           pageCount={developerData.count}
           pageRangeDisplayed={1}
           marginPagesDisplayed={1}
+          customClassName="developer-list"
         ></Listing>
       )}
     </>

@@ -61,6 +61,7 @@ export function* loadSubmitOtpSaga(otp) {
       "http://"
     );
     if (data.auth_token) {
+      afterUserSuccess(data);
       yield put(submitOtpSuccess({ showSuccess: true }));
     } else {
       yield put(submitOtpError(data));

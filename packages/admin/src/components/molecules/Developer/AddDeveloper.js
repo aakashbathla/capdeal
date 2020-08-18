@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "components/atoms/Input";
 import { Formik, Form } from "formik";
-import "./AddDeveloper.scss";
+import "./Developer.scss";
 
 const AddDeveloper = () => {
   return (
