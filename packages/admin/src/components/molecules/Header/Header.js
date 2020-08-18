@@ -23,14 +23,6 @@ const Header = () => {
               <i className="zmdi zmdi-swap"></i>
             </a>
           </li>
-          <li className="hidden-sm-down">
-            <div className="input-group">
-              <input type="text" className="search" placeholder="Search..." />
-              <span className="input-group-addon">
-                <i className="zmdi zmdi-search"></i>
-              </span>
-            </div>
-          </li>
         </ul>
         <ul className="nav navbar-nav navbar-right">
           <li className="dropdown">
@@ -79,77 +71,6 @@ const Header = () => {
                 <a href="#">View All Notifications</a>{" "}
               </li>
             </ul>
-          </li>
-          <li className="dropdown">
-            <a
-              href="#"
-              className="dropdown-toggle"
-              data-toggle="dropdown"
-              role="button"
-            >
-              <i className="zmdi zmdi-flag"></i>
-            </a>
-            <ul className="dropdown-menu dropdown-menu-right slideDown">
-              <li className="header">TASKS</li>
-              <li className="body">
-                <ul className="menu tasks list-unstyled">
-                  <li>
-                    <a href="#">
-                      <div className="progress-container progress-primary">
-                        <span className="progress-badge">
-                          {" "}
-                          Create new dashboard
-                        </span>
-                        <div className="progress">
-                          <div
-                            className="progress-bar progress-primary"
-                            role="progressbar"
-                            aria-valuenow="45"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                            style={{ width: "45%" }}
-                          >
-                            <span className="progress-value">45%</span>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div className="progress-container progress-info">
-                        <span className="progress-badge">Panding Project</span>
-                        <div className="progress">
-                          <div
-                            className="progress-bar progress-bar-info"
-                            role="progressbar"
-                            aria-valuenow="29"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                            style={{ width: "29%" }}
-                          >
-                            <span className="progress-value">29%</span>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="footer">
-                <a href="#">View All</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="fullscreen hidden-sm-down"
-              data-provide="fullscreen"
-              data-close="true"
-            >
-              <i className="zmdi zmdi-fullscreen"></i>
-            </a>
           </li>
           <li>
             <a href="/login" className="mega-menu" data-close="true">

@@ -6,7 +6,8 @@ import ReactPaginate from "react-paginate";
 const Listing = ({
   data,
   listingName,
-  listingDesciption,
+  listingDescription,
+  customClassName,
   deleteItem,
   pageCount,
   pageRangeDisplayed,
@@ -30,7 +31,7 @@ const Listing = ({
         <tr>
           {Object.entries(val).map(([key, value]) => {
             if (!Array.isArray(value) && !(key == "image")) {
-              return <td>{value}</td>;
+              return <td><div>{value}</div></td>;
             }
           })}
           <td>
@@ -56,19 +57,20 @@ const Listing = ({
         <div className="col-lg-7 col-md-6 col-sm-12">
           <h2>
             {listingName}
-            <small className="text-muted">{listingDesciption}</small>
+            <small className="text-muted">{listingDescription}</small>
           </h2>
         </div>
         <div className="col-lg-5 col-md-6 col-sm-12">
-          <button
+          <a
             className="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10"
             type="button"
+            href="/app/add-developer"
           >
             <i className="zmdi zmdi-plus"></i>
-          </button>
+          </a>
         </div>
       </div>
-      <div className="card">
+      <div className={`card `+ customClassName}>
         <div className="body table-responsive">
           <table className="table table-hover m-b-0 list">
             <thead>
@@ -132,7 +134,7 @@ const Listing = ({
             marginPagesDisplayed={marginPagesDisplayed}
             pageRangeDisplayed={pageRangeDisplayed}
             onPageChange={handlePageClick}
-            containerClassName={"pagination pagination-primary m-b-0"}
+            containerClassName={"pagination m-b-0"}
             subContainerClassName={"page-item"}
           />
         </div>

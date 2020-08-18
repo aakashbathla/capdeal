@@ -49,3 +49,18 @@
     }
   }
 }
+
+.developer-list {
+  tbody {
+    tr {
+      td:nth-child(3) > div {
+        width: 200px;
+        overflow: hidden;
+        white-space: nowrap;
+        display: block;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+ 
+}

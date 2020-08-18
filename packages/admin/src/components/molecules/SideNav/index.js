@@ -24,61 +24,21 @@ const SideNav = () => {
           <MenuItem icon={<i className="zmdi zmdi-home"></i>}>
             Dashboard
           </MenuItem>
-          <SubMenu
-            title="Customer"
-            icon={<i className="zmdi zmdi-accounts"></i>}
-          >
-            <MenuItem>
-              <Link to="/app/customer-list">Customer Listings</Link>
-            </MenuItem>
-            <MenuItem>Add Customer</MenuItem>
-            <MenuItem>Update Customer</MenuItem>
-            <MenuItem>Delete Customer</MenuItem>
-          </SubMenu>
-          <SubMenu
-            title="Agents"
-            icon={<i className="zmdi zmdi-accounts-outline"></i>}
-          >
-            <MenuItem>
-              <Link to="/app/agents-list">Agents Listings</Link>
-            </MenuItem>
-            <MenuItem>Add Agents</MenuItem>
-            <MenuItem>Update Agents</MenuItem>
-            <MenuItem>Delete Agents</MenuItem>
-          </SubMenu>
-          <SubMenu title="Property" icon={<i className="zmdi zmdi-city"></i>}>
-            <MenuItem>
-              <Link to="/app/property-list">Property List</Link>
-            </MenuItem>
-            <MenuItem>Add Property</MenuItem>
-            <MenuItem>Update Property</MenuItem>
-            <MenuItem>Delete Property</MenuItem>
-          </SubMenu>
-          <SubMenu
-            title="Project"
-            icon={<i className="zmdi zmdi-city-alt"></i>}
-          >
-            <MenuItem>Add Project</MenuItem>
-            <MenuItem>Update Project</MenuItem>
-            <MenuItem>Delete Project</MenuItem>
-          </SubMenu>
-          <SubMenu title="Developer" icon={<i className="zmdi zmdi-city"></i>}>
-            <MenuItem>
-              <Link to="/app/developer-list">Developer List</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to="/app/add-developer">Add Developer</Link>
-            </MenuItem>
-            <MenuItem>Update Developer</MenuItem>
-            <MenuItem>Delete Developer</MenuItem>
-          </SubMenu>
-          <SubMenu title="SEO" icon={<i className="zmdi zmdi-code"></i>}>
-            <MenuItem>Home Page</MenuItem>
-            <MenuItem>Property Page</MenuItem>
-            <MenuItem>Property Detail Page</MenuItem>
-            <MenuItem>About Us Page</MenuItem>
-            <MenuItem>Contact Us Page</MenuItem>
-          </SubMenu>
+          <MenuItem icon={<i className="zmdi zmdi-accounts"></i>}>
+            <Link to="/app/customer-list">Customers</Link>
+          </MenuItem>
+          <MenuItem icon={<i className="zmdi zmdi-accounts-outline"></i>}>
+            <Link to="/app/agents-list">Team</Link>
+          </MenuItem>
+          <MenuItem icon={<i className="zmdi zmdi-city"></i>}>
+            <Link to="/app/property-list">Property List</Link>
+          </MenuItem>
+          <MenuItem icon={<i className="zmdi zmdi-city"></i>}>
+            <Link to="/app/developer-list">Developer List</Link>
+          </MenuItem>
+          <MenuItem icon={<i className="zmdi zmdi-code"></i>}>
+            SEO
+          </MenuItem>
         </Menu>
       </ProSidebar>
     </aside>
