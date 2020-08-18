@@ -28,7 +28,7 @@ const SideNav = () => {
             <Link to="/app/customer-list">Customers</Link>
           </MenuItem>
           <MenuItem icon={<i className="zmdi zmdi-accounts-outline"></i>}>
-            <Link to="/app/agents-list">Team</Link>
+            <Link to="/app/team-list">Team</Link>
           </MenuItem>
           <MenuItem icon={<i className="zmdi zmdi-city"></i>}>
             <Link to="/app/property-list">Property List</Link>
@@ -36,9 +36,7 @@ const SideNav = () => {
           <MenuItem icon={<i className="zmdi zmdi-city"></i>}>
             <Link to="/app/developer-list">Developer List</Link>
           </MenuItem>
-          <MenuItem icon={<i className="zmdi zmdi-code"></i>}>
-            SEO
-          </MenuItem>
+          <MenuItem icon={<i className="zmdi zmdi-code"></i>}>SEO</MenuItem>
         </Menu>
       </ProSidebar>
     </aside>

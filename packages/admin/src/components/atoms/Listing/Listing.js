@@ -12,6 +12,7 @@ const Listing = ({
   pageCount,
   pageRangeDisplayed,
   marginPagesDisplayed,
+  loadMore,
 }) => {
   console.log(deleteItem, "deleteItem");
   const listingHeader = data && (
@@ -31,7 +32,11 @@ const Listing = ({
         <tr>
           {Object.entries(val).map(([key, value]) => {
             if (!Array.isArray(value) && !(key == "image")) {
-              return <td><div>{value}</div></td>;
+              return (
+                <td>
+                  <div>{value}</div>
+                </td>
+              );
             }
           })}
           <td>
@@ -49,7 +54,8 @@ const Listing = ({
       );
     });
   const handlePageClick = (data) => {
-    console.log(data);
+    let selected = data.selected + 1;
+    loadMore({ page: selected });
   };
   return (
     <div className="col-lg-12">
@@ -70,65 +76,16 @@ const Listing = ({
           </a>
         </div>
       </div>
-      <div className={`card `+ customClassName}>
+      <div className={`card ` + customClassName}>
         <div className="body table-responsive">
           <table className="table table-hover m-b-0 list">
-            <thead>
-              {/* <th>#</th> */}
-              {/* <th>Name</th>
-                <th data-breakpoints="xs">Phone</th>
-                <th data-breakpoints="xs sm md">Email</th>
-                <th data-breakpoints="xs sm md">Address</th>
-                <th data-breakpoints="xs">Action</th> */}
-              {listingHeader}
-            </thead>
-            <tbody>
-              {/* <td>
-                  <div className="checkbox">
-                    <input id="delete_3" type="checkbox" />
-                    <label for="delete_3">&nbsp;</label>
-                  </div>
-                </td> */}
-              {listing}
-            </tbody>
+            <thead>{listingHeader}</thead>
+            <tbody>{listing}</tbody>
           </table>
         </div>
       </div>
       <div className="card">
         <div className="body text-right">
-          {/* <ul className="">
-            <li className="page-item">
-              <a className="page-link" href="#">
-                <i className="zmdi zmdi-arrow-left"></i>
-              </a>
-            </li>
-            <li className="page-item active">
-              <a className="page-link" href="#">
-                1
-              </a>
-            </li>
-            <li className="page-item">
-              <a className="page-link" href="#">
-                2
-              </a>
-            </li>
-            <li className="page-item">
-              <a className="page-link" href="#">
-                3
-              </a>
-            </li>
-            <li className="page-item">
-              <a className="page-link" href="#">
-                4
-              </a>
-            </li>
-            <li className="page-item">
-              <a className="page-link" href="#">
-                <i className="zmdi zmdi-arrow-right"></i>
-              </a>
-            </li>
-          </ul>
-         */}
           <ReactPaginate
             pageCount={pageCount / 10}
             marginPagesDisplayed={marginPagesDisplayed}
@@ -136,6 +93,7 @@ const Listing = ({
             onPageChange={handlePageClick}
             containerClassName={"pagination m-b-0"}
             subContainerClassName={"page-item"}
+            loadMore={loadMore}
           />
         </div>
       </div>

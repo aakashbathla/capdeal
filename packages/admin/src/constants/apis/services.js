@@ -5,7 +5,8 @@ const apis = {
   submitpassword: `${api_url}/user/login-with-password/`,
   socialLogin: `${api_url}/social-sign-up`,
   developerListingUrl: `${api_url}/developers/`,
-  userListingUrl: `${api_url}/users`,
+  userListingUrl: `${api_url}/users?role=Customer`,
+  teamListingUrl: `${api_url}/users?role=Admin`,
 };
 
 export default apis;
