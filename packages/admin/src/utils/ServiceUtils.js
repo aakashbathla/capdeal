@@ -1,5 +1,6 @@
 import axios from "axios";
 import es6promise from "es6-promise";
+import { LocalStorageUtil } from "./localstorage";
 
 es6promise.polyfill();
 
@@ -11,12 +12,17 @@ class ServiceUtils {
 
   async fetch(url, additionalFetchOptions) {
     let responseData;
-
+    const localStorage = new LocalStorageUtil();
+    const token = JSON.parse(localStorage.getItem("userProfile"));
+    console.log(token);
     // Request options in axios format
     const reqOptions = {
       url: `${this.basePath}${url}`,
       withCredentials: false,
       ...additionalFetchOptions,
+      headers: {
+        Authorization: `Token ${token.auth_token}`,
+      },
     };
 
     try {
@@ -25,8 +31,7 @@ class ServiceUtils {
     } catch (err) {
       throw err;
     }
-
-    return responseData;
+    return await responseData;
   }
 }
 

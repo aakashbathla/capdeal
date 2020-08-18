@@ -7,6 +7,7 @@ import AgentsList from "components/molecules/AgentsList";
 import PropertyList from "components/molecules/PropertyList";
 import LoginPage from "containers/organisms/Login/Login";
 import AddDeveloper from "components/molecules/Developer";
+import DeveloperList from "components/molecules/Developer/DeveloperListing";
 
 // import Login from "./containers/organisms/Login/Login";
 // import NoMatch from "./components/atoms/NoMatch";
@@ -38,6 +39,11 @@ const Routes = () => {
                   exact
                   path="/app/property-list"
                   component={PropertyList}
+                />
+                <Route
+                  exact
+                  path="/app/developer-list"
+                  component={DeveloperList}
                 />
                 <Route
                   exact
