@@ -8,20 +8,27 @@ import "./Developer.scss";
 
 const DeveloperListing = () => {
   const [developerData, setDeveloperData] = useState([]);
-  const urlOptions = {
+  let urlOptions = {
     pathname: apis.developerListingUrl,
     urlEncoded: true,
   };
-  const fetchData = () => {
+  const fetchData = (params) => {
+    urlOptions = {
+      ...urlOptions,
+      query: params || undefined,
+    };
+
     try {
-      ServiceUtils.fetch(buildUrl(urlOptions), "http://").then((data) => {
-        if (data) {
-          setDeveloperData(data);
-          console.log(data);
-        } else {
-          console.log(error);
+      ServiceUtils.fetch(buildUrl(urlOptions, params), "http://").then(
+        (data) => {
+          if (data) {
+            setDeveloperData(data);
+            console.log(data);
+          } else {
+            console.log(error);
+          }
         }
-      });
+      );
     } catch (err) {
       console.log(err);
     }
@@ -62,6 +69,7 @@ const DeveloperListing = () => {
           pageRangeDisplayed={1}
           marginPagesDisplayed={1}
           customClassName="developer-list"
+          loadMore={fetchData}
         ></Listing>
       )}
     </>

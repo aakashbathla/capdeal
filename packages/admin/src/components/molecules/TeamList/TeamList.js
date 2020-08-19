@@ -4,13 +4,13 @@ import React, { useState, useEffect } from "react";
 import ServiceUtils from "../../../utils/ServiceUtils";
 import { buildUrl } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
-import Listing from "../../atoms/Listing/";
-import "./CustomerList.scss";
+import Listing from "../../atoms/Listing";
+import "./TeamList.scss";
 
-const CustomerListing = () => {
-  const [customerData, setCustomerData] = useState([]);
+const TeamListing = () => {
+  const [teamData, setTeamData] = useState([]);
   let urlOptions = {
-    pathname: apis.userListingUrl,
+    pathname: apis.teamListingUrl,
     urlEncoded: true,
   };
   const fetchData = (params) => {
@@ -23,7 +23,7 @@ const CustomerListing = () => {
       ServiceUtils.fetch(buildUrl(urlOptions, params), "http://").then(
         (data) => {
           if (data) {
-            setCustomerData(data);
+            setTeamData(data);
             console.log(data);
           } else {
             console.log(error);
@@ -37,7 +37,7 @@ const CustomerListing = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  const deleteCustomer = (id) => {
+  const deleteTeam = (id) => {
     const additionalFetchOptions = (id) => ({
       method: "DELETE",
     });
@@ -60,16 +60,16 @@ const CustomerListing = () => {
   };
   return (
     <>
-      {customerData && customerData.results && (
+      {teamData && teamData.results && (
         <Listing
-          data={customerData}
-          listingName="Customers List"
-          listingDescription="Manage Customers"
-          deleteItem={deleteCustomer}
-          pageCount={customerData.count}
+          data={teamData}
+          listingName="Teams List"
+          listingDescription="Manage Teams"
+          deleteItem={deleteTeam}
+          pageCount={teamData.count}
           pageRangeDisplayed={1}
           marginPagesDisplayed={1}
-          customClassName="customer-list"
+          customClassName="team-list"
           loadMore={fetchData}
         ></Listing>
       )}
@@ -77,4 +77,4 @@ const CustomerListing = () => {
   );
 };
 
-export default CustomerListing;
+export default TeamListing;

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import App from "./App";
 import CustomerList from "components/molecules/CustomerList";
-import AgentsList from "components/molecules/AgentsList";
+import TeamList from "components/molecules/TeamList";
 import PropertyList from "components/molecules/PropertyList";
 import LoginPage from "containers/organisms/Login/Login";
 import AddDeveloper from "components/molecules/Developer";
@@ -34,7 +34,7 @@ const Routes = () => {
                   path="/app/customer-list"
                   component={CustomerList}
                 />
-                <Route exact path="/app/agents-list" component={AgentsList} />
+                <Route exact path="/app/team-list" component={TeamList} />
                 <Route
                   exact
                   path="/app/property-list"
