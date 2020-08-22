@@ -112,7 +112,12 @@ const Listing = ({
               className="form-control"
               onChange={(e) => loadMore({ search: e.target.value })}
             />
-            <span className="clear-text"><i className="zmdi zmdi-close"></i></span>
+            <span
+              className="clear-text"
+              onClick={(e) => loadMore({ search: "" })}
+            >
+              <i className="zmdi zmdi-close"></i>
+            </span>
           </div>
         </div>
       </div>
