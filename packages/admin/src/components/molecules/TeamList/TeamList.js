@@ -71,6 +71,8 @@ const TeamListing = () => {
           marginPagesDisplayed={1}
           customClassName="team-list"
           loadMore={fetchData}
+          addUrl="/app/add-team"
+          editUrl="/app/edit-team"
         ></Listing>
       )}
     </>

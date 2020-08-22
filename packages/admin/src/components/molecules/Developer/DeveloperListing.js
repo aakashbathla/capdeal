@@ -70,6 +70,8 @@ const DeveloperListing = () => {
           marginPagesDisplayed={1}
           customClassName="developer-list"
           loadMore={fetchData}
+          addUrl="/app/add-developer"
+          editUrl="/app/edit-developer"
         ></Listing>
       )}
     </>

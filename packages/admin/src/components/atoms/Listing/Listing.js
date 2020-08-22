@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+/* eslint-disable */
+import React from "react";
 import "./Listing.scss";
-import avatar from "assets/avatar7.jpg";
 import ReactPaginate from "react-paginate";
-
+import { useHistory } from "react-router";
 const Listing = ({
   data,
   listingName,
@@ -13,13 +13,21 @@ const Listing = ({
   pageRangeDisplayed,
   marginPagesDisplayed,
   loadMore,
+  addUrl,
+  editUrl,
 }) => {
-  console.log(deleteItem, "deleteItem");
+  const history = useHistory();
+  const goToEditLink = () => {
+    history.push({
+      pathname: editUrl,
+    });
+  };
   const listingHeader = data && (
     <tr>
       {Object.entries(data.results[0]).map(([key, value]) => {
-        if (!Array.isArray(value) && !(key == "image")) {
+        if (!Array.isArray(value) && !(key === "image")) {
           return <th>{key.replace(/_/g, " ")}</th>;
+        } else {
         }
       })}
       <th>Actions</th>
@@ -31,7 +39,7 @@ const Listing = ({
       return (
         <tr>
           {Object.entries(val).map(([key, value]) => {
-            if (!Array.isArray(value) && !(key == "image")) {
+            if (!Array.isArray(value) && !(key === "image")) {
               return (
                 <td>
                   <div>{value}</div>
@@ -40,7 +48,12 @@ const Listing = ({
             }
           })}
           <td>
-            <button className="btn btn-default btn-icon btn-simple btn-icon-mini btn-round">
+            <button
+              className="btn btn-default btn-icon btn-simple btn-icon-mini btn-round"
+              onClick={() => {
+                goToEditLink();
+              }}
+            >
               <i className="zmdi zmdi-edit"></i>
             </button>
             <button
@@ -70,7 +83,7 @@ const Listing = ({
           <a
             className="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10"
             type="button"
-            href="/app/add-developer"
+            href={addUrl}
           >
             <i className="zmdi zmdi-plus"></i>
           </a>

@@ -1,5 +1,4 @@
 import { LocalStorageUtil } from "./localstorage";
-import axios from "axios";
 export const phoneRegExp = "^(+91[-s]?)?[0]?(91)?[789]d{9}$";
 export const passwordRegExp = "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$";
 export const buildUrl = (options) => {

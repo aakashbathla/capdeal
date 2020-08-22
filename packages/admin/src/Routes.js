@@ -7,6 +7,9 @@ import TeamList from "components/molecules/TeamList";
 import PropertyList from "components/molecules/PropertyList";
 import LoginPage from "containers/organisms/Login/Login";
 import AddDeveloper from "components/molecules/Developer";
+import EditDeveloper from "components/molecules/Developer/EditDeveloper";
+import AddTeam from "components/molecules/TeamList/AddTeam";
+import EditTeam from "components/molecules/TeamList/EditTeam";
 import DeveloperList from "components/molecules/Developer/DeveloperListing";
 
 // import Login from "./containers/organisms/Login/Login";
@@ -50,6 +53,13 @@ const Routes = () => {
                   path="/app/add-developer"
                   component={AddDeveloper}
                 />
+                <Route
+                  exact
+                  path="/app/edit-developer"
+                  component={EditDeveloper}
+                />
+                <Route exact path="/app/add-team" component={AddTeam} />
+                <Route exact path="/app/edit-team" component={EditTeam} />
               </Switch>
             )}
           />

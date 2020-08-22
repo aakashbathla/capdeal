@@ -16,14 +16,7 @@ const Header = () => {
             <img src={logo} height="30" alt="capdeal" />
           </a>
         </div>
-        <ul className="nav navbar-nav navbar-left">
-          <li>
-            <a href="#" className="ls-toggle-btn" data-close="true">
-              <span class="sr-only">icon swap</span>
-              <i className="zmdi zmdi-swap"></i>
-            </a>
-          </li>
-        </ul>
+        <ul className="nav navbar-nav navbar-left"></ul>
         <ul className="nav navbar-nav navbar-right">
           <li className="dropdown">
             <a
