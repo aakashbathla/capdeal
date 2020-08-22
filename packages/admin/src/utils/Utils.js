@@ -1,5 +1,6 @@
 import { LocalStorageUtil } from "./localstorage";
 import apis from "../constants/apis/services";
+import ServiceUtils from "./ServiceUtils";
 export const phoneRegExp = "^(+91[-s]?)?[0]?(91)?[789]d{9}$";
 export const passwordRegExp = "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$";
 export const buildUrl = (options) => {
@@ -35,6 +36,34 @@ export const createUrlSearchParams = (query = {}, urlEncoded = false) => {
 export const afterUserSuccess = (userProfile) => {
   setCookieMethod(userProfile);
 };
+
+export const addData = (url, data, redirectFunction, params) => {
+  let urlOptions = {
+    pathname: url,
+    urlEncoded: true,
+  };
+  const additionalFetchOptions = () => ({
+    method: "POST",
+    data: data,
+  });
+  urlOptions = {
+    ...urlOptions,
+    query: params || undefined,
+  };
+
+  try {
+    ServiceUtils.fetch(
+      buildUrl(urlOptions, params),
+      additionalFetchOptions(),
+      "http://"
+    ).then((data) => {
+      redirectFunction();
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const localStorage = new LocalStorageUtil();
 const setCookieMethod = (userProfile) => {
   localStorage.saveItem("userProfile", JSON.stringify(userProfile));

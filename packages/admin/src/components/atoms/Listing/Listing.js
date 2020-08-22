@@ -23,7 +23,7 @@ const Listing = ({
       pathname: editUrl,
     });
   };
-  const listingHeader = data && data.results && (
+  const listingHeader = data && data.results.length > 0 && (
     <tr>
       {Object.entries(data.results[0]).map(([key, value]) => {
         if (
@@ -40,6 +40,7 @@ const Listing = ({
   );
   const listing =
     data &&
+    data.results.length > 0 &&
     data.results.map((val, key) => {
       return (
         <tr>
@@ -117,15 +118,17 @@ const Listing = ({
       </div>
       <div className="card">
         <div className="body text-right">
-          <ReactPaginate
-            pageCount={pageCount / 10}
-            marginPagesDisplayed={marginPagesDisplayed}
-            pageRangeDisplayed={pageRangeDisplayed}
-            onPageChange={handlePageClick}
-            containerClassName={"pagination m-b-0"}
-            subContainerClassName={"page-item"}
-            loadMore={loadMore}
-          />
+          {data && data.results.length > 0 && (
+            <ReactPaginate
+              pageCount={pageCount / 10}
+              marginPagesDisplayed={marginPagesDisplayed}
+              pageRangeDisplayed={pageRangeDisplayed}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination m-b-0"}
+              subContainerClassName={"page-item"}
+              loadMore={loadMore}
+            />
+          )}
         </div>
       </div>
     </div>
