@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 import { schema, uiSchema } from "./AddDeveloperSchema";
 import apis from "../../../constants/apis/services";
 import { addData } from "../../../utils/Utils";
+import "./Developer.scss";
 
 const AddDeveloper = () => {
   const history = useHistory();
