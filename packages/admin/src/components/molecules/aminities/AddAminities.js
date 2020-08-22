@@ -12,14 +12,16 @@ const AddAminities = () => {
     });
   };
   return (
-    <Form
-      schema={schema}
-      uiSchema={uiSchema}
-      onSubmit={({ formData }, e) => {
-        e.preventDefault();
-        addData(apis.aminitiesListingUrl, formData, redirectFunction);
-      }}
-    />
+    <div className="col-lg-6 col-md-6 col-sm-12">
+      <Form
+        schema={schema}
+        uiSchema={uiSchema}
+        onSubmit={({ formData }, e) => {
+          e.preventDefault();
+          addData(apis.aminitiesListingUrl, formData, redirectFunction);
+        }}
+      />
+    </div>
   );
 };
 

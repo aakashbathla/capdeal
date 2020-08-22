@@ -4,18 +4,23 @@ export const schema = {
   properties: {
     name: {
       type: "string",
+      title: "Name",
     },
     experience: {
       type: "string",
+      title: "Experience",
     },
     number_or_projects: {
       type: "integer",
+      title: "Number of Projects",
     },
     description: {
       type: "string",
+      title: "Description",
     },
     projects: {
       type: "string",
+      title: "Projects",
     },
   },
   required: [

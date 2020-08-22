@@ -4,6 +4,7 @@ export const schema = {
   properties: {
     name: {
       type: "string",
+      title: "Name",
     },
   },
   required: ["name"],

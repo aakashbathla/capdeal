@@ -13,6 +13,7 @@ section.content {
   padding: 0 20px;
   z-index: 9;
   background-color: #e9ecef;
+  min-height: calc(100vh - 63px);
 }
 .block-header {
   padding: 20px 15px;
@@ -29,4 +30,19 @@ section.content {
     }
   }
 }
-
+.rjsf {
+  width: 100%;
+}
+.form-handler-css {
+  #root__title {
+    margin: 0 !important;
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-family: 'Muli', Arial, Tahoma, sans-serif;
+    font-weight: 600;
+  }
+  .control-label {
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+}

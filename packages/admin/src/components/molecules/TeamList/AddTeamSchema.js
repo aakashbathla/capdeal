@@ -4,18 +4,23 @@ export const schema = {
   properties: {
     phone_number: {
       type: "string",
+      title: "Phone Number",
     },
     email: {
       type: "string",
+      title: "Email",
     },
     first_name: {
       type: "integer",
+      title: "First Name",
     },
     last_name: {
       type: "string",
+      title: "Last Name",
     },
     role: {
       type: "string",
+      title: "User Role",
       enum: ["Admin", "Cutomer", "Manager"],
     },
   },
