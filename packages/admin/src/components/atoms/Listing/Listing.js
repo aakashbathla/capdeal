@@ -15,6 +15,7 @@ const Listing = ({
   loadMore,
   addUrl,
   editUrl,
+  hideActions,
 }) => {
   const history = useHistory();
   const goToEditLink = () => {
@@ -30,7 +31,7 @@ const Listing = ({
         } else {
         }
       })}
-      <th>Actions</th>
+      {!hideActions && <th>Actions</th>}
     </tr>
   );
   const listing =
@@ -47,22 +48,24 @@ const Listing = ({
               );
             }
           })}
-          <td>
-            <button
-              className="btn btn-default btn-icon btn-simple btn-icon-mini btn-round"
-              onClick={() => {
-                goToEditLink();
-              }}
-            >
-              <i className="zmdi zmdi-edit"></i>
-            </button>
-            <button
-              className="btn btn-default btn-icon btn-simple btn-icon-mini btn-round"
-              onClick={() => deleteItem(val.id)}
-            >
-              <i className="zmdi zmdi-delete"></i>
-            </button>
-          </td>
+          {!hideActions && (
+            <td>
+              <button
+                className="btn btn-default btn-icon btn-simple btn-icon-mini btn-round"
+                onClick={() => {
+                  goToEditLink();
+                }}
+              >
+                <i className="zmdi zmdi-edit"></i>
+              </button>
+              <button
+                className="btn btn-default btn-icon btn-simple btn-icon-mini btn-round"
+                onClick={() => deleteItem(val.id)}
+              >
+                <i className="zmdi zmdi-delete"></i>
+              </button>
+            </td>
+          )}
         </tr>
       );
     });
@@ -79,15 +82,17 @@ const Listing = ({
             <small className="text-muted">{listingDescription}</small>
           </h2>
         </div>
-        <div className="col-lg-5 col-md-6 col-sm-12">
-          <a
-            className="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10"
-            type="button"
-            href={addUrl}
-          >
-            <i className="zmdi zmdi-plus"></i>
-          </a>
-        </div>
+        {!hideActions && (
+          <div className="col-lg-5 col-md-6 col-sm-12">
+            <a
+              className="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10"
+              type="button"
+              href={addUrl}
+            >
+              <i className="zmdi zmdi-plus"></i>
+            </a>
+          </div>
+        )}
       </div>
       <div className={`card ` + customClassName}>
         <div className="body table-responsive">

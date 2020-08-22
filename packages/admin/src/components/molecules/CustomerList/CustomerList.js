@@ -1,5 +1,4 @@
 /* eslint-disable */
-/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import ServiceUtils from "../../../utils/ServiceUtils";
 import { buildUrl } from "../../../utils/Utils";
@@ -71,6 +70,7 @@ const CustomerListing = () => {
           marginPagesDisplayed={1}
           customClassName="customer-list"
           loadMore={fetchData}
+          hideActions={true}
         ></Listing>
       )}
     </>
