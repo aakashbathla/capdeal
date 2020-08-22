@@ -103,11 +103,19 @@ const Listing = ({
           </div>
         )}
       </div>
-      <input
-        type="text"
-        placeholder="search"
-        onChange={(e) => loadMore({ search: e.target.value })}
-      />
+      <div className="row">
+        <div className="col-lg-4 col-md-6 col-sm-12">
+          <div className="form-group position-relative">
+            <input
+              type="text"
+              placeholder="Type to search"
+              className="form-control"
+              onChange={(e) => loadMore({ search: e.target.value })}
+            />
+            <span className="clear-text"><i className="zmdi zmdi-close"></i></span>
+          </div>
+        </div>
+      </div>
       <div className={`card ` + customClassName}>
         <div className="body table-responsive">
           <table className="table table-hover m-b-0 list">

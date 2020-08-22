@@ -9,10 +9,10 @@ const Header = () => {
       <div className="col-12">
         <div className="navbar-header">
           <a href="#" className="bars">
-            <span class="sr-only">Menu Bar</span>
+            <span className="sr-only">Menu Bar</span>
           </a>
           <a href="/">
-            <span class="sr-only">logo</span>
+            <span className="sr-only">logo</span>
             <img src={logo} height="30" alt="capdeal" />
           </a>
         </div>
@@ -67,7 +67,7 @@ const Header = () => {
           </li>
           <li>
             <a href="/login" className="mega-menu" data-close="true">
-              <span class="sr-only">icon power</span>
+              <span className="sr-only">icon power</span>
               <i className="zmdi zmdi-power"></i>
             </a>
           </li>
