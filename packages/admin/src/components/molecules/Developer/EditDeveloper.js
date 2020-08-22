@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Form from "@rjsf/core";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";

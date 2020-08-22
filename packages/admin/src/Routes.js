@@ -76,16 +76,12 @@ const Routes = () => {
                 />
                 <Route exact path="/app/aminities-list" component={Aminities} />
                 <Route exact path="/app/add-team" component={AddTeam} />
-                <Route exact path="/app/edit-team" component={EditTeam} />
+                <Route exact path="/app/edit-team/:id" component={EditTeam} />
                 <Route exact path="/app/project-list" component={ProjectList} />
+                <Route exact path="/app/add-project" component={AddProject} />
                 <Route
                   exact
-                  path="/app/add-project"
-                  component={AddProject}
-                />
-                <Route
-                  exact
-                  path="/app/edit-project"
+                  path="/app/edit-project/:id"
                   component={EditProject}
                 />
               </Switch>
