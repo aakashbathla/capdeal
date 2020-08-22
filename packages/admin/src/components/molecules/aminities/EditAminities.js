@@ -1,7 +1,7 @@
 import Form from "@rjsf/core";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
-import { schema, uiSchema, formData } from "./EditAminitiesSchema";
+import { schema, uiSchema } from "./EditAminitiesSchema";
 import apis from "../../../constants/apis/services";
 import { fetchData, updateData } from "../../../utils/Utils";
 import { withRouter } from "react-router";
