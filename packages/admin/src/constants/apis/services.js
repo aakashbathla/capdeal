@@ -5,6 +5,7 @@ const apis = {
   submitpassword: `${api_url}/user/login-with-password/`,
   socialLogin: `${api_url}/social-sign-up`,
   developerListingUrl: `${api_url}/developers/`,
+  projectListingUrl: `${api_url}/projects/`,
   userListingUrl: `${api_url}/users?role=Customer`,
   teamListingUrl: `${api_url}/users?role=Admin`,
 };

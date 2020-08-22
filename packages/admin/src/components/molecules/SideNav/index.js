@@ -30,11 +30,14 @@ const SideNav = () => {
           <MenuItem icon={<i className="zmdi zmdi-accounts-outline"></i>}>
             <Link to="/app/team-list">Team</Link>
           </MenuItem>
-          <MenuItem icon={<i className="zmdi zmdi-city"></i>}>
-            <Link to="/app/property-list">Property List</Link>
+          <MenuItem icon={<i className="zmdi zmdi-balance"></i>}>
+            <Link to="/app/property-list">Property</Link>
           </MenuItem>
           <MenuItem icon={<i className="zmdi zmdi-city"></i>}>
-            <Link to="/app/developer-list">Developer List</Link>
+            <Link to="/app/developer-list">Developer</Link>
+          </MenuItem>
+          <MenuItem icon={<i className="zmdi zmdi-city-alt"></i>}>
+            <Link to="/app/project-list">Project</Link>
           </MenuItem>
           <MenuItem icon={<i className="zmdi zmdi-code"></i>}>SEO</MenuItem>
         </Menu>
