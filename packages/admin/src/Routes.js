@@ -15,6 +15,8 @@ import EditAminities from "components/molecules/aminities/EditAminities";
 import Aminities from "components/molecules/aminities/AminitiesListing";
 import DeveloperList from "components/molecules/Developer/DeveloperListing";
 import ProjectList from "components/molecules/Project";
+import AddProject from "components/molecules/Project/AddProject";
+import EditProject from "components/molecules/Project/EditProject";
 
 // import Login from "./containers/organisms/Login/Login";
 // import NoMatch from "./components/atoms/NoMatch";
@@ -76,6 +78,16 @@ const Routes = () => {
                 <Route exact path="/app/add-team" component={AddTeam} />
                 <Route exact path="/app/edit-team" component={EditTeam} />
                 <Route exact path="/app/project-list" component={ProjectList} />
+                <Route
+                  exact
+                  path="/app/add-project"
+                  component={AddProject}
+                />
+                <Route
+                  exact
+                  path="/app/edit-project"
+                  component={EditProject}
+                />
               </Switch>
             )}
           />

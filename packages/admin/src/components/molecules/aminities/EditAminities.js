@@ -1,5 +1,6 @@
 import Form from "@rjsf/core";
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router";
 import { schema, uiSchema, formData } from "./EditAminitiesSchema";
 import apis from "../../../constants/apis/services";
 import { fetchData, updateData } from "../../../utils/Utils";
@@ -10,6 +11,7 @@ const EditAminities = (props) => {
   const updateFormData = (data) => {
     setUpdateFormDataValue(data);
   };
+  const history = useHistory();
   const redirectFunction = () => {
     props.history.push({
       pathname: "/app/aminities-list",
@@ -25,6 +27,9 @@ const EditAminities = (props) => {
   }, []);
   return (
     <div className="col-lg-6 col-md-6 col-sm-12">
+      <span className="back-btn" onClick={() => history.goBack()}>
+        <i className="zmdi zmdi-arrow-left"></i>
+      </span>
       {updateFormDataValue && (
         <Form
           schema={schema}
