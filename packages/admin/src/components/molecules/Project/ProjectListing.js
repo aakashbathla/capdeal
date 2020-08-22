@@ -70,6 +70,8 @@ const ProjectListing = () => {
           marginPagesDisplayed={1}
           customClassName="project-list"
           loadMore={fetchData}
+          addUrl="/app/add-project"
+          editUrl="/app/edit-project"
         ></Listing>
       )}
     </>

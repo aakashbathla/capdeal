@@ -1,12 +1,28 @@
 .project-list {
   tbody {
     tr {
-      td:nth-child(3) > div {
-        width: 200px;
+      td:nth-child(2) > div,
+      td:nth-child(3) > div,
+      td:nth-child(5) > div,
+      td:nth-child(6) > div {
+        width: 180px;
         overflow: hidden;
         white-space: nowrap;
         display: block;
         text-overflow: ellipsis;
+      }
+      td:nth-child(7) > div,
+      td:nth-child(8) > div,
+      td:nth-child(12) > div,
+      td:nth-child(13) > div {
+        width: 100px;
+        overflow: hidden;
+        white-space: nowrap;
+        display: block;
+        text-overflow: ellipsis;
+      }
+      td:nth-child(14) {
+        white-space: nowrap;
       }
     }
   }

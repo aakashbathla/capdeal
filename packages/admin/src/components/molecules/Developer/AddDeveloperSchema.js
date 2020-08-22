@@ -10,10 +10,6 @@ export const schema = {
       type: "string",
       title: "Experience",
     },
-    number_of_projects: {
-      type: "integer",
-      title: "Number of Projects",
-    },
     description: {
       type: "string",
       title: "Description",
@@ -27,13 +23,7 @@ export const schema = {
       },
     },
   },
-  required: [
-    "name",
-    "experience",
-    "number_of_projects",
-    "description",
-    "major_projects",
-  ],
+  required: ["name", "experience", "description", "major_projects"],
 };
 
 export const uiSchema = {
