@@ -23,10 +23,14 @@ const Listing = ({
       pathname: editUrl,
     });
   };
-  const listingHeader = data && (
+  const listingHeader = data && data.results && (
     <tr>
       {Object.entries(data.results[0]).map(([key, value]) => {
-        if (!Array.isArray(value) && !(key === "image")) {
+        if (
+          !Array.isArray(value) &&
+          !(key === "image") &&
+          !(typeof value === "object" && value !== null)
+        ) {
           return <th>{key.replace(/_/g, " ")}</th>;
         } else {
         }
@@ -40,7 +44,11 @@ const Listing = ({
       return (
         <tr>
           {Object.entries(val).map(([key, value]) => {
-            if (!Array.isArray(value) && !(key === "image")) {
+            if (
+              !Array.isArray(value) &&
+              !(key === "image") &&
+              !(typeof value === "object" && value !== null)
+            ) {
               return (
                 <td>
                   <div>{value}</div>
