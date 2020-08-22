@@ -102,6 +102,11 @@ const Listing = ({
           </div>
         )}
       </div>
+      <input
+        type="text"
+        placeholder="search"
+        onChange={(e) => loadMore({ search: e.target.value })}
+      />
       <div className={`card ` + customClassName}>
         <div className="body table-responsive">
           <table className="table table-hover m-b-0 list">

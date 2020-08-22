@@ -1,13 +1,21 @@
 import { LocalStorageUtil } from "./localstorage";
+import apis from "../constants/apis/services";
 export const phoneRegExp = "^(+91[-s]?)?[0]?(91)?[789]d{9}$";
 export const passwordRegExp = "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$";
 export const buildUrl = (options) => {
   if (typeof options === "object") {
     const { pathname, query, urlEncoded } = options;
     let url = pathname;
-    if (typeof query === "object") {
-      url += `?${createUrlSearchParams(query, urlEncoded)}`;
+    if (url === apis.userListingUrl || url === apis.teamListingUrl) {
+      if (typeof query === "object") {
+        url += `&${createUrlSearchParams(query, urlEncoded)}`;
+      }
+    } else {
+      if (typeof query === "object") {
+        url += `?${createUrlSearchParams(query, urlEncoded)}`;
+      }
     }
+
     return url;
   }
   return options;
