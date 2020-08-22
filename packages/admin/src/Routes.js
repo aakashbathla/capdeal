@@ -59,7 +59,7 @@ const Routes = () => {
                 />
                 <Route
                   exact
-                  path="/app/edit-developer"
+                  path="/app/edit-developer/:id"
                   component={EditDeveloper}
                 />
                 <Route

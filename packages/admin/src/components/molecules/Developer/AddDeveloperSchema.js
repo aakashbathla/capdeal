@@ -10,7 +10,7 @@ export const schema = {
       type: "string",
       title: "Experience",
     },
-    number_or_projects: {
+    number_of_projects: {
       type: "integer",
       title: "Number of Projects",
     },
@@ -18,17 +18,21 @@ export const schema = {
       type: "string",
       title: "Description",
     },
-    projects: {
-      type: "string",
+    major_projects: {
+      type: "array",
       title: "Projects",
+      classNames: "zmdi zmdi-plus",
+      items: {
+        type: "string",
+      },
     },
   },
   required: [
     "name",
     "experience",
-    "number_or_projects",
+    "number_of_projects",
     "description",
-    "projects",
+    "major_projects",
   ],
 };
 
