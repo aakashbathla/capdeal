@@ -10,6 +10,10 @@ export const schema = {
       type: "string",
       title: "Email",
     },
+    password: {
+      type: "string",
+      title: "Passowrd",
+    },
     first_name: {
       type: "string",
       title: "First Name",
@@ -19,19 +23,12 @@ export const schema = {
       title: "Last Name",
     },
     role: {
-      type: "string",
+      type: "integer",
       title: "User Role",
-      enum: ["Admin", "Cutomer", "Manager"],
+      enum: [1, 2],
+      enumNames: ["Managers", "Workers"],
     },
   },
-};
-
-export const formData = {
-  phone_number: "+919205456797",
-  email: "aakash.bathla7@gmail.com",
-  first_name: "Aakash",
-  last_name: "Bathla",
-  role: "Manager",
 };
 
 export const uiSchema = {

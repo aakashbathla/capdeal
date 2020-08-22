@@ -10,8 +10,12 @@ export const schema = {
       type: "string",
       title: "Email",
     },
+    password: {
+      type: "string",
+      title: "Passowrd",
+    },
     first_name: {
-      type: "integer",
+      type: "string",
       title: "First Name",
     },
     last_name: {
@@ -19,12 +23,20 @@ export const schema = {
       title: "Last Name",
     },
     role: {
-      type: "string",
+      type: "integer",
       title: "User Role",
-      enum: ["Admin", "Cutomer", "Manager"],
+      enum: [1, 2],
+      enumNames: ["Managers", "Workers"],
     },
   },
-  required: ["phone_number", "email", "first_name", "last_name", "role"],
+  required: [
+    "phone_number",
+    "email",
+    "password",
+    "first_name",
+    "last_name",
+    "role",
+  ],
 };
 export const uiSchema = {
   classNames: "form-handler-css",

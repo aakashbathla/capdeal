@@ -50,7 +50,7 @@ export const addData = (url, data, redirectFunction, params) => {
     ...urlOptions,
     query: params || undefined,
   };
-
+  console.log("post called");
   try {
     ServiceUtils.fetch(
       buildUrl(urlOptions, params),

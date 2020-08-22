@@ -8,6 +8,7 @@ const apis = {
   projectListingUrl: `${api_url}/projects/`,
   userListingUrl: `${api_url}/users?role=Customer`,
   teamListingUrl: `${api_url}/users?role=Admin`,
+  teamUrl: `${api_url}/users/`,
   aminitiesListingUrl: `${api_url}/aminities-categories/`,
 };
 
