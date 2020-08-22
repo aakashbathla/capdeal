@@ -1,5 +1,6 @@
 export const schema = {
   type: "object",
+  title: "Edit Developer",
   properties: {
     name: {
       type: "string",
@@ -32,4 +33,5 @@ export const uiSchema = {
   description: {
     "ui:widget": "textarea",
   },
+  classNames: "form-handler-css",
 };
