@@ -8,6 +8,7 @@ const apis = {
   projectListingUrl: `${api_url}/projects/`,
   userListingUrl: `${api_url}/users?role=Customer`,
   teamListingUrl: `${api_url}/users?role=Admin`,
+  aminitiesListingUrl: `${api_url}/aminities-categories/`,
 };
 
 export default apis;

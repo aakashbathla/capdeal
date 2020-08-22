@@ -10,6 +10,9 @@ import AddDeveloper from "components/molecules/Developer";
 import EditDeveloper from "components/molecules/Developer/EditDeveloper";
 import AddTeam from "components/molecules/TeamList/AddTeam";
 import EditTeam from "components/molecules/TeamList/EditTeam";
+import AddAminities from "components/molecules/aminities/AddAminities";
+import EditAminities from "components/molecules/aminities/EditAminities";
+import Aminities from "components/molecules/aminities/AminitiesListing";
 import DeveloperList from "components/molecules/Developer/DeveloperListing";
 import ProjectList from "components/molecules/Project";
 
@@ -59,13 +62,20 @@ const Routes = () => {
                   path="/app/edit-developer"
                   component={EditDeveloper}
                 />
-                <Route exact path="/app/add-team" component={AddTeam} />
-                <Route exact path="/app/edit-team" component={EditTeam} />
                 <Route
                   exact
-                  path="/app/project-list"
-                  component={ProjectList}
+                  path="/app/add-aminities"
+                  component={AddAminities}
                 />
+                <Route
+                  exact
+                  path="/app/edit-aminities"
+                  component={EditAminities}
+                />
+                <Route exact path="/app/aminities-list" component={Aminities} />
+                <Route exact path="/app/add-team" component={AddTeam} />
+                <Route exact path="/app/edit-team" component={EditTeam} />
+                <Route exact path="/app/project-list" component={ProjectList} />
               </Switch>
             )}
           />
