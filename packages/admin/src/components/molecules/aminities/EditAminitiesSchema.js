@@ -7,10 +7,7 @@ export const schema = {
       title: "Name",
     },
   },
-};
-
-export const formData = {
-  name: "Shopping",
+  required: ["name"],
 };
 
 export const uiSchema = {

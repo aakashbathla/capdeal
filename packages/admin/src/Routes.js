@@ -69,7 +69,7 @@ const Routes = () => {
                 />
                 <Route
                   exact
-                  path="/app/edit-aminities"
+                  path="/app/edit-aminities/:id"
                   component={EditAminities}
                 />
                 <Route exact path="/app/aminities-list" component={Aminities} />

@@ -64,6 +64,52 @@ export const addData = (url, data, redirectFunction, params) => {
   }
 };
 
+export const fetchData = (url, updateFormData, params) => {
+  let urlOptions = {
+    pathname: url,
+    urlEncoded: true,
+  };
+  urlOptions = {
+    ...urlOptions,
+    query: params || undefined,
+  };
+
+  try {
+    ServiceUtils.fetch(buildUrl(urlOptions, params), "http://").then((data) => {
+      updateFormData(data);
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const updateData = (url, data, redirectFunction, params) => {
+  let urlOptions = {
+    pathname: url,
+    urlEncoded: true,
+  };
+  const additionalFetchOptions = () => ({
+    method: "PATCH",
+    data: data,
+  });
+  urlOptions = {
+    ...urlOptions,
+    query: params || undefined,
+  };
+
+  try {
+    ServiceUtils.fetch(
+      buildUrl(urlOptions, params),
+      additionalFetchOptions(),
+      "http://"
+    ).then((data) => {
+      redirectFunction();
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const localStorage = new LocalStorageUtil();
 const setCookieMethod = (userProfile) => {
   localStorage.saveItem("userProfile", JSON.stringify(userProfile));

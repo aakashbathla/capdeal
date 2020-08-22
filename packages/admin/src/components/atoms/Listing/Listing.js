@@ -18,9 +18,9 @@ const Listing = ({
   hideActions,
 }) => {
   const history = useHistory();
-  const goToEditLink = () => {
+  const goToEditLink = (id) => {
     history.push({
-      pathname: editUrl,
+      pathname: `${editUrl}/${id}`,
     });
   };
   const listingHeader = data && data.results.length > 0 && (
@@ -62,7 +62,7 @@ const Listing = ({
               <button
                 className="btn btn-default btn-icon btn-simple btn-icon-mini btn-round"
                 onClick={() => {
-                  goToEditLink();
+                  goToEditLink(val.id);
                 }}
               >
                 <i className="zmdi zmdi-edit"></i>
