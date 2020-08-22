@@ -1,4 +1,5 @@
 export const schema = {
+  title: "Add Developer",
   type: "object",
   properties: {
     name: {
@@ -30,4 +31,5 @@ export const uiSchema = {
   description: {
     "ui:widget": "textarea",
   },
+  classNames: "form-handler-css",
 };

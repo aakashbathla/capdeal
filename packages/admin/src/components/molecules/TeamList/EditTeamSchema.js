@@ -1,5 +1,6 @@
 export const schema = {
   type: "object",
+  title: "Edit Team Member Details",
   properties: {
     phone_number: {
       type: "string",
@@ -26,4 +27,8 @@ export const formData = {
   first_name: "Aakash",
   last_name: "Bathla",
   role: "Manager",
+};
+
+export const uiSchema = {
+  classNames: "form-handler-css",
 };
