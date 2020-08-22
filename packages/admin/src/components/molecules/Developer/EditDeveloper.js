@@ -5,6 +5,7 @@ import { useHistory } from "react-router";
 import { schema, uiSchema } from "./EditDeveloperSchema";
 import apis from "../../../constants/apis/services";
 import { fetchData, updateData } from "../../../utils/Utils";
+import "./Developer.scss";
 
 const EditDeveloper = (props) => {
   const history = useHistory();

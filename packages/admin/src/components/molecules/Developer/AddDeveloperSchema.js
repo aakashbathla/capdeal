@@ -17,7 +17,7 @@ export const schema = {
     major_projects: {
       type: "array",
       title: "Projects",
-      classNames: "zmdi zmdi-plus",
+      className: "zmdi zmdi-back",
       items: {
         type: "string",
       },
