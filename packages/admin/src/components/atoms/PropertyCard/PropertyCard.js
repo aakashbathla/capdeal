@@ -61,7 +61,7 @@ const PropertyCard = ({propertyTableId}) => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     Aliquam gravida magna et fringilla convallis. Pellentesque
                     habitant lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    Aliquam gravida magna et fringilla convallis.<a href="#"> Know More</a>
+                    Aliquam gravida magna et fringilla convallis.<span> Know More</span>
                   </p>
                 </div>
                 <div className="property-action m-t-15">
