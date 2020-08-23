@@ -81,3 +81,21 @@ section.content {
     background: #c5c5c5;
   }
 }
+
+//btn overight
+.btn-outline-primary {
+  border-color:  #707070 !important;
+  color: #c98b66 !important;
+  border-radius: 30px !important;
+  font-size: 13px !important;
+  min-width: 90px;
+  &:focus {
+    box-shadow: none !important;
+  }
+  &:hover {
+    background-color: #c98b66 !important;
+    border-color:  #c98b66 !important;
+    color: #fff !important;
+  }
+  
+}
