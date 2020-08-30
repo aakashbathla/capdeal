@@ -1,0 +1,27 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+.info-bar{
+  padding: 40px 0 10px;
+  &__item {
+    padding-left: 8px;
+    position: relative;
+    &::before {
+      content: '';
+      width: 1px;
+      height: 80px;
+      background: #c98b66;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    img {
+      margin-bottom: 5px;
+    }
+    p {
+      @include font-poppins-regular-11($deep-purple);
+      margin-bottom: 0;
+      line-height: 1.3;
+    }
+  }
+}

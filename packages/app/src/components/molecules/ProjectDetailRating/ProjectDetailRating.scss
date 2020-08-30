@@ -1,0 +1,35 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+.rating {
+  @include font-poppins-regular-16($deep-purple);
+  display: inline-block;
+  margin-right: 15px;
+}
+.rating-value {
+  @include font-poppins-bold-15($deep-purple);
+  display: inline-block;
+  border: 1px solid #a9a9a9;
+  padding: 0 6px;
+  border-radius: 18px;
+  .zmdi-star {
+    color: #68c647;
+  }
+}
+.d-driver {
+  display: flex;
+  align-items: center;
+  span {
+    @include font-poppins-regular-16($deep-purple);
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .progress {
+    width: 100px;
+    background-color: #706f70;
+    border-radius: 15px;
+    .progress-bar{
+      background-color: #5cbf92;
+    }
+  }
+}
