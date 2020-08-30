@@ -1,0 +1,35 @@
+@import "../../styles/src/colors";
+@import "../../styles/src/typography";
+@import "../../styles/src/breakpoints";
+.project-detail {
+  .main-navigation {
+    background-color: #0f1033;
+  }
+  &__wrap {
+    padding-top: 71px;
+    padding-bottom: 30px;
+    background-color: #f5f5f5;
+    @include mobile {
+      padding-top: 50px;
+    }
+  }
+  &__tab {
+    background-color: $white;
+  }
+}
+.btn-green {
+  color: #fff !important;
+  font-weight: bold !important;
+  background-color: #5cbf92 !important;
+  border-color: #5cbf92 !important;
+}
+.btn-yellow {
+  color: #fff !important;
+  font-weight: bold !important;
+  background-color: #facb37 !important;
+  border-color: #facb37 !important;
+}
+
+.bg-purple {
+  background-color: $deep-purple;
+}

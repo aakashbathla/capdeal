@@ -8,6 +8,7 @@ import Home from "pages/Home";
 import Dashboard from "pages/Dashboard";
 import User from "pages/Dashboard/User";
 import ProjectList from "pages/ProjectList";
+import ProjectDetail from "pages/ProjectDetail";
 
 const Routes = () => {
   return (
@@ -18,6 +19,7 @@ const Routes = () => {
         </Route>
         <Route exact path="/home" component={Home} />
         <Route exact path="/project-list" component={ProjectList} />
+        <Route exact path="/project-detail" component={ProjectDetail} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/404" component={NoMatch} />
         <Dashboard>
