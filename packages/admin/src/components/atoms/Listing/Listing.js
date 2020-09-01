@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from "react";
+import React, { useRef } from "react";
 import "./Listing.scss";
 import ReactPaginate from "react-paginate";
 import { useHistory } from "react-router";
@@ -18,6 +18,8 @@ const Listing = ({
   hideActions,
 }) => {
   const history = useHistory();
+  const inputEl = useRef(null);
+  console.log(inputEl);
   const goToEditLink = (id) => {
     history.push({
       pathname: `${editUrl}/${id}`,
@@ -110,13 +112,22 @@ const Listing = ({
               type="text"
               placeholder="Type to search"
               className="form-control"
+              id="search"
+              ref={inputEl}
               onChange={(e) => loadMore({ search: e.target.value })}
             />
             <span
               className="clear-text"
-              onClick={(e) => loadMore({ search: "" })}
+              onClick={(e) => {
+                document.getElementById("search").value = "";
+                loadMore({ search: "" });
+              }}
             >
-              <i className="zmdi zmdi-close"></i>
+              {inputEl.current && inputEl.current.value ? (
+                <i className="zmdi zmdi-close"></i>
+              ) : (
+                <i className="zmdi zmdi-search"></i>
+              )}
             </span>
           </div>
         </div>
