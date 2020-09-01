@@ -1,10 +1,10 @@
+/* eslint-disable */
 import Form from "@rjsf/core";
 import React from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./AddProjectSchema";
 import { addData } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
-import MultipleMediaApi from "../../../utils/MultipleMediaApi";
 const AddProject = () => {
   const history = useHistory();
   const redirectFunction = () => {

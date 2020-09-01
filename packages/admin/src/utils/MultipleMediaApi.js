@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import apis from "../constants/apis/services";
 import ServiceUtils from "./ServiceUtils";
 import { buildUrl } from "./Utils";
