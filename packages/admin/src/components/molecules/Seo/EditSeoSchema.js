@@ -18,9 +18,13 @@ export const schema = {
           type: "string",
           title: "Description",
         },
-        ogurl: {
+        keyword: {
           type: "string",
-          title: "OG:Url",
+          title: "Keyword",
+        },
+        script: {
+          type: "string",
+          title: "Script",
         },
       },
     },
