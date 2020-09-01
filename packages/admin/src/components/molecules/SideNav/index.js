@@ -42,7 +42,9 @@ const SideNav = () => {
           <MenuItem icon={<i className="zmdi zmdi-city-alt"></i>}>
             <Link to="/app/aminities-list">Aminities</Link>
           </MenuItem>
-          <MenuItem icon={<i className="zmdi zmdi-code"></i>}>SEO</MenuItem>
+          <MenuItem icon={<i className="zmdi zmdi-code"></i>}>
+            <Link to="/app/seo-list">SEO</Link>
+          </MenuItem>
         </Menu>
       </ProSidebar>
     </aside>

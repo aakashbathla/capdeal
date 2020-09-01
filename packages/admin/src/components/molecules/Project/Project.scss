@@ -26,5 +26,57 @@
       }
     }
   }
- 
+}
+#root_amenities,
+#root_floor_plans {
+  #root_amenities__title {
+    font-size: 18px;
+  }
+  .glyphicon {
+    display: inline-block;
+    font: normal normal normal 14px/1 "Material-Design-Iconic-Font";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .glyphicon-plus:before {
+    content: "\f278";
+  }
+  .glyphicon-remove {
+    vertical-align: top;
+    &:before {
+      content: "\f136";
+    }
+  }
+  .btn-add {
+    border-radius: 30px;
+    height: 38px;
+    width: 38px;
+  }
+  .btn-group {
+    position: absolute;
+    right: -36px;
+    top: 3px;
+  }
+  .array-item-list {
+    width: 100%;
+    margin-left: 0;
+  }
+  .array-item {
+    width: 100%;
+    position: relative;
+  }
+  .array-item-add {
+    padding-left: 15px;
+  }
+  .array-item-remove {
+    border-radius: 30px;
+    height: 30px;
+    width: 30px;
+  }
+  .array-item-move-up,
+  .array-item-move-down {
+    display: none;
+  }
 }

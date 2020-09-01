@@ -1,7 +1,15 @@
+import MediaApiWidget from "../../../utils/MediaApiWidget";
+import MultipleMediaApiWidget from "../../../utils/MultipleMediaApiWidget";
+import getList from "../../../utils/getList";
+import apis from "../../../constants/apis/services";
 export const schema = {
   title: "Add Project",
   type: "object",
   properties: {
+    developer: {
+      type: "integer",
+      title: "Developer",
+    },
     name: {
       type: "string",
       title: "Name",
@@ -35,11 +43,13 @@ export const schema = {
       title: "Zipcode",
     },
     video: {
-      type: "string",
+      type: "integer",
+      format: "data-url",
       title: "Video",
     },
     broucher: {
-      type: "string",
+      type: "integer",
+      format: "data-url",
       title: "Broucher",
     },
     status: {
@@ -50,23 +60,108 @@ export const schema = {
       type: "string",
       title: "Property Type",
     },
+    media: {
+      type: "string",
+      title: "Media",
+    },
+    floor_plans: {
+      type: "array",
+      title: "Floor Plans",
+      items: {
+        type: "object",
+        required: ["title"],
+        properties: {
+          title: {
+            type: "string",
+            title: "Title",
+          },
+          inventory: {
+            type: "integer",
+            title: "Inventory",
+          },
+          saleable_area: {
+            type: "string",
+            title: "Saleable Area",
+          },
+          pricing: {
+            title: "Pricing",
+            type: "string",
+          },
+        },
+      },
+    },
+    amenities: {
+      type: "array",
+      title: "Amenities",
+      items: {
+        type: "object",
+        required: ["name"],
+        properties: {
+          name: {
+            type: "string",
+            title: "Name",
+          },
+          category: {
+            type: "integer",
+            title: "Category",
+          },
+          media: {
+            type: "string",
+            title: "Media",
+          },
+        },
+      },
+    },
   },
-  required: [
-    "name",
-    "rera_no",
-    "description",
-    "address_line1",
-    "city",
-    "state",
-    "zipcode",
-    "status",
-    "property_type",
-  ],
 };
 
 export const uiSchema = {
   description: {
     "ui:widget": "textarea",
+  },
+  amenities: {
+    items: {
+      media: {
+        "ui:widget": MultipleMediaApiWidget,
+      },
+      category: {
+        "ui:widget": getList,
+        "ui:options": {
+          url: apis.amenitiesCategoryChoice,
+        },
+      },
+    },
+  },
+  broucher: {
+    "ui:widget": MediaApiWidget,
+    "ui:options": { accept: ".pdf" },
+  },
+  media: {
+    "ui:widget": MultipleMediaApiWidget,
+  },
+  video: {
+    "ui:widget": MediaApiWidget,
+    "ui:options": { accept: "video/*" },
+  },
+  developer: {
+    "ui:widget": getList,
+    "ui:options": {
+      url: apis.developerListChoice,
+    },
+  },
+  property_type: {
+    "ui:widget": getList,
+    "ui:options": {
+      url: apis.projectTypeChoice,
+      type: "normal",
+    },
+  },
+  status: {
+    "ui:widget": getList,
+    "ui:options": {
+      url: apis.projectStatusChoice,
+      type: "normal",
+    },
   },
   classNames: "form-handler-css",
 };

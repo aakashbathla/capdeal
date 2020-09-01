@@ -17,6 +17,9 @@ import DeveloperList from "components/molecules/Developer/DeveloperListing";
 import ProjectList from "components/molecules/Project";
 import AddProject from "components/molecules/Project/AddProject";
 import EditProject from "components/molecules/Project/EditProject";
+import SeoList from "components/molecules/Seo/SeoListing";
+import AddSeo from "components/molecules/Seo/";
+import EditSeo from "./components/molecules/Seo/EditSeo";
 
 // import Login from "./containers/organisms/Login/Login";
 // import NoMatch from "./components/atoms/NoMatch";
@@ -84,6 +87,9 @@ const Routes = () => {
                   path="/app/edit-project/:id"
                   component={EditProject}
                 />
+                <Route exact path="/app/seo-list" component={SeoList} />
+                <Route exact path="/app/add-seo" component={AddSeo} />
+                <Route exact path="/app/edit-seo/:id" component={EditSeo} />
               </Switch>
             )}
           />
