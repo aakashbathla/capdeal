@@ -37,6 +37,7 @@ const EditProject = (props) => {
           uiSchema={uiSchema}
           formData={updateFormDataValue}
           onSubmit={({ formData }, e) => {
+            console.log(formData);
             e.preventDefault();
             updateData(
               `${apis.projectListingUrl}/${props.match.params.id}`,

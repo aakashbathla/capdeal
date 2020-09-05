@@ -39,8 +39,18 @@ export const schema = {
       title: "State",
     },
     zipcode: {
-      type: "integer",
+      type: "string",
       title: "Zipcode",
+    },
+    home_page: {
+      type: "boolean",
+      enum: [true, false],
+      title: "Homepage",
+    },
+    is_feature: {
+      type: "boolean",
+      enum: [true, false],
+      title: "isFeature",
     },
     video: {
       type: "integer",

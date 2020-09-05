@@ -39,7 +39,7 @@ export const schema = {
       title: "State",
     },
     zipcode: {
-      type: "integer",
+      type: "string",
       title: "Zipcode",
     },
     home_page: {
