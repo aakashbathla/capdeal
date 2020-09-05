@@ -1,5 +1,5 @@
 import MediaApiWidget from "../../../utils/MediaApiWidget";
-import MultipleMediaApiWidget from "../../../utils/MultipleMediaApiWidget";
+import MultipleMediaPreviewWidget from "../../../utils/MultipleMediaPreviewWidget";
 import getList from "../../../utils/getList";
 import apis from "../../../constants/apis/services";
 export const schema = {
@@ -42,6 +42,16 @@ export const schema = {
       type: "integer",
       title: "Zipcode",
     },
+    home_page: {
+      type: "boolean",
+      enum: [true, false],
+      title: "Homepage",
+    },
+    is_feature: {
+      type: "boolean",
+      enum: [true, false],
+      title: "isFeature",
+    },
     video: {
       type: "integer",
       format: "data-url",
@@ -60,7 +70,7 @@ export const schema = {
       type: "string",
       title: "Property Type",
     },
-    media: {
+    mediaFile: {
       type: "string",
       title: "Media",
     },
@@ -105,7 +115,7 @@ export const schema = {
             type: "integer",
             title: "Category",
           },
-          media: {
+          mediaFile: {
             type: "string",
             title: "Media",
           },
@@ -121,8 +131,8 @@ export const uiSchema = {
   },
   amenities: {
     items: {
-      media: {
-        "ui:widget": MultipleMediaApiWidget,
+      mediaFile: {
+        "ui:widget": MultipleMediaPreviewWidget,
       },
       category: {
         "ui:widget": getList,
@@ -136,8 +146,8 @@ export const uiSchema = {
     "ui:widget": MediaApiWidget,
     "ui:options": { accept: ".pdf" },
   },
-  media: {
-    "ui:widget": MultipleMediaApiWidget,
+  mediaFile: {
+    "ui:widget": MultipleMediaPreviewWidget,
   },
   video: {
     "ui:widget": MediaApiWidget,

@@ -1,7 +1,15 @@
+import MediaApiWidget from "../../../utils/MediaApiWidget";
+import MultipleMediaPreviewWidget from "../../../utils/MultipleMediaPreviewWidget";
+import getList from "../../../utils/getList";
+import apis from "../../../constants/apis/services";
 export const schema = {
   type: "object",
   title: "Edit Project",
   properties: {
+    developer: {
+      type: "integer",
+      title: "Developer",
+    },
     name: {
       type: "string",
       title: "Name",
@@ -35,11 +43,13 @@ export const schema = {
       title: "Zipcode",
     },
     video: {
-      type: "string",
+      type: "integer",
+      format: "data-url",
       title: "Video",
     },
     broucher: {
-      type: "string",
+      type: "integer",
+      format: "data-url",
       title: "Broucher",
     },
     status: {
@@ -50,26 +60,108 @@ export const schema = {
       type: "string",
       title: "Property Type",
     },
+    media: {
+      type: "string",
+      title: "Media",
+    },
+    floor_plans: {
+      type: "array",
+      title: "Floor Plans",
+      items: {
+        type: "object",
+        required: ["title"],
+        properties: {
+          title: {
+            type: "string",
+            title: "Title",
+          },
+          inventory: {
+            type: "integer",
+            title: "Inventory",
+          },
+          saleable_area: {
+            type: "string",
+            title: "Saleable Area",
+          },
+          pricing: {
+            title: "Pricing",
+            type: "string",
+          },
+        },
+      },
+    },
+    amenities: {
+      type: "array",
+      title: "Amenities",
+      items: {
+        type: "object",
+        required: ["name"],
+        properties: {
+          name: {
+            type: "string",
+            title: "Name",
+          },
+          category: {
+            type: "integer",
+            title: "Category",
+          },
+          media: {
+            type: "string",
+            title: "Media",
+          },
+        },
+      },
+    },
   },
-};
-
-export const formData = {
-  name: "4BHK Rohini, New Delhi",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit Aliquam gravida magna et fringilla convallis. Pellentesque habitant morb",
-  rera_no: "CR3124242",
-  address_line1: "",
-  address_line2: "",
-  city: "New Delhi",
-  state: "New Delhi",
-  zipcode: "110092",
-  status: "Ready to move",
-  property_type: "Commercial"
 };
 
 export const uiSchema = {
   description: {
     "ui:widget": "textarea",
+  },
+  amenities: {
+    items: {
+      media: {
+        "ui:widget": MultipleMediaPreviewWidget,
+      },
+      category: {
+        "ui:widget": getList,
+        "ui:options": {
+          url: apis.amenitiesCategoryChoice,
+        },
+      },
+    },
+  },
+  broucher: {
+    "ui:widget": MediaApiWidget,
+    "ui:options": { accept: ".pdf" },
+  },
+  media: {
+    "ui:widget": MultipleMediaPreviewWidget,
+  },
+  video: {
+    "ui:widget": MediaApiWidget,
+    "ui:options": { accept: "video/*" },
+  },
+  developer: {
+    "ui:widget": getList,
+    "ui:options": {
+      url: apis.developerListChoice,
+    },
+  },
+  property_type: {
+    "ui:widget": getList,
+    "ui:options": {
+      url: apis.projectTypeChoice,
+      type: "normal",
+    },
+  },
+  status: {
+    "ui:widget": getList,
+    "ui:options": {
+      url: apis.projectStatusChoice,
+      type: "normal",
+    },
   },
   classNames: "form-handler-css",
 };

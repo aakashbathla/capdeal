@@ -1,3 +1,4 @@
+import MultipleMediaPreviewWidget from "../../../utils/MultipleMediaPreviewWidget";
 export const schema = {
   title: "Add Developer",
   type: "object",
@@ -22,6 +23,10 @@ export const schema = {
         type: "string",
       },
     },
+    media: {
+      type: "string",
+      title: "Media",
+    },
   },
   required: ["name", "experience", "description", "major_projects"],
 };
@@ -29,6 +34,9 @@ export const schema = {
 export const uiSchema = {
   description: {
     "ui:widget": "textarea",
+  },
+  media: {
+    "ui:widget": MultipleMediaPreviewWidget,
   },
   classNames: "form-handler-css",
 };

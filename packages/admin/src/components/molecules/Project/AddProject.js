@@ -23,12 +23,14 @@ const AddProject = () => {
         onSubmit={({ formData }, e) => {
           console.log(formData);
           e.preventDefault();
-          if (formData && formData.media) {
-            formData.media = formData.media.split(",").map(Number);
+          if (formData && formData.mediaFile) {
+            formData.media = formData.mediaFile.split(",").map(Number);
           }
           if (formData && formData.amenities) {
             formData.amenities.map((val, key) => {
-              formData.amenities[key].media = val.media.split(",").map(Number);
+              formData.amenities[key].media = val.mediaFile
+                .split(",")
+                .map(Number);
             });
           }
           formData.price_range = [3, 4];

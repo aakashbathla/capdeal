@@ -10,6 +10,7 @@ const MultipleMediaApiWidget = (props) => {
     console.log(e.target.files);
     let length = e.target.files.length;
     for (var i = 0; i < e.target.files.length; i++) {
+      console.log(e.target.files)
       formData.append("media_file", e.target.files[0], e.target.files[0].name);
       formData.append("media_type", "Image");
       let urlOptions = {
