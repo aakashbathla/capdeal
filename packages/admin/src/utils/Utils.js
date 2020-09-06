@@ -141,7 +141,7 @@ export const toDataURL = (url) =>
 export const urlToBase64 = (url) => {
   return new Promise((resolve, reject) => {
     request.get(url, function(error, response, body) {
-      if (!error && response.statusCode == 200) {
+      if (!error && response.statusCode === 200) {
         resolve(
           "data:" +
             response.headers["content-type"] +

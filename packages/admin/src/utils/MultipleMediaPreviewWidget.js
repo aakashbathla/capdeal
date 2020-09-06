@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import apis from "../constants/apis/services";
 import ServiceUtils from "./ServiceUtils";
 import { buildUrl, dataURItoBlob } from "./Utils";
