@@ -1,3 +1,4 @@
+import ServiceUtils from "./ServiceUtils";
 export const buildUrl = (options) => {
   if (typeof options === "object") {
     const { pathname, query, urlEncoded } = options;
@@ -19,4 +20,23 @@ export const createUrlSearchParams = (query = {}, urlEncoded = false) => {
     queryParams.push(`${keys[i]}=${qsencoded}`);
   }
   return queryParams.join("&");
+};
+
+export const fetchData = (url, updateFormData, params) => {
+  let urlOptions = {
+    pathname: url,
+    urlEncoded: true,
+  };
+  urlOptions = {
+    ...urlOptions,
+    query: params || undefined,
+  };
+
+  try {
+    ServiceUtils.fetch(buildUrl(urlOptions, params), "http://").then((data) => {
+      updateFormData(data);
+    });
+  } catch (err) {
+    console.log(err);
+  }
 };

@@ -70,7 +70,7 @@ const EditProject = (props) => {
               }
             }
             updateData(
-              `${apis.projectListingUrl}${props.match.params.id}`,
+              `${apis.projectListingUrl}${props.match.params.id}/`,
               formData,
               redirectFunction
             );
