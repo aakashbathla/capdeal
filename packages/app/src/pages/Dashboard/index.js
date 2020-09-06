@@ -4,8 +4,6 @@ import Header from "./components/Header/Header";
 import SideNav from "./components/SideNav";
 
 const Dashboard = (props) => {
-  console.log("jum");
-  console.log(props.children);
   return (
     <div className="theme-capdeal">
       <Header />

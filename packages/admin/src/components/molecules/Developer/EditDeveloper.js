@@ -20,7 +20,6 @@ const EditDeveloper = (props) => {
   };
   useEffect(() => {
     if (props && props.match && props.match.params && props.match.params.id) {
-      console.log("aakash");
       fetchData(
         `${apis.developerListingUrl}/${props.match.params.id}`,
         updateFormData

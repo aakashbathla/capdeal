@@ -19,7 +19,6 @@ const Listing = ({
 }) => {
   const history = useHistory();
   const inputEl = useRef(null);
-  console.log(inputEl);
   const goToEditLink = (id) => {
     history.push({
       pathname: `${editUrl}/${id}`,
@@ -54,7 +53,14 @@ const Listing = ({
             ) {
               return (
                 <td>
-                  <div>{value}</div>
+                  <div>
+                    {value}
+                    {value == false && typeof value == "boolean" ? (
+                      <i className="zmdi zmdi-close"></i>
+                    ) : value == true && typeof value == "boolean" ? (
+                      <i className="zmdi zmdi-check"></i>
+                    ) : null}
+                  </div>
                 </td>
               );
             }

@@ -18,7 +18,6 @@ const Navigation = () => {
   }, []);
 
   const toggleNav = (event) => {
-    console.log(event);
     event.preventDefault();
     setToggle((toggle) => {
       return !toggle;
@@ -85,9 +84,15 @@ const Navigation = () => {
                     <div className="col-1">
                       <div className="social-links">
                         <span>Follow us on</span>
-                        <span className="social-links_icon"><i className="zmdi zmdi-facebook"></i></span>
-                        <span className="social-links_icon"><i className="zmdi zmdi-twitter"></i></span>
-                        <span className="social-links_icon"><i className="zmdi zmdi-instagram"></i></span>
+                        <span className="social-links_icon">
+                          <i className="zmdi zmdi-facebook"></i>
+                        </span>
+                        <span className="social-links_icon">
+                          <i className="zmdi zmdi-twitter"></i>
+                        </span>
+                        <span className="social-links_icon">
+                          <i className="zmdi zmdi-instagram"></i>
+                        </span>
                       </div>
                     </div>
                   </div>

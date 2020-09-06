@@ -1,6 +1,7 @@
 import { LocalStorageUtil } from "./localstorage";
 import apis from "../constants/apis/services";
 import ServiceUtils from "./ServiceUtils";
+const request = require("request");
 export const phoneRegExp = "^(+91[-s]?)?[0]?(91)?[789]d{9}$";
 export const passwordRegExp = "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$";
 export const buildUrl = (options) => {
@@ -122,4 +123,34 @@ export const dataURItoBlob = (dataURI) => {
     array.push(binary.charCodeAt(i));
   }
   return new Blob([new Uint8Array(array)], { type: "image/jpeg" });
+};
+
+export const toDataURL = (url) =>
+  fetch(url)
+    .then((response) => response.blob())
+    .then(
+      (blob) =>
+        new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(blob);
+        })
+    );
+
+export const urlToBase64 = (url) => {
+  return new Promise((resolve, reject) => {
+    request.get(url, function(error, response, body) {
+      if (!error && response.statusCode == 200) {
+        resolve(
+          "data:" +
+            response.headers["content-type"] +
+            ";base64," +
+            new Buffer(body).toString("base64")
+        );
+      } else {
+        reject(response);
+      }
+    });
+  });
 };

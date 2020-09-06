@@ -14,7 +14,6 @@ class ServiceUtils {
     let responseData;
     const localStorage = new LocalStorageUtil();
     const token = JSON.parse(localStorage.getItem("userProfile"));
-    console.log(token);
     // Request options in axios format
     const reqOptions = {
       url: `${this.basePath}${url}`,

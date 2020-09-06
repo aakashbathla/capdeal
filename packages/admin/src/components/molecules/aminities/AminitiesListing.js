@@ -44,7 +44,6 @@ const AminitiesListing = () => {
       ...urlOptions,
       pathname: urlOptions.pathname + id,
     };
-    console.log(updateUrlOptions);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),

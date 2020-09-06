@@ -16,7 +16,6 @@ const initialState = {
 
 const LoginReducer = (state = initialState, action) => {
   const { type } = action;
-  console.log(action);
   switch (type) {
     case LOGIN_WITH_OTP_SUCCESS:
       return Object.assign({}, state, {

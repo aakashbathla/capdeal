@@ -37,12 +37,22 @@ const getList = (props, url) => {
   };
   return (
     <div>
+      {options && !props.value && (
+        <Select
+          name="form-field-name"
+          onChange={handleChange}
+          options={options}
+        />
+      )}
       {options && props && props.value && (
         <Select
           name="form-field-name"
           value={options.filter((option) => {
             if (props && props.value && props.value.id) {
-              return option.value === props.value.id;
+              if (option.value === props.value.id) {
+                handleChange(option);
+                return;
+              }
             } else if (props && props.value && !props.value.id) {
               return option.value === props.value;
             }

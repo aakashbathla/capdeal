@@ -70,7 +70,7 @@ export const schema = {
       type: "string",
       title: "Property Type",
     },
-    media: {
+    mediaFile: {
       type: "string",
       title: "Media",
     },
@@ -115,7 +115,7 @@ export const schema = {
             type: "integer",
             title: "Category",
           },
-          media: {
+          mediaFile: {
             type: "string",
             title: "Media",
           },
@@ -131,7 +131,7 @@ export const uiSchema = {
   },
   amenities: {
     items: {
-      media: {
+      mediaFile: {
         "ui:widget": MultipleMediaPreviewWidget,
       },
       category: {
@@ -146,7 +146,7 @@ export const uiSchema = {
     "ui:widget": MediaApiWidget,
     "ui:options": { accept: ".pdf" },
   },
-  media: {
+  mediaFile: {
     "ui:widget": MultipleMediaPreviewWidget,
   },
   video: {

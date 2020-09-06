@@ -9,7 +9,15 @@ const MultipleMediaPreviewWidget = (props) => {
     aspect: 4 / 3,
     width: "100",
   };
-  const [images, setImages] = useState({});
+  const [images, setImages] = useState([]);
+  // useEffect(() => {
+  //   if (props && props.value) {
+  //     const img = props.value.map((val, key) => {
+  //       return val.media_file;
+  //     });
+  //     setImages(img);
+  //   }
+  // }, []);
   let imageIds = [];
   const uploadImages = () => {
     const length = Object.keys(images).length;
