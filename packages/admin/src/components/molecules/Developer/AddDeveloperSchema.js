@@ -8,7 +8,7 @@ export const schema = {
       title: "Name",
     },
     experience: {
-      type: "string",
+      type: "integer",
       title: "Experience",
     },
     description: {
@@ -23,7 +23,7 @@ export const schema = {
         type: "string",
       },
     },
-    media: {
+    imageFile: {
       type: "string",
       title: "Media",
     },
@@ -35,8 +35,11 @@ export const uiSchema = {
   description: {
     "ui:widget": "textarea",
   },
-  media: {
+  imageFile: {
     "ui:widget": MultipleMediaPreviewWidget,
+    "ui:options": {
+      number: 1,
+    },
   },
   classNames: "form-handler-css",
 };

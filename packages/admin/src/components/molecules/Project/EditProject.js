@@ -62,7 +62,7 @@ const EditProject = (props) => {
             if (formData && formData.amenities) {
               formData.amenities.map((val, key) => {
                 formData.amenities[key].media = val.mediaFile
-                  ? val.split(",").map(Number)
+                  ? val.mediaFile.split(",").map(Number)
                   : [];
               });
               for (var i = 0; i < formData.amenities.length; i++) {

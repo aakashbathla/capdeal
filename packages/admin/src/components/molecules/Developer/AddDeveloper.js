@@ -23,6 +23,10 @@ const AddDeveloper = () => {
         uiSchema={uiSchema}
         onSubmit={({ formData }, e) => {
           e.preventDefault();
+          if (formData && formData.imageFile) {
+            formData.image = parseInt(formData.imageFile);
+          }
+          delete formData.imageFile;
           addData(apis.developerListingUrl, formData, redirectFunction);
         }}
       />

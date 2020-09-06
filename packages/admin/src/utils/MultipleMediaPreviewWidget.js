@@ -61,6 +61,7 @@ const MultipleMediaPreviewWidget = (props) => {
         setImages={setImages}
         cropConfig={{ crop, ruleOfThirds: true }}
         allowCrop={false}
+        max={props.options.number || 3}
       />
       <button type="button" onClick={uploadImages}>
         Upload All Images
