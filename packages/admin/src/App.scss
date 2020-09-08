@@ -97,5 +97,19 @@ section.content {
     border-color:  #c98b66 !important;
     color: #fff !important;
   }
-  
+}
+.btn-info, .btn-round {
+  background-color: #c98b66 !important;
+  border-color:  #c98b66 !important;
+  &:hover {
+    background-color: #bf794e !important;
+     border-color:  #bf794e !important;
+  }
+  &:focus {
+    box-shadow: none !important;
+  }
+  .zmdi {
+    color: #fff;
+    margin-right: 0 !important;
+  }
 }
