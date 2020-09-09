@@ -2,7 +2,7 @@
 import Form from "@rjsf/core";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
-import { schema, uiSchema } from "./EditProjectSchema";
+import { schema, uiSchema, fields } from "./EditProjectSchema";
 import apis from "../../../constants/apis/services";
 import { fetchData, updateData } from "../../../utils/Utils";
 import "./Project.scss";
@@ -44,14 +44,18 @@ const EditProject = (props) => {
     }
   }, []);
   return (
-    <div className="col-lg-6 col-md-6 col-sm-12">
-      <span className="back-btn" onClick={() => history.goBack()}>
-        <i className="zmdi zmdi-arrow-left"></i>
-      </span>
+    <div>
+      <div className="form-header">
+        <span className="back-btn" onClick={() => history.goBack()}>
+          <i className="zmdi zmdi-arrow-left"></i>
+        </span>
+        <span className="form-header__title">Edit Project</span>
+      </div>
       {updateFormDataValue && (
         <Form
           schema={schema}
           uiSchema={uiSchema}
+          fields={fields}
           formData={updateFormDataValue}
           onSubmit={({ formData }, e) => {
             e.preventDefault();
