@@ -12,7 +12,6 @@ const ProjectList = () => {
   const updateFormData = (data) => {
     setDataList(data);
   };
-  console.log(dataList, "mani");
   useEffect(() => {
     fetchData(apis.projectListingUrl, updateFormData);
   }, []);
