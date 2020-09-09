@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import apis from "../constants/apis/services";
 import ServiceUtils from "./ServiceUtils";
-import {
-  buildUrl,
-  dataURItoBlob,
-  convertBase64ToBlob,
-  imageType,
-} from "./Utils";
+import { buildUrl, convertBase64ToBlob, imageType } from "./Utils";
 import MultiImageInput from "react-multiple-image-input";
 const MultipleMediaPreviewWidget = (props) => {
   const crop = {
