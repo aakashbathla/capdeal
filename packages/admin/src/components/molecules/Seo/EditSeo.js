@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./EditSeoSchema";
 import apis from "../../../constants/apis/services";
-import { fetchData, updateData } from "../../../utils/Utils";
+import { fetchData, updateData, errorGenerator } from "../../../utils/Utils";
 import { withRouter } from "react-router";
 
 const EditSeo = (props) => {
@@ -18,11 +18,16 @@ const EditSeo = (props) => {
       pathname: "/app/seo-list",
     });
   };
+  const errorHandler = (err) => {
+    console.log(errorGenerator(err));
+  };
   useEffect(() => {
     if (props && props.match && props.match.params && props.match.params.id) {
       fetchData(
         `${apis.seoListingUrl}/${props.match.params.id}`,
-        updateFormData
+        updateFormData,
+        null,
+        errorHandler
       );
     }
   }, []);
@@ -41,7 +46,9 @@ const EditSeo = (props) => {
             updateData(
               `${apis.seoListingUrl}/${props.match.params.id}`,
               formData,
-              redirectFunction
+              redirectFunction,
+              null,
+              errorHandler
             );
           }}
         />

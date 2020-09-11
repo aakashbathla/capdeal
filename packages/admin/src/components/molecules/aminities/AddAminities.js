@@ -3,10 +3,18 @@ import React from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./AddAminitiesSchema";
 import apis from "../../../constants/apis/services";
-import { addData } from "../../../utils/Utils";
+import { addData, errorGenerator } from "../../../utils/Utils";
 
 const AddAminities = () => {
   const history = useHistory();
+  const redirectFunction = () => {
+    history.push({
+      pathname: "/app/aminities-list",
+    });
+  };
+  const errorHandler = (err) => {
+    console.log(errorGenerator(err));
+  };
   return (
     <div className="col-lg-6 col-md-6 col-sm-12">
       <span className="back-btn" onClick={() => history.goBack()}>
@@ -17,7 +25,13 @@ const AddAminities = () => {
         uiSchema={uiSchema}
         onSubmit={({ formData }, e) => {
           e.preventDefault();
-          addData(apis.aminitiesListingUrl, formData);
+          addData(
+            apis.aminitiesListingUrl,
+            formData,
+            redirectFunction,
+            null,
+            errorHandler
+          );
         }}
       />
     </div>

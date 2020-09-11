@@ -3,7 +3,7 @@ import React from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./AddTeamSchema";
 import apis from "../../../constants/apis/services";
-import { addData } from "../../../utils/Utils";
+import { addData, errorGenerator } from "../../../utils/Utils";
 
 const AddTeam = () => {
   const history = useHistory();
@@ -11,6 +11,9 @@ const AddTeam = () => {
     history.push({
       pathname: "/app/team-list",
     });
+  };
+  const errorHandler = (err) => {
+    console.log(errorGenerator(err));
   };
   return (
     <div className="col-lg-6 col-md-6 col-sm-12">
@@ -22,7 +25,7 @@ const AddTeam = () => {
         uiSchema={uiSchema}
         onSubmit={({ formData }, e) => {
           e.preventDefault();
-          addData(apis.teamUrl, formData, redirectFunction);
+          addData(apis.teamUrl, formData, redirectFunction, null, errorHandler);
         }}
       />
     </div>

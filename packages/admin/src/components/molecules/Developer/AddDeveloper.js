@@ -3,7 +3,7 @@ import React from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./AddDeveloperSchema";
 import apis from "../../../constants/apis/services";
-import { addData } from "../../../utils/Utils";
+import { addData, errorGenerator } from "../../../utils/Utils";
 import "./Developer.scss";
 
 const AddDeveloper = () => {
@@ -12,6 +12,9 @@ const AddDeveloper = () => {
     history.push({
       pathname: "/app/developer-list",
     });
+  };
+  const errorHandler = (err) => {
+    console.log(errorGenerator(err));
   };
   return (
     <div className="col-lg-6 col-md-6 col-sm-12">
@@ -27,7 +30,13 @@ const AddDeveloper = () => {
             formData.image = parseInt(formData.imageFile);
           }
           delete formData.imageFile;
-          addData(apis.developerListingUrl, formData, redirectFunction);
+          addData(
+            apis.developerListingUrl,
+            formData,
+            redirectFunction,
+            null,
+            errorHandler
+          );
         }}
       />
     </div>

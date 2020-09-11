@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./EditTeamSchema";
 import apis from "../../../constants/apis/services";
-import { fetchData, updateData } from "../../../utils/Utils";
+import { fetchData, updateData, errorGenerator } from "../../../utils/Utils";
 
 const EditTeam = (props) => {
   const history = useHistory();
@@ -17,9 +17,17 @@ const EditTeam = (props) => {
       pathname: "/app/team-list",
     });
   };
+  const errorHandler = (err) => {
+    console.log(errorGenerator(err));
+  };
   useEffect(() => {
     if (props && props.match && props.match.params && props.match.params.id) {
-      fetchData(`${apis.teamUrl}${props.match.params.id}/`, updateFormData);
+      fetchData(
+        `${apis.teamUrl}${props.match.params.id}/`,
+        updateFormData,
+        null,
+        errorHandler
+      );
     }
   }, []);
   return (
@@ -37,7 +45,9 @@ const EditTeam = (props) => {
             updateData(
               `${apis.teamUrl}${props.match.params.id}`,
               formData,
-              redirectFunction
+              redirectFunction,
+              null,
+              errorHandler
             );
           }}
         />

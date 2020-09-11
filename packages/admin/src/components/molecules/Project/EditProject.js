@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema, fields } from "./EditProjectSchema";
 import apis from "../../../constants/apis/services";
-import { fetchData, updateData } from "../../../utils/Utils";
+import { fetchData, updateData, errorGenerator } from "../../../utils/Utils";
 import "./Project.scss";
 
 const EditProject = (props) => {
@@ -35,11 +35,16 @@ const EditProject = (props) => {
       pathname: "/app/project-list",
     });
   };
+  const errorHandler = (err) => {
+    console.log(errorGenerator(err));
+  };
   useEffect(() => {
     if (props && props.match && props.match.params && props.match.params.id) {
       fetchData(
         `${apis.projectListingUrl}/${props.match.params.id}`,
-        updateFormData
+        updateFormData,
+        null,
+        errorHandler
       );
     }
   }, []);
@@ -76,7 +81,9 @@ const EditProject = (props) => {
             updateData(
               `${apis.projectListingUrl}${props.match.params.id}/`,
               formData,
-              redirectFunction
+              redirectFunction,
+              null,
+              errorHandler
             );
           }}
         />

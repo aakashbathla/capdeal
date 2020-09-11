@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
 import ServiceUtils from "../../../utils/ServiceUtils";
-import { buildUrl } from "../../../utils/Utils";
+import { buildUrl, errorGenerator } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 import Listing from "../../atoms/Listing/";
 import "./Developer.scss";
@@ -19,16 +19,18 @@ const DeveloperListing = () => {
     };
 
     try {
-      ServiceUtils.fetch(buildUrl(urlOptions, params), "http://").then(
-        (data) => {
+      ServiceUtils.fetch(buildUrl(urlOptions, params), "http://")
+        .then((data) => {
           if (data) {
             setDeveloperData(data);
             console.log(data);
           } else {
             console.log(error);
           }
-        }
-      );
+        })
+        .catch((err) => {
+          console.log(errorGenerator(err));
+        });
     } catch (err) {
       console.log(err);
     }
@@ -49,9 +51,13 @@ const DeveloperListing = () => {
         buildUrl(updateUrlOptions),
         additionalFetchOptions(id),
         "http://"
-      ).then(() => {
-        fetchData();
-      });
+      )
+        .then(() => {
+          fetchData();
+        })
+        .catch((err) => {
+          console.log(errorGenerator(err));
+        });
     } catch (err) {
       console.log(err);
     }

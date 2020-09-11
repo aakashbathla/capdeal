@@ -3,7 +3,7 @@ import Form from "@rjsf/core";
 import React from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema, fields } from "./AddProjectSchema";
-import { addData } from "../../../utils/Utils";
+import { addData, errorGenerator } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 const AddProject = () => {
   const history = useHistory();
@@ -11,6 +11,9 @@ const AddProject = () => {
     history.push({
       pathname: "/app/project-list",
     });
+  };
+  const errorHandler = (err) => {
+    console.log(errorGenerator(err));
   };
   return (
     <div>
@@ -38,7 +41,13 @@ const AddProject = () => {
             });
           }
           formData.price_range = [3, 4];
-          addData(apis.projectListingUrl, formData, redirectFunction);
+          addData(
+            apis.projectListingUrl,
+            formData,
+            redirectFunction,
+            null,
+            errorHandler
+          );
         }}
       />
     </div>
