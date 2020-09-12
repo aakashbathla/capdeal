@@ -38,7 +38,7 @@ export const afterUserSuccess = (userProfile) => {
   setCookieMethod(userProfile);
 };
 
-export const addData = (url, data, redirectFunction, params) => {
+export const addData = (url, data, redirectFunction, params, errorHandler) => {
   let urlOptions = {
     pathname: url,
     urlEncoded: true,
@@ -51,21 +51,24 @@ export const addData = (url, data, redirectFunction, params) => {
     ...urlOptions,
     query: params || undefined,
   };
-  console.log("post called");
   try {
     ServiceUtils.fetch(
       buildUrl(urlOptions, params),
       additionalFetchOptions(),
       "http://"
-    ).then((data) => {
-      redirectFunction();
-    });
+    )
+      .then((data) => {
+        redirectFunction();
+      })
+      .catch((err) => {
+        errorHandler(err);
+      });
   } catch (err) {
-    console.log(err);
+    return err;
   }
 };
 
-export const fetchData = (url, updateFormData, params) => {
+export const fetchData = (url, updateFormData, params, errorHandler) => {
   let urlOptions = {
     pathname: url,
     urlEncoded: true,
@@ -76,15 +79,26 @@ export const fetchData = (url, updateFormData, params) => {
   };
 
   try {
-    ServiceUtils.fetch(buildUrl(urlOptions, params), "http://").then((data) => {
-      updateFormData(data);
-    });
+    ServiceUtils.fetch(buildUrl(urlOptions, params), "http://")
+      .then((data) => {
+        updateFormData(data);
+      })
+      .catch((err) => {
+        errorHandler(err);
+      });
   } catch (err) {
-    console.log(err);
+    console.log(err && err.response);
+    return err;
   }
 };
 
-export const updateData = (url, data, redirectFunction, params) => {
+export const updateData = (
+  url,
+  data,
+  redirectFunction,
+  params,
+  errorHandler
+) => {
   let urlOptions = {
     pathname: url,
     urlEncoded: true,
@@ -103,11 +117,16 @@ export const updateData = (url, data, redirectFunction, params) => {
       buildUrl(urlOptions, params),
       additionalFetchOptions(),
       "http://"
-    ).then((data) => {
-      redirectFunction();
-    });
+    )
+      .then((data) => {
+        redirectFunction();
+      })
+      .catch((err) => {
+        errorHandler(err);
+      });
   } catch (err) {
-    console.log(err);
+    console.log(err && err.response);
+    return err;
   }
 };
 
@@ -182,4 +201,16 @@ export const imageType = (base64Image) => {
     "data:image/".length,
     base64Image.indexOf(";base64")
   );
+};
+
+export const errorGenerator = (err) => {
+  if (err && err.response && err.response.data) {
+    let error = [];
+    for (const [key, value] of Object.entries(err.response.data)) {
+      error.push(`${key}: ${value}`);
+    }
+    return error;
+  } else {
+    return "Some Error Occurred! Please reach out to admin!";
+  }
 };
