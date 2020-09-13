@@ -43,7 +43,7 @@ const MultipleMediaPreviewWidget = (props) => {
         props.onChange(props.value.id.toString());
       }
     }
-  }, []);
+  }, [props]);
   let imageIds = [];
   const uploadImages = () => {
     const length = Object.keys(images).length;
