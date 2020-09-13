@@ -27,9 +27,10 @@ export const schema = {
           title: "Script",
         },
       },
+      required: ["title", "description", "keyword", "script"],
     },
   },
-  required: ["name"],
+  required: ["page"],
 };
 
 export const uiSchema = {

@@ -3,7 +3,7 @@ import React from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./AddSeoSchema";
 import apis from "../../../constants/apis/services";
-import { addData, errorGenerator } from "../../../utils/Utils";
+import { addData, errorGenerator, transformErrors } from "../../../utils/Utils";
 
 const AddSeo = () => {
   const history = useHistory();
@@ -23,6 +23,8 @@ const AddSeo = () => {
       <Form
         schema={schema}
         uiSchema={uiSchema}
+        transformErrors={transformErrors}
+        noHtml5Validate={true}
         onSubmit={({ formData }, e) => {
           e.preventDefault();
           addData(

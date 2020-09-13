@@ -3,7 +3,7 @@ import Form from "@rjsf/core";
 import React from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema, fields } from "./AddProjectSchema";
-import { addData, errorGenerator } from "../../../utils/Utils";
+import { addData, errorGenerator, transformErrors } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 const AddProject = () => {
   const history = useHistory();
@@ -27,13 +27,15 @@ const AddProject = () => {
         schema={schema}
         uiSchema={uiSchema}
         fields={fields}
+        noHtml5Validate={true}
+        transformErrors={transformErrors}
         onSubmit={({ formData }, e) => {
           console.log(formData);
           e.preventDefault();
           if (formData && formData.mediaFile) {
             formData.media = formData.mediaFile.split(",").map(Number);
           }
-          if (formData && formData.amenities) {
+          if (formData && formData.amenities && formData.amenities) {
             formData.amenities.map((val, key) => {
               formData.amenities[key].media = val.mediaFile
                 .split(",")

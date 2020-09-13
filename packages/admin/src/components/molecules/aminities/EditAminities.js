@@ -4,7 +4,12 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./EditAminitiesSchema";
 import apis from "../../../constants/apis/services";
-import { fetchData, updateData, errorGenerator } from "../../../utils/Utils";
+import {
+  fetchData,
+  updateData,
+  errorGenerator,
+  transformErrors,
+} from "../../../utils/Utils";
 import { withRouter } from "react-router";
 
 const EditAminities = (props) => {
@@ -41,6 +46,8 @@ const EditAminities = (props) => {
           schema={schema}
           uiSchema={uiSchema}
           formData={updateFormDataValue}
+          noHtml5Validate={true}
+          transformErrors={transformErrors}
           onSubmit={({ formData }, e) => {
             e.preventDefault();
             updateData(

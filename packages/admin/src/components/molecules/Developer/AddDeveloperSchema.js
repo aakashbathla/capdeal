@@ -19,6 +19,7 @@ export const schema = {
       type: "array",
       title: "Projects",
       className: "zmdi zmdi-back",
+      default: [],
       items: {
         type: "string",
       },
@@ -28,7 +29,13 @@ export const schema = {
       title: "Media",
     },
   },
-  required: ["name", "experience", "description", "major_projects"],
+  required: [
+    "name",
+    "experience",
+    "description",
+    "major_projects",
+    "imageFile",
+  ],
 };
 
 export const uiSchema = {

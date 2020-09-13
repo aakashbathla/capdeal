@@ -4,7 +4,12 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./EditSeoSchema";
 import apis from "../../../constants/apis/services";
-import { fetchData, updateData, errorGenerator } from "../../../utils/Utils";
+import {
+  fetchData,
+  updateData,
+  errorGenerator,
+  transformErrors,
+} from "../../../utils/Utils";
 import { withRouter } from "react-router";
 
 const EditSeo = (props) => {
@@ -41,6 +46,8 @@ const EditSeo = (props) => {
           schema={schema}
           uiSchema={uiSchema}
           formData={updateFormDataValue}
+          transformErrors={transformErrors}
+          noHtml5Validate={true}
           onSubmit={({ formData }, e) => {
             e.preventDefault();
             updateData(

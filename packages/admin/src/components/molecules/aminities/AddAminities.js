@@ -3,7 +3,7 @@ import React from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./AddAminitiesSchema";
 import apis from "../../../constants/apis/services";
-import { addData, errorGenerator } from "../../../utils/Utils";
+import { addData, errorGenerator, transformErrors } from "../../../utils/Utils";
 
 const AddAminities = () => {
   const history = useHistory();
@@ -22,7 +22,9 @@ const AddAminities = () => {
       </span>
       <Form
         schema={schema}
+        transformErrors={transformErrors}
         uiSchema={uiSchema}
+        noHtml5Validate={true}
         onSubmit={({ formData }, e) => {
           e.preventDefault();
           addData(

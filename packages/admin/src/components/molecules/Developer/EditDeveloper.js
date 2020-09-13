@@ -4,13 +4,19 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./EditDeveloperSchema";
 import apis from "../../../constants/apis/services";
-import { fetchData, updateData, errorGenerator } from "../../../utils/Utils";
+import {
+  fetchData,
+  updateData,
+  errorGenerator,
+  transformErrors,
+} from "../../../utils/Utils";
 import "./Developer.scss";
 
 const EditDeveloper = (props) => {
   const history = useHistory();
   const [updateFormDataValue, setUpdateFormDataValue] = useState(null);
   const updateFormData = (data) => {
+    data.imageFile = data.image || undefined;
     setUpdateFormDataValue(data);
   };
   const redirectFunction = () => {
@@ -38,11 +44,18 @@ const EditDeveloper = (props) => {
       </span>
       {updateFormDataValue && (
         <Form
+          safeRenderCompletion={true}
           schema={schema}
           uiSchema={uiSchema}
           formData={updateFormDataValue}
+          transformErrors={transformErrors}
+          noHtml5Validate={true}
           onSubmit={({ formData }, e) => {
             e.preventDefault();
+            if (formData && formData.imageFile) {
+              formData.image = parseInt(formData.imageFile);
+            }
+            delete formData.imageFile;
             updateData(
               `${apis.developerListingUrl}/${props.match.params.id}`,
               formData,

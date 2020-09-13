@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import apis from "../constants/apis/services";
 import ServiceUtils from "./ServiceUtils";
 import { buildUrl, convertBase64ToBlob, imageType } from "./Utils";
@@ -10,20 +10,46 @@ const MultipleMediaPreviewWidget = (props) => {
     width: "100",
   };
   const [images, setImages] = useState([]);
-  // useEffect(() => {
-  //   if (props && props.value) {
-  //     const img = props.value.map((val, key) => {
-  //       return val.media_file;
-  //     });
-  //     setImages(img);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (props && props.value) {
+      let id = [];
+      if (Array.isArray(props.value)) {
+        const img = props.value.map((val, key) => {
+          id.push(val.id.toString());
+          return val.media_file;
+        });
+        console.log(id.toString());
+        // props.onChange("aakash");
+        props.onChange(
+          props.value
+            .map((val) => {
+              console.log("Bathla");
+              return val.id;
+            })
+            .toString()
+        );
+        setTimeout(() => {}, 0);
+        console.log(props);
+        setImages(img);
+      }
+      if (
+        props.value &&
+        props.value.media_file &&
+        typeof props.value.media_file === "string"
+      ) {
+        const img = [];
+        img.push(props.value.media_file);
+        setImages(img);
+        props.onChange(props.value.id.toString());
+      }
+    }
+  }, []);
   let imageIds = [];
   const uploadImages = () => {
     const length = Object.keys(images).length;
-    const formData = new FormData();
     if (length > 0) {
       for (var i = 0; i < length; i++) {
+        let formData = new FormData();
         formData.append(
           "media_file",
           convertBase64ToBlob(images[i]),

@@ -3,7 +3,7 @@ import React from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./AddTeamSchema";
 import apis from "../../../constants/apis/services";
-import { addData, errorGenerator } from "../../../utils/Utils";
+import { addData, errorGenerator, transformErrors } from "../../../utils/Utils";
 
 const AddTeam = () => {
   const history = useHistory();
@@ -23,6 +23,8 @@ const AddTeam = () => {
       <Form
         schema={schema}
         uiSchema={uiSchema}
+        noHtml5Validate={true}
+        transformErrors={transformErrors}
         onSubmit={({ formData }, e) => {
           e.preventDefault();
           addData(apis.teamUrl, formData, redirectFunction, null, errorHandler);

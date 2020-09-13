@@ -214,3 +214,33 @@ export const errorGenerator = (err) => {
     return "Some Error Occurred! Please reach out to admin!";
   }
 };
+
+export const transformErrors = (errors) => {
+  return errors.map((error) => {
+    if (error.name === "required") {
+      error.message = "This Field is required";
+      // error.stack = `${error.params.missingProperty} field is required`;
+    }
+    if (error.name === "type") {
+      // error.stack = `${error.property.substring(1)} ${error.message}`;
+    }
+    if (error.name === "pattern") {
+      if (error.property === ".phone_number") {
+        error.message = "should match pattern +919999999999";
+        // error.stack = "Phone Number: should match pattern +919999999999";
+      }
+      if (error.property === ".email") {
+        error.message = "please enter correct Email Id";
+        // error.stack = "Email: please enter correct Email Id";
+      }
+      if (error.property === ".password") {
+        error.message =
+          "one digit, one lowercase and one uppercase alphabet and, minimum length 6";
+        // error.stack =
+        //   "Password: one digit, one lowercase and one uppercase alphabet and, minimum length 6";
+      }
+    }
+    delete error.stack;
+    return error;
+  });
+};

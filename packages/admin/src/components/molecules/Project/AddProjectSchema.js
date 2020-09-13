@@ -1,3 +1,4 @@
+/* eslint-disable */
 import LayoutGridField from "react-jsonschema-form-layout-grid";
 import MediaApiWidget from "../../../utils/MediaApiWidget";
 import MultipleMediaPreviewWidget from "../../../utils/MultipleMediaPreviewWidget";
@@ -121,43 +122,52 @@ export const schema = {
             title: "Media",
           },
         },
+        required: ["name", "category", "mediaFile"],
       },
     },
   },
+  required: ["developer", "amenities", "name", "status", "property_type"],
 };
 
 export const fields = {
   layout_grid: LayoutGridField,
-}
+};
 
 export const uiSchema = {
-  'ui:field': 'layout_grid',
-  'ui:layout_grid': { 'ui:row': [
-    { 'ui:col': { md: 12, children: [
-      { 'ui:row': [
-        { 'ui:col': { md: 6, children: ['developer'] } },
-        { 'ui:col': { md: 6, children: ['name'] } },
-        { 'ui:col': { md: 6, children: ['rera_no'] } },
-        { 'ui:col': { md: 6, children: ['address_line1'] } },
-        { 'ui:col': { md: 6, children: ['address_line2'] } },
-        { 'ui:col': { md: 6, children: ['city'] } },
-        { 'ui:col': { md: 6, children: ['state'] } },
-        { 'ui:col': { md: 6, children: ['zipcode'] } },
-        { 'ui:col': { md: 6, children: ['status'] } },
-        { 'ui:col': { md: 6, children: ['property_type'] } },
-        { 'ui:col': { md: 12, children: ['description'] } },
-        { 'ui:col': { md: 6, children: ['video'] } },
-        { 'ui:col': { md: 6, children: ['broucher'] } },
-        { 'ui:col': { md: 6, children: ['mediaFile'] } },
-        { 'ui:col': { md: 3, children: ['home_page'] } },
-        { 'ui:col': { md: 3, children: ['is_feature'] } },
-        { 'ui:col': { md: 12, children: ['floor_plans'] } },
-        { 'ui:col': { md: 12, children: ['amenities'] } },
-      ] },
-      ]
-    }
-  }
-  ]},
+  "ui:field": "layout_grid",
+  "ui:layout_grid": {
+    "ui:row": [
+      {
+        "ui:col": {
+          md: 12,
+          children: [
+            {
+              "ui:row": [
+                { "ui:col": { md: 6, children: ["developer"] } },
+                { "ui:col": { md: 6, children: ["name"] } },
+                { "ui:col": { md: 6, children: ["rera_no"] } },
+                { "ui:col": { md: 6, children: ["address_line1"] } },
+                { "ui:col": { md: 6, children: ["address_line2"] } },
+                { "ui:col": { md: 6, children: ["city"] } },
+                { "ui:col": { md: 6, children: ["state"] } },
+                { "ui:col": { md: 6, children: ["zipcode"] } },
+                { "ui:col": { md: 6, children: ["status"] } },
+                { "ui:col": { md: 6, children: ["property_type"] } },
+                { "ui:col": { md: 12, children: ["description"] } },
+                { "ui:col": { md: 6, children: ["video"] } },
+                { "ui:col": { md: 6, children: ["broucher"] } },
+                { "ui:col": { md: 6, children: ["mediaFile"] } },
+                { "ui:col": { md: 3, children: ["home_page"] } },
+                { "ui:col": { md: 3, children: ["is_feature"] } },
+                { "ui:col": { md: 12, children: ["floor_plans"] } },
+                { "ui:col": { md: 12, children: ["amenities"] } },
+              ],
+            },
+          ],
+        },
+      },
+    ],
+  },
   description: {
     "ui:widget": "textarea",
   },
@@ -165,7 +175,7 @@ export const uiSchema = {
     items: {
       mediaFile: {
         "ui:widget": MultipleMediaPreviewWidget,
-        "classNames": "upload-media"
+        classNames: "upload-media",
       },
       category: {
         "ui:widget": getList,
@@ -178,16 +188,16 @@ export const uiSchema = {
   broucher: {
     "ui:widget": MediaApiWidget,
     "ui:options": { accept: ".pdf" },
-    "classNames": "file-upload"
+    classNames: "file-upload",
   },
   mediaFile: {
     "ui:widget": MultipleMediaPreviewWidget,
-    "classNames": "upload-media"
+    classNames: "upload-media",
   },
   video: {
     "ui:widget": MediaApiWidget,
     "ui:options": { accept: "video/*" },
-    "classNames": "file-upload"
+    classNames: "file-upload",
   },
   developer: {
     "ui:widget": getList,

@@ -3,7 +3,7 @@ import React from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./AddDeveloperSchema";
 import apis from "../../../constants/apis/services";
-import { addData, errorGenerator } from "../../../utils/Utils";
+import { addData, errorGenerator, transformErrors } from "../../../utils/Utils";
 import "./Developer.scss";
 
 const AddDeveloper = () => {
@@ -24,6 +24,8 @@ const AddDeveloper = () => {
       <Form
         schema={schema}
         uiSchema={uiSchema}
+        noHtml5Validate={true}
+        transformErrors={transformErrors}
         onSubmit={({ formData }, e) => {
           e.preventDefault();
           if (formData && formData.imageFile) {
