@@ -38,9 +38,23 @@ const AdvertisedProperty = () => {
       style={{ backgroundImage: `url(` + AdvetisedBgImage + `)` }}
     >
       <div className="container">
-        <h1 className="advertised_property_header p0 sm-text-center">
-          Lorem Ipsum is simply
-        </h1>
+        <div className="row">
+          <div className="col-sm-12 col-md-11">
+            <h1 className="advertised_property_header p0 sm-text-center">
+              Featured New Projects
+            </h1>
+          </div>
+          <div className="col-sm-12 col-md-1 text-right">
+            <div
+              className="link cursor-pointer"
+              onClick={() => {
+                history.push("/project-list");
+              }}
+            >
+              View All
+            </div>
+          </div>
+        </div>
         <div className="row">
           <Slider {...settings}>
             {dataList &&
@@ -106,16 +120,6 @@ const AdvertisedProperty = () => {
                 );
               })}
           </Slider>
-        </div>
-        <div className="row">
-          <div
-            className="col-lg-12 text-center mt5 link cursor-pointer"
-            onClick={() => {
-              history.push("/project-list");
-            }}
-          >
-            View All
-          </div>
         </div>
       </div>
     </div>
