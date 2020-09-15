@@ -35,14 +35,41 @@ const AddProject = () => {
           if (formData && formData.mediaFile) {
             formData.media = formData.mediaFile.split(",").map(Number);
           }
+          if (
+            formData &&
+            formData.price_range_min &&
+            formData.price_range_max
+          ) {
+            formData.price_range = [
+              formData.price_range_min,
+              formData.price_range_max,
+            ];
+            delete formData.price_range_min;
+            delete formData.price_range_max;
+          }
           if (formData && formData.amenities && formData.amenities) {
             formData.amenities.map((val, key) => {
               formData.amenities[key].media = val.mediaFile
                 .split(",")
                 .map(Number);
             });
+            for (var i = 0; i < formData.amenities.length; i++) {
+              if (formData.amenities[i] && formData.amenities[i].mediaFile) {
+                delete formData.amenities[i].mediaFile;
+              }
+            }
           }
-          formData.price_range = [3, 4];
+          if (formData && formData.features) {
+            formData.features.map((val, key) => {
+              formData.features[key].media = parseInt(val.mediaFile);
+            });
+
+            for (var i = 0; i < formData.features.length; i++) {
+              if (formData.features[i] && formData.features[i].mediaFile) {
+                delete formData.features[i].mediaFile;
+              }
+            }
+          }
           addData(
             apis.projectListingUrl,
             formData,

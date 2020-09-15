@@ -44,6 +44,10 @@ export const schema = {
       type: "string",
       title: "Zipcode",
     },
+    media_url: {
+      type: "string",
+      title: "Video Url",
+    },
     home_page: {
       type: "boolean",
       enum: [true, false],
@@ -75,6 +79,14 @@ export const schema = {
     mediaFile: {
       type: "string",
       title: "Media",
+    },
+    price_range_min: {
+      type: "number",
+      title: "Price Range Min Value",
+    },
+    price_range_max: {
+      type: "number",
+      title: "Price Range Max Value",
     },
     floor_plans: {
       type: "array",
@@ -125,8 +137,35 @@ export const schema = {
         required: ["name", "category", "mediaFile"],
       },
     },
+    features: {
+      type: "array",
+      title: "Features",
+      items: {
+        type: "object",
+        properties: {
+          description: {
+            type: "string",
+            title: "Description",
+          },
+          mediaFile: {
+            type: "string",
+            title: "Media",
+          },
+        },
+        required: ["description", "mediaFile"],
+      },
+    },
   },
-  required: ["developer", "amenities", "name", "status", "property_type"],
+  required: [
+    "developer",
+    "amenities",
+    "name",
+    "status",
+    "property_type",
+    "price_range_min",
+    "price_range_max",
+    "features",
+  ],
 };
 
 export const fields = {
@@ -151,6 +190,9 @@ export const uiSchema = {
                 { "ui:col": { md: 6, children: ["city"] } },
                 { "ui:col": { md: 6, children: ["state"] } },
                 { "ui:col": { md: 6, children: ["zipcode"] } },
+                { "ui:col": { md: 6, children: ["media_url"] } },
+                { "ui:col": { md: 3, children: ["price_range_min"] } },
+                { "ui:col": { md: 3, children: ["price_range_max"] } },
                 { "ui:col": { md: 6, children: ["status"] } },
                 { "ui:col": { md: 6, children: ["property_type"] } },
                 { "ui:col": { md: 12, children: ["description"] } },
@@ -161,6 +203,7 @@ export const uiSchema = {
                 { "ui:col": { md: 3, children: ["is_feature"] } },
                 { "ui:col": { md: 12, children: ["floor_plans"] } },
                 { "ui:col": { md: 12, children: ["amenities"] } },
+                { "ui:col": { md: 12, children: ["features"] } },
               ],
             },
           ],
@@ -182,6 +225,20 @@ export const uiSchema = {
         "ui:options": {
           url: apis.amenitiesCategoryChoice,
         },
+      },
+    },
+  },
+  features: {
+    items: {
+      mediaFile: {
+        "ui:widget": MultipleMediaPreviewWidget,
+        classNames: "upload-media",
+        "ui:options": {
+          number: 1,
+        },
+      },
+      description: {
+        "ui:widget": "textarea",
       },
     },
   },

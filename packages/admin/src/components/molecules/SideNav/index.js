@@ -21,9 +21,6 @@ const SideNav = () => {
           </div>
         </div>
         <Menu iconShape="square">
-          <MenuItem icon={<i className="zmdi zmdi-home"></i>}>
-            Dashboard
-          </MenuItem>
           <MenuItem icon={<i className="zmdi zmdi-accounts"></i>}>
             <Link to="/app/customer-list">Customers</Link>
           </MenuItem>
