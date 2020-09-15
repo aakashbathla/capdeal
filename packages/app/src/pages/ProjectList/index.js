@@ -24,6 +24,25 @@ const ProjectList = () => {
         <SearchFilter />
         <div className="container">
           <div className="row">
+            <div className="col-sm-2 mb-4">
+              <div className="dropdown">
+              <a className="btn btn-outline-dark dropdown-toggle btn-lg btn-block" href="true" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort By
+              </a>
+              <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a className="dropdown-item" href="/project-list">Latest</a>
+                <a className="dropdown-item" href="/project-list">Another action</a>
+                <a className="dropdown-item" href="/project-list">Something else here</a>
+              </div>
+            </div>
+            </div>
+            <div className="col-sm-6 align-self-center">
+              <h4 className="showing-text text-right mb-3">
+                Showing 1-5 Projects out of 230 
+              </h4>
+            </div>
+          </div>
+          <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-8">
               {dataList &&
                 dataList.results &&

@@ -3,27 +3,6 @@ import "./ContactRealEstateForm.scss";
 const ContactRealEstateForm = () => {
   return (
     <div>
-      <div className="row">
-        <div className="col-4">
-          <div className="dropdown">
-          <a className="btn btn-outline-dark dropdown-toggle btn-lg btn-block" href="true" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sort By
-          </a>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a className="dropdown-item" href="/project-list">Latest</a>
-            <a className="dropdown-item" href="/project-list">Another action</a>
-            <a className="dropdown-item" href="/project-list">Something else here</a>
-          </div>
-        </div>
-        </div>
-        <div className="col-8">
-          <h4 className="showing-text">
-            Showing<br/>
-            1-5 Projects out of 230 
-          </h4>
-        </div>
-      </div>
-      <hr />
       <div className="card contact-realestate-form">
         <h4 className="text-center mb-4">Contact Our Real Estate Experts</h4>
         <form>

@@ -10,6 +10,9 @@
   background-position: top left;
   background-repeat: no-repeat;
   background-size: cover;
+  .link {
+    @include font-poppins-bold-15($orange-color);
+  }
   .slick-slide {
     > .col-12 {
       &:focus {
@@ -104,7 +107,10 @@
     }
   }
   &_image {
-    width: 100%;
+    width: 255px;
+    height: 224px;
+    object-fit: contain;
+    background: #b5b1b1;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
