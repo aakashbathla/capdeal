@@ -4,8 +4,10 @@ import locationIcon from "assets/location.png";
 import amountIcon from "assets/amount.png";
 import availIcon from "assets/availability.png";
 import "./ProjectCard.scss";
+import { useHistory } from "react-router-dom";
 
 const ProjectCard = ({ propertyTableId, value }) => {
+  let history = useHistory();
   return (
     <div className="card project_list">
       <div className="body">
@@ -51,7 +53,10 @@ const ProjectCard = ({ propertyTableId, value }) => {
                       <img src={amountIcon} className="mr-2" alt="icon" />
                       <div className="media-body">
                         <h5 className="mt-0">Amount</h5>
-                        <span>&#8377;83.60 Lac to &#8377;1.56 Cr</span>
+                        <span>
+                          &#8377;{value.price_range[0] || ""} to &#8377;
+                          {value.price_range[1] || ""}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -86,7 +91,12 @@ const ProjectCard = ({ propertyTableId, value }) => {
                   </a>
                 )}
                 <div className="float-right">
-                  <button className="btn btn-sm btn-outline-primary mr-2">
+                  <button
+                    className="btn btn-sm btn-outline-primary mr-2"
+                    onClick={() => {
+                      history.push(`project-detail/${value.id}`);
+                    }}
+                  >
                     Details
                   </button>
                   <button className="btn btn-sm btn-outline-primary">

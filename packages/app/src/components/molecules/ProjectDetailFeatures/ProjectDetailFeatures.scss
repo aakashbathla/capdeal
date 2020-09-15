@@ -1,13 +1,13 @@
 @import "../../../styles/src/colors";
 @import "../../../styles/src/typography";
 @import "../../../styles/src/breakpoints";
-.info-bar{
+.info-bar {
   padding: 40px 0 10px;
   &__item {
     padding-left: 8px;
     position: relative;
     &::before {
-      content: '';
+      content: "";
       width: 1px;
       height: 80px;
       background: #c98b66;
@@ -17,6 +17,9 @@
     }
     img {
       margin-bottom: 5px;
+      width: 100px;
+      height: auto;
+      border-radius: 10px;
     }
     p {
       @include font-poppins-regular-11($deep-purple);

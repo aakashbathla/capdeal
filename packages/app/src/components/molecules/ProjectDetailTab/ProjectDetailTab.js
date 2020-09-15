@@ -6,7 +6,7 @@ import Icon4 from "assets/business.png";
 import FloorPlan from "assets/floor-plan1.jpg";
 import "./ProjectDetailTab.scss";
 
-const ProjectDetailTab = () => {
+const ProjectDetailTab = ({ data }) => {
   return (
     <div className="project-detail__tab">
       <div className="container">
@@ -20,13 +20,18 @@ const ProjectDetailTab = () => {
           <div className="col-lg-3 col-md-12 col-12">
             <div className="card header-wrap__price">
               <h5 className="mb-0">Project CAPD Reg.</h5>
-              <h3 className="mb-0">CAPD0239892394929</h3>
+              <h3 className="mb-0">{(data && data.rera_no) || ""}</h3>
             </div>
           </div>
         </div>
         <div className="row my-5 pt-3 pb-4 tab-wrap">
           <div className="col-lg-3 col-md-12 col-12 card">
-            <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div
+              className="nav flex-column nav-pills"
+              id="v-pills-tab"
+              role="tablist"
+              aria-orientation="vertical"
+            >
               <a
                 className="nav-link active"
                 id="property-calculator-tab"
@@ -125,11 +130,22 @@ const ProjectDetailTab = () => {
                 role="tabpanel"
                 aria-labelledby="property-calculator-tab"
               >
-                <h4 className="d-inline-block">How far is this property from my workplace?</h4>
-                <button className="btn btn-green float-right btn-lg">Calculate travel time</button>
+                <h4 className="d-inline-block">
+                  How far is this property from my workplace?
+                </h4>
+                <button className="btn btn-green float-right btn-lg">
+                  Calculate travel time
+                </button>
                 <div className="form-group mt-4">
-                  <label className="label-text">Your Commutes <strong>E.g. Workplace, Kid's School, Gym</strong></label>
-                  <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <label className="label-text">
+                    Your Commutes{" "}
+                    <strong>E.g. Workplace, Kid's School, Gym</strong>
+                  </label>
+                  <textarea
+                    className="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                  ></textarea>
                 </div>
               </div>
               <div
@@ -156,12 +172,32 @@ const ProjectDetailTab = () => {
               >
                 <h4>INDIS Viva City - Floor Plans</h4>
                 <div className="custom-control custom-radio custom-control-inline mr-5">
-                  <input type="radio" id="customRadioInline1" name="customRadioInline1" className="custom-control-input input-lg" />
-                  <label className="custom-control-label" htmlFor="customRadioInline1">Floor 1</label>
+                  <input
+                    type="radio"
+                    id="customRadioInline1"
+                    name="customRadioInline1"
+                    className="custom-control-input input-lg"
+                  />
+                  <label
+                    className="custom-control-label"
+                    htmlFor="customRadioInline1"
+                  >
+                    Floor 1
+                  </label>
                 </div>
                 <div className="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="customRadioInline2" name="customRadioInline1" className="custom-control-input" />
-                  <label className="custom-control-label" htmlFor="customRadioInline2">Floor 2</label>
+                  <input
+                    type="radio"
+                    id="customRadioInline2"
+                    name="customRadioInline1"
+                    className="custom-control-input"
+                  />
+                  <label
+                    className="custom-control-label"
+                    htmlFor="customRadioInline2"
+                  >
+                    Floor 2
+                  </label>
                 </div>
                 <div className="row mt-4">
                   <div className="col-lg-4 col-md-6 col-sm-12">
@@ -171,11 +207,15 @@ const ProjectDetailTab = () => {
                       <div className="row">
                         <div className="col">
                           <p className="mb-0">Saleable Area</p>
-                          <p className="mb-0"><strong>1360 Sq.Ft.</strong></p>
+                          <p className="mb-0">
+                            <strong>1360 Sq.Ft.</strong>
+                          </p>
                         </div>
                         <div className="col text-right">
                           <p className="mb-0">Bedrooms</p>
-                          <p className="mb-0"><strong>2 Bedrooms</strong></p>
+                          <p className="mb-0">
+                            <strong>2 Bedrooms</strong>
+                          </p>
                         </div>
                       </div>
                       <div className="row mt-4">
@@ -183,7 +223,9 @@ const ProjectDetailTab = () => {
                           <p className="mb-0 know-text">Know More</p>
                         </div>
                         <div className="col">
-                          <p className="mb-0 price"><strong>&#8377;80.50 Lac</strong></p>
+                          <p className="mb-0 price">
+                            <strong>&#8377;80.50 Lac</strong>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -195,11 +237,15 @@ const ProjectDetailTab = () => {
                       <div className="row">
                         <div className="col">
                           <p className="mb-0">Saleable Area</p>
-                          <p className="mb-0"><strong>1360 Sq.Ft.</strong></p>
+                          <p className="mb-0">
+                            <strong>1360 Sq.Ft.</strong>
+                          </p>
                         </div>
                         <div className="col text-right">
                           <p className="mb-0">Bedrooms</p>
-                          <p className="mb-0"><strong>2 Bedrooms</strong></p>
+                          <p className="mb-0">
+                            <strong>2 Bedrooms</strong>
+                          </p>
                         </div>
                       </div>
                       <div className="row mt-4">
@@ -207,7 +253,9 @@ const ProjectDetailTab = () => {
                           <p className="mb-0 know-text">Know More</p>
                         </div>
                         <div className="col">
-                          <p className="mb-0 price"><strong>&#8377;80.50 Lac</strong></p>
+                          <p className="mb-0 price">
+                            <strong>&#8377;80.50 Lac</strong>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -219,11 +267,15 @@ const ProjectDetailTab = () => {
                       <div className="row">
                         <div className="col">
                           <p className="mb-0">Saleable Area</p>
-                          <p className="mb-0"><strong>1360 Sq.Ft.</strong></p>
+                          <p className="mb-0">
+                            <strong>1360 Sq.Ft.</strong>
+                          </p>
                         </div>
                         <div className="col text-right">
                           <p className="mb-0">Bedrooms</p>
-                          <p className="mb-0"><strong>2 Bedrooms</strong></p>
+                          <p className="mb-0">
+                            <strong>2 Bedrooms</strong>
+                          </p>
                         </div>
                       </div>
                       <div className="row mt-4">
@@ -231,7 +283,9 @@ const ProjectDetailTab = () => {
                           <p className="mb-0 know-text">Know More</p>
                         </div>
                         <div className="col">
-                          <p className="mb-0 price"><strong>&#8377;80.50 Lac</strong></p>
+                          <p className="mb-0 price">
+                            <strong>&#8377;80.50 Lac</strong>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -311,16 +365,33 @@ const ProjectDetailTab = () => {
                   </thead>
                   <tbody>
                     <tr>
-                      <td><img width="80" src={FloorPlan} alt="floor" /></td>
-                      <td>Name of the property<br />&#8377;81.60Lac</td>
+                      <td>
+                        <img width="80" src={FloorPlan} alt="floor" />
+                      </td>
+                      <td>
+                        Name of the property
+                        <br />
+                        &#8377;81.60Lac
+                      </td>
                       <td>Location</td>
                       <td>Westzome</td>
                       <td>2BHK 1360 Sq. Ft.</td>
                       <td>2</td>
                     </tr>
                     <tr>
-                      <td><img width="80" className="img-fluid" src={FloorPlan} alt="floor" /></td>
-                      <td>Name of the property<br />&#8377;81.60Lac</td>
+                      <td>
+                        <img
+                          width="80"
+                          className="img-fluid"
+                          src={FloorPlan}
+                          alt="floor"
+                        />
+                      </td>
+                      <td>
+                        Name of the property
+                        <br />
+                        &#8377;81.60Lac
+                      </td>
                       <td>Location</td>
                       <td>Westzome</td>
                       <td>2BHK 1360 Sq. Ft.</td>
@@ -338,8 +409,16 @@ const ProjectDetailTab = () => {
                 <h4>Review and FAQ's</h4>
                 <div className="faqs">
                   <div className="faqs__item">
-                    <h4>Q: What are the other projects & their construction status been undertaken by this developer?</h4>
-                    <h5><strong>A:</strong> To ensure your peace of mind, we only list projects from reputed and top rated developers here. In this case, indis Group Incor is established since 2008.A list of their project(s) follows:</h5>
+                    <h4>
+                      Q: What are the other projects & their construction status
+                      been undertaken by this developer?
+                    </h4>
+                    <h5>
+                      <strong>A:</strong> To ensure your peace of mind, we only
+                      list projects from reputed and top rated developers here.
+                      In this case, indis Group Incor is established since
+                      2008.A list of their project(s) follows:
+                    </h5>
                     <ol>
                       <li>INDIS ABEL City - delivered</li>
                       <li>INDIS Viva City - under construction</li>
@@ -350,7 +429,12 @@ const ProjectDetailTab = () => {
                   <hr />
                   <div className="faqs__item">
                     <h4>Q: How can I get a brochure Of this project?</h4>
-                    <h5><strong>A:</strong> Sorry no brochure availablefor now, but you can callourToIIfreeNo. 18002083344 (7 days in a week 10 am to 6:30 pm). Our folks would be happyto help you.</h5>
+                    <h5>
+                      <strong>A:</strong> Sorry no brochure availablefor now,
+                      but you can callourToIIfreeNo. 18002083344 (7 days in a
+                      week 10 am to 6:30 pm). Our folks would be happyto help
+                      you.
+                    </h5>
                   </div>
                 </div>
               </div>
