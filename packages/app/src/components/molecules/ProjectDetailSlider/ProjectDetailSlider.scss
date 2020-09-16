@@ -1,46 +1,21 @@
 @import "../../../styles/src/colors";
 @import "../../../styles/src/typography";
 @import "../../../styles/src/breakpoints";
-.slider_wrap {
-  background: $deep-purple;
-  margin-top: 70px;
-  padding-top: 25px;
-  .slider-item {
-    margin-bottom: 10px;
-    text-align: center;
-    img {
-      height: 60px;
-      border: 2px solid #fff;
-      border-radius: 4px;
-      display: inline-block
-    }
-    &:focus {
-      outline: none !important;
+
+.image-gallery {
+  .right{ 
+    float: left;
+    .image-gallery-thumbnails {
+      top: 8px;
     }
   }
 }
-.slick-slider {
-  width: 100%;
-  .slick-arrow {
-    display: none !important;
-  }
-  & li {
-    @include mobile {
-      display: none;
-    }
-    padding-top: 24px;
-    width: 5px;
-    height: 5px;
-    &.slick-active {
-      & button {
-        background-color: $orange-color;
-      }
-    }
-    & button {
-      width: 5px;
-      height: 5px;
-      border-radius: 5px;
-      background-color: black;
-    }
+.image-gallery-content {
+  background: $deep-purple;
+}
+.image-gallery-slide {
+  .image-gallery-image {
+    object-fit: cover;
+    height: 470px;
   }
 }

@@ -32,8 +32,8 @@ const ProjectDetailRating = () => {
       <div className="col-lg-2 col-md-12 col-12 p-0">
         &nbsp;
       </div>
-      <div className="col-lg-3 col-md-12 col-12 px-0 bg-purple">
-        &nbsp;
+      <div className="col-lg-3 col-md-12 col-12">
+        <div className="bg-purple p-4">&nbsp;</div>
       </div>
     </div>
   );
