@@ -1,9 +1,6 @@
 import React from "react";
 import ImageGallery from 'react-image-gallery';
-import Slider from "react-slick";
 import "react-image-gallery/styles/scss/image-gallery.scss";
-import "slick-carousel/slick/slick.css";
-import { useMediaQuery } from "react-responsive";
 import ProjectDetail1 from "assets/project-detail11.png";
 import ProjectDetail2 from "assets/project-detail1.png";
 import "./ProjectDetailSlider.scss";
@@ -53,9 +50,6 @@ const images = [
 
 
 const ProjectDetailSlider = () => {
-  const isMobile = useMediaQuery({
-    maxWidth: 768,
-  });
   const settings = {
     infinite: true,
     showFullscreenButton: false,

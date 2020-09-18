@@ -1,8 +1,8 @@
 import React from "react";
-import Icon1 from "assets/hospital.png";
-import Icon2 from "assets/school.png";
-import Icon3 from "assets/road.png";
-import Icon4 from "assets/business.png";
+// import Icon1 from "assets/hospital.png";
+// import Icon2 from "assets/school.png";
+// import Icon3 from "assets/road.png";
+// import Icon4 from "assets/business.png";
 import FloorPlan from "assets/floor-plan1.jpg";
 import "./ProjectDetailTab.scss";
 
