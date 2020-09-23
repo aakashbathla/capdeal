@@ -70,12 +70,12 @@ const ProjectDetailSlider = ({ data }) => {
               <source src={SampleVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <span title="Close Video" className="close-video" onClick={() => setStatus(!status)}><i class="zmdi zmdi-close"></i></span>
+            <span title="Close Video" className="close-video" onClick={() => setStatus(!status)}><i className="zmdi zmdi-close"></i></span>
           </div>
         }
         <div className="video-thumbnail" onClick={() => setStatus(!status)}>
           <img width="92" src={ProjectDetail1} alt="video" />
-          <span className="play-btn"><i class="zmdi zmdi-play-circle-outline"></i></span>
+          <span className="play-btn"><i className="zmdi zmdi-play-circle-outline"></i></span>
         </div>
       </div>
     </div>

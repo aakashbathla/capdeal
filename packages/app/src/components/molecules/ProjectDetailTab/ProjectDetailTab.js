@@ -2,11 +2,12 @@ import React from "react";
 // import Icon1 from "assets/hospital.png";
 // import Icon2 from "assets/school.png";
 // import Icon3 from "assets/road.png";
-// import Icon4 from "assets/business.png";
+import Icon4 from "assets/business.png";
 import FloorPlan from "assets/floor-plan1.jpg";
 import "./ProjectDetailTab.scss";
 
 const ProjectDetailTab = ({ data }) => {
+  console.log('details', data);
   return (
     <div className="project-detail__tab">
       <div className="container">
@@ -149,12 +150,14 @@ const ProjectDetailTab = ({ data }) => {
                 </div>
               </div> */}
               <div
-                className="tab-pane fade"
+                className="tab-pane fade show active"
                 id="project-info"
                 role="tabpanel"
                 aria-labelledby="project-info-tab"
               >
                 <h4>Project Info</h4>
+                <hr />
+                <p className="project-desc">{(data && data.description) || ""}</p>
               </div>
               <div
                 className="tab-pane fade"
@@ -163,6 +166,21 @@ const ProjectDetailTab = ({ data }) => {
                 aria-labelledby="amenities-tab"
               >
                 <h4>Amenities</h4>
+                <hr />
+                <div className="row">
+                  {data.amenities &&
+                    data.amenities.length > 0 &&
+                    data.amenities.map((val, key) => {
+                      return (
+                        <div key={key} className="col-3">
+                          <div className="amenities-box">
+                            <img src={val.media.media_file || Icon4} alt="icon" />
+                            <h4>{val.name}</h4>
+                          </div>
+                        </div>
+                      );
+                  })}
+                </div>
               </div>
               <div
                 className="tab-pane fade"
@@ -171,6 +189,7 @@ const ProjectDetailTab = ({ data }) => {
                 aria-labelledby="floor-plan-tab"
               >
                 <h4>INDIS Viva City - Floor Plans</h4>
+                <hr />
                 <div className="custom-control custom-radio custom-control-inline mr-5">
                   <input
                     type="radio"

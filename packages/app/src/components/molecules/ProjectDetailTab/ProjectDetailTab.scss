@@ -123,5 +123,17 @@
         }
       }
     }
+    .project-desc {
+      @include font-poppins-regular-13($black);
+    }
+    .amenities-box {
+      display: flex;
+      align-items: center;
+      h4 {
+        margin-bottom: 0;
+        margin-left: 5px;
+        @include font-poppins-regular-14($black);
+      }
+    }
   }
 }

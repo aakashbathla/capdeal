@@ -34,7 +34,7 @@ const Listing = ({
     data.results.length > 0 &&
     data.results.map((val, key) => {
       return (
-        <div className="card property_list">
+        <div key={key} className="card property_list">
           <div className="body">
             <div className="row">
               <div className="col-lg-3 col-md-3 col-sm-12">
@@ -102,7 +102,7 @@ const Listing = ({
                             <img src={amountIcon} className="mr-2" alt="icon" />
                             <div className="media-body">
                               <h5 className="mt-0">Amount</h5>
-                              <span>&#8377;{val.price_range[0]} Lac to &#8377;{val.price_range[1]} Lac</span>
+                              <span>&#8377;{val.min_price} Lac to &#8377;{val.max_price} Lac</span>
                             </div>
                           </div>
                         </div>
@@ -163,9 +163,9 @@ const Listing = ({
                     </thead>
                     <tbody>
                       {val.floor_plans &&
-                        val.floor_plans.map((floorval) => {
+                        val.floor_plans.map((floorval, key) => {
                           return (
-                            <tr>
+                            <tr key={key}>
                               <td>{floorval.title}</td>
                               <td>{floorval.saleable_area}(Saleable)</td>
                               <td>{floorval.pricing}</td>
