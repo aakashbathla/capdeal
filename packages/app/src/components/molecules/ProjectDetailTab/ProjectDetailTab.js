@@ -1,8 +1,8 @@
 import React from "react";
-import Icon1 from "assets/hospital.png";
-import Icon2 from "assets/school.png";
-import Icon3 from "assets/road.png";
-import Icon4 from "assets/business.png";
+// import Icon1 from "assets/hospital.png";
+// import Icon2 from "assets/school.png";
+// import Icon3 from "assets/road.png";
+// import Icon4 from "assets/business.png";
 import FloorPlan from "assets/floor-plan1.jpg";
 import "./ProjectDetailTab.scss";
 
@@ -32,19 +32,19 @@ const ProjectDetailTab = ({ data }) => {
               role="tablist"
               aria-orientation="vertical"
             >
-              <a
-                className="nav-link active"
+              {/* <a
+                className="nav-link"
                 id="property-calculator-tab"
                 data-toggle="pill"
                 href="#property-calculator"
                 role="tab"
                 aria-controls="property-calculator"
                 aria-selected="true"
-              >
+              > 
                 Far is this property calculator
-              </a>
+              </a> */}
               <a
-                className="nav-link"
+                className="nav-link active"
                 id="project-info-tab"
                 data-toggle="pill"
                 href="#project-info"
@@ -76,7 +76,7 @@ const ProjectDetailTab = ({ data }) => {
               >
                 Amenities
               </a>
-              <a
+              {/* <a
                 className="nav-link"
                 id="location-map-tab"
                 data-toggle="pill"
@@ -86,8 +86,8 @@ const ProjectDetailTab = ({ data }) => {
                 aria-selected="false"
               >
                 Location Map and Landmarks
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 className="nav-link"
                 id="price-trend-tab"
                 data-toggle="pill"
@@ -97,7 +97,7 @@ const ProjectDetailTab = ({ data }) => {
                 aria-selected="false"
               >
                 Price Trend
-              </a>
+              </a> */}
               <a
                 className="nav-link"
                 id="market-analysis-tab"
@@ -124,7 +124,7 @@ const ProjectDetailTab = ({ data }) => {
           </div>
           <div className="col-lg-9 col-md-12 col-12">
             <div className="tab-content" id="v-pills-tabContent">
-              <div
+              {/* <div
                 className="tab-pane fade show active"
                 id="property-calculator"
                 role="tabpanel"
@@ -147,7 +147,7 @@ const ProjectDetailTab = ({ data }) => {
                     rows="3"
                   ></textarea>
                 </div>
-              </div>
+              </div> */}
               <div
                 className="tab-pane fade"
                 id="project-info"
@@ -292,7 +292,7 @@ const ProjectDetailTab = ({ data }) => {
                   </div>
                 </div>
               </div>
-              <div
+              {/* <div
                 className="tab-pane fade"
                 id="location-map"
                 role="tabpanel"
@@ -336,7 +336,7 @@ const ProjectDetailTab = ({ data }) => {
                     <span>NH5 HIGHWAY</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div
                 className="tab-pane fade"
                 id="price-trend"

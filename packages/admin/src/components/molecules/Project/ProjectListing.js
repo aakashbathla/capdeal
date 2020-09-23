@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import ServiceUtils from "../../../utils/ServiceUtils";
 import { buildUrl, errorGenerator } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
-import Listing from "../../atoms/Listing";
+import Listing from "../../atoms/ProjectCard";
 import "./Project.scss";
 
 const ProjectListing = () => {

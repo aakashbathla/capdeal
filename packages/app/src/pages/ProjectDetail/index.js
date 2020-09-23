@@ -33,7 +33,7 @@ const ProjectList = (props) => {
           {dataList && (
             <>
               <ProjectDetailHeader data={dataList} />
-              <ProjectDetailSlider />
+              <ProjectDetailSlider data={dataList} />
               <ProjectDetailRating />
               <ProjectDetailFeatures data={dataList} />
             </>

@@ -1,71 +1,82 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import { useMediaQuery } from "react-responsive";
+import React, { useState } from "react";
+import ImageGallery from 'react-image-gallery';
+import "react-image-gallery/styles/scss/image-gallery.scss";
 import ProjectDetail1 from "assets/project-detail11.png";
 import ProjectDetail2 from "assets/project-detail1.png";
+import SampleVideo from "assets/sample-video.mp4";
 import "./ProjectDetailSlider.scss";
 
-const ProjectDetailSlider = () => {
-  const isMobile = useMediaQuery({
-    maxWidth: 768,
-  });
+const images = [
+  {
+    original: ProjectDetail2,
+    thumbnail: ProjectDetail1,
+  },
+  {
+    original: ProjectDetail2,
+    thumbnail: ProjectDetail1,
+  },
+  {
+    original: ProjectDetail2,
+    thumbnail: ProjectDetail1,
+  },
+  {
+    original: ProjectDetail2,
+    thumbnail: ProjectDetail1,
+  },
+  {
+    original: ProjectDetail2,
+    thumbnail: ProjectDetail1,
+  },
+  {
+    original: ProjectDetail2,
+    thumbnail: ProjectDetail1,
+  },
+  {
+    original: ProjectDetail2,
+    thumbnail: ProjectDetail1,
+  },
+  {
+    original: ProjectDetail2,
+    thumbnail: ProjectDetail1,
+  },
+  {
+    original: ProjectDetail2,
+    thumbnail: ProjectDetail1,
+  },
+  {
+    original: ProjectDetail2,
+    thumbnail: ProjectDetail1,
+  },
+];
+
+const ProjectDetailSlider = ({ data }) => {
+  const [status, setStatus] = useState(false);
   const settings = {
-    dots: true,
     infinite: true,
-    speed: 500,
-    vertical: true,
-    verticalScrolling: true,
-    slidesToShow: isMobile ? 1 : 4,
-    slidesToScroll: isMobile ? 1 : 1,
+    showFullscreenButton: false,
+    showPlayButton: false,
+    autoPlay: false,
+    showNav: false,
+    thumbnailPosition: 'right',
   };
+
   return (
     <div className="row">
-      <div className="col-lg-10 col-md-12 col-12 pr-0">
-        <img
-          src={ProjectDetail2}
-          className="img-fluid"
-          alt="prop img"
-        />
-      </div>
-      <div className="col-lg-2 col-md-12 col-12 slider_wrap">
-        <Slider {...settings}>
-          <div className="slider-item">
-            <img
-              src={ProjectDetail1}
-              className=""
-              alt="advertised property"
-            />
+      <div className="col-md-12 col-12">
+        <ImageGallery items={images}  {...settings} />
+        { status && 
+          <div className="video-wrap">
+            <video width="100%" height="470" controls autoplay>
+              <source src={SampleVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <span title="Close Video" className="close-video" onClick={() => setStatus(!status)}><i class="zmdi zmdi-close"></i></span>
           </div>
-          <div className="slider-item">
-            <img
-              src={ProjectDetail1}
-              className=""
-              alt="advertised property"
-            />
-          </div>
-          <div className="slider-item">
-            <img
-              src={ProjectDetail1}
-              className=""
-              alt="advertised property"
-            />
-          </div>
-          <div className="slider-item">
-            <img
-              src={ProjectDetail1}
-              className=""
-              alt="advertised property"
-            />
-          </div>
-          <div className="slider-item">
-            <img
-              src={ProjectDetail1}
-              className=""
-              alt="advertised property"
-            />
-          </div>
-        </Slider>
+        }
+        <div className="video-thumbnail" onClick={() => setStatus(!status)}>
+          <img width="92" src={ProjectDetail1} alt="video" />
+          <span className="play-btn"><i class="zmdi zmdi-play-circle-outline"></i></span>
+        </div>
       </div>
     </div>
   );

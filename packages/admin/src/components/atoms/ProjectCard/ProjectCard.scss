@@ -1,0 +1,127 @@
+.card.property_list .body {
+  font-size: 14px;
+  color: #424242;
+  padding: 10px 0;
+  font-weight: 400;
+}
+.property_list {
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none!important;
+  box-shadow: none;
+  border-radius: 4px!important;
+  margin-bottom: 15px;
+  .property_image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border-radius: 0;
+      text-transform: uppercase;
+    }
+  }
+  .space {
+    padding-left: 0;
+  }
+  .img-thumbnail {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
+  }
+  h4 {
+    font-size: 18px;
+    color: #0c1033;
+  }
+  .text-muted {
+    color: #6c757d!important;
+  }
+  .desc {
+    color: #6c757d!important;
+    font-size: 13px;
+    span {
+      cursor: pointer;
+      color: #000;
+      font-weight: bold;
+    }
+    a {
+      color: #000;
+      font-weight: bold;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .property-action {
+    a {
+      color: #0c1033;;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .down-arrow {
+      height: 15px;
+      width: 15px;
+      padding-top: 1px;
+      background: #be7452;
+      display: inline-flex;
+      border-radius: 30px;
+      color: black;
+      margin-left: 4px;
+    }
+    .zmdi-check {
+      border: 1px solid #54ad6d;
+      padding-top: 3px;
+      height: 22px;
+      text-align: center;
+      width: 22px;
+      border-radius: 30px;
+      font-weight: bold;
+      color: #54ad6d;
+      margin-left: 3px;
+    }
+    .zmdi-close {
+      border: 1px solid #dd423c;
+      padding-top: 3px;
+      height: 22px;
+      text-align: center;
+      width: 22px;
+      border-radius: 30px;
+      font-weight: bold;
+      color: #dd423c;
+      margin-left: 3px;
+    }
+  }
+  .media {
+    align-items: center;
+    h5 {
+      font-size: 13px;
+      font-weight: 400;
+      color: #6c757d;
+      margin-bottom: 0;
+      line-height: 1;
+    }
+    span {
+      font-size: 13px;
+      display: block;
+    }
+  }
+  .internal-list{
+    width: 100%;
+    margin: 0 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin-top: 20px;
+    table {
+      margin-bottom: 0;
+      th {
+        color: #be7452;
+      }
+    }
+  }
+}
