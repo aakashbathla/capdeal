@@ -45,7 +45,7 @@ const TeamListing = () => {
     });
     const updateUrlOptions = {
       ...urlOptions,
-      pathname: urlOptions.pathname + id,
+      pathname: apis.teamListing + id,
     };
     console.log(updateUrlOptions);
     try {

@@ -15,7 +15,6 @@ export const schema = {
     password: {
       type: "string",
       title: "Passowrd",
-      pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]{6,}$",
     },
     first_name: {
       type: "string",
@@ -49,5 +48,6 @@ export const uiSchema = {
   password: {
     "ui:placeholder":
       "one digit, one lowercase and one uppercase alphabet and, minimum length 6",
+    "ui:widget": "password",
   },
 };

@@ -54,8 +54,8 @@ const ProjectCard = ({ propertyTableId, value }) => {
                       <div className="media-body">
                         <h5 className="mt-0">Amount</h5>
                         <span>
-                          &#8377;{value.price_range[0] || ""} to &#8377;
-                          {value.price_range[1] || ""}
+                          &#8377;{value.min_price || ""} to &#8377;
+                          {value.max_price || ""}
                         </span>
                       </div>
                     </div>

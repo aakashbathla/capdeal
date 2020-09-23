@@ -14,8 +14,8 @@ const ProjectDetailHeader = ({ data }) => {
         <div className="col-sm-12 col-md-6 col-lg-3 p-0">
           <div className="card header-wrap__price">
             <h3 className="mb-0">
-              &#8377;{`${data.price_range[0]} TO `}&#8377;
-              {`${data.price_range[1]}`}
+              &#8377;{`${data.min_price} TO `}&#8377;
+              {`${data.max_price}`}
             </h3>
             <h5 className="mb-0">&#8377;6000/Sq.Ft Onwards</h5>
           </div>
