@@ -6,6 +6,8 @@ const apis = {
   submitpassword: `${api_url}/user/login-with-password/`,
   developerListingUrl: `${api_url}/developers/`,
   projectListingUrl: `${api_url}/projects/`,
+  homepageProject: `${api_url}/projects/homepage/`,
+  homepageDevelopers: `${api_url}/developers/home_page/`,
   userListingUrl: `${api_url}/users?role=Customer`,
   teamListingUrl: `${api_url}/users?role=Admin`,
   teamUrl: `${api_url}/users/`,

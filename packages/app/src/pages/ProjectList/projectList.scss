@@ -13,7 +13,7 @@
       padding-top: 50px;
     }
   }
-  .showing-text{
+  .showing-text {
     @include font-poppins-bold-14($orange-color);
     line-height: 1.2;
   }
@@ -37,5 +37,19 @@
   }
   .dropdown-item {
     @include font-poppins-regular-13(black);
+  }
+}
+.pagination {
+  border-top: 1px solid #dee2e6;
+  padding-top: 15px;
+  a {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
   }
 }

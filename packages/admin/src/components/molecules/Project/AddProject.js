@@ -35,18 +35,6 @@ const AddProject = () => {
           if (formData && formData.mediaFile) {
             formData.media = formData.mediaFile.split(",").map(Number);
           }
-          if (
-            formData &&
-            formData.min_price &&
-            formData.max_price
-          ) {
-            formData.price_range = [
-              formData.min_price,
-              formData.max_price,
-            ];
-            delete formData.min_price;
-            delete formData.max_price;
-          }
           if (formData && formData.amenities && formData.amenities) {
             formData.amenities.map((val, key) => {
               formData.amenities[key].media = val.mediaFile

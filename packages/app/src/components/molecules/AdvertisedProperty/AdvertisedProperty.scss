@@ -51,7 +51,7 @@
       left: -3%;
     }
     @include mobile {
-      left: 0%
+      left: 0%;
     }
     &::before {
       content: "\f2fa";
@@ -65,7 +65,7 @@
       right: -3%;
     }
     @include mobile {
-      right: 0%
+      right: 0%;
     }
     &::before {
       content: "\f2fb";
@@ -148,6 +148,10 @@
         @include font-poppins-bold-10($deep-purple);
         &.active {
           @include font-poppins-bold-10($orange-color);
+          &:hover {
+            @include font-poppins-bold-10($white);
+            cursor: pointer;
+          }
         }
       }
       span {

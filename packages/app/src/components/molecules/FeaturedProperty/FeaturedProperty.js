@@ -11,7 +11,7 @@ const FeaturedProperty = () => {
     setDataList(data);
   };
   useEffect(() => {
-    fetchData(apis.developerListingUrl, updateFormData);
+    fetchData(apis.homepageDevelopers, updateFormData);
   }, []);
   return (
     <div
@@ -23,15 +23,13 @@ const FeaturedProperty = () => {
         <div className="col-lg-12 p0">
           <div className="row pb-lg-4 pb-0 justify-content-center">
             {dataList &&
-              dataList.results &&
-              dataList.results.map((val, key) => {
+              dataList.map((val, key) => {
                 return (
                   <div className="col-lg-4 col-md-6 col-10 pb-2 pb-lf-0">
                     <CardVendor value={val} />
                   </div>
                 );
-              })
-            }
+              })}
           </div>
           <div className="row">
             <div className="col-lg-12 text-center pt5 link">View All</div>
