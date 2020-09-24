@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import ProjectDetail1 from "assets/project-detail11.png";
-import ProjectDetail2 from "assets/project-detail1.png";
-import SampleVideo from "assets/sample-video.mp4";
+// import ProjectDetail2 from "assets/project-detail1.png";
+// import SampleVideo from "assets/sample-video.mp4";
 import "./ProjectDetailSlider.scss";
 
 // const images = [
