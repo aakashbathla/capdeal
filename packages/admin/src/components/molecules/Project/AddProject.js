@@ -37,15 +37,15 @@ const AddProject = () => {
           }
           if (
             formData &&
-            formData.price_range_min &&
-            formData.price_range_max
+            formData.min_price &&
+            formData.max_price
           ) {
             formData.price_range = [
-              formData.price_range_min,
-              formData.price_range_max,
+              formData.min_price,
+              formData.max_price,
             ];
-            delete formData.price_range_min;
-            delete formData.price_range_max;
+            delete formData.min_price;
+            delete formData.max_price;
           }
           if (formData && formData.amenities && formData.amenities) {
             formData.amenities.map((val, key) => {

@@ -32,7 +32,7 @@ const Listing = ({
           !(key === "image") &&
           !(typeof value === "object" && value !== null)
         ) {
-          return <th>{key.replace(/_/g, " ")}</th>;
+          return <th key={key}>{key.replace(/_/g, " ")}</th>;
         } else {
         }
       })}
@@ -44,7 +44,7 @@ const Listing = ({
     data.results.length > 0 &&
     data.results.map((val, key) => {
       return (
-        <tr>
+        <tr key={key}>
           {Object.entries(val).map(([key, value]) => {
             if (
               !Array.isArray(value) &&
@@ -52,7 +52,7 @@ const Listing = ({
               !(typeof value === "object" && value !== null)
             ) {
               return (
-                <td>
+                <td key={key}>
                   <div>
                     {value}
                     {value == false && typeof value == "boolean" ? (

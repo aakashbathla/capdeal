@@ -80,11 +80,11 @@ export const schema = {
       type: "string",
       title: "Media",
     },
-    price_range_min: {
+    min_price: {
       type: "number",
       title: "Price Range Min Value",
     },
-    price_range_max: {
+    max_price: {
       type: "number",
       title: "Price Range Max Value",
     },
@@ -162,8 +162,8 @@ export const schema = {
     "name",
     "status",
     "property_type",
-    "price_range_min",
-    "price_range_max",
+    "min_price",
+    "max_price",
     "features",
   ],
 };
@@ -191,8 +191,8 @@ export const uiSchema = {
                 { "ui:col": { md: 6, children: ["state"] } },
                 { "ui:col": { md: 6, children: ["zipcode"] } },
                 { "ui:col": { md: 6, children: ["media_url"] } },
-                { "ui:col": { md: 3, children: ["price_range_min"] } },
-                { "ui:col": { md: 3, children: ["price_range_max"] } },
+                { "ui:col": { md: 3, children: ["min_price"] } },
+                { "ui:col": { md: 3, children: ["max_price"] } },
                 { "ui:col": { md: 6, children: ["status"] } },
                 { "ui:col": { md: 6, children: ["property_type"] } },
                 { "ui:col": { md: 12, children: ["description"] } },
