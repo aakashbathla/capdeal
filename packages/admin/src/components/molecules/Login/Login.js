@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import LoginLogo from "assets/login-logo-2x.png";
 import Logo from "assets/logo.png";
 import bgImage from "assets/bg-img.jpg";
-import { phoneRegExp, passwordRegExp } from "utils/Utils";
+import { phoneRegExp, passwordRegExp, logout } from "utils/Utils";
 import Input from "components/atoms/Input";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
@@ -20,6 +20,9 @@ const Login = ({
 }) => {
   const [showPasswordField, setShowPasswordField] = useState(false);
   const formRef = useRef();
+  useEffect(() => {
+    logout();
+  }, []);
   if (otpSubmitSuccess || passwordSubmitSuccess) {
     return <Redirect to="/app/customer-list" />;
   }
@@ -40,6 +43,7 @@ const Login = ({
         );
       }
     }
+    console.log("phone number required");
   };
   const onOtpClick = () => {
     if (
@@ -49,6 +53,8 @@ const Login = ({
       formRef.current.values.mobile_number
     ) {
       loginWithOtp(formRef.current.values.mobile_number);
+    } else {
+      console.log("phone number required");
     }
   };
   return (
