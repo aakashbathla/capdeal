@@ -137,6 +137,9 @@ const setCookieMethod = (userProfile) => {
 export const logout = () => {
   localStorage.removeItem("userProfile");
 };
+export const getLocalstorageData = () => {
+  return localStorage.getItem("userProfile");
+};
 
 export const dataURItoBlob = (dataURI) => {
   var binary = atob(dataURI.split(",")[1]);

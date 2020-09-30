@@ -2,10 +2,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
-import ProfileImg from "assets/profile_av.jpg";
+import ProfileImg from "assets/profile.png";
+import { getLocalstorageData } from "utils/Utils";
 import "./SideNav.css";
 
 const SideNav = () => {
+  let userProfile = getLocalstorageData();
+  userProfile = JSON.parse(userProfile);
   return (
     <aside id="leftsidebar" className="sidebar">
       <ProSidebar>
@@ -16,8 +19,8 @@ const SideNav = () => {
             </a>
           </div>
           <div className="detail">
-            <h4>Michael</h4>
-            <small>Admin</small>
+            <h4>{userProfile.name || "Team Member"}</h4>
+            <small>{userProfile.role}</small>
           </div>
         </div>
         <Menu iconShape="square">
