@@ -2,10 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import LoginLogo from "assets/login-logo-2x.png";
 import Logo from "assets/logo.png";
 import bgImage from "assets/bg-img.jpg";
-import { phoneRegExp, passwordRegExp, logout } from "utils/Utils";
+import {logout } from "utils/Utils";
 import Input from "components/atoms/Input";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
 import { Redirect } from "react-router";
 
 import "./Login.scss";
@@ -17,22 +16,32 @@ const Login = ({
   submitOtp,
   submitPassword,
   passwordSubmitSuccess,
+  showError,
 }) => {
   const [showPasswordField, setShowPasswordField] = useState(false);
+  const [error, setError] = useState(null);
   const formRef = useRef();
+  const form2Ref = useRef();
+  let count;
   useEffect(() => {
+    count = 0;
     logout();
   }, []);
+  if (showError && !error) {
+    setError(showError);
+  }
   if (otpSubmitSuccess || passwordSubmitSuccess) {
     return <Redirect to="/app/customer-list" />;
   }
   const onPasswordClick = () => {
+    setError(null);
     if (
       formRef &&
       formRef.current &&
       formRef.current.values &&
       formRef.current.values.mobile_number
     ) {
+      count = count + 1;
       setShowPasswordField(true);
       if (formRef.current.values.password) {
         console.log(formRef.current.values.password);
@@ -41,11 +50,17 @@ const Login = ({
           formRef.current.values.password,
           formRef.current.values.mobile_number
         );
+      } else {
+        if (count != 1) {
+          setError("password required");
+        }
       }
+    } else {
+      setError("Phone number required");
     }
-    console.log("phone number required");
   };
   const onOtpClick = () => {
+    setError(null);
     if (
       formRef &&
       formRef.current &&
@@ -54,7 +69,24 @@ const Login = ({
     ) {
       loginWithOtp(formRef.current.values.mobile_number);
     } else {
-      console.log("phone number required");
+      setError("Phone number required");
+    }
+  };
+  const submitOtpClick = () => {
+    setError(null);
+    console.log(formRef.current);
+    if (
+      form2Ref &&
+      form2Ref.current &&
+      form2Ref.current.values &&
+      form2Ref.current.values.otp
+    ) {
+      submitOtp(
+        form2Ref.current.values.otp,
+        form2Ref.current.values.mobile_number
+      );
+    } else {
+      setError("please enter otp");
     }
   };
   return (
@@ -84,15 +116,15 @@ const Login = ({
                     password: "",
                   }}
                   innerRef={formRef}
-                  validationSchema={Yup.object({
-                    mobile_number: Yup.string()
-                      .matches(phoneRegExp, "Phone Number is not valid")
-                      .max(15, "Must be 15 characters or less")
-                      .required("Enter Phone Number"),
-                    password: Yup.string()
-                      .matches(passwordRegExp, "Invalid Password")
-                      .required("Enter Password"),
-                  })}
+                  // validationSchema={Yup.object({
+                  //   mobile_number: Yup.string()
+                  //     .matches(phoneRegExp, "Phone Number is not valid")
+                  //     .max(15, "Must be 15 characters or less")
+                  //     .required("Enter Phone Number"),
+                  //   password: Yup.string()
+                  //     .matches(passwordRegExp, "Invalid Password")
+                  //     .required("Enter Password"),
+                  // })}
                 >
                   <Form
                     name="login_with_otp_form"
@@ -108,6 +140,7 @@ const Login = ({
                             Login
                           </div>
                         </div>
+                        {error && <div className="error">{error}</div>}
                         <div className="fom grroup mb-3">
                           <div className="input-group input-lg">
                             <Input
@@ -116,6 +149,11 @@ const Login = ({
                               placeholder="Enter Mobile Number"
                               className="form-control"
                               iconClassName="zmdi zmdi-account-circle"
+                              // onChange={() => {
+                              //   console.log("mani");
+                              //   error && setError(null);
+                              //   console.log("bathla");
+                              // }}
                             />
                           </div>
                           {showPasswordField && (
@@ -126,6 +164,9 @@ const Login = ({
                                 placeholder="Enter Password"
                                 className="form-control"
                                 iconClassName="zmdi zmdi-lock"
+                                // onChange={() => {
+                                //   // setError(null);
+                                // }}
                               />
                             </div>
                           )}
@@ -172,14 +213,15 @@ const Login = ({
                       formRef.current.values.mobile_number,
                     otp: "",
                   }}
-                  validationSchema={Yup.object({
-                    otp: Yup.string()
-                      .max(4, "Must be 4 characters or less")
-                      .required("Enter OTP"),
-                  })}
-                  onSubmit={(values) => {
-                    submitOtp(values.otp, values.mobile_number);
-                  }}
+                  innerRef={form2Ref}
+                  // validationSchema={Yup.object({
+                  //   otp: Yup.string()
+                  //     .max(4, "Must be 4 characters or less")
+                  //     .required("Enter OTP"),
+                  // })}
+                  // onSubmit={(values) => {
+                  //   submitOtp(values.otp, values.mobile_number);
+                  // }}
                 >
                   <Form
                     name="login_with_otp_form"
@@ -195,6 +237,7 @@ const Login = ({
                             Please Enter OTP
                           </div>
                         </div>
+                        {error && <div className="error">{error}</div>}
                         <div className="fom grroup mb-3">
                           <div className="input-group input-lg">
                             <Input
@@ -203,6 +246,9 @@ const Login = ({
                               placeholder="Enter OTP"
                               className="form-control"
                               iconClassName="zmdi zmdi-lock"
+                              // onChange={() => {
+                              //   // setError(null);
+                              // }}
                             />
                             {/* <input
                               type="text"
@@ -218,7 +264,8 @@ const Login = ({
                           <div>
                             <button
                               className="btn-block btn btn-lg btn-primary"
-                              type="submit"
+                              type="button"
+                              onClick={submitOtpClick}
                             >
                               Submit OTP
                             </button>
