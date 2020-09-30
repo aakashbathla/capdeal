@@ -1,8 +1,9 @@
+/* eslint-disable */
 import React, { useState, useRef, useEffect } from "react";
 import LoginLogo from "assets/login-logo-2x.png";
 import Logo from "assets/logo.png";
 import bgImage from "assets/bg-img.jpg";
-import {logout } from "utils/Utils";
+import { logout } from "utils/Utils";
 import Input from "components/atoms/Input";
 import { Formik, Form } from "formik";
 import { Redirect } from "react-router";
@@ -51,7 +52,7 @@ const Login = ({
           formRef.current.values.mobile_number
         );
       } else {
-        if (count != 1) {
+        if (count !== 1) {
           setError("password required");
         }
       }

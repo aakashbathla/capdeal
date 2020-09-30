@@ -213,7 +213,7 @@ export const errorGenerator = (err) => {
   if (err && err.response && err.response.data) {
     let error = [];
     for (const [key, value] of Object.entries(err.response.data)) {
-      if (key == "error" || key == "non_field_errors") {
+      if (key === "error" || key === "non_field_errors") {
         error.push(`${value}`);
       } else {
         error.push(`${key}: ${value}`);
