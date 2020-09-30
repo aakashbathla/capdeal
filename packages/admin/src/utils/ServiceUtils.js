@@ -30,6 +30,10 @@ class ServiceUtils {
       const response = await axios(reqOptions);
       responseData = response.data;
     } catch (err) {
+      if (err && err.response && err.response.status === 401) {
+        alert("you don't have permission");
+        window.location.href = "/login";
+      }
       throw err;
     }
     return await responseData;
