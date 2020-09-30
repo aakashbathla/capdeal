@@ -134,6 +134,9 @@ const localStorage = new LocalStorageUtil();
 const setCookieMethod = (userProfile) => {
   localStorage.saveItem("userProfile", JSON.stringify(userProfile));
 };
+export const logout = () => {
+  localStorage.removeItem("userProfile");
+};
 
 export const dataURItoBlob = (dataURI) => {
   var binary = atob(dataURI.split(",")[1]);
