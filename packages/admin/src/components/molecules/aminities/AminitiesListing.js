@@ -8,6 +8,7 @@ import "./Aminities.scss";
 
 const AminitiesListing = () => {
   const [aminitiesData, setAminitiesData] = useState([]);
+  const [error, setError] = useState(null);
   let urlOptions = {
     pathname: apis.aminitiesListingUrl,
     urlEncoded: true,
@@ -29,6 +30,7 @@ const AminitiesListing = () => {
           }
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -56,6 +58,7 @@ const AminitiesListing = () => {
           fetchData();
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -64,6 +67,13 @@ const AminitiesListing = () => {
   };
   return (
     <>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {aminitiesData && aminitiesData.results && (
         <Listing
           data={aminitiesData}

@@ -8,6 +8,7 @@ import "./CustomerList.scss";
 
 const CustomerListing = () => {
   const [customerData, setCustomerData] = useState([]);
+  const [error, setError] = useState(null);
   let urlOptions = {
     pathname: apis.userListingUrl,
     urlEncoded: true,
@@ -29,6 +30,7 @@ const CustomerListing = () => {
           }
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -56,6 +58,7 @@ const CustomerListing = () => {
           fetchData();
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -64,6 +67,13 @@ const CustomerListing = () => {
   };
   return (
     <>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {customerData && customerData.results && (
         <Listing
           data={customerData}

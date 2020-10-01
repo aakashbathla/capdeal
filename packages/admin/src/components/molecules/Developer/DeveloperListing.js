@@ -8,6 +8,7 @@ import "./Developer.scss";
 
 const DeveloperListing = () => {
   const [developerData, setDeveloperData] = useState([]);
+  const [error, setError] = useState(null);
   let urlOptions = {
     pathname: apis.developerListingUrl,
     urlEncoded: true,
@@ -29,6 +30,7 @@ const DeveloperListing = () => {
           }
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -56,6 +58,7 @@ const DeveloperListing = () => {
           fetchData();
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -64,6 +67,13 @@ const DeveloperListing = () => {
   };
   return (
     <>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {developerData && developerData.results && (
         <Listing
           data={developerData}

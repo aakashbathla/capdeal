@@ -8,6 +8,7 @@ import "./Project.scss";
 
 const ProjectListing = () => {
   const [projectData, setProjectData] = useState([]);
+  const [error, setError] = useState(null);
   let urlOptions = {
     pathname: apis.projectListingUrl,
     urlEncoded: true,
@@ -29,6 +30,7 @@ const ProjectListing = () => {
           }
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -57,6 +59,7 @@ const ProjectListing = () => {
           fetchData();
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -65,6 +68,13 @@ const ProjectListing = () => {
   };
   return (
     <>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {projectData && projectData.results && (
         <Listing
           data={projectData}

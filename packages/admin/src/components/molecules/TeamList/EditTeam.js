@@ -8,6 +8,7 @@ import { fetchData, updateData, errorGenerator } from "../../../utils/Utils";
 
 const EditTeam = (props) => {
   const history = useHistory();
+  const [error, setError] = useState(null);
   const [updateFormDataValue, setUpdateFormDataValue] = useState(null);
   const updateFormData = (data) => {
     setUpdateFormDataValue(data);
@@ -18,6 +19,7 @@ const EditTeam = (props) => {
     });
   };
   const errorHandler = (err) => {
+    setError(errorGenerator(err));
     console.log(errorGenerator(err));
   };
   useEffect(() => {
@@ -35,6 +37,13 @@ const EditTeam = (props) => {
       <span className="back-btn" onClick={() => history.goBack()}>
         <i className="zmdi zmdi-arrow-left"></i>
       </span>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {updateFormDataValue && (
         <Form
           schema={schema}

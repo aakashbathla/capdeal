@@ -1,18 +1,20 @@
 /* eslint-disable */
 import Form from "@rjsf/core";
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema, fields } from "./AddProjectSchema";
 import { addData, errorGenerator, transformErrors } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 const AddProject = () => {
   const history = useHistory();
+  const [error, setError] = useState(null);
   const redirectFunction = () => {
     history.push({
       pathname: "/app/project-list",
     });
   };
   const errorHandler = (err) => {
+    setError(errorGenerator(err));
     console.log(errorGenerator(err));
   };
   return (
@@ -23,6 +25,13 @@ const AddProject = () => {
         </span>
         <span className="form-header__title">Add Project</span>
       </div>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       <Form
         schema={schema}
         uiSchema={uiSchema}

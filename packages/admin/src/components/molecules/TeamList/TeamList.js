@@ -9,6 +9,7 @@ import "./TeamList.scss";
 
 const TeamListing = () => {
   const [teamData, setTeamData] = useState([]);
+  const [error, setError] = useState(null);
   let urlOptions = {
     pathname: apis.teamListingUrl,
     urlEncoded: true,
@@ -30,6 +31,7 @@ const TeamListing = () => {
           }
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -58,6 +60,7 @@ const TeamListing = () => {
           fetchData();
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -66,6 +69,13 @@ const TeamListing = () => {
   };
   return (
     <>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {teamData && teamData.results && (
         <Listing
           data={teamData}

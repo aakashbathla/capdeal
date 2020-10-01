@@ -14,6 +14,7 @@ import "./Developer.scss";
 
 const EditDeveloper = (props) => {
   const history = useHistory();
+  const [error, setError] = useState(null);
   const [updateFormDataValue, setUpdateFormDataValue] = useState(null);
   const updateFormData = (data) => {
     data.imageFile = data.image || undefined;
@@ -25,6 +26,7 @@ const EditDeveloper = (props) => {
     });
   };
   const errorHandler = (err) => {
+    setError(errorGenerator(err));
     console.log(errorGenerator(err));
   };
   useEffect(() => {
@@ -42,6 +44,13 @@ const EditDeveloper = (props) => {
       <span className="back-btn" onClick={() => history.goBack()}>
         <i className="zmdi zmdi-arrow-left"></i>
       </span>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {updateFormDataValue && (
         <Form
           safeRenderCompletion={true}

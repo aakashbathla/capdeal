@@ -8,6 +8,7 @@ import "./Seo.scss";
 
 const SeoListing = () => {
   const [seoData, setSeoData] = useState([]);
+  const [error, setError] = useState(null);
   let urlOptions = {
     pathname: apis.seoListingUrl,
     urlEncoded: true,
@@ -29,6 +30,7 @@ const SeoListing = () => {
           }
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -57,6 +59,7 @@ const SeoListing = () => {
           fetchData();
         })
         .catch((err) => {
+          setError(errorGenerator(err));
           console.log(errorGenerator(err));
         });
     } catch (err) {
@@ -65,6 +68,13 @@ const SeoListing = () => {
   };
   return (
     <>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {seoData && seoData.results && (
         <Listing
           data={seoData}

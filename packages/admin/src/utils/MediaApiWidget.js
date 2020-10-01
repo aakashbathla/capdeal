@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import apis from "../constants/apis/services";
 import ServiceUtils from "./ServiceUtils";
-import { buildUrl } from "./Utils";
+import { buildUrl, errorGenerator } from "./Utils";
 const MediaApiWidget = (props) => {
+  const [error, setError] = useState(null);
   const handleChange = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -28,16 +29,26 @@ const MediaApiWidget = (props) => {
         props.onChange(data.id);
       });
     } catch (err) {
+      setError(errorGenerator(err));
       console.log(err);
     }
   };
   return (
-    <input
-      name="file"
-      type="file"
-      onChange={handleChange}
-      accept={props.options.accept}
-    />
+    <>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
+      <input
+        name="file"
+        type="file"
+        onChange={handleChange}
+        accept={props.options.accept}
+      />
+    </>
   );
 };
 

@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import apis from "../constants/apis/services";
 import ServiceUtils from "./ServiceUtils";
-import { buildUrl, convertBase64ToBlob, imageType } from "./Utils";
+import {
+  buildUrl,
+  convertBase64ToBlob,
+  imageType,
+  errorGenerator,
+} from "./Utils";
 import MultiImageInput from "react-multiple-image-input";
 const MultipleMediaPreviewWidget = (props) => {
   const crop = {
@@ -9,6 +14,7 @@ const MultipleMediaPreviewWidget = (props) => {
     aspect: 4 / 3,
     width: "100",
   };
+  const [error, setError] = useState(null);
   const [images, setImages] = useState([]);
   useEffect(() => {
     if (props && props.value) {
@@ -79,6 +85,7 @@ const MultipleMediaPreviewWidget = (props) => {
             }
           });
         } catch (err) {
+          setError(errorGenerator(err));
           console.log(err);
         }
       }
@@ -86,6 +93,13 @@ const MultipleMediaPreviewWidget = (props) => {
   };
   return (
     <>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       <MultiImageInput
         images={images}
         setImages={setImages}

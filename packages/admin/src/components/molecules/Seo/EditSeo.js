@@ -14,6 +14,7 @@ import { withRouter } from "react-router";
 
 const EditSeo = (props) => {
   const [updateFormDataValue, setUpdateFormDataValue] = useState(null);
+  const [error, setError] = useState(null);
   const updateFormData = (data) => {
     setUpdateFormDataValue(data);
   };
@@ -24,6 +25,7 @@ const EditSeo = (props) => {
     });
   };
   const errorHandler = (err) => {
+    setError(errorGenerator(err));
     console.log(errorGenerator(err));
   };
   useEffect(() => {
@@ -41,6 +43,13 @@ const EditSeo = (props) => {
       <span className="back-btn" onClick={() => history.goBack()}>
         <i className="zmdi zmdi-arrow-left"></i>
       </span>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {updateFormDataValue && (
         <Form
           schema={schema}
