@@ -50,7 +50,6 @@ import "./ProjectDetailSlider.scss";
 // ];
 
 const ProjectDetailSlider = ({ data }) => {
-  console.log(data);
   const images =
     data &&
     data.media &&

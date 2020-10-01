@@ -45,8 +45,6 @@ const Login = ({
       count = count + 1;
       setShowPasswordField(true);
       if (formRef.current.values.password) {
-        console.log(formRef.current.values.password);
-        console.log(formRef.current.values.mobile_number);
         submitPassword(
           formRef.current.values.password,
           formRef.current.values.mobile_number
@@ -75,7 +73,6 @@ const Login = ({
   };
   const submitOtpClick = () => {
     setError(null);
-    console.log(formRef.current);
     if (
       form2Ref &&
       form2Ref.current &&
@@ -117,15 +114,6 @@ const Login = ({
                     password: "",
                   }}
                   innerRef={formRef}
-                  // validationSchema={Yup.object({
-                  //   mobile_number: Yup.string()
-                  //     .matches(phoneRegExp, "Phone Number is not valid")
-                  //     .max(15, "Must be 15 characters or less")
-                  //     .required("Enter Phone Number"),
-                  //   password: Yup.string()
-                  //     .matches(passwordRegExp, "Invalid Password")
-                  //     .required("Enter Password"),
-                  // })}
                 >
                   <Form
                     name="login_with_otp_form"
@@ -150,11 +138,6 @@ const Login = ({
                               placeholder="Enter Mobile Number"
                               className="form-control"
                               iconClassName="zmdi zmdi-account-circle"
-                              // onChange={() => {
-                              //   console.log("mani");
-                              //   error && setError(null);
-                              //   console.log("bathla");
-                              // }}
                             />
                           </div>
                           {showPasswordField && (
@@ -165,9 +148,6 @@ const Login = ({
                                 placeholder="Enter Password"
                                 className="form-control"
                                 iconClassName="zmdi zmdi-lock"
-                                // onChange={() => {
-                                //   // setError(null);
-                                // }}
                               />
                             </div>
                           )}
@@ -215,14 +195,6 @@ const Login = ({
                     otp: "",
                   }}
                   innerRef={form2Ref}
-                  // validationSchema={Yup.object({
-                  //   otp: Yup.string()
-                  //     .max(4, "Must be 4 characters or less")
-                  //     .required("Enter OTP"),
-                  // })}
-                  // onSubmit={(values) => {
-                  //   submitOtp(values.otp, values.mobile_number);
-                  // }}
                 >
                   <Form
                     name="login_with_otp_form"
@@ -247,18 +219,7 @@ const Login = ({
                               placeholder="Enter OTP"
                               className="form-control"
                               iconClassName="zmdi zmdi-lock"
-                              // onChange={() => {
-                              //   // setError(null);
-                              // }}
                             />
-                            {/* <input
-                              type="text"
-                              className="form-control"
-                              placeholder=""
-                            />
-                            <span className="input-group-addon">
-                              <i className="zmdi zmdi-lock"></i>
-                            </span> */}
                           </div>
                         </div>
                         <div className="col-xs-12">

@@ -30,7 +30,6 @@ const MediaApiWidget = (props) => {
       });
     } catch (err) {
       setError(errorGenerator(err));
-      console.log(err);
     }
   };
   return (

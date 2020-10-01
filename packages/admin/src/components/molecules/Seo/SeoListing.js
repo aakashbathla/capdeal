@@ -24,14 +24,12 @@ const SeoListing = () => {
         .then((data) => {
           if (data) {
             setSeoData(data);
-            console.log(data);
           } else {
             console.log(error);
           }
         })
         .catch((err) => {
           setError(errorGenerator(err));
-          console.log(errorGenerator(err));
         });
     } catch (err) {
       console.log(err);
@@ -48,7 +46,6 @@ const SeoListing = () => {
       ...urlOptions,
       pathname: urlOptions.pathname + id,
     };
-    console.log(updateUrlOptions);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),
@@ -60,7 +57,6 @@ const SeoListing = () => {
         })
         .catch((err) => {
           setError(errorGenerator(err));
-          console.log(errorGenerator(err));
         });
     } catch (err) {
       console.log(err);

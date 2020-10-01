@@ -16,7 +16,6 @@ const AddDeveloper = () => {
   };
   const errorHandler = (err) => {
     setError(errorGenerator(err));
-    console.log(errorGenerator(err));
   };
   return (
     <div className="col-lg-6 col-md-6 col-sm-12">

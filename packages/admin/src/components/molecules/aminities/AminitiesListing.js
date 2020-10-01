@@ -24,14 +24,12 @@ const AminitiesListing = () => {
         .then((data) => {
           if (data) {
             setAminitiesData(data);
-            console.log(data);
           } else {
             console.log(error);
           }
         })
         .catch((err) => {
           setError(errorGenerator(err));
-          console.log(errorGenerator(err));
         });
     } catch (err) {
       console.log(err);
@@ -59,7 +57,6 @@ const AminitiesListing = () => {
         })
         .catch((err) => {
           setError(errorGenerator(err));
-          console.log(errorGenerator(err));
         });
     } catch (err) {
       console.log(err);

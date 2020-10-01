@@ -7,7 +7,6 @@ import FloorPlan from "assets/floor-plan1.jpg";
 import "./ProjectDetailTab.scss";
 
 const ProjectDetailTab = ({ data }) => {
-  console.log('details', data);
   return (
     <div className="project-detail__tab">
       <div className="container">

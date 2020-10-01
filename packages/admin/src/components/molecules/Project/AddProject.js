@@ -15,7 +15,6 @@ const AddProject = () => {
   };
   const errorHandler = (err) => {
     setError(errorGenerator(err));
-    console.log(errorGenerator(err));
   };
   return (
     <div>
@@ -39,7 +38,6 @@ const AddProject = () => {
         noHtml5Validate={true}
         transformErrors={transformErrors}
         onSubmit={({ formData }, e) => {
-          console.log(formData);
           e.preventDefault();
           if (formData && formData.mediaFile) {
             formData.media = formData.mediaFile.split(",").map(Number);

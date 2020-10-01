@@ -26,7 +26,6 @@ const EditSeo = (props) => {
   };
   const errorHandler = (err) => {
     setError(errorGenerator(err));
-    console.log(errorGenerator(err));
   };
   useEffect(() => {
     if (props && props.match && props.match.params && props.match.params.id) {

@@ -25,14 +25,12 @@ const TeamListing = () => {
         .then((data) => {
           if (data) {
             setTeamData(data);
-            console.log(data);
           } else {
             console.log(error);
           }
         })
         .catch((err) => {
           setError(errorGenerator(err));
-          console.log(errorGenerator(err));
         });
     } catch (err) {
       console.log(err);
@@ -49,7 +47,6 @@ const TeamListing = () => {
       ...urlOptions,
       pathname: apis.teamListing + id,
     };
-    console.log(updateUrlOptions);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),
@@ -61,7 +58,6 @@ const TeamListing = () => {
         })
         .catch((err) => {
           setError(errorGenerator(err));
-          console.log(errorGenerator(err));
         });
     } catch (err) {
       console.log(err);

@@ -24,18 +24,14 @@ const MultipleMediaPreviewWidget = (props) => {
           id.push(val.id.toString());
           return val.media_file;
         });
-        console.log(id.toString());
-        // props.onChange("aakash");
         props.onChange(
           props.value
             .map((val) => {
-              console.log("Bathla");
               return val.id;
             })
             .toString()
         );
         setTimeout(() => {}, 0);
-        console.log(props);
         setImages(img);
       }
       if (

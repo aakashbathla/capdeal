@@ -20,7 +20,6 @@ const AdvertisedProperty = () => {
   useEffect(() => {
     fetchData(apis.homepageProject, updateFormData);
   }, []);
-  console.log(dataList);
   let history = useHistory();
   const isMobile = useMediaQuery({
     maxWidth: 768,

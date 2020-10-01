@@ -24,14 +24,12 @@ const CustomerListing = () => {
         .then((data) => {
           if (data) {
             setCustomerData(data);
-            console.log(data);
           } else {
             console.log(error);
           }
         })
         .catch((err) => {
           setError(errorGenerator(err));
-          console.log(errorGenerator(err));
         });
     } catch (err) {
       console.log(err);
@@ -59,7 +57,6 @@ const CustomerListing = () => {
         })
         .catch((err) => {
           setError(errorGenerator(err));
-          console.log(errorGenerator(err));
         });
     } catch (err) {
       console.log(err);

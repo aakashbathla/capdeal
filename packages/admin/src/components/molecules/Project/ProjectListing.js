@@ -24,14 +24,12 @@ const ProjectListing = () => {
         .then((data) => {
           if (data) {
             setProjectData(data);
-            console.log(data);
           } else {
             console.log(error);
           }
         })
         .catch((err) => {
           setError(errorGenerator(err));
-          console.log(errorGenerator(err));
         });
     } catch (err) {
       console.log(err);
@@ -48,7 +46,6 @@ const ProjectListing = () => {
       ...urlOptions,
       pathname: urlOptions.pathname + id,
     };
-    console.log(updateUrlOptions);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),
@@ -60,7 +57,6 @@ const ProjectListing = () => {
         })
         .catch((err) => {
           setError(errorGenerator(err));
-          console.log(errorGenerator(err));
         });
     } catch (err) {
       console.log(err);
