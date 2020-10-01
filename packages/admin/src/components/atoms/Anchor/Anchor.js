@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { buildUrl } from "../../../core/utils/url";
+import { buildUrl } from "../../../utils/Utils";
 
 const Anchor = ({
   children,

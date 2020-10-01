@@ -29,8 +29,8 @@ const NoMatch = (props) => {
         <div className="row align-items-center justify-content-center">
           <div className="col-xl-2 col-lg-2 text-center">
             <div>
-              <h3>Error 404</h3>
-              <span>Page not found</span>
+              <h3>Error 500</h3>
+              <span>Internal Server Error</span>
               <Anchor
                 to="/"
                 className="btn btn-lg deep-purple-background light d-block mt-4"

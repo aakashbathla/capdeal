@@ -33,6 +33,8 @@ class ServiceUtils {
       if (err && err.response && err.response.status === 401) {
         alert("you don't have permission");
         window.location.href = "/login";
+      } else if (err && err.response && err.response.status === 500) {
+        window.location.href = "/500";
       }
       throw err;
     }

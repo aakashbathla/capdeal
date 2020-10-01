@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-
+//import ErrorHandler from "./utils/ErrorHandlerUtility";
 import App from "./App";
 import CustomerList from "components/molecules/CustomerList";
 import TeamList from "components/molecules/TeamList";
@@ -20,23 +20,28 @@ import EditProject from "components/molecules/Project/EditProject";
 import SeoList from "components/molecules/Seo/SeoListing";
 import AddSeo from "components/molecules/Seo/";
 import EditSeo from "./components/molecules/Seo/EditSeo";
-
-// import Login from "./containers/organisms/Login/Login";
-// import NoMatch from "./components/atoms/NoMatch";
-
-// import Home from "pages/Home";
-// import Dashboard from "pages/Dashboard";
-// import User from "pages/Dashboard/User";
+import NoMatch from "components/atoms/NoMatch";
+import NoMatch500 from "components/atoms/NoMatch/NoMatch500";
+import { LocalStorageUtil } from "./utils/localstorage";
 
 const Routes = () => {
+  const localStorage = new LocalStorageUtil();
+  const loggedIn = JSON.parse(localStorage.getItem("userProfile"));
   return (
     <BrowserRouter>
+      {/* <ErrorHandler> */}
       <Switch>
         <Route exact path="/">
-          <Redirect to="/login" />
+          {loggedIn ? (
+            <Redirect to="/app/customer-list" />
+          ) : (
+            <Redirect to="/login" />
+          )}
         </Route>
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/app" component={App} />
+        <Route exact path="/404" component={NoMatch} />
+        <Route exact path="/500" component={NoMatch500} />
         <App>
           <Route
             component={({ match }) => (
@@ -90,26 +95,16 @@ const Routes = () => {
                 <Route exact path="/app/seo-list" component={SeoList} />
                 <Route exact path="/app/add-seo" component={AddSeo} />
                 <Route exact path="/app/edit-seo/:id" component={EditSeo} />
-              </Switch>
-            )}
-          />
-        </App>
-        {/* <Route exact path="/login" component={Login} />
-        <Route exact path="/404" component={NoMatch} />
-        <Dashboard>
-          <Route
-            component={({ match }) => (
-              <Switch>
-                <Route exact path="/dashboard/user" component={User} />
                 <Route component={NoMatch}>
                   <Redirect to="/404" />
                 </Route>
               </Switch>
             )}
           />
-        </Dashboard>
-        <Route component={NoMatch}></Route> */}
+        </App>
+        <Route component={NoMatch}></Route>
       </Switch>
+      {/* </ErrorHandler> */}
     </BrowserRouter>
   );
 };

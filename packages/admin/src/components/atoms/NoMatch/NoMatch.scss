@@ -1,16 +1,15 @@
-@import "../../../styles/src/colors";
-@import "../../../styles/src/typography";
-
-.content {
+.content-nomatch {
   background-position: center;
   background-size: cover;
   .row {
     height: calc(100vh - 101px);
   }
   h3 {
-    @include font-poppins-regular-28($white)
+    font-size: 28px;
+    color: white;
   }
   span {
-    @include font-poppins-regular-15($white);
+    font-size: 15px;
+    color: white;
   }
 }
