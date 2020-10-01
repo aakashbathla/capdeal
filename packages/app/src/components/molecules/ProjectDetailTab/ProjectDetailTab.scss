@@ -1,0 +1,139 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+.tab-wrap {
+  .card {
+    padding: 15px 0 15px 2px;
+    border: none;
+    border-left: 6px solid $orange-color;
+    &:hover {
+      box-shadow: 0px 3px 6px #00000029;
+    }
+  }
+  .nav-link {
+    @include font-poppins-bold-13($deep-purple);
+    padding: .6rem 1rem;
+    letter-spacing: 0.01rem;
+    &.active {
+      color: $orange-color !important;
+      background-color: transparent !important;
+    }
+  }
+  .label-text {
+    @include font-raleway-regular-12($black);
+  }
+  .tab-content {
+    h4 {
+      @include font-poppins-bold-17($black);
+      font-weight: 500;
+    }
+    #floor-plan {
+      .custom-control-input {
+        &:checked~.custom-control-label::before {
+          border-color: $orange-color;
+          background-color: $orange-color;
+        }
+      }
+      .custom-control-label{
+        &::after, &::before {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+      .custom-control-label {
+        @include font-poppins-bold-15($black);
+        font-weight: 500;
+        padding-top: 2px;
+        padding-left: 12px;
+      }
+      .card {
+        border: none;
+        padding: 10px;
+        background-color: $light-grey-2;
+        border: 1px solid #e2d9da;
+        box-shadow: none;
+        border-radius: 5px !important;
+        h5 {
+          @include font-poppins-bold-12($black);
+          font-weight: 500;
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+        p {
+          @include font-poppins-regular-11($black);
+        }
+        .know-text {
+          @include font-poppins-bold-12($orange-color);
+          cursor: pointer;
+        }
+        .price {
+          text-align: right;
+          @include font-poppins-bold-12($black);
+        }
+      }
+    }
+    #location-map {
+      .icon-wrap {
+        padding: 10px;
+        border: 1px solid #b3a091;
+        background-color: $light-grey-2;
+        border-radius: 3px;
+        h5 {
+          @include font-poppins-regular-12($black);
+        }
+      }
+      span {
+        display: block;
+        border: 1px solid $grey-color;
+        border-radius: 30px;
+        text-align: center;
+        padding: 6px;
+        @include font-poppins-regular-12($black);
+      }
+    }
+    .faqs {
+      border: 1px solid #d6d6d6;
+      padding: 15px;
+      border-radius: 4px;
+      &__item {
+        h4 {
+          @include font-poppins-bold-13($black);
+          letter-spacing: 0.02rem;
+        }
+        h5 {
+          @include font-poppins-regular-12($black);
+        }
+        ol {
+          padding-left: 20px;
+          margin-bottom: 0;
+          li {
+            @include font-poppins-regular-11($black);
+          }
+        }
+      }
+    }
+    #market-analysis {
+      table {
+        th {
+          @include font-poppins-regular-14($black);
+        }
+        td {
+          @include font-poppins-regular-12($black);
+          vertical-align: middle;
+        }
+      }
+    }
+    .project-desc {
+      @include font-poppins-regular-13($black);
+    }
+    .amenities-box {
+      display: flex;
+      align-items: center;
+      h4 {
+        margin-bottom: 0;
+        margin-left: 5px;
+        @include font-poppins-regular-14($black);
+      }
+    }
+  }
+}

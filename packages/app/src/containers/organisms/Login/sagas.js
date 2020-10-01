@@ -48,8 +48,6 @@ export function* loadLoginWithOtpSaga(phoneNumber) {
 }
 
 export function* loadLoginWithFacebookSaga(accessToken) {
-  console.log("mani");
-  console.log(accessToken);
   const additionalFetchOptions = (accessToken) => ({
     method: "POST",
     data: {

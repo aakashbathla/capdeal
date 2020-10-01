@@ -1,0 +1,38 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+
+.contact-realestate-form {
+  padding: 15px;
+  h4 {
+    @include font-poppins-bold-18($orange-color);
+  }
+  .contact_no {
+    white-space: nowrap;
+  }
+  label {
+    @include font-poppins-regular-10($orange-color);
+    margin-bottom: 0;
+    font-weight: 500;
+  }
+  .form-control {
+    @include font-poppins-regular-12(black);
+    padding: 1.7rem 1rem;
+  }
+  .custom-control-label {
+    @include font-poppins-bold-10(black);
+    font-weight: 500;
+  }
+  .btn-primary {
+    background: $orange-color;
+    border-color: $orange-color;
+    font-size: 15px;
+    @include font-poppins-bold-15(white);
+    font-weight: 500;
+    &:hover {
+      background: $orange-color;
+      border-color: $orange-color;
+    }
+  }
+}
+

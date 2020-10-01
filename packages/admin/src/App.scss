@@ -1,9 +1,9 @@
 @import "./theme";
 section.content {
-  -moz-transition: .5s;
-  -o-transition: .5s;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
@@ -13,6 +13,7 @@ section.content {
   padding: 0 20px;
   z-index: 9;
   background-color: #e9ecef;
+  min-height: calc(100vh - 63px);
 }
 .block-header {
   padding: 20px 15px;
@@ -20,7 +21,7 @@ section.content {
     margin: 0 !important;
     padding-bottom: 20px;
     font-size: 20px;
-    font-family: 'Muli', Arial, Tahoma, sans-serif;
+    font-family: "Muli", Arial, Tahoma, sans-serif;
     font-weight: 600;
     small {
       color: #757575;
@@ -29,4 +30,96 @@ section.content {
     }
   }
 }
+.rjsf {
+  width: 100%;
+  .panel-danger.errors {
+    display: none;
+  }
+}
+.form-handler-css {
+  #root__title {
+    margin: 0 !important;
+    padding-bottom: 20px;
+    padding-left: 36px;
+    font-size: 20px;
+    font-family: "Muli", Arial, Tahoma, sans-serif;
+    font-weight: 600;
+  }
+  .control-label {
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+  .form-control {
+    font-size: 14px;
+  }
+}
 
+/* scrollbar  */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(153, 153, 153, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 6px rgba(25, 27, 55, 0.7);
+}
+
+.back-btn {
+  height: 26px;
+  width: 26px;
+  background: #d2d0d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  position: absolute;
+  cursor: pointer;
+  &:hover {
+    background: #c5c5c5;
+  }
+}
+
+//btn overight
+.btn-outline-primary {
+  border-color: #707070 !important;
+  color: #c98b66 !important;
+  border-radius: 30px !important;
+  font-size: 13px !important;
+  min-width: 90px;
+  &:focus {
+    box-shadow: none !important;
+  }
+  &:hover {
+    background-color: #c98b66 !important;
+    border-color: #c98b66 !important;
+    color: #fff !important;
+  }
+}
+.btn-info,
+.btn-round {
+  background-color: #c98b66 !important;
+  border-color: #c98b66 !important;
+  &:hover {
+    background-color: #bf794e !important;
+    border-color: #bf794e !important;
+  }
+  &:focus {
+    box-shadow: none !important;
+  }
+  .zmdi {
+    color: #fff;
+    margin-right: 0 !important;
+  }
+}
+
+.error-detail{
+  font-size: 12px;
+  padding-left: 0;
+  list-style: none;
+}

@@ -6,16 +6,17 @@ import {
   LOGIN_WITH_OTP_SUCCESS,
   LOGIN_WITH_OTP_ERROR,
 } from "./constants";
+import { errorGenerator } from "../../../utils/Utils";
 
 const initialState = {
   showOtpSuccess: false,
   otpSubmitSuccess: false,
   passwordSubmitSuccess: false,
+  showError: null,
 };
 
 const LoginReducer = (state = initialState, action) => {
   const { type } = action;
-  console.log(action);
   switch (type) {
     case LOGIN_WITH_OTP_SUCCESS:
       return Object.assign({}, state, {
@@ -25,7 +26,7 @@ const LoginReducer = (state = initialState, action) => {
     case LOGIN_WITH_OTP_ERROR:
       return Object.assign({}, state, {
         showOtpSuccess: false,
-        showError: true,
+        showError: errorGenerator(action.params),
       });
     case SUBMIT_OTP_SUCCESS:
       return Object.assign({}, state, {
@@ -35,7 +36,7 @@ const LoginReducer = (state = initialState, action) => {
     case SUBMIT_OTP_ERROR:
       return Object.assign({}, state, {
         otpSubmitSuccess: false,
-        showError: true,
+        showError: errorGenerator(action.params),
       });
     case SUBMIT_PASSWORD_SUCCESS:
       return Object.assign({}, state, {
@@ -45,7 +46,7 @@ const LoginReducer = (state = initialState, action) => {
     case SUBMIT_PASSWORD_ERROR:
       return Object.assign({}, state, {
         passwordSubmitSuccess: false,
-        showError: true,
+        showError: errorGenerator(action.params),
       });
     default:
       return state;

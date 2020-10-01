@@ -13,7 +13,7 @@ const NoMatch = (props) => {
             <div className="row">
               <div className="col-xl-2 col-lg-2">
                 <div className="logo-area logo-area">
-                  <Anchor to="/#home">
+                  <Anchor to="/">
                     <img src={logo} alt="enventer" />
                   </Anchor>
                 </div>
@@ -22,13 +22,19 @@ const NoMatch = (props) => {
           </div>
         </div>
       </header>
-      <div className="container-fluid content" style={{backgroundImage: `url(`+bgImage+`)`}}>
+      <div
+        className="container-fluid content-nomatch"
+        style={{ backgroundImage: `url(` + bgImage + `)` }}
+      >
         <div className="row align-items-center justify-content-center">
           <div className="col-xl-2 col-lg-2 text-center">
             <div>
               <h3>Error 404</h3>
               <span>Page not found</span>
-              <Anchor to="/home" className="btn btn-lg deep-purple-background light d-block mt-4">
+              <Anchor
+                to="/"
+                className="btn btn-lg deep-purple-background light d-block mt-4"
+              >
                 Go Back to Home
               </Anchor>
             </div>

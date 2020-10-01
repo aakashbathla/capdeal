@@ -2,13 +2,14 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
 import ServiceUtils from "../../../utils/ServiceUtils";
-import { buildUrl } from "../../../utils/Utils";
+import { buildUrl, errorGenerator } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 import Listing from "../../atoms/Listing";
 import "./TeamList.scss";
 
 const TeamListing = () => {
   const [teamData, setTeamData] = useState([]);
+  const [error, setError] = useState(null);
   let urlOptions = {
     pathname: apis.teamListingUrl,
     urlEncoded: true,
@@ -20,16 +21,17 @@ const TeamListing = () => {
     };
 
     try {
-      ServiceUtils.fetch(buildUrl(urlOptions, params), "http://").then(
-        (data) => {
+      ServiceUtils.fetch(buildUrl(urlOptions, params), "http://")
+        .then((data) => {
           if (data) {
             setTeamData(data);
-            console.log(data);
           } else {
             console.log(error);
           }
-        }
-      );
+        })
+        .catch((err) => {
+          setError(errorGenerator(err));
+        });
     } catch (err) {
       console.log(err);
     }
@@ -43,23 +45,33 @@ const TeamListing = () => {
     });
     const updateUrlOptions = {
       ...urlOptions,
-      pathname: urlOptions.pathname + id,
+      pathname: apis.teamListing + id,
     };
-    console.log(updateUrlOptions);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),
         additionalFetchOptions(id),
         "http://"
-      ).then(() => {
-        fetchData();
-      });
+      )
+        .then(() => {
+          fetchData();
+        })
+        .catch((err) => {
+          setError(errorGenerator(err));
+        });
     } catch (err) {
       console.log(err);
     }
   };
   return (
     <>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {teamData && teamData.results && (
         <Listing
           data={teamData}

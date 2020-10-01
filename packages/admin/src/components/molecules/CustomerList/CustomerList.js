@@ -1,13 +1,14 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
 import ServiceUtils from "../../../utils/ServiceUtils";
-import { buildUrl } from "../../../utils/Utils";
+import { buildUrl, errorGenerator } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 import Listing from "../../atoms/Listing/";
 import "./CustomerList.scss";
 
 const CustomerListing = () => {
   const [customerData, setCustomerData] = useState([]);
+  const [error, setError] = useState(null);
   let urlOptions = {
     pathname: apis.userListingUrl,
     urlEncoded: true,
@@ -19,16 +20,17 @@ const CustomerListing = () => {
     };
 
     try {
-      ServiceUtils.fetch(buildUrl(urlOptions, params), "http://").then(
-        (data) => {
+      ServiceUtils.fetch(buildUrl(urlOptions, params), "http://")
+        .then((data) => {
           if (data) {
             setCustomerData(data);
-            console.log(data);
           } else {
             console.log(error);
           }
-        }
-      );
+        })
+        .catch((err) => {
+          setError(errorGenerator(err));
+        });
     } catch (err) {
       console.log(err);
     }
@@ -44,21 +46,31 @@ const CustomerListing = () => {
       ...urlOptions,
       pathname: urlOptions.pathname + id,
     };
-    console.log(updateUrlOptions);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),
         additionalFetchOptions(id),
         "http://"
-      ).then(() => {
-        fetchData();
-      });
+      )
+        .then(() => {
+          fetchData();
+        })
+        .catch((err) => {
+          setError(errorGenerator(err));
+        });
     } catch (err) {
       console.log(err);
     }
   };
   return (
     <>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {customerData && customerData.results && (
         <Listing
           data={customerData}

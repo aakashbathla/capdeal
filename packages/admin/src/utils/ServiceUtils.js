@@ -14,7 +14,6 @@ class ServiceUtils {
     let responseData;
     const localStorage = new LocalStorageUtil();
     const token = JSON.parse(localStorage.getItem("userProfile"));
-    console.log(token);
     // Request options in axios format
     const reqOptions = {
       url: `${this.basePath}${url}`,
@@ -31,6 +30,12 @@ class ServiceUtils {
       const response = await axios(reqOptions);
       responseData = response.data;
     } catch (err) {
+      if (err && err.response && err.response.status === 401) {
+        alert("you don't have permission");
+        window.location.href = "/login";
+      } else if (err && err.response && err.response.status === 500) {
+        window.location.href = "/500";
+      }
       throw err;
     }
     return await responseData;

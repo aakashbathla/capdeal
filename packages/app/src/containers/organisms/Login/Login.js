@@ -6,7 +6,6 @@ import { submitOtp } from "./actions";
 import Login from "../../../components/molecules/Login";
 
 export const mapStateToProps = (state) => {
-  console.log(state);
   return {
     showOtpSuccess: state.login.showOtpSuccess,
     showFacebookSuccess: state.login.showFacebookSuccess,

@@ -9,6 +9,7 @@ export const mapStateToProps = (state) => {
     showOtpSuccess: state.login.showOtpSuccess,
     otpSubmitSuccess: state.login.otpSubmitSuccess,
     passwordSubmitSuccess: state.login.passwordSubmitSuccess,
+    showError: state.login.showError,
   };
 };
 

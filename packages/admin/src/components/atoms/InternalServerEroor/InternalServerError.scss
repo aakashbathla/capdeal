@@ -1,0 +1,15 @@
+.content_internalServerError {
+  background-position: center;
+  background-size: cover;
+  .row {
+    height: calc(100vh - 101px);
+  }
+  h3 {
+    font-size: 2.8rem;
+    color: white;
+  }
+  span {
+    font-size: 1.5rem;
+    color: white;
+  }
+}

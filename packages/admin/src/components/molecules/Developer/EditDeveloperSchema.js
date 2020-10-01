@@ -1,37 +1,52 @@
+import MultipleMediaPreviewWidget from "../../../utils/MultipleMediaPreviewWidget";
 export const schema = {
   type: "object",
   title: "Edit Developer",
   properties: {
     name: {
       type: "string",
+      title: "Name",
     },
     experience: {
       type: "string",
-    },
-    number_or_projects: {
-      type: "integer",
+      title: "Experience",
     },
     description: {
       type: "string",
+      title: "Description",
     },
-    projects: {
+    major_projects: {
+      type: "array",
+      title: "Projects",
+      classNames: "zmdi zmdi-plus",
+      default: [],
+      items: {
+        type: "string",
+      },
+    },
+    imageFile: {
       type: "string",
+      title: "Media",
     },
   },
-};
-
-export const formData = {
-  name: "Aakash Bathla",
-  experience: "2 Years",
-  number_or_projects: "5",
-  description:
-    "Et et sed duo consetetur amet sit sit clita dolor. Erat inviduntnonumy erat accusam ut lorem ut lorem rebum",
-  projects: "Orchid Petals, Orchid Garden",
+  required: [
+    "name",
+    "experience",
+    "description",
+    "major_projects",
+    "imageFile",
+  ],
 };
 
 export const uiSchema = {
   description: {
     "ui:widget": "textarea",
+  },
+  imageFile: {
+    "ui:widget": MultipleMediaPreviewWidget,
+    "ui:options": {
+      number: 1,
+    },
   },
   classNames: "form-handler-css",
 };

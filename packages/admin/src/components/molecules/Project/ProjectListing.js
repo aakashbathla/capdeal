@@ -1,13 +1,14 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
 import ServiceUtils from "../../../utils/ServiceUtils";
-import { buildUrl } from "../../../utils/Utils";
+import { buildUrl, errorGenerator } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
-import Listing from "../../atoms/Listing";
+import Listing from "../../atoms/ProjectCard";
 import "./Project.scss";
 
 const ProjectListing = () => {
   const [projectData, setProjectData] = useState([]);
+  const [error, setError] = useState(null);
   let urlOptions = {
     pathname: apis.projectListingUrl,
     urlEncoded: true,
@@ -19,16 +20,17 @@ const ProjectListing = () => {
     };
 
     try {
-      ServiceUtils.fetch(buildUrl(urlOptions, params), "http://").then(
-        (data) => {
+      ServiceUtils.fetch(buildUrl(urlOptions, params), "http://")
+        .then((data) => {
           if (data) {
             setProjectData(data);
-            console.log(data);
           } else {
             console.log(error);
           }
-        }
-      );
+        })
+        .catch((err) => {
+          setError(errorGenerator(err));
+        });
     } catch (err) {
       console.log(err);
     }
@@ -44,21 +46,31 @@ const ProjectListing = () => {
       ...urlOptions,
       pathname: urlOptions.pathname + id,
     };
-    console.log(updateUrlOptions);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),
         additionalFetchOptions(id),
         "http://"
-      ).then(() => {
-        fetchData();
-      });
+      )
+        .then(() => {
+          fetchData();
+        })
+        .catch((err) => {
+          setError(errorGenerator(err));
+        });
     } catch (err) {
       console.log(err);
     }
   };
   return (
     <>
+      {error && (
+        <div className="error">
+          {error.map((val, key) => (
+            <div>{val}</div>
+          ))}
+        </div>
+      )}
       {projectData && projectData.results && (
         <Listing
           data={projectData}
@@ -70,6 +82,8 @@ const ProjectListing = () => {
           marginPagesDisplayed={1}
           customClassName="project-list"
           loadMore={fetchData}
+          addUrl="/app/add-project"
+          editUrl="/app/edit-project"
         ></Listing>
       )}
     </>
