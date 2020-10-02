@@ -8,7 +8,7 @@ const ExploreProperties = () => {
         Explore Properties using our tools
       </div>
       <div className="row">
-        <div className="col-lg-6 col-md-6 explore-properties-left-container">
+        <div className="col-lg-7 col-md-7 explore-properties-left-container">
           <ul className="p0">
             <li className="active">Calculators</li>
             <li>Heatmap</li>
@@ -19,7 +19,7 @@ const ExploreProperties = () => {
             <li>Comparative Investor Page</li>
           </ul>
         </div>
-        <div className="col-lg-6 col-md-6 explore-properties-image-container">
+        <div className="col-lg-5 col-md-5 explore-properties-image-container">
           <img
             className=" explore-properties-image"
             src={CalculatorImage}

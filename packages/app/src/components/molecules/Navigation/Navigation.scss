@@ -26,7 +26,7 @@
 }
 .main-navigation {
   width: 100%;
-  background-color: transparent;
+  background-color: $deep-purple;
   position: absolute;
   left: 0;
   top: 0;
@@ -48,7 +48,6 @@
   animation: sticky 1s;
 }
 .logo-area img {
-  max-width: 14rem;
   padding: 1.5rem 0;
   transition: 0.5s;
   -webkit-transition: 0.5s;

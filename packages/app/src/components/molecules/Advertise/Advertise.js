@@ -14,10 +14,9 @@ const Advertise = () => {
                 accusam duo et et vero est et, ut sit.
               </p>
             </div>
-            <div className="col-lg-2 number col-md-12 col-12">
-              <span className="header">Projects</span>
+            <div className="col-lg-2 number col-md-12 col-12 text-center align-self-center">
               <h2>456</h2>
-              <span className="number_link">View more</span>
+              <span className="header">Projects</span>
             </div>
             <div className="col-lg-5 col-md-12 col-12">
               <img src={AdvertiseImage} className="advertise_image" alt="advertise" />

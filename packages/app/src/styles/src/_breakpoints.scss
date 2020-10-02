@@ -18,6 +18,15 @@
     @content;
   }
 }
+@mixin md-desktop {
+  /**
+   * Used in exclusive cases, For More info sync up with Praveen
+   * For desktops, from 1280px to 1440px 
+   */
+  @media (min-width: 1440px) and (max-width: 1600px) {
+    @content;
+  }
+}
 
 @mixin lg-desktop {
   /**
