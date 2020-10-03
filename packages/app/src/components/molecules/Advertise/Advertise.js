@@ -10,8 +10,7 @@ const Advertise = () => {
             <div className="col-lg-5 col-md-12 col-12">
               <h1 className="mt-3">Bhubhaneshwar</h1>
               <p>
-                At et est sea et labore aliquyam sadipscing duo. Labore kasd
-                accusam duo et et vero est et, ut sit.
+                We are always keeping an eye on the finest projects In the city for you. And, The numbers speak, Of Course.
               </p>
             </div>
             <div className="col-lg-2 number col-md-12 col-12 text-center align-self-center">

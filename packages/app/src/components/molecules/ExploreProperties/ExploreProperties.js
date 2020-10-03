@@ -3,7 +3,7 @@ import "./ExploreProperties.scss";
 import CalculatorImage from "../../../assets/calculator.png";
 const ExploreProperties = () => {
   return (
-    <div className="container explore-properties">
+    <div className="container explore-properties" id="tools">
       <div className="explore-properties-header">
         Explore Properties using our tools
       </div>
@@ -29,9 +29,7 @@ const ExploreProperties = () => {
             <h3>Calculators</h3>
           </div>
           <div className="calculator-description">
-            Lorem erat amet kasd accusam elitr clita. Et sit diam ea sed ipsum
-            dolor. Consetetur gubergren sit sanctus duo invidunt amet elitr amet
-            stet, magna
+            One of the exclusive Smart Tools Capdeal has developed for real estate.
             <a href="/" className="calculator-link mt-2">
               Know More -
             </a>

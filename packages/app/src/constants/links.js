@@ -1,38 +1,27 @@
 export default [
   {
-    path: "#home",
+    path: "#tools",
     text: "Tools",
-    id: "tools",
-  },
-  {
-    path: "#aboutus",
-    text: "Featured Properties",
-    id: "featured_properties",
+    id: "tools-section",
   },
   {
     path: "#expertise",
-    text: "Investor Page",
+    text: "Investors",
     id: "investor_page",
   },
   {
-    path: "#projects",
-    text: "Contact Us",
-    id: "contact_us",
+    path: "/project-list",
+    text: "Projects",
+    id: "project_list",
   },
   {
     path: "/login",
-    text: "Login and Posting",
-    id: "login_and_posting",
+    text: "Post Property",
+    id: "post",
   },
   {
-    path: "#contactus",
-    text: "Buy/Sell/Rent",
-    id: "buy_sell_rent",
-  },
-
-  {
-    path: "#profile",
-    text: "Profile",
-    id: "profile",
+    path: "/login",
+    text: "Login",
+    id: "login",
   },
 ];

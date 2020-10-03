@@ -19,7 +19,7 @@ const FeaturedProperty = () => {
       style={{ backgroundImage: `url(` + FeaturedBgImage + `)` }}
     >
       <div className="container">
-        <h1 className="m0">Browse Our Top Developers</h1>
+        <h1 className="m0">Browse Top Developers</h1>
         <div className="col-lg-12 p0">
           <div className="row pb-lg-4 pb-0 justify-content-center">
             {dataList &&

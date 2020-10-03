@@ -7,6 +7,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  &__logo {
+    max-width: 14em;
+  }
   &_box {
     height: calc(100vh - 11vh);
     &_border {

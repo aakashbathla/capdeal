@@ -100,9 +100,7 @@ const Footer = () => {
                 Sign Up
               </h3>
               <p className="footer-right-container-content">
-                Tempor duo at et ut amet amet ut amet, duo et ea vero amet ut
-                voluptua lorem accusam eos, lorem eos sadipscing eos takimata
-                labore diam diam labore,
+                We will not spam you! Only Relevant Projects and Meaningful Insights prepared by our expert team will be shared.
               </p>
               <div className="col-lg-12 p-0 pb-4">
                 <input
