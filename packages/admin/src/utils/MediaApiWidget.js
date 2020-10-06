@@ -8,7 +8,10 @@ const MediaApiWidget = (props) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("media_file", e.target.files[0], e.target.files[0].name);
-    formData.append("media_type", "Image");
+    formData.append(
+      "media_type",
+      (props && props.options && props.options.type) || "Image"
+    );
     let urlOptions = {
       pathname: apis.mediaUrl,
       urlEncoded: true,
@@ -25,12 +28,17 @@ const MediaApiWidget = (props) => {
         buildUrl(urlOptions),
         additionalFetchOptions(),
         "http://"
-      ).then((data) => {
-        props.onChange(data.id);
-      });
+      )
+        .then((data) => {
+          props.onChange(data.id);
+        })
+        .catch((err) => {
+          setError(errorGenerator(err));
+        });
     } catch (err) {
       setError(errorGenerator(err));
     }
+    setError(null);
   };
   return (
     <>
