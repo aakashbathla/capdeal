@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Anchor from "../../atoms/Anchor/Anchor";
 import "./Navigation.scss";
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/logo-sm.png";
 import links from "../../../constants/links";
 
 const Navigation = () => {

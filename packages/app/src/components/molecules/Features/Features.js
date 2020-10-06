@@ -17,31 +17,31 @@ const Features = () => {
           <div className="row align-items-center m-0">
             <div className="col">
               <img src={ZeroBrokerageIcon} alt="brokerage-icon" className="features_img" />
-              <span className="features_text features_slash">Zero<br/>Brokerage fees</span>
-            </div>
-            <div className="col">
-              <img src={LowestPriceIcon} alt="lowest-price" className="features_img" />
-              <span className="features_text features_slash">Lowest Price<br/>Guaranteed</span>
-            </div>
-            <div className="col">
-              <img src={CompartiveMarketIcon} alt="compartive-market" className="features_img" />
-              <span className="features_text features_slash">Comparative<br/>Market Analysis</span>
+              <span className="features_text features_slash">Zero<br/>Brokerage</span>
             </div>
             <div className="col">
               <img src={ExclusiveInventoryIcon} alt="exclusive-inventory" className="features_img" />
               <span className="features_text features_slash slash-none">Exclusive<br/>Inventory</span>
             </div>
+            <div className="col">
+              <img src={CompartiveMarketIcon} alt="compartive-market" className="features_img" />
+              <span className="features_text features_slash">Home Loan<br/>Assistance</span>
+            </div>
+            <div className="col">
+              <img src={LowestPriceIcon} alt="lowest-price" className="features_img" />
+              <span className="features_text features_slash">Lowest Price<br/>Guaranteed</span>
+            </div>
             <div className="col d-none d-lg-block">
               <img src={ProjectSiteIcon} alt="project-site-icon" className="features_img" />
               <span className="features_text features_slash">Project Site<br/>Visit</span>
             </div>
-            <div className="col d-none d-lg-block">
+            {/* <div className="col d-none d-lg-block">
               <img src={HomeLoanIcon} alt="home-loan-icon" className="features_img" />
               <span className="features_text features_slash">Home Loan<br/>& Insurance</span>
-            </div>
+            </div> */}
             <div className="col d-none d-lg-block">
               <img src={PostSaleIcon} alt="post-sale-icon" className="features_img" />
-              <span className="features_text">Post Sale<br/>Service</span>
+              <span className="features_text">Post-Sale<br/>Service</span>
             </div>
           </div>
           <div className="row align-items-center d-flex d-lg-none mt-5 pt-3 m-0">

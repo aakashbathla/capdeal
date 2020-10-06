@@ -43,7 +43,7 @@ const Login = ({
             <div className="col-xl-2 col-lg-2">
               <div className="logo-area">
                 <Anchor to="/home">
-                  <img src={Logo} alt="enventer" />
+                  <img className="login__logo" src={Logo} alt="enventer" />
                 </Anchor>
               </div>
             </div>

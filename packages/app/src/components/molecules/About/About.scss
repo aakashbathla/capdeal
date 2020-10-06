@@ -44,9 +44,10 @@
     }
     h6 {
       padding-top: 15px;
-      @include font-raleway-bold-18($white);
+      line-height: 1.3;
+      @include font-poppins-regular-18($white);
       @include mobile {
-        @include font-raleway-bold-25($white);
+        @include font-poppins-bold-24($white);
       }
     }
     &_details {
@@ -59,11 +60,6 @@
       }
     }
     &_border {
-      border-radius: 3.5rem;
-      width: 7rem;
-      height: 7rem;
-      background-color: $deep-purple;
-      margin: 0 auto;
       &_details {
         @include font-poppins-regular-14($white);
         @include mobile {
