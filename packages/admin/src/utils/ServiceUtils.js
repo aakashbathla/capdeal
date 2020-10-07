@@ -35,6 +35,8 @@ class ServiceUtils {
         window.location.href = "/login";
       } else if (err && err.response && err.response.status === 500) {
         window.location.href = "/500";
+      } else if (err && err.response && err.response.status === 404) {
+        window.location.href = "/404";
       }
       throw err;
     }

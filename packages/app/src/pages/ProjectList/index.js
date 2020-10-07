@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import Navigation from "components/molecules/Navigation/Navigation";
 import ProjectItem from "components/molecules/ProjectCard";
@@ -10,7 +11,7 @@ import ServiceUtils from "../../utils/ServiceUtils";
 import apis from "constants/apis/services";
 import ReactPaginate from "react-paginate";
 
-const ProjectList = () => {
+const ProjectList = (props) => {
   const [dataList, setDataList] = useState([]);
   const updateFormData = (data) => {
     setDataList(data);
@@ -20,7 +21,13 @@ const ProjectList = () => {
     urlEncoded: true,
   };
   useEffect(() => {
-    fetchData(apis.projectListingUrl, updateFormData);
+    const query = new URLSearchParams(props.location.search);
+    const search = query.get("search");
+    if (search) {
+      filterData({ search: search });
+    } else {
+      fetchData(apis.projectListingUrl, updateFormData);
+    }
   }, []);
   const handlePageClick = (data) => {
     let selected = data.selected + 1;
@@ -71,7 +78,12 @@ const ProjectList = () => {
         <Navigation />
       </div>
       <div className="project-list__wrap">
-        <SearchFilter filterData={filterData} />
+        <SearchFilter
+          filterData={filterData}
+          search={
+            new URLSearchParams(props.location.search).get("search") || ""
+          }
+        />
         <div className="container">
           <div className="row">
             <div className="col-sm-2 mb-4">

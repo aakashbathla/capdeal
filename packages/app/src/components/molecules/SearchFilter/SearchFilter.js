@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchFilter.scss";
-const SearchFilter = ({ filterData }) => {
+const SearchFilter = ({ filterData, search }) => {
   return (
     <div className="card search-filter pt-4 pb-4 mb-4">
       <form className="form-inline">
@@ -11,6 +11,7 @@ const SearchFilter = ({ filterData }) => {
             placeholder="Search by name, builder or project"
             className="form-control form-control-lg mr-3 search-text"
             onChange={(e) => filterData({ search: e.target.value })}
+            defaultValue={search}
           />
         </div>
         {/* <div className="col-sm-2 pl-0">
