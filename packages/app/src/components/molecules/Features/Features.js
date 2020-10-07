@@ -6,7 +6,6 @@ import CompartiveMarketIcon from "assets/compartive-market.png";
 import ExclusiveInventoryIcon from "assets/exclusive-inventory.png";
 import ProjectSiteIcon from "assets/project-site.png";
 import LowestPriceIcon from "assets/low-price.png";
-import HomeLoanIcon from "assets/home-loan.png";
 import PostSaleIcon from "assets/post-sale.png";
 const Features = () => {
   return (
@@ -35,10 +34,6 @@ const Features = () => {
               <img src={ProjectSiteIcon} alt="project-site-icon" className="features_img" />
               <span className="features_text features_slash">Project Site<br/>Visit</span>
             </div>
-            {/* <div className="col d-none d-lg-block">
-              <img src={HomeLoanIcon} alt="home-loan-icon" className="features_img" />
-              <span className="features_text features_slash">Home Loan<br/>& Insurance</span>
-            </div> */}
             <div className="col d-none d-lg-block">
               <img src={PostSaleIcon} alt="post-sale-icon" className="features_img" />
               <span className="features_text">Post-Sale<br/>Service</span>
