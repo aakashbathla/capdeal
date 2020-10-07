@@ -19,5 +19,6 @@
   }
   .link {
     @include font-poppins-bold-15($white);
+    cursor: pointer;
   }
 }

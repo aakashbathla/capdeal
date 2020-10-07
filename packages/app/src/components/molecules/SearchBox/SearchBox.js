@@ -15,10 +15,8 @@ const SearchBox = () => {
               <div className="col-lg-2 col-md-2 col-sm-12 offset-lg-1 offset-sm-0 pr-lg-0 pr-md-0 mb-5 mb-md-0">
                 <label>Property Type</label>
                 <select className="form-control form-control-lg">
-                  <option>Option1</option>
-                  <option>Option2</option>
-                  <option>Option3</option>
-                  <option>Option4</option>
+                  <option>Residential</option>
+                  <option>Commercial</option>
                 </select>
               </div>
               <div className="col-lg-5 col-md-5 col-sm-12 mb-5 mb-md-0">

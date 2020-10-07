@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.scss";
-import heroImage from "../../../assets/home-banner2.jpg";
+import heroImage from "../../../assets/home-banner-final.jpg";
 const Hero = () => {
   return (
     <div className="hero-component">

@@ -20,47 +20,28 @@ const Footer = () => {
                     Quick Links
                   </h3>
                   <ul className="footer-container-content-subitems no-list-style p-0">
-                    <li>Menu</li>
-                    <li>Menu</li>
-                    <li>Menu</li>
+                    <li>Project</li>
+                    <li>Investors</li>
+                    <li>Post Property</li>
+                    <li>Login</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
                   </ul>
                 </div>
               </div>
               <div className="col-lg-6 col-sm-6 col-6">
                 <div>
                   <h3 className="footer-container-content-items">
-                    Quick Links
+                    Tools
                   </h3>
                   <ul className="footer-container-content-subitems no-list-style p-0">
-                    <li>Menu</li>
-                    <li>Menu</li>
-                    <li>Menu</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-6 col-sm-6 col-6">
-                <div>
-                  <h3 className="footer-container-content-items">
-                    Quick Links
-                  </h3>
-                  <ul className="footer-container-content-subitems no-list-style p-0">
-                    <li>Menu</li>
-                    <li>Menu</li>
-                    <li>Menu</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-6 col-sm-6 col-6">
-                <div>
-                  <h3 className="footer-container-content-items">
-                    Quick Links
-                  </h3>
-                  <ul className="footer-container-content-subitems no-list-style p-0">
-                    <li>Menu</li>
-                    <li>Menu</li>
-                    <li>Menu</li>
+                    <li>Calculators</li>
+                    <li>Heatmap</li>
+                    <li>Price Vs Size</li>
+                    <li>Recommendation Engine</li>
+                    <li>PMAY Calculator</li>
+                    <li>Tax Calculator</li>
+                    <li>Comparative Investor</li>
                   </ul>
                 </div>
               </div>
@@ -117,7 +98,7 @@ const Footer = () => {
       <div className="copyright">
         <hr className="orange-background my-0"></hr>
         <div className="text-center white py-4">
-          All copyrights reserved 2020
+          &copy; 2020 Capdeal. All rights reserved.
         </div>
       </div>
     </div>

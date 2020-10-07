@@ -9,6 +9,9 @@
   background-size: cover;
   @include mobile {
     margin-top: 80px;
+    .container {
+      text-align: center;
+    }
   }
   h1 {
     @include font-raleway-bold-35($orange-color);
@@ -64,7 +67,7 @@
       padding-left: 0 !important;
       &:after {
         font-size: 30px;
-        right: 1.3rem;
+        right: 0.1rem;
         top: -1rem;
       }
     }

@@ -1,5 +1,5 @@
 import React from "react";
-import AboutImage from "assets/aboutus.png";
+import AboutImage from "assets/capdeal-edge.jpg";
 import ResponsibilityIcon from "assets/responsibility.png";
 import SmartIcon from "assets/smart-talent.png";
 import SalesIcon from "assets/sales.png";
