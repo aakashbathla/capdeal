@@ -4,17 +4,17 @@ import "./ProjectDetailRating.scss";
 const ProjectDetailRating = () => {
   return (
     <div className="row mb-4">
-      <div className="col-lg-2 col-md-12 col-12 pt-4">
+      <div className="col-lg-2 col-md-12 col-4 pt-4">
         <i className="zmdi zmdi-favorite mr-3"></i>|
         <i className="zmdi zmdi-facebook ml-3"></i>
         <i className="zmdi zmdi-linkedin ml-3 mr-3">
         </i><i className="zmdi zmdi-twitter"></i>
       </div>
-      <div className="col-lg-2 col-md-12 col-12 pt-4 px-0">
+      <div className="col-lg-2 col-md-12 col-6 pt-4 px-0">
         <span className="rating">RATING</span>
         <span className="rating-value">4.5  <i className="zmdi zmdi-star"></i></span>
       </div>
-      <div className="col-lg-3 col-md-12 col-12 pt-4 px-0">
+      <div className="col-lg-3 col-md-12 col-12 pt-4 px-md-0">
         <div className="d-driver">
           <span>DECISION DRIVERS</span>
           <div className="progress">
@@ -32,7 +32,7 @@ const ProjectDetailRating = () => {
       <div className="col-lg-2 col-md-12 col-12 p-0">
         &nbsp;
       </div>
-      <div className="col-lg-3 col-md-12 col-12">
+      <div className="col-lg-3 col-md-12 col-12 d-none d-lg-block">
         <div className="bg-purple p-5">&nbsp;</div>
       </div>
     </div>

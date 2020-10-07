@@ -8,7 +8,7 @@ const Advertise = () => {
         <div className="advertise_container">
           <div className="row">
             <div className="col-lg-5 col-md-12 col-12">
-              <h1 className="mt-3">Bhubhaneshwar</h1>
+              <h1 className="mt-3">Bhubaneswar</h1>
               <p>
                 We are always keeping an eye on the finest projects In the city for you. And, The numbers speak, Of Course.
               </p>

@@ -11,7 +11,7 @@ const ProjectDetailHeader = ({ data }) => {
             <i className="zmdi zmdi-pin"></i> {`${data.city}, ${data.state}`}
           </h5>
         </div>
-        <div className="col-sm-12 col-md-6 col-lg-3 p-0">
+        <div className="col-6 col-md-6 col-lg-3 header-wrap__space">
           <div className="card header-wrap__price">
             <h3 className="mb-0">
               &#8377;{`${data.min_price} TO `}&#8377;
@@ -20,7 +20,7 @@ const ProjectDetailHeader = ({ data }) => {
             <h5 className="mb-0">&#8377;6000/Sq.Ft Onwards</h5>
           </div>
         </div>
-        <div className="col-sm-12 col-md-6 col-lg-2 align-self-center">
+        <div className="col-6 col-md-6 col-lg-2 align-self-center">
           <h5 className="status mb-0">STATUS</h5>
           <h4 className="mb-0">{data.status}</h4>
         </div>

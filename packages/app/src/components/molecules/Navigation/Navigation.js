@@ -44,7 +44,7 @@ const Navigation = () => {
         <div className="container">
           <div className="row">
             <div className="col-xl-2 col-lg-2">
-              <div className="logo-area logo-area">
+              <div className="logo-area">
                 <Anchor to="/#home">
                   <Logo />
                 </Anchor>

@@ -47,13 +47,12 @@
   -webkit-animation: sticky 1s;
   animation: sticky 1s;
 }
-.logo-area img {
-  padding: 1.5rem 0;
+.logo-area svg {
   transition: 0.5s;
   -webkit-transition: 0.5s;
   @include mobile {
-    padding-top: 1.7rem;
-    padding-bottom: 1.5rem;
+    height: 52px;
+    width: 130px;
   }
 }
 /* hide the link until viewport size is reached */

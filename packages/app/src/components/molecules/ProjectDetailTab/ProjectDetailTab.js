@@ -11,7 +11,7 @@ const ProjectDetailTab = ({ data }) => {
     <div className="project-detail__tab">
       <div className="container">
         <div className="row my-5">
-          <div className="col-lg-3 col-md-12 col-12 pl-0">
+          <div className="col-lg-3 col-md-12 col-12 pl-md-0 mb-2">
             <div className="card header-wrap__price">
               <h5 className="mb-0">Capdeal RERA Reg.</h5>
               <h3 className="mb-0">REA02348383298329</h3>
