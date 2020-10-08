@@ -23,14 +23,16 @@
       @include font-poppins-regular-12($black);
       @include mobile {
         @include font-poppins-regular-21($black);
+        padding-bottom: 4rem;
       }
     }
     .number {
       .header {
-        @include font-poppins-bold-12($black);
+        @include font-poppins-bold-14($black);
         @include mobile {
           margin-top: 10px;
           display: inline-block;
+          @include font-poppins-bold-17($black);
         }
       }
       h2 {

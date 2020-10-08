@@ -44,7 +44,7 @@ const AdvertisedProperty = () => {
               Hottest Projects
             </h1>
           </div>
-          <div className="col-sm-12 col-md-1 text-right">
+          <div className="col-sm-12 col-md-1 text-right d-none d-lg-block">
             <div
               className="link cursor-pointer"
               onClick={() => {
@@ -128,6 +128,16 @@ const AdvertisedProperty = () => {
                 );
               })}
           </Slider>
+          <div className="col-md-12 pt-5 text-center d-lg-none">
+            <div
+              className="link cursor-pointer"
+              onClick={() => {
+                history.push("/project-list");
+              }}
+            >
+              View All
+            </div>
+          </div>
         </div>
       </div>
     </div>
