@@ -14,7 +14,7 @@ const SearchFilter = ({ filterData, search }) => {
             defaultValue={search}
           />
         </div>
-        {/* <div className="col-sm-2 pl-0">
+        <div className="col-sm-2 pl-0">
           <select
             name="name"
             type="text"
@@ -54,7 +54,7 @@ const SearchFilter = ({ filterData, search }) => {
             <option>Option 2</option>
           </select>
         </div>
-          <button className="btn btn-primary">Search</button> */}
+        <button className="btn btn-primary">Search</button>
       </form>
     </div>
   );
