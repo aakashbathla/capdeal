@@ -107,9 +107,10 @@
     }
   }
   &_image {
-    width: 255px;
+    width: 100%;
     height: 224px;
-    object-fit: contain;
+    object-position: center;
+    object-fit: cover;
     background: #b5b1b1;
     background-repeat: no-repeat;
     background-size: cover;

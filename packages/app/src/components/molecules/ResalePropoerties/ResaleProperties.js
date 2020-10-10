@@ -23,10 +23,10 @@ const ResaleProperties = () => {
               </ul>
             </div>
             <div className="col-lg-11 p0 m0">
-              <ul class="nav nav-pills resale_property_type_2" role="tablist" id="homePills">
-                <li class="nav-item">
+              <ul className="nav nav-pills resale_property_type_2" role="tablist" id="homePills">
+                <li className="nav-item">
                   <a
-                    class="nav-link active"
+                    className="nav-link active"
                     id="plot-tab"
                     data-toggle="pill"
                     href="#plot"
@@ -37,9 +37,9 @@ const ResaleProperties = () => {
                     Plot
                   </a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <a
-                      class="nav-link"
+                      className="nav-link"
                       id="apartment-tab"
                       data-toggle="pill"
                       href="#apartment"
@@ -50,9 +50,9 @@ const ResaleProperties = () => {
                       Apartment
                   </a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <a
-                    class="nav-link"
+                    className="nav-link"
                     id="independent-tab"
                     data-toggle="pill"
                     href="#independent"
@@ -63,9 +63,9 @@ const ResaleProperties = () => {
                     Independent House
                   </a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                 <a
-                  class="nav-link"
+                  className="nav-link"
                   id="villa-tab"
                   data-toggle="pill"
                   href="#villa"

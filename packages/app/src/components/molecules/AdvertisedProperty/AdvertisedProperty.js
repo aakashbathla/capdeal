@@ -60,7 +60,7 @@ const AdvertisedProperty = () => {
             {dataList &&
               dataList.map((val, key) => {
                 return (
-                  <div className="col-lg-12 col-md-12 col-12">
+                  <div key={key} className="col-lg-12 col-md-12 col-12">
                     <div className="advertised_property_content">
                       <img
                         src={
