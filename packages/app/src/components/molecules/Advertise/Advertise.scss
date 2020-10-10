@@ -32,7 +32,7 @@
         @include mobile {
           margin-top: 10px;
           display: inline-block;
-          @include font-poppins-bold-17($black);
+          @include font-poppins-bold-22($black);
         }
       }
       h2 {

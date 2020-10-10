@@ -43,7 +43,7 @@ const About = () => {
                       <div className="about_content_border">
                         <img src={ResponsibilityIcon} height="80" alt="responsobe" />
                       </div>
-                      <h6>Ethical and Responsible Real Estate Transactions</h6>
+                      <h6>Ethical and Responsible Real Estate</h6>
                       <span className="about_content_border_details"></span>
                     </div>
                     <div className="col-lg-4 col-md-6 col-sm-6 col-6">

@@ -12,6 +12,10 @@
   background-size: cover;
   .link {
     @include font-poppins-bold-15($orange-color);
+    @include mobile {
+      padding-top: 20px;
+      @include font-poppins-bold-20($orange-color);
+    }
   }
   .slick-slide {
     > .col-12 {
@@ -97,6 +101,7 @@
   }
   @include mobile {
     margin-top: 0;
+    padding-bottom: 60px;
   }
   &_header {
     @include font-raleway-bold-35($orange-color);
@@ -136,14 +141,20 @@
       .price {
         @include font-poppins-bold-14($deep-purple);
         @include mobile {
-          @include font-poppins-bold-18($deep-purple);
+          @include font-poppins-bold-20($deep-purple);
         }
       }
       p {
         @include font-poppins-regular-11($grey-color);
+        @include mobile {
+          @include font-poppins-regular-15($grey-color);
+        }
       }
       span.data {
         @include font-poppins-regular-10($black);
+        @include mobile {
+          @include font-poppins-regular-15($black);
+        }
       }
       .button {
         @include font-poppins-bold-10($deep-purple);
@@ -152,6 +163,15 @@
           &:hover {
             @include font-poppins-bold-10($white);
             cursor: pointer;
+          }
+        }
+        @include mobile {
+          @include font-poppins-bold-14($deep-purple);
+          &.active {
+            @include font-poppins-bold-14($orange-color);
+            &:hover {
+              @include font-poppins-bold-14($white);
+            }
           }
         }
       }
