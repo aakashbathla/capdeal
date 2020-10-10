@@ -1,4 +1,5 @@
 import React from "react";
+import CallBackModal from "../CallBackModal";
 import "./ProjectDetailHeader.scss";
 
 const ProjectDetailHeader = ({ data }) => {
@@ -25,12 +26,23 @@ const ProjectDetailHeader = ({ data }) => {
           <h4 className="mb-0">{data.status}</h4>
         </div>
         <div className="col-sm-12 col-md-6 col-lg-2">
-          <button className="btn btn-green btn-lg btn-block">Call Back</button>
-          <button className="btn btn-yellow btn-lg btn-block">
+          <button
+            className="btn btn-green btn-lg btn-block"
+            data-toggle="modal"
+            data-target="#callBackModal"
+          >
+            Call Back
+          </button>
+          <button
+            className="btn btn-yellow btn-lg btn-block"
+            data-toggle="modal"
+            data-target="#callBackModal"
+          >
             Contact Expert
           </button>
         </div>
       </div>
+      <CallBackModal />
     </div>
   );
 };

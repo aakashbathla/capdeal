@@ -1,0 +1,64 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+.call-back-form {
+  .form-control {
+    @include font-poppins-regular-14(black);
+  }
+  .control-label {
+    @include font-poppins-regular-11($orange-color);
+    margin-bottom: 0;
+  }
+  .checkbox {
+    input {
+      margin-top: 5px;
+      appearance: auto;
+    }
+    span {
+      font-size: 13px !important;
+      padding-left: 6px;
+      vertical-align: text-bottom;
+    }
+    label {
+      @include font-poppins-regular-10($orange-color);
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+  }
+  .btn-info {
+    width: 100%;
+    font-size: 0 !important;
+    background-color: #c98b66 !important;
+    border-color: #c98b66 !important;
+    margin-bottom: 20px;
+    @include font-poppins-bold-15($white);
+    &::after {
+      content: 'Get a callback';
+      font-size: 15px;
+      font-weight: 500;
+    }
+    &:hover {
+      background-color: #bf794e !important;
+      border-color: #bf794e !important;
+    }
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+  .error-detail{
+    font-size: 12px;
+    padding-left: 0;
+    list-style: none;
+    padding-top: 2px;
+  }
+  .list-group-item {
+    border: none;
+    font-size: 12px;
+    padding: 0;
+  }
+  .panel-title {
+    font-size: 12px;
+    color: #dc3545!important;
+  }
+}
+

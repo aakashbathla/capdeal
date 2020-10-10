@@ -69,6 +69,8 @@
     }
     @include mobile {
       width: 95px;
+      @include font-poppins-bold-12($white);
+      font-weight: 600;
     }
     @include x-small {
       width: 80px;

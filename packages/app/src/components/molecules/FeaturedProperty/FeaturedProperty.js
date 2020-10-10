@@ -27,7 +27,7 @@ const FeaturedProperty = () => {
             {dataList &&
               dataList.map((val, key) => {
                 return (
-                  <div className="col-lg-4 col-md-6 col-10 pb-2 pb-lf-0">
+                  <div key={key} className="col-lg-4 col-md-6 col-10 pb-2 pb-lf-0">
                     <CardVendor value={val} />
                   </div>
                 );

@@ -3,6 +3,7 @@ import projectImage from "assets/prop1.png";
 import locationIcon from "assets/location.png";
 import amountIcon from "assets/amount.png";
 import availIcon from "assets/availability.png";
+import CallBackModal from "../CallBackModal";
 import "./ProjectCard.scss";
 import { useHistory } from "react-router-dom";
 
@@ -99,7 +100,7 @@ const ProjectCard = ({ propertyTableId, value }) => {
                   >
                     Details
                   </button>
-                  <button className="btn btn-sm btn-outline-primary">
+                  <button className="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#callBackModal">
                     Call Back
                   </button>
                 </div>
@@ -131,6 +132,7 @@ const ProjectCard = ({ propertyTableId, value }) => {
           </div>
         </div>
       </div>
+      <CallBackModal />
     </div>
   );
 };

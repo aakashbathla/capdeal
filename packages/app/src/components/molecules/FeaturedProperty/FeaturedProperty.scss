@@ -20,5 +20,8 @@
   .link {
     @include font-poppins-bold-15($white);
     cursor: pointer;
+    @include mobile {
+      @include font-poppins-bold-20($white);
+    }
   }
 }
