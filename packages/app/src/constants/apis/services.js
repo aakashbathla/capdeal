@@ -2,7 +2,7 @@ const api_url = "https://api.capdeal.in";
 const apis = {
   loginwithotp: `${api_url}/user/generate-otp/`,
   submitotp: `${api_url}/user/login-with-otp/`,
-  socialLogin: `${api_url}/social-sign-up`,
+  socialLogin: `${api_url}/social-sign-up/`,
   submitpassword: `${api_url}/user/login-with-password/`,
   developerListingUrl: `${api_url}/developers/`,
   projectListingUrl: `${api_url}/projects/`,
