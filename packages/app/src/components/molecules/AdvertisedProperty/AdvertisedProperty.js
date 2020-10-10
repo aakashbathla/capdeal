@@ -5,6 +5,7 @@ import AdvetisedBgImage from "assets/advertise-bg.png";
 import CoinIcon from "assets/money.svg";
 import BuildingIcon from "assets/buildings.png";
 import FlagIcon from "assets/flag.png";
+import LikeIcon from "assets/like.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import { useMediaQuery } from "react-responsive";
@@ -40,10 +41,10 @@ const AdvertisedProperty = () => {
         <div className="row">
           <div className="col-sm-12 col-md-11">
             <h1 className="advertised_property_header p0 sm-text-center">
-              Featured New Projects
+              Hottest Projects
             </h1>
           </div>
-          <div className="col-sm-12 col-md-1 text-right">
+          <div className="col-sm-12 col-md-1 text-right d-none d-lg-block">
             <div
               className="link cursor-pointer"
               onClick={() => {
@@ -110,7 +111,7 @@ const AdvertisedProperty = () => {
                         </h6>
                         <div>
                           <div className="width-50 light-grey-background inline-block p1 text-center button">
-                            ShortList
+                            ShortList <img className="d-inline pl-3" src={LikeIcon} height="14" alt="like" />
                           </div>
                           <div
                             className="width-50 deep-purple-background  inline-block p1 text-center active button"
@@ -127,6 +128,16 @@ const AdvertisedProperty = () => {
                 );
               })}
           </Slider>
+          <div className="col-md-12 pt-5 text-center d-lg-none">
+            <div
+              className="link cursor-pointer"
+              onClick={() => {
+                history.push("/project-list");
+              }}
+            >
+              View All
+            </div>
+          </div>
         </div>
       </div>
     </div>

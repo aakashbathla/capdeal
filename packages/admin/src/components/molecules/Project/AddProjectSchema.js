@@ -253,7 +253,7 @@ export const uiSchema = {
   },
   video: {
     "ui:widget": MediaApiWidget,
-    "ui:options": { accept: "video/*" },
+    "ui:options": { accept: "video/*", type: "Video" },
     classNames: "file-upload",
   },
   developer: {

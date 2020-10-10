@@ -18,12 +18,24 @@
   .image-gallery-image {
     object-fit: cover;
     height: 470px;
+    @include mobile {
+      height: 200px;
+    }
   }
 }
 .video-wrap {
   position: absolute;
   width: calc(100% - 140px);
   background-color: #000;
+  @include mobile {
+    width: calc(100% - 117px);
+  }
+  video {
+    height: 470px;
+    @include mobile {
+      height: 200px;
+    }
+  }
   .close-video {
     background: #6f6f6f;
     height: 40px;

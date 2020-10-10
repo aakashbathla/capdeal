@@ -221,7 +221,7 @@ export const errorGenerator = (err) => {
     }
     return error;
   } else {
-    return "Some Error Occurred! Please reach out to admin!";
+    return ["Some Error Occurred! Please reach out to admin!"];
   }
 };
 

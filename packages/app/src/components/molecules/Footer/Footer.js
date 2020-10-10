@@ -20,47 +20,28 @@ const Footer = () => {
                     Quick Links
                   </h3>
                   <ul className="footer-container-content-subitems no-list-style p-0">
-                    <li>Menu</li>
-                    <li>Menu</li>
-                    <li>Menu</li>
+                    <li>Project</li>
+                    <li>Investors</li>
+                    <li>Post Property</li>
+                    <li>Login</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
                   </ul>
                 </div>
               </div>
               <div className="col-lg-6 col-sm-6 col-6">
                 <div>
                   <h3 className="footer-container-content-items">
-                    Quick Links
+                    Tools
                   </h3>
                   <ul className="footer-container-content-subitems no-list-style p-0">
-                    <li>Menu</li>
-                    <li>Menu</li>
-                    <li>Menu</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-6 col-sm-6 col-6">
-                <div>
-                  <h3 className="footer-container-content-items">
-                    Quick Links
-                  </h3>
-                  <ul className="footer-container-content-subitems no-list-style p-0">
-                    <li>Menu</li>
-                    <li>Menu</li>
-                    <li>Menu</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-6 col-sm-6 col-6">
-                <div>
-                  <h3 className="footer-container-content-items">
-                    Quick Links
-                  </h3>
-                  <ul className="footer-container-content-subitems no-list-style p-0">
-                    <li>Menu</li>
-                    <li>Menu</li>
-                    <li>Menu</li>
+                    <li>Calculators</li>
+                    <li>Heatmap</li>
+                    <li>Price Vs Size</li>
+                    <li>Recommendation Engine</li>
+                    <li>PMAY Calculator</li>
+                    <li>Tax Calculator</li>
+                    <li>Comparative Investor</li>
                   </ul>
                 </div>
               </div>
@@ -100,9 +81,7 @@ const Footer = () => {
                 Sign Up
               </h3>
               <p className="footer-right-container-content">
-                Tempor duo at et ut amet amet ut amet, duo et ea vero amet ut
-                voluptua lorem accusam eos, lorem eos sadipscing eos takimata
-                labore diam diam labore,
+                We will not spam you! Only Relevant Projects and Meaningful Insights prepared by our expert team will be shared.
               </p>
               <div className="col-lg-12 p-0 pb-4">
                 <input
@@ -119,7 +98,7 @@ const Footer = () => {
       <div className="copyright">
         <hr className="orange-background my-0"></hr>
         <div className="text-center white py-4">
-          All copyrights reserved 2020
+          &copy; 2020 Capdeal. All rights reserved.
         </div>
       </div>
     </div>

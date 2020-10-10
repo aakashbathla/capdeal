@@ -8,16 +8,14 @@ const Advertise = () => {
         <div className="advertise_container">
           <div className="row">
             <div className="col-lg-5 col-md-12 col-12">
-              <h1 className="mt-3">Bhubhaneshwar</h1>
+              <h1 className="mt-3">Bhubaneswar</h1>
               <p>
-                At et est sea et labore aliquyam sadipscing duo. Labore kasd
-                accusam duo et et vero est et, ut sit.
+                We are always keeping an eye on the finest projects In the city for you. And, The numbers speak, Of Course.
               </p>
             </div>
-            <div className="col-lg-2 number col-md-12 col-12">
-              <span className="header">Projects</span>
+            <div className="col-lg-2 number col-md-12 col-12 text-center align-self-center">
               <h2>456</h2>
-              <span className="number_link">View more</span>
+              <span className="header">Projects</span>
             </div>
             <div className="col-lg-5 col-md-12 col-12">
               <img src={AdvertiseImage} className="advertise_image" alt="advertise" />

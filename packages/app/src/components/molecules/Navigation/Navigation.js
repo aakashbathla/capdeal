@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Anchor from "../../atoms/Anchor/Anchor";
 import "./Navigation.scss";
-import logo from "../../../assets/logo.png";
+import Logo from "../../../assets/logo.svg";
 import links from "../../../constants/links";
 
 const Navigation = () => {
@@ -44,9 +44,9 @@ const Navigation = () => {
         <div className="container">
           <div className="row">
             <div className="col-xl-2 col-lg-2">
-              <div className="logo-area logo-area">
+              <div className="logo-area">
                 <Anchor to="/#home">
-                  <img src={logo} alt="enventer" />
+                  <Logo />
                 </Anchor>
               </div>
             </div>

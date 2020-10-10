@@ -44,10 +44,12 @@
         padding-right: 20px;
         @include font-poppins-regular-18($white);
         &.active {
-          @include font-poppins-bold-18($white);
+          text-stroke: 1px white;
+          -webkit-text-stroke: 1px white;
         }
         &:hover {
-          @include font-poppins-bold-18($white);
+          text-stroke: 1px white;
+          -webkit-text-stroke: 1px white;
           cursor: pointer;
         }
       }
@@ -66,16 +68,21 @@
     }
     .resale_property_type_2 {
       padding-left: 0;
+      padding-bottom: 10px;
       li {
-        display: inline-block;
         padding-right: 55px;
-        @include font-poppins-regular-18($white);
-        &.active {
-          @include font-poppins-bold-18($white);
-        }
-        &:hover {
-          @include font-poppins-bold-18($white);
-          cursor: pointer;
+        .nav-link {
+          padding: 0 !important;
+          background-color: transparent;
+          @include font-poppins-regular-18($white);
+          &:hover {
+            text-stroke: 1px white;
+            -webkit-text-stroke: 1px white;
+          }
+          &.active {
+            text-stroke: 1px white;
+            -webkit-text-stroke: 1px white;
+          }
         }
         @include mobile {
           padding-right: 25px;

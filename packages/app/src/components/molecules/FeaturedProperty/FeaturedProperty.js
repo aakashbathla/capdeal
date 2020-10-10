@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import "./FeaturedProperty.scss";
 import FeaturedBgImage from "assets/about-bg.png";
 
@@ -10,6 +11,7 @@ const FeaturedProperty = () => {
   const updateFormData = (data) => {
     setDataList(data);
   };
+  let history = useHistory();
   useEffect(() => {
     fetchData(apis.homepageDevelopers, updateFormData);
   }, []);
@@ -19,7 +21,7 @@ const FeaturedProperty = () => {
       style={{ backgroundImage: `url(` + FeaturedBgImage + `)` }}
     >
       <div className="container">
-        <h1 className="m0">Browse Our Top Developers</h1>
+        <h1 className="m0">Browse Top Developers</h1>
         <div className="col-lg-12 p0">
           <div className="row pb-lg-4 pb-0 justify-content-center">
             {dataList &&
@@ -32,7 +34,14 @@ const FeaturedProperty = () => {
               })}
           </div>
           <div className="row">
-            <div className="col-lg-12 text-center pt5 link">View All</div>
+            <div
+              className="col-lg-12 text-center pt5 link"
+              onClick={() => {
+                history.push("/project-list");
+              }}
+            >
+              View All
+            </div>
           </div>
         </div>
       </div>

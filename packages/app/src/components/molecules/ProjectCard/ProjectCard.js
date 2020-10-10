@@ -94,7 +94,7 @@ const ProjectCard = ({ propertyTableId, value }) => {
                   <button
                     className="btn btn-sm btn-outline-primary mr-2"
                     onClick={() => {
-                      history.push(`project-detail/${value.id}`);
+                      history.replace(`/project-detail/${value.id}`);
                     }}
                   >
                     Details

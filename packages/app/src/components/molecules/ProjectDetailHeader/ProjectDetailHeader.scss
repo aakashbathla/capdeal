@@ -5,6 +5,9 @@
   padding: 15px;
   margin-top: 25px;
   border-radius: 4px !important;
+  @include mobile {
+    margin-top: 15px;
+  }
   h1 {
     @include font-poppins-bold-24($deep-purple);
   }
@@ -20,6 +23,14 @@
   }
   .status {
     @include font-poppins-bold-10($deep-purple);
+  }
+  &__space {
+    padding: 0 !important;
+    @include mobile {
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+      margin-bottom: 10px;
+    }
   }
   &__price {
     padding: 4px 12px;

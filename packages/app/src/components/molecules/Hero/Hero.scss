@@ -29,6 +29,7 @@
       }
       width: 50%;
       h2 {
+        text-shadow: 3px 4px 3px rgba(0,0,0,0.5);
         @include font-raleway-bold-52($white);
         @include mobile {
           @include font-raleway-bold-45($white);
@@ -39,11 +40,15 @@
         @include sm-laptop {
           @include font-raleway-bold-41($white);
         }
+        @include md-desktop {
+          @include font-raleway-bold-45($white);
+        }
         @include x-small {
           @include font-raleway-bold-37($white);
         }
       }
       p {
+        text-shadow: 3px 4px 3px rgba(0,0,0,0.5);
         @include font-poppins-regular-30($white);
         line-height: 4rem;
         padding-top: 50px;
@@ -57,6 +62,11 @@
         }
         @include sm-laptop {
           @include font-poppins-regular-21($white);
+        }
+        @include md-desktop {
+          @include font-poppins-regular-22($white);
+          line-height: 3rem;
+          padding-top: 20px;
         }
         @include x-small {
           @include font-poppins-regular-18($white);
