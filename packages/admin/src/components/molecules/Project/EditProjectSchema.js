@@ -6,7 +6,6 @@ import apis from "../../../constants/apis/services";
 export const schema = {
   type: "object",
   title: "Edit Project",
-  required: ["developer", "name", "rera_no", "address_line1"],
   properties: {
     developer: {
       type: "integer",
@@ -117,7 +116,6 @@ export const schema = {
       title: "Amenities",
       items: {
         type: "object",
-        required: ["name"],
         properties: {
           name: {
             type: "string",
