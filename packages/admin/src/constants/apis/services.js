@@ -17,6 +17,9 @@ const apis = {
   projectStatusChoice: `${api_url}/projects/status_choice/`,
   developerListChoice: `${api_url}/developers/choices/`,
   amenitiesCategoryChoice: `${api_url}/aminities-categories/choices/`,
+  userRole: `${api_url}/group/`,
+  contactus: `${api_url}/contactus/`,
+  floorPlanChoice: `${api_url}/projects/floor_plan_choice/`,
 };
 
 export default apis;
