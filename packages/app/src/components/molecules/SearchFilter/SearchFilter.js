@@ -21,7 +21,10 @@ const SearchFilter = ({ filterData, search }) => {
             className="form-control form-control-lg mr-3"
           >
             <option>Bed Room</option>
-            <option>Option 2</option>
+            <option>2BHK</option>
+            <option>3BHK</option>
+            <option>4BHK</option>
+            <option>5BHK</option>
           </select>
         </div>
         <div className="col-sm-2 pl-0">
@@ -31,7 +34,11 @@ const SearchFilter = ({ filterData, search }) => {
             className="form-control form-control-lg mr-3"
           >
             <option>Property Type</option>
-            <option>Option 2</option>
+            <option>Residential</option>
+            <option>Commercial</option>
+            <option>Apartment</option>
+            <option>Penthouse</option>
+            <option>Villa</option>
           </select>
         </div>
         <div className="col-sm-2 pl-0">
@@ -41,7 +48,10 @@ const SearchFilter = ({ filterData, search }) => {
             className="form-control form-control-lg mr-3"
           >
             <option>Budget</option>
-            <option>Option 2</option>
+            <option>&#8377; 10 Lac</option>
+            <option>&#8377; 20 Lac</option>
+            <option>&#8377; 30 Lac</option>
+            <option>&#8377; 50 Lac</option>
           </select>
         </div>
         <div className="col-sm-2 pl-0">
@@ -51,7 +61,7 @@ const SearchFilter = ({ filterData, search }) => {
             className="form-control form-control-lg mr-3"
           >
             <option>Property Status</option>
-            <option>Option 2</option>
+            <option>Ready to move</option>
           </select>
         </div>
         <button className="btn btn-primary">Search</button>

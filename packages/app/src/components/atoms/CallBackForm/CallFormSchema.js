@@ -13,7 +13,6 @@ type: "object",
       contact_number: {
         type: "string",
         title: "Contact No.",
-        pattern: "^([+][9][1])([6-9]{1})([0-9]{9})$",
       },
       city: {
         type: "string",
@@ -37,7 +36,7 @@ type: "object",
   ],
 };
 export const uiSchema = {
-  phone_number: {
-      "ui:placeholder": "+919999999999",
+  contact_number: {
+      "ui:placeholder": "",
   },
 };

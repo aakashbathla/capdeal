@@ -132,6 +132,9 @@
     .amenities-box {
       display: flex;
       align-items: center;
+      img {
+        border-radius: 4px;
+      }
       h4 {
         margin-bottom: 0;
         margin-left: 5px;

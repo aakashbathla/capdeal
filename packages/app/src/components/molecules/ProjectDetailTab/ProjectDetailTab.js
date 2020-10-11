@@ -171,9 +171,16 @@ const ProjectDetailTab = ({ data }) => {
                     data.amenities.length > 0 &&
                     data.amenities.map((val, key) => {
                       return (
-                        <div key={key} className="col-3">
+                        <div key={key} className="col-4">
                           <div className="amenities-box">
-                            <img src={val.media.media_file || Icon4} alt="icon" />
+                          {val.media &&
+                            val.media.length > 0 &&
+                            val.media.map((value, index) => {
+                              return (
+                                <img key={index} src={value.media_file} height="100" alt="icon" />
+                              )
+                            })
+                          }
                             <h4>{val.name}</h4>
                           </div>
                         </div>
@@ -189,125 +196,43 @@ const ProjectDetailTab = ({ data }) => {
               >
                 <h4>INDIS Viva City - Floor Plans</h4>
                 <hr />
-                <div className="custom-control custom-radio custom-control-inline mr-5">
-                  <input
-                    type="radio"
-                    id="customRadioInline1"
-                    name="customRadioInline1"
-                    className="custom-control-input input-lg"
-                  />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="customRadioInline1"
-                  >
-                    Floor 1
-                  </label>
-                </div>
-                <div className="custom-control custom-radio custom-control-inline">
-                  <input
-                    type="radio"
-                    id="customRadioInline2"
-                    name="customRadioInline1"
-                    className="custom-control-input"
-                  />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="customRadioInline2"
-                  >
-                    Floor 2
-                  </label>
-                </div>
                 <div className="row mt-4">
-                  <div className="col-lg-4 col-md-6 col-sm-12">
-                    <div className="card">
-                      <img className="img-fluid" src={FloorPlan} alt="floor" />
-                      <h5>2 BHK 1360 Sq.Ft. Apartment</h5>
-                      <div className="row">
-                        <div className="col">
-                          <p className="mb-0">Saleable Area</p>
-                          <p className="mb-0">
-                            <strong>1360 Sq.Ft.</strong>
-                          </p>
+                  {data.floor_plans &&
+                    data.floor_plans.length > 0 &&
+                    data.floor_plans.map((val, key) => {
+                      return (
+                        <div key={key} className="col-lg-4 col-md-6 col-sm-12">
+                          <div className="card">
+                            <h5>{val.title}</h5>
+                            <div className="row">
+                              <div className="col">
+                                <p className="mb-0">Saleable Area</p>
+                                <p className="mb-0">
+                                  <strong>{val.saleable_area} Sq.Ft.</strong>
+                                </p>
+                              </div>
+                              <div className="col text-right">
+                                <p className="mb-0">Inventory</p>
+                                <p className="mb-0">
+                                  <strong>{val.inventory}</strong>
+                                </p>
+                              </div>
+                            </div>
+                            <div className="row mt-4">
+                              <div className="col">
+                                <p className="mb-0 know-text">Know More</p>
+                              </div>
+                              <div className="col">
+                                <p className="mb-0 price">
+                                  <strong>&#8377;{val.pricing}</strong>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="col text-right">
-                          <p className="mb-0">Bedrooms</p>
-                          <p className="mb-0">
-                            <strong>2 Bedrooms</strong>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="row mt-4">
-                        <div className="col">
-                          <p className="mb-0 know-text">Know More</p>
-                        </div>
-                        <div className="col">
-                          <p className="mb-0 price">
-                            <strong>&#8377;80.50 Lac</strong>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4 col-md-6 col-sm-12">
-                    <div className="card">
-                      <img className="img-fluid" src={FloorPlan} alt="floor" />
-                      <h5>2 BHK 1360 Sq.Ft. Apartment</h5>
-                      <div className="row">
-                        <div className="col">
-                          <p className="mb-0">Saleable Area</p>
-                          <p className="mb-0">
-                            <strong>1360 Sq.Ft.</strong>
-                          </p>
-                        </div>
-                        <div className="col text-right">
-                          <p className="mb-0">Bedrooms</p>
-                          <p className="mb-0">
-                            <strong>2 Bedrooms</strong>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="row mt-4">
-                        <div className="col">
-                          <p className="mb-0 know-text">Know More</p>
-                        </div>
-                        <div className="col">
-                          <p className="mb-0 price">
-                            <strong>&#8377;80.50 Lac</strong>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4 col-md-6 col-sm-12">
-                    <div className="card">
-                      <img className="img-fluid" src={FloorPlan} alt="floor" />
-                      <h5>2 BHK 1360 Sq.Ft. Apartment</h5>
-                      <div className="row">
-                        <div className="col">
-                          <p className="mb-0">Saleable Area</p>
-                          <p className="mb-0">
-                            <strong>1360 Sq.Ft.</strong>
-                          </p>
-                        </div>
-                        <div className="col text-right">
-                          <p className="mb-0">Bedrooms</p>
-                          <p className="mb-0">
-                            <strong>2 Bedrooms</strong>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="row mt-4">
-                        <div className="col">
-                          <p className="mb-0 know-text">Know More</p>
-                        </div>
-                        <div className="col">
-                          <p className="mb-0 price">
-                            <strong>&#8377;80.50 Lac</strong>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                      )}
+                    )
+                  }
                 </div>
               </div>
               {/* <div

@@ -37,6 +37,9 @@ const SearchBox = () => {
                 <select className="form-control form-control-lg">
                   <option>Residential</option>
                   <option>Commercial</option>
+                  <option>Apartment</option>
+                  <option>Penthouse</option>
+                  <option>Villa</option>
                 </select>
               </div>
               <div className="col-lg-5 col-md-5 col-sm-12 mb-5 mb-md-0">
@@ -52,7 +55,10 @@ const SearchBox = () => {
               <div className="col-lg-2 col-md-2 col-sm-12 pl-lg-0 pl-md-0 mb-5 mb-md-0">
                 <label>Budget</label>
                 <select className="form-control form-control-lg">
-                  <option>Select</option>
+                  <option>&#8377; 10 Lac</option>
+                  <option>&#8377; 20 Lac</option>
+                  <option>&#8377; 30 Lac</option>
+                  <option>&#8377; 50 Lac</option>
                 </select>
               </div>
               <div className="col-lg-2 col-md-3 col-sm-12 searchbox_spacing">

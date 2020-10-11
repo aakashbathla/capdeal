@@ -15,7 +15,7 @@ const ProjectDetailFeatures = ({ data }) => {
         data.features.length > 0 &&
         data.features.map((val, key) => {
           return (
-            <div className="col">
+            <div key={key} className="col">
               <div className="info-bar__item">
                 <img src={data.features[key].media.media_file} alt="icon" />
                 <p>{data.features[key].description}</p>
