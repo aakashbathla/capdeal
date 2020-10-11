@@ -51,12 +51,17 @@ const SideNav = () => {
           </MenuItem>
           <MenuItem icon={<i className="zmdi zmdi-city-alt"></i>}>
             <Link activeStyle={{ fontWeight: "800" }} to="/app/aminities-list">
-              Aminities
+              Aminities Category
             </Link>
           </MenuItem>
           <MenuItem icon={<i className="zmdi zmdi-code"></i>}>
             <Link activeStyle={{ fontWeight: "800" }} to="/app/seo-list">
               SEO
+            </Link>
+          </MenuItem>
+          <MenuItem icon={<i className="zmdi zmdi-code"></i>}>
+            <Link activeStyle={{ fontWeight: "800" }} to="/app/contact-us">
+              Contact Us
             </Link>
           </MenuItem>
         </Menu>
