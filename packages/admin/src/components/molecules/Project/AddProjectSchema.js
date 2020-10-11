@@ -228,6 +228,17 @@ export const uiSchema = {
       },
     },
   },
+  floor_plans: {
+    items: {
+      title: {
+        "ui:widget": getList,
+        "ui:options": {
+          url: apis.floorPlanChoice,
+          type: "normal",
+        },
+      },
+    },
+  },
   features: {
     items: {
       mediaFile: {
