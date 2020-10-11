@@ -1,0 +1,21 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+
+.call-back-modal {
+  .modal-title {
+    @include font-poppins-bold-15($orange-color);
+  }
+  .modal-content {
+    box-shadow: 6px 16px 18px #00000060 !important;
+  }
+  .close {
+    font-size: 35px;
+    padding: 0 !important;
+    font-weight: 300;
+    padding-right: 10px !important;
+    &:focus {
+      outline: none;
+    }
+  }
+}

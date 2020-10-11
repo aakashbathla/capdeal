@@ -48,6 +48,7 @@
       @include font-poppins-regular-18($white);
       @include mobile {
         @include font-poppins-bold-24($white);
+        font-weight: 500;
       }
     }
     &_details {

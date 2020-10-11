@@ -44,17 +44,26 @@
       margin-bottom: 4px;
       @include mobile {
         @include font-poppins-bold-14($black);
-        padding-top: 10px;
+        padding-top: 5px;
       }
     }
     .location {
       @include font-poppins-regular-9($grey-color);
+      @include mobile {
+        @include font-poppins-regular-13($grey-color);
+      }
     }
     .subhead {
       @include font-poppins-regular-9($grey-color);
+      @include mobile {
+        @include font-poppins-regular-13($grey-color);
+      }
     }
     .amount {
       @include font-poppins-regular-10($black);
+      @include mobile {
+        @include font-poppins-regular-13($black);
+      }
     }
     .border-l {
       border-right: 1px solid $orange-color;
@@ -65,6 +74,9 @@
       border-radius: 36px;
       box-shadow: 0px 3px 6px #00000029;
       padding: 2px 10px;
+      @include mobile {
+        @include font-poppins-regular-12($white);
+      }
     }
   }
 }

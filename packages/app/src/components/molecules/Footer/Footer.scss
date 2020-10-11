@@ -26,7 +26,7 @@
     &-subitems {
       @include font-poppins-regular-13($white);
       @include mobile {
-        @include font-poppins-regular-12($white);
+        @include font-poppins-regular-14($white);
       }
     }
   }
@@ -49,7 +49,7 @@
     &-content {
       @include font-poppins-regular-14($white);
       @include mobile {
-        @include font-poppins-regular-12($white);
+        @include font-poppins-regular-14($white);
       }
     }
     .social-link-list li {
