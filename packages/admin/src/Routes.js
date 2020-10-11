@@ -15,6 +15,7 @@ import EditAminities from "components/molecules/aminities/EditAminities";
 import Aminities from "components/molecules/aminities/AminitiesListing";
 import DeveloperList from "components/molecules/Developer/DeveloperListing";
 import ProjectList from "components/molecules/Project";
+import ContactList from "components/molecules/callback";
 import AddProject from "components/molecules/Project/AddProject";
 import EditProject from "components/molecules/Project/EditProject";
 import SeoList from "components/molecules/Seo/SeoListing";
@@ -51,6 +52,7 @@ const Routes = () => {
                   path="/app/customer-list"
                   component={CustomerList}
                 />
+                <Route exact path="/app/contact-us" component={ContactList} />
                 <Route exact path="/app/team-list" component={TeamList} />
                 <Route
                   exact
