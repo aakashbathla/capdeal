@@ -1,0 +1,325 @@
+$sidebar-bg-color: #fff;
+$sidebar-color: black;
+$sidebar-width: 100%;
+$sidebar-collapsed-width: 80px !default;
+$highlight-color: #585858 !default;
+$submenu-bg-color: #fff;
+$submenu-bg-color-collapsed: #fff;
+$icon-bg-color: transparent !default;
+
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item {
+	padding: 0px 5px 0px 5px;
+  }
+  .pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item > div > ul {
+	padding-top: 0;
+	padding-bottom: 0;
+  }
+  .pro-sidebar .pro-menu .pro-menu-item.pro-sub-menu .pro-inner-list-item .pro-inner-item {
+	padding: 6px 30px 6px 20px;
+  }
+
+@media (max-width: 1169px) {
+	.navbar-header {
+		width: auto
+	}
+	.ls-toggle-btn {
+		display: none !important
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar .navbar-toggle {
+		position: relative;
+		margin-right: 12px;
+		margin-top: 10px
+	}
+	.navbar .navbar-toggle:before {
+		position: absolute;
+		top: 0;
+		left: 0
+	}
+}
+
+@media (max-width: 500px) {
+	.navbar-header .navbar-brand span {
+		display: none
+	}
+	.block-header h2 small {
+		display: inline-block !important
+	}
+}
+
+@media (max-width: 325px) {
+	.navbar .navbar-left {
+		display: none !important
+	}
+}
+
+.overlay {
+	position: fixed;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	z-index: 12
+}
+
+.overlay-open .sidebar {
+	margin-left: 0;
+	z-index: 13
+}
+
+.sidebar {
+	border-radius: 5px;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+	font-family: "Muli", sans-serif;
+	background: #fff;
+	width: 200px;
+	top: 0;
+	height: 100%;
+	position: absolute;
+	box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+	z-index: 10;
+	overflow-y: scroll;
+	scrollbar-width: none;
+	-ms-overflow-style: none
+}
+.sidebar .pro-icon-wrapper {
+	margin-right: 0 !important;
+}
+.sidebar .user-info {
+	background: #f2e4db;
+    border: 8px solid #fff;
+	border-radius: 15px;
+	padding: 12px 15px;
+	position: relative;	
+}
+.sidebar::-webkit-scrollbar {
+	width: 0px
+}
+
+.sidebar .legal {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	border-top: 1px solid #eee;
+	padding: 15px;
+	overflow: hidden
+}
+
+.sidebar .user-info .image img {
+	width: 65px	;
+	border-radius: 0;
+    vertical-align: bottom !important;
+    border: none;
+	box-shadow: none;
+	margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.sidebar .user-info .detail h4 {
+	font-size: 18px
+}
+
+.sidebar .user-info a {
+	display: inline-block !important
+}
+
+.sidebar .menu {
+	position: relative
+}
+
+.sidebar .menu .list {
+	list-style: none;
+	margin: 0 10px
+}
+
+.sidebar .menu .list li.active>:first-child span {
+	font-weight: 700
+}
+
+.sidebar .menu .list>li:last-child {
+	margin-bottom: 80px
+}
+
+.sidebar .menu .list .header {
+	font-size: 11px;
+	font-weight: 700;
+	padding: 8px 12px;
+	position: relative;
+	color: #455a64
+}
+
+.sidebar .menu .list .header:before {
+	content: "--";
+	position: absolute;
+	left: 0;
+	top: 7px
+}
+
+.sidebar .menu .list i.material-icons {
+	margin-top: 4px
+}
+
+.sidebar .menu .list .menu-toggle:after,
+.sidebar .menu .list .menu-toggle:before {
+	position: absolute;
+	top: calc(50% - 11px);
+	right: 17px;
+	font-size: 15px;
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	-o-transform: scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	font-family: 'Material-Design-Iconic-Font'
+}
+
+.sidebar .menu .list .menu-toggle:before {
+	content: '\f2fb';
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	-webkit-transform: scale(1);
+	transform: scale(1)
+}
+
+.sidebar .menu .list .menu-toggle:after {
+	content: '\f2f9';
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	-o-transform: scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0)
+}
+
+.sidebar .menu .list .menu-toggle.toggled:before {
+	content: '\f2f9';
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	-o-transform: scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	font-family: 'Material-Design-Iconic-Font'
+}
+
+.sidebar .menu .list .menu-toggle.toggled:after {
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	-webkit-transform: scale(1);
+	transform: scale(1)
+}
+
+.sidebar .menu .list a {
+	color: #424242;
+	position: relative;
+	padding: 14px 10px;
+}
+
+.sidebar .menu .list a:hover,
+.sidebar .menu .list a:active,
+.sidebar .menu .list a:focus {
+	text-decoration: none !important
+}
+
+.sidebar .menu .list a i {
+	width: 16px;
+	font-size: 16px
+}
+
+.sidebar .menu .list a small {
+	position: absolute;
+	top: calc(50% - 7.5px);
+	right: 15px
+}
+
+.sidebar .menu .list a span {
+	margin: 0 0 0 12px
+}
+
+.sidebar .menu .list .ml-menu {
+	list-style: none;
+	display: none
+}
+
+.sidebar .menu .list .ml-menu span {
+	font-weight: normal;
+	margin: 3px 0 1px 6px
+}
+
+.sidebar .menu .list .ml-menu li a {
+	padding-left: 40px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	font-size: 14px
+}
+
+.sidebar .menu .list .ml-menu li a:before {
+	content: '\f30f';
+	position: absolute;
+	left: 14px;
+	font-size: 12px;
+	font-family: 'Material-Design-Iconic-Font';
+	color: #9e9e9e;
+	top: 8px
+}
+
+.sidebar .menu .list .ml-menu li.active a.toggled:not(.menu-toggle) {
+	font-weight: 700
+}
+
+.sidebar .menu .progress-container {
+	margin: 12px
+}
+.sidebar .user-info .detail h4 {
+	margin-top: 0px
+}
+.sidebar .user-info .detail h4 {
+	margin-bottom: 0px;
+}
+.sidebar .menu .list .header {
+	margin-top: 15px
+}
+.sidebar .menu .list,
+.sidebar .menu .list .ml-menu {
+	padding-left: 0px
+}
+.ls-toggle-menu .sidebar {
+	margin-left: -300px
+}
+
+.ls-closed .sidebar {
+	margin-left: -300px
+}
+.sidebar .menu .list a i {
+	text-align: center;
+}
+
+@media (max-width: 1169px) {
+	.sidebar {
+		height: calc(100vh - 0px);
+		top: 0px
+	}
+}
+.sidebar .user-info,
+.sidebar .menu .list a i {
+	text-align: center;
+}
+.sidebar {
+	display: inline-block;
+}
+.sidebar .menu .list a {
+	display: block;
+}

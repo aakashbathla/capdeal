@@ -1,0 +1,13 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+.user-journey-form {
+  &_wrapper {
+    padding: 3rem !important;
+    background-color: $white;
+    border: 2px solid $orange-color;
+    border-radius: 4px;
+  }
+}
+
+

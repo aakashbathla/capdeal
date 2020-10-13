@@ -2,10 +2,83 @@
 @import "../../styles/src/typography";
 @import "../../styles/src/breakpoints";
 
-.user-journey {
-  background-color: #fdfdfb;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.user {
+  background-color: #f3f3f3 ;
+  &__wrap {
+    position: relative;
+    padding-top: 9rem;
+    padding-bottom: 30px;
+  }
+  &__content {
+    margin-left: 220px;
+    padding: 2rem;
+    background-color: $white;
+    border: 1px solid $orange-color;
+    border-radius: 4px;
+    min-height: 400px;
+  }
+  .form-group{
+    margin-bottom: 2rem;
+  }
+  .form-control {
+    @include font-poppins-regular-14(black);
+    height: 35px;
+  }
+  .control-label {
+    @include font-poppins-regular-11($black-3);
+    margin-bottom: 0;
+  }
+  .btn-info {
+    width: 200px;
+    font-size: 0 !important;
+    background-color: #c98b66 !important;
+    border-color: #c98b66 !important;
+    margin-bottom: 20px;
+    @include font-poppins-bold-15($white);
+    &::after {
+      content: 'Update';
+      font-size: 15px;
+      font-weight: 500;
+    }
+    &:hover {
+      background-color: #bf794e !important;
+      border-color: #bf794e !important;
+    }
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+  .error-detail{
+    font-size: 12px;
+    padding-left: 0;
+    list-style: none;
+    padding-top: 2px;
+  }
+  .list-group-item {
+    border: none;
+    font-size: 12px;
+    padding: 0;
+  }
+  .panel-title {
+    font-size: 12px;
+    color: #dc3545!important;
+  }
+}
+.btn-round {
+  height: 35px;
+  width: 35px;
+  border-radius: 30px!important;
+  background-color: #c98b66 !important;
+  border-color: #c98b66 !important;
+  &:hover {
+    background-color: #bf794e !important;
+    border-color: #bf794e !important;
+  }
+  &:focus {
+    box-shadow: none !important;
+  }
+  .zmdi {
+    color: #fff;
+    padding-top: 3px;
+  }
 }

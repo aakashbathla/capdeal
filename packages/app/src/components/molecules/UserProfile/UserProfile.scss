@@ -1,0 +1,19 @@
+@import "../../../styles/src/colors";
+@import "../../../styles/src/typography";
+@import "../../../styles/src/breakpoints";
+.user-profile {
+  &_content {
+    label {
+      @include font-poppins-regular-14($grey-color);
+      letter-spacing: 0.01rem;
+      margin-bottom: 0;
+    }
+    h3 {
+      @include font-poppins-regular-16($black);
+    }
+  }
+}
+
+
+
+
