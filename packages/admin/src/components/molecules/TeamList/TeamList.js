@@ -6,10 +6,12 @@ import { buildUrl, errorGenerator } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 import Listing from "../../atoms/Listing";
 import "./TeamList.scss";
+import Loader from "../../atoms/Loader";
 
 const TeamListing = () => {
   const [teamData, setTeamData] = useState([]);
   const [error, setError] = useState(null);
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   let urlOptions = {
     pathname: apis.teamListingUrl,
     urlEncoded: true,
@@ -19,10 +21,11 @@ const TeamListing = () => {
       ...urlOptions,
       query: params || undefined,
     };
-
+    setLoaderIndicator(true);
     try {
       ServiceUtils.fetch(buildUrl(urlOptions, params), "http://")
         .then((data) => {
+          setLoaderIndicator(false);
           if (data) {
             setTeamData(data);
           } else {
@@ -30,9 +33,11 @@ const TeamListing = () => {
           }
         })
         .catch((err) => {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
         });
     } catch (err) {
+      setLoaderIndicator(false);
       console.log(err);
     }
   };
@@ -47,6 +52,7 @@ const TeamListing = () => {
       ...urlOptions,
       pathname: apis.teamListing + id,
     };
+    setLoaderIndicator(true);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),
@@ -54,12 +60,15 @@ const TeamListing = () => {
         "http://"
       )
         .then(() => {
+          setLoaderIndicator(false);
           fetchData();
         })
         .catch((err) => {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
         });
     } catch (err) {
+      setLoaderIndicator(false);
       console.log(err);
     }
   };
@@ -72,6 +81,7 @@ const TeamListing = () => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       {teamData && teamData.results && (
         <Listing
           data={teamData}

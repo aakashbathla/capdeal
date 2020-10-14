@@ -1,3 +1,5 @@
+import getList from "../../../utils/getList";
+import apis from "../../../constants/apis/services";
 export const schema = {
   type: "object",
   title: "Add Team Member",
@@ -27,8 +29,6 @@ export const schema = {
     role: {
       type: "integer",
       title: "User Role",
-      enum: [1, 2],
-      enumNames: ["Managers", "Workers"],
     },
   },
   required: [
@@ -49,5 +49,11 @@ export const uiSchema = {
     "ui:placeholder":
       "one digit, one lowercase and one uppercase alphabet and, minimum length 6",
     "ui:widget": "password",
+  },
+  role: {
+    "ui:widget": getList,
+    "ui:options": {
+      url: apis.userRole,
+    },
   },
 };

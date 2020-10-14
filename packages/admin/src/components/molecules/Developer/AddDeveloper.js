@@ -4,17 +4,22 @@ import { useHistory } from "react-router";
 import { schema, uiSchema } from "./AddDeveloperSchema";
 import apis from "../../../constants/apis/services";
 import { addData, errorGenerator, transformErrors } from "../../../utils/Utils";
+import Loader from "../../atoms/Loader";
 import "./Developer.scss";
 
 const AddDeveloper = () => {
   const history = useHistory();
   const [error, setError] = useState(null);
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   const redirectFunction = () => {
+    setLoaderIndicator(false);
     history.push({
       pathname: "/app/developer-list",
     });
   };
+  let data;
   const errorHandler = (err) => {
+    setLoaderIndicator(false);
     setError(errorGenerator(err));
   };
   return (
@@ -29,12 +34,14 @@ const AddDeveloper = () => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       <Form
         schema={schema}
         uiSchema={uiSchema}
         noHtml5Validate={true}
         transformErrors={transformErrors}
         onSubmit={({ formData }, e) => {
+          setLoaderIndicator(true);
           e.preventDefault();
           if (formData && formData.imageFile) {
             formData.image = parseInt(formData.imageFile);

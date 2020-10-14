@@ -4,11 +4,13 @@ import ServiceUtils from "../../../utils/ServiceUtils";
 import { buildUrl, errorGenerator } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 import Listing from "../../atoms/Listing/";
+import Loader from "../../atoms/Loader";
 import "./CustomerList.scss";
 
 const CustomerListing = () => {
   const [customerData, setCustomerData] = useState([]);
   const [error, setError] = useState(null);
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   let urlOptions = {
     pathname: apis.userListingUrl,
     urlEncoded: true,
@@ -18,10 +20,11 @@ const CustomerListing = () => {
       ...urlOptions,
       query: params || undefined,
     };
-
+    setLoaderIndicator(true);
     try {
       ServiceUtils.fetch(buildUrl(urlOptions, params), "http://")
         .then((data) => {
+          setLoaderIndicator(false);
           if (data) {
             setCustomerData(data);
           } else {
@@ -29,9 +32,11 @@ const CustomerListing = () => {
           }
         })
         .catch((err) => {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
         });
     } catch (err) {
+      setLoaderIndicator(false);
       console.log(err);
     }
   };
@@ -46,6 +51,7 @@ const CustomerListing = () => {
       ...urlOptions,
       pathname: urlOptions.pathname + id,
     };
+    setLoaderIndicator(true);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),
@@ -53,12 +59,15 @@ const CustomerListing = () => {
         "http://"
       )
         .then(() => {
+          setLoaderIndicator(false);
           fetchData();
         })
         .catch((err) => {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
         });
     } catch (err) {
+      setLoaderIndicator(false);
       console.log(err);
     }
   };
@@ -71,6 +80,7 @@ const CustomerListing = () => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       {customerData && customerData.results && (
         <Listing
           data={customerData}

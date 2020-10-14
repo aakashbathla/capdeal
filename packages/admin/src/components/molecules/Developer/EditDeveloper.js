@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { schema, uiSchema } from "./EditDeveloperSchema";
 import apis from "../../../constants/apis/services";
+import Loader from "../../atoms/Loader";
 import {
   fetchData,
   updateData,
@@ -16,20 +17,25 @@ const EditDeveloper = (props) => {
   const history = useHistory();
   const [error, setError] = useState(null);
   const [updateFormDataValue, setUpdateFormDataValue] = useState(null);
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   const updateFormData = (data) => {
+    setLoaderIndicator(false);
     data.imageFile = data.image || undefined;
     setUpdateFormDataValue(data);
   };
   const redirectFunction = () => {
+    setLoaderIndicator(false);
     props.history.push({
       pathname: "/app/developer-list",
     });
   };
   const errorHandler = (err) => {
+    setLoaderIndicator(false);
     setError(errorGenerator(err));
   };
   useEffect(() => {
     if (props && props.match && props.match.params && props.match.params.id) {
+      setLoaderIndicator(true);
       fetchData(
         `${apis.developerListingUrl}/${props.match.params.id}`,
         updateFormData,
@@ -50,6 +56,7 @@ const EditDeveloper = (props) => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       {updateFormDataValue && (
         <Form
           safeRenderCompletion={true}
@@ -59,6 +66,7 @@ const EditDeveloper = (props) => {
           transformErrors={transformErrors}
           noHtml5Validate={true}
           onSubmit={({ formData }, e) => {
+            setLoaderIndicator(true);
             e.preventDefault();
             if (formData && formData.imageFile) {
               formData.image = parseInt(formData.imageFile);

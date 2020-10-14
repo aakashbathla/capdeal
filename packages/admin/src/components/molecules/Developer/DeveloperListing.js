@@ -4,11 +4,13 @@ import ServiceUtils from "../../../utils/ServiceUtils";
 import { buildUrl, errorGenerator } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 import Listing from "../../atoms/Listing/";
+import Loader from "../../atoms/Loader";
 import "./Developer.scss";
 
 const DeveloperListing = () => {
   const [developerData, setDeveloperData] = useState([]);
   const [error, setError] = useState(null);
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   let urlOptions = {
     pathname: apis.developerListingUrl,
     urlEncoded: true,
@@ -18,10 +20,11 @@ const DeveloperListing = () => {
       ...urlOptions,
       query: params || undefined,
     };
-
+    setLoaderIndicator(true);
     try {
       ServiceUtils.fetch(buildUrl(urlOptions, params), "http://")
         .then((data) => {
+          setLoaderIndicator(false);
           if (data) {
             setDeveloperData(data);
           } else {
@@ -29,9 +32,11 @@ const DeveloperListing = () => {
           }
         })
         .catch((err) => {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
         });
     } catch (err) {
+      setLoaderIndicator(false);
       console.log(err);
     }
   };
@@ -46,6 +51,7 @@ const DeveloperListing = () => {
       ...urlOptions,
       pathname: urlOptions.pathname + id,
     };
+    setLoaderIndicator(true);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),
@@ -53,12 +59,15 @@ const DeveloperListing = () => {
         "http://"
       )
         .then(() => {
+          setLoaderIndicator(false);
           fetchData();
         })
         .catch((err) => {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
         });
     } catch (err) {
+      setLoaderIndicator(false);
       console.log(err);
     }
   };
@@ -71,6 +80,7 @@ const DeveloperListing = () => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       {developerData && developerData.results && (
         <Listing
           data={developerData}

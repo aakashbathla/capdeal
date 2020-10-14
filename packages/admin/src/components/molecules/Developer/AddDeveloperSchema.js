@@ -29,13 +29,13 @@ export const schema = {
       title: "Media",
     },
   },
-  required: [
-    "name",
-    "experience",
-    "description",
-    "major_projects",
-    "imageFile",
-  ],
+  // required: [
+  //   "name",
+  //   "experience",
+  //   "description",
+  //   "major_projects",
+  //   "imageFile",
+  // ],
 };
 
 export const uiSchema = {

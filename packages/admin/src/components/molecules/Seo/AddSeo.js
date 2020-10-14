@@ -4,16 +4,20 @@ import { useHistory } from "react-router";
 import { schema, uiSchema } from "./AddSeoSchema";
 import apis from "../../../constants/apis/services";
 import { addData, errorGenerator, transformErrors } from "../../../utils/Utils";
+import Loader from "../../atoms/Loader";
 
 const AddSeo = () => {
   const history = useHistory();
   const [error, setError] = useState(null);
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   const redirectFunction = () => {
+    setLoaderIndicator(false);
     history.push({
       pathname: "/app/seo-list",
     });
   };
   const errorHandler = (err) => {
+    setLoaderIndicator(false);
     setError(errorGenerator(err));
   };
   return (
@@ -28,12 +32,14 @@ const AddSeo = () => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       <Form
         schema={schema}
         uiSchema={uiSchema}
         transformErrors={transformErrors}
         noHtml5Validate={true}
         onSubmit={({ formData }, e) => {
+          setLoaderIndicator(true);
           e.preventDefault();
           addData(
             apis.seoListingUrl,

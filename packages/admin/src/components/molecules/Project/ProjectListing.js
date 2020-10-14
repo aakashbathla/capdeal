@@ -5,6 +5,7 @@ import { buildUrl, errorGenerator } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 import Listing from "../../atoms/ProjectCard";
 import "./Project.scss";
+import Loader from "../../atoms/Loader";
 
 const ProjectListing = () => {
   const [projectData, setProjectData] = useState([]);
@@ -13,15 +14,17 @@ const ProjectListing = () => {
     pathname: apis.projectListingUrl,
     urlEncoded: true,
   };
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   const fetchData = (params) => {
     urlOptions = {
       ...urlOptions,
       query: params || undefined,
     };
-
+    setLoaderIndicator(true);
     try {
       ServiceUtils.fetch(buildUrl(urlOptions, params), "http://")
         .then((data) => {
+          setLoaderIndicator(false);
           if (data) {
             setProjectData(data);
           } else {
@@ -29,9 +32,11 @@ const ProjectListing = () => {
           }
         })
         .catch((err) => {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
         });
     } catch (err) {
+      setLoaderIndicator(false);
       console.log(err);
     }
   };
@@ -46,6 +51,7 @@ const ProjectListing = () => {
       ...urlOptions,
       pathname: urlOptions.pathname + id,
     };
+    setLoaderIndicator(true);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),
@@ -53,12 +59,15 @@ const ProjectListing = () => {
         "http://"
       )
         .then(() => {
+          setLoaderIndicator(false);
           fetchData();
         })
         .catch((err) => {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
         });
     } catch (err) {
+      setLoaderIndicator(false);
       console.log(err);
     }
   };
@@ -71,6 +80,7 @@ const ProjectListing = () => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       {projectData && projectData.results && (
         <Listing
           data={projectData}

@@ -11,12 +11,15 @@ import {
   transformErrors,
 } from "../../../utils/Utils";
 import "./Project.scss";
+import Loader from "../../atoms/Loader";
 
 const EditProject = (props) => {
   const history = useHistory();
   const [error, setError] = useState(null);
   const [updateFormDataValue, setUpdateFormDataValue] = useState(null);
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   const updateFormData = (data) => {
+    setLoaderIndicator(false);
     if (data.rera_no) {
       data.rera_no = parseInt(data.rera_no);
     }
@@ -46,15 +49,18 @@ const EditProject = (props) => {
     setUpdateFormDataValue(data);
   };
   const redirectFunction = () => {
+    setLoaderIndicator(false);
     props.history.push({
       pathname: "/app/project-list",
     });
   };
   const errorHandler = (err) => {
+    setLoaderIndicator(false);
     setError(errorGenerator(err));
   };
   useEffect(() => {
     if (props && props.match && props.match.params && props.match.params.id) {
+      setLoaderIndicator(true);
       fetchData(
         `${apis.projectListingUrl}/${props.match.params.id}`,
         updateFormData,
@@ -78,6 +84,7 @@ const EditProject = (props) => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       {updateFormDataValue && (
         <Form
           schema={schema}
@@ -116,6 +123,7 @@ const EditProject = (props) => {
                 }
               }
             }
+            setLoaderIndicator(true);
             updateData(
               `${apis.projectListingUrl}${props.match.params.id}/`,
               formData,

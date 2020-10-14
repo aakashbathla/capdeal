@@ -4,11 +4,13 @@ import ServiceUtils from "../../../utils/ServiceUtils";
 import { buildUrl, errorGenerator } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
 import Listing from "../../atoms/Listing/";
+import Loader from "../../atoms/Loader";
 import "./Callback.scss";
 
 const CallbackListing = () => {
   const [customerData, setCallbackData] = useState([]);
   const [error, setError] = useState(null);
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   let urlOptions = {
     pathname: apis.contactus,
     urlEncoded: true,
@@ -18,20 +20,24 @@ const CallbackListing = () => {
       ...urlOptions,
       query: params || undefined,
     };
-
+    setLoaderIndicator(true);
     try {
       ServiceUtils.fetch(buildUrl(urlOptions, params), "http://")
         .then((data) => {
           if (data) {
+            setLoaderIndicator(false);
             setCallbackData(data);
           } else {
+            setLoaderIndicator(false);
             console.log(error);
           }
         })
         .catch((err) => {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
         });
     } catch (err) {
+      setLoaderIndicator(false);
       console.log(err);
     }
   };
@@ -46,6 +52,7 @@ const CallbackListing = () => {
       ...urlOptions,
       pathname: urlOptions.pathname + id,
     };
+    setLoaderIndicator(true);
     try {
       ServiceUtils.fetch(
         buildUrl(updateUrlOptions),
@@ -53,12 +60,15 @@ const CallbackListing = () => {
         "http://"
       )
         .then(() => {
+          setLoaderIndicator(false);
           fetchData();
         })
         .catch((err) => {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
         });
     } catch (err) {
+      setLoaderIndicator(false);
       console.log(err);
     }
   };
@@ -71,6 +81,7 @@ const CallbackListing = () => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       {customerData && customerData.results && (
         <Listing
           data={customerData}

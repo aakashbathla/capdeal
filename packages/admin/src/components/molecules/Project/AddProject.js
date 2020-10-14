@@ -5,15 +5,19 @@ import { useHistory } from "react-router";
 import { schema, uiSchema, fields } from "./AddProjectSchema";
 import { addData, errorGenerator, transformErrors } from "../../../utils/Utils";
 import apis from "../../../constants/apis/services";
+import Loader from "../../atoms/Loader";
 const AddProject = () => {
   const history = useHistory();
   const [error, setError] = useState(null);
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   const redirectFunction = () => {
+    setLoaderIndicator(false);
     history.push({
       pathname: "/app/project-list",
     });
   };
   const errorHandler = (err) => {
+    setLoaderIndicator(false);
     setError(errorGenerator(err));
   };
   return (
@@ -31,6 +35,7 @@ const AddProject = () => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       <Form
         schema={schema}
         uiSchema={uiSchema}
@@ -38,6 +43,7 @@ const AddProject = () => {
         noHtml5Validate={true}
         transformErrors={transformErrors}
         onSubmit={({ formData }, e) => {
+          setLoaderIndicator(true);
           e.preventDefault();
           if (formData && formData.mediaFile) {
             formData.media = formData.mediaFile.split(",").map(Number);
@@ -65,6 +71,7 @@ const AddProject = () => {
               }
             }
           }
+          setLoaderIndicator(true);
           addData(
             apis.projectListingUrl,
             formData,

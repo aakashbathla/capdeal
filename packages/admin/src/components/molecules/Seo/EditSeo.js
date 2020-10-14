@@ -11,24 +11,30 @@ import {
   transformErrors,
 } from "../../../utils/Utils";
 import { withRouter } from "react-router";
+import Loader from "../../atoms/Loader";
 
 const EditSeo = (props) => {
   const [updateFormDataValue, setUpdateFormDataValue] = useState(null);
   const [error, setError] = useState(null);
   const updateFormData = (data) => {
+    setLoaderIndicator(false);
     setUpdateFormDataValue(data);
   };
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   const history = useHistory();
   const redirectFunction = () => {
+    setLoaderIndicator(false);
     props.history.push({
       pathname: "/app/seo-list",
     });
   };
   const errorHandler = (err) => {
+    setLoaderIndicator(false);
     setError(errorGenerator(err));
   };
   useEffect(() => {
     if (props && props.match && props.match.params && props.match.params.id) {
+      setLoaderIndicator(true);
       fetchData(
         `${apis.seoListingUrl}/${props.match.params.id}`,
         updateFormData,
@@ -49,6 +55,7 @@ const EditSeo = (props) => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       {updateFormDataValue && (
         <Form
           schema={schema}
@@ -58,6 +65,7 @@ const EditSeo = (props) => {
           noHtml5Validate={true}
           onSubmit={({ formData }, e) => {
             e.preventDefault();
+            setLoaderIndicator(true);
             updateData(
               `${apis.seoListingUrl}/${props.match.params.id}`,
               formData,

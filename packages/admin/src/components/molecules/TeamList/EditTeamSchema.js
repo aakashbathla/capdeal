@@ -50,5 +50,6 @@ export const uiSchema = {
   password: {
     "ui:placeholder":
       "one digit, one lowercase and one uppercase alphabet and, minimum length 6",
+    "ui:widget": "password",
   },
 };
