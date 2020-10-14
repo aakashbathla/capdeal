@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import apis from "../constants/apis/services";
 import ServiceUtils from "./ServiceUtils";
+import Loader from "../components/atoms/Loader";
 import {
   buildUrl,
   convertBase64ToBlob,
@@ -16,6 +17,7 @@ const MultipleMediaPreviewWidget = (props) => {
   };
   const [error, setError] = useState(null);
   const [images, setImages] = useState([]);
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   useEffect(() => {
     if (props && props.value) {
       let id = [];
@@ -51,6 +53,7 @@ const MultipleMediaPreviewWidget = (props) => {
     const length = Object.keys(images).length;
     if (length > 0) {
       for (var i = 0; i < length; i++) {
+        setLoaderIndicator(true);
         let formData = new FormData();
         formData.append(
           "media_file",
@@ -77,10 +80,12 @@ const MultipleMediaPreviewWidget = (props) => {
           ).then((data) => {
             imageIds.push(data.id.toString());
             if (imageIds.length === length) {
+              setLoaderIndicator(false);
               props.onChange(imageIds.toString());
             }
           });
         } catch (err) {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
           console.log(err);
         }
@@ -96,6 +101,7 @@ const MultipleMediaPreviewWidget = (props) => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       <MultiImageInput
         images={images}
         setImages={setImages}

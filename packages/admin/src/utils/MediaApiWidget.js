@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import apis from "../constants/apis/services";
 import ServiceUtils from "./ServiceUtils";
 import { buildUrl, errorGenerator } from "./Utils";
+import Loader from "../components/atoms/Loader";
 const MediaApiWidget = (props) => {
   const [error, setError] = useState(null);
+  const [loaderIndicator, setLoaderIndicator] = useState(null);
   const handleChange = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -23,6 +25,7 @@ const MediaApiWidget = (props) => {
     urlOptions = {
       ...urlOptions,
     };
+    setLoaderIndicator(true);
     try {
       ServiceUtils.fetch(
         buildUrl(urlOptions),
@@ -30,12 +33,15 @@ const MediaApiWidget = (props) => {
         "http://"
       )
         .then((data) => {
+          setLoaderIndicator(false);
           props.onChange(data.id);
         })
         .catch((err) => {
+          setLoaderIndicator(false);
           setError(errorGenerator(err));
         });
     } catch (err) {
+      setLoaderIndicator(false);
       setError(errorGenerator(err));
     }
     setError(null);
@@ -49,6 +55,7 @@ const MediaApiWidget = (props) => {
           ))}
         </div>
       )}
+      <Loader loaderIndicator={loaderIndicator} />
       <input
         name="file"
         type="file"
