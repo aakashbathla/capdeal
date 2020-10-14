@@ -17,7 +17,6 @@ const AddDeveloper = () => {
       pathname: "/app/developer-list",
     });
   };
-  let data;
   const errorHandler = (err) => {
     setLoaderIndicator(false);
     setError(errorGenerator(err));
