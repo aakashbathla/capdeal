@@ -17,6 +17,7 @@ const apis = {
   projectTypeChoice: `${api_url}/projects/type_choice/`,
   projectStatusChoice: `${api_url}/projects/status_choice/`,
   developerListChoice: `${api_url}/developers/choices/`,
+  floorPlanChoice: `${api_url}/projects/floor_plan_choice/`,
   amenitiesCategoryChoice: `${api_url}/aminities-categories/choices/`,
   callBackUrl: `${api_url}/contactus/`,
 };

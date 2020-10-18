@@ -50,11 +50,12 @@ const ProjectList = (props) => {
     last = (c - 2) * 10 + 10;
   }
   const filterData = (params) => {
+    console.log(params);
     urlOptions = {
       ...urlOptions,
       query: params || undefined,
     };
-
+    console.log(urlOptions);
     try {
       ServiceUtils.fetch(buildUrl(urlOptions, params), "http://")
         .then((data) => {
@@ -72,6 +73,9 @@ const ProjectList = (props) => {
       console.log(err);
     }
   };
+  const searchClick = (params) => {
+    filterData(params);
+  };
   return (
     <div className="project-list">
       <div className="Header-Background">
@@ -83,6 +87,7 @@ const ProjectList = (props) => {
           search={
             new URLSearchParams(props.location.search).get("search") || ""
           }
+          searchClick={searchClick}
         />
         <div className="container">
           <div className="row">

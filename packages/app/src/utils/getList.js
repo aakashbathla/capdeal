@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import { fetchData } from "../../../utils/Utils";
+import { fetchData } from "./Utils";
 import Select from "react-select";
 
 const getList = (props, url) => {
@@ -9,10 +9,10 @@ const getList = (props, url) => {
     setDataList(data);
   };
   useEffect(() => {
-    fetchData(props && props.options && props.options.url, updateFormData);
+    fetchData(props.options.url, updateFormData);
   }, []);
   let options;
-  if (props && props.options && props.options.type === "normal") {
+  if (props.options.type === "normal") {
     options =
       dataList &&
       dataList.map(function (val) {
@@ -22,10 +22,8 @@ const getList = (props, url) => {
         };
       });
   } else {
-    console.log(dataList);
     options =
       dataList &&
-      dataList.length > 0 &&
       dataList.map(function (val) {
         return {
           value: val.id,
@@ -44,8 +42,6 @@ const getList = (props, url) => {
           name="form-field-name"
           onChange={handleChange}
           options={options}
-          className={props.className}
-          placeholder={props.placeholder}
         />
       )}
       {options && props && props.value && (
