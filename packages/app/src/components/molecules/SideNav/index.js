@@ -17,7 +17,7 @@ const SideNav = () => {
             </a>
           </div>
           <div className="detail">
-            <h4>Team Member</h4>
+            <h4>Prithvi Raj Chauhan</h4>
           </div>
         </div>
         <Menu iconShape="square">
@@ -27,8 +27,8 @@ const SideNav = () => {
             </Link>
           </MenuItem>
           <MenuItem icon={<i className="zmdi zmdi-city"></i>}>
-            <Link activeStyle={{ fontWeight: "800" }} to="/user/projects">
-              Projects
+            <Link activeStyle={{ fontWeight: "800" }} to="/user/properties">
+              Properties
             </Link>
           </MenuItem>
           <MenuItem icon={<i className="zmdi zmdi-balance"></i>}>

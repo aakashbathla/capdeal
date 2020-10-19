@@ -1,6 +1,7 @@
 import React from "react";
+import { useHistory } from "react-router";
 import ProjectItem from "components/molecules/ProjectCard";
-import "./UserPropertyList.scss";
+import "./UserProperties.scss";
 const dataList ={
   "results": [
     {
@@ -237,12 +238,29 @@ const dataList ={
   ]
 
 }
-const UserPropertyList = () => {
+const UserProperties = () => {
+    const history = useHistory();
+    const goToAddLink = () => {
+    history.push({
+      pathname: `/user/add-properties`,
+    });
+  };
   return (
-    <div className="user-properties-list">
+    <div className="user-properties">
       <div className="row">
         <div className="col-12 col-md-6">
-          <h2>Listed Properties</h2>
+          <h2>Properties List</h2>
+        </div>
+        <div className="col-12 col-md-6 text-right">
+          <button
+            className="btn btn-round"
+            title="Add Properties"
+            onClick={() => {
+                goToAddLink();
+            }}
+          >
+            <i className="zmdi zmdi-plus"></i>
+          </button>
         </div>
       </div>
       <hr className="mb-4 pb-3" />
@@ -266,4 +284,4 @@ const UserPropertyList = () => {
   );
 };
 
-export default UserPropertyList;
+export default UserProperties;

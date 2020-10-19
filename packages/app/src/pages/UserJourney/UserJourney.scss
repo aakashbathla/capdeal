@@ -11,10 +11,6 @@
   }
   &__content {
     margin-left: 220px;
-    padding: 2rem;
-    background-color: $white;
-    border: 1px solid $orange-color;
-    border-radius: 4px;
     min-height: 400px;
   }
   .form-group{
@@ -47,6 +43,12 @@
     &:focus {
       box-shadow: none !important;
     }
+  }
+  .required {
+    color: red;
+    font-size: 15px;
+    line-height: 1;
+    vertical-align: sub;
   }
   .error-detail{
     font-size: 12px;

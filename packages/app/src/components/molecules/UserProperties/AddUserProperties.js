@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { addData, errorGenerator, transformErrors } from "utils/Utils";
-import { schema, uiSchema, fields } from "./EditProfileSchema";
+import { schema, uiSchema, fields } from "./AddUserPropertiesSchema";
 import Form from "@rjsf/core";
 import apis from "constants/apis/services";
-import "./UserProfile.scss";
+import "./UserProperties.scss";
 
-const EditProfile = () => {
+const AddUserProperties = () => {
   const history = useHistory();
   const [error, setError] = useState(null);
   const redirectFunction = () => {
     history.push({
-      pathname: "/user/profile",
+      pathname: "/user/properties",
     });
   };
   const errorHandler = (err) => {
     setError(errorGenerator(err));
   };
   return (
-    <div className="user-profile-form">
+    <div className="add-properties">
       <div className="row">
         <div className="col-12 col-md-12">
           <span className="back-btn" onClick={() => history.goBack()}>
             <i className="zmdi zmdi-arrow-left"></i>
           </span>
-          <h2 className="d-inline-block ml-2">Edit Profile</h2>
+          <h2 className="d-inline-block ml-2">Add Properties</h2>
         </div>
       </div>
       <hr className="mb-4 pb-3" />
@@ -56,4 +56,4 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+export default AddUserProperties;

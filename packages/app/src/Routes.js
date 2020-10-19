@@ -12,7 +12,8 @@ import ProjectDetail from "pages/ProjectDetail";
 import UserJourney from "pages/UserJourney";
 import UserProfile from "components/molecules/UserProfile";
 import EditProfile from "components/molecules/UserProfile/EditProfile";
-import UserProjects from "components/molecules/UserProjects";
+import UserProperties from "components/molecules/UserProperties";
+import AddUserProperties from "components/molecules/UserProperties/AddUserProperties";
 import UserPropertyList from "components/molecules/UserPropertyList";
 
 const Routes = () => {
@@ -44,8 +45,13 @@ const Routes = () => {
                 />
                 <Route
                   exact
-                  path="/user/projects"
-                  component={UserProjects}
+                  path="/user/properties"
+                  component={UserProperties}
+                />
+                <Route
+                  exact
+                  path="/user/add-properties"
+                  component={AddUserProperties}
                 />
                 <Route
                   exact

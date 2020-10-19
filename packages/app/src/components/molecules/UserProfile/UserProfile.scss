@@ -2,6 +2,10 @@
 @import "../../../styles/src/typography";
 @import "../../../styles/src/breakpoints";
 .user-profile {
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #c98b66;
+  border-radius: 4px;
   &_content {
     label {
       @include font-poppins-regular-14($grey-color);
@@ -12,6 +16,9 @@
       @include font-poppins-regular-16($black);
     }
   }
+}
+.user-profile-form {
+  @extend .user-profile;
 }
 
 
