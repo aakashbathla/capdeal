@@ -5,15 +5,17 @@ import Select from "react-select";
 
 const getList = (props, url) => {
   const [dataList, setDataList] = useState([]);
+  const [selectedValue, setSelectedValue] = useState(props.value);
   const updateFormData = (data) => {
     setDataList(data);
   };
   useEffect(() => {
     fetchData(props && props.options && props.options.url, updateFormData);
   }, []);
-  let options;
+  let options = [{ value: "", label: "Select Option" }];
+  let opt;
   if (props && props.options && props.options.type === "normal") {
-    options =
+    opt =
       dataList &&
       dataList.map(function (val) {
         return {
@@ -23,7 +25,7 @@ const getList = (props, url) => {
       });
   } else {
     console.log(dataList);
-    options =
+    opt =
       dataList &&
       dataList.length > 0 &&
       dataList.map(function (val) {
@@ -33,8 +35,11 @@ const getList = (props, url) => {
         };
       });
   }
-
+  if (opt) {
+    options = options.concat(opt);
+  }
   const handleChange = (selectedOption) => {
+    setSelectedValue(selectedOption.value);
     props.onChange(selectedOption.value);
   };
   return (
@@ -46,19 +51,20 @@ const getList = (props, url) => {
           options={options}
           className={props.className}
           placeholder={props.placeholder}
+          defaultValue={props.defaultValue}
         />
       )}
       {options && props && props.value && (
         <Select
           name="form-field-name"
-          value={options.filter((option) => {
-            if (props && props.value && props.value.id) {
-              if (option.value === props.value.id) {
+          value={options.find((option) => {
+            if (props && selectedValue && selectedValue.id) {
+              if (option.value === selectedValue.id) {
                 handleChange(option);
                 return;
               }
-            } else if (props && props.value && !props.value.id) {
-              return option.value === props.value;
+            } else if (props && selectedValue && !selectedValue.id) {
+              return option.value === selectedValue;
             }
           })}
           onChange={handleChange}

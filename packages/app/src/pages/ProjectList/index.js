@@ -20,11 +20,19 @@ const ProjectList = (props) => {
     pathname: apis.projectListingUrl,
     urlEncoded: true,
   };
+  function paramsToObject(entries) {
+    const result = {};
+    for (const [key, value] of entries) {
+      result[key] = value;
+    }
+    return result;
+  }
   useEffect(() => {
-    const query = new URLSearchParams(props.location.search);
-    const search = query.get("search");
-    if (search) {
-      filterData({ search: search });
+    const query = paramsToObject(
+      new URLSearchParams(props.location.search.slice(1)).entries()
+    );
+    if (query) {
+      filterData(query);
     } else {
       fetchData(apis.projectListingUrl, updateFormData);
     }
