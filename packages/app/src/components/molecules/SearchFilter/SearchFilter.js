@@ -55,7 +55,7 @@ const SearchFilter = ({ filterData, search, searchClick }, props) => {
           <Select
             {...floorPlan}
             placeholder="Bed Room"
-            className="form-control form-control-lg mr-3"
+            className="form-control form-control-lg mr-3 custom-select"
             onChange={(value) => (parameters.floor_plans__title = value)}
             value={parameters.floor_plans__title}
           />
@@ -64,7 +64,7 @@ const SearchFilter = ({ filterData, search, searchClick }, props) => {
           <Select
             {...projectType}
             placeholder="Property Type"
-            className="form-control form-control-lg mr-3"
+            className="form-control form-control-lg mr-3 custom-select"
             onChange={(value) => (parameters.property_type = value)}
             value={parameters.property_type}
           />
@@ -86,7 +86,7 @@ const SearchFilter = ({ filterData, search, searchClick }, props) => {
           <Select
             {...projectStatus}
             placeholder="Project Status"
-            className="form-control form-control-lg mr-3"
+            className="form-control form-control-lg mr-3 custom-select"
             onChange={(value) => (parameters.status = value)}
             value={parameters.status}
           />
