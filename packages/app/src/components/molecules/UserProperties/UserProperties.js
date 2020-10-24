@@ -240,6 +240,7 @@ const dataList ={
 }
 const UserProperties = () => {
     const history = useHistory();
+    const isUserProperty = true;
     const goToAddLink = () => {
     history.push({
       pathname: `/user/add-properties`,
@@ -248,10 +249,10 @@ const UserProperties = () => {
   return (
     <div className="user-properties">
       <div className="row">
-        <div className="col-12 col-md-6">
+        <div className="col-8 col-md-6">
           <h2>Properties List</h2>
         </div>
-        <div className="col-12 col-md-6 text-right">
+        <div className="col-4 col-md-6 text-right">
           <button
             className="btn btn-round"
             title="Add Properties"
@@ -274,6 +275,7 @@ const UserProperties = () => {
                   <ProjectItem
                     propertyTableId={`table${key}`}
                     value={val}
+                    isUserProperty={isUserProperty}
                   />
                 </>
               );

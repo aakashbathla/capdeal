@@ -7,7 +7,7 @@ import CallBackModal from "../CallBackModal";
 import "./ProjectCard.scss";
 import { useHistory } from "react-router-dom";
 
-const ProjectCard = ({ propertyTableId, value }) => {
+const ProjectCard = ({ propertyTableId, value, isUserProperty, isUserSelectedProperty }) => {
   let history = useHistory();
   return (
     <div className="card project_list">
@@ -32,7 +32,19 @@ const ProjectCard = ({ propertyTableId, value }) => {
           <div className="col-lg-9 col-md-9 col-sm-12 space">
             <div className="project-content">
               <div className="detail">
-                <h4 className="mb-0">{value.name}</h4>
+                <div className="row">
+                  <div className="col-10 col-md-11">
+                    <h4 className="mb-0">{value.name}</h4>
+                  </div>
+                  { isUserProperty &&
+                    <div className="col-2 col-md-1">
+                      <div className="custom-control custom-switch">
+                        <input type="checkbox" className="custom-control-input" id={`customSwitch`+value.id} />
+                        <label className="custom-control-label" htmlFor={`customSwitch`+value.id}></label>
+                      </div>
+                    </div>
+                  }
+                </div>
                 <p className="text-muted">
                   {value.address_line1}, {value.address_line2}, {value.city},{" "}
                   {value.state}
@@ -92,17 +104,59 @@ const ProjectCard = ({ propertyTableId, value }) => {
                   </a>
                 )}
                 <div className="float-right">
-                  <button
-                    className="btn btn-sm btn-outline-primary mr-2"
-                    onClick={() => {
-                      history.replace(`/project-detail/${value.id}`);
-                    }}
-                  >
-                    Details
-                  </button>
-                  <button className="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#callBackModal">
-                    Call Back
-                  </button>
+                  { (isUserProperty  || isUserSelectedProperty)
+                    ? <div>
+                        { isUserProperty &&
+                          <button
+                            className="btn btn-sm btn-outline-primary mr-2"
+                            onClick={() => {
+                              history.replace(`/user/add-properties`);
+                            }}
+                          >
+                            Edit
+                          </button>
+                        }
+                        <button
+                          className="btn btn-sm btn-outline-primary mr-2"
+                          data-toggle="modal"
+                          data-target="#confirmDelModal"
+                        >
+                          {isUserProperty ? 'Delete' : 'Unselect'}
+                        </button>
+                        <div className="modal fade call-back-modal" id="confirmDelModal" tabIndex="-1" role="dialog" aria-labelledby="confirmDelModalLabel" aria-hidden="true">
+                          <div className="modal-dialog modal-dialog-centered" role="document">
+                            <div className="modal-content">
+                              <div className="modal-header">
+                                <h5 className="modal-title" id="confirmDelModalLabel">Please Confirm</h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div className="modal-body px-4">
+                                <h3>{`Are are sure want to ` + (isUserProperty ? 'Delete' : 'Unselect') + ` the properties?`}</h3>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Confirm</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                  : <div>
+                      <button
+                          className="btn btn-lg btn-outline-primary mr-2"
+                          onClick={() => {
+                            history.replace(`/project-detail/${value.id}`);
+                          }}
+                      >
+                        Details
+                      </button>
+                      <button className="btn btn-lg btn-outline-primary" data-toggle="modal" data-target="#callBackModal">
+                        Call Back
+                      </button>
+                    </div>
+                  }
                 </div>
               </div>
             </div>

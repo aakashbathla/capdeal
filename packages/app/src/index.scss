@@ -28,4 +28,11 @@ body {
   @include lg-desktop {
     max-width: calc(100% - 80px);
   }
+.btn-primary {
+  background: #c98b66;
+  border-color: #c98b66;
+  &:hover, &:active, &:focus {
+    background-color: #a06847 !important;
+  }
+}
 }

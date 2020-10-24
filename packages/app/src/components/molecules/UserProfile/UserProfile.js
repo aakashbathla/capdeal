@@ -12,10 +12,10 @@ const UserProfile = () => {
   return (
     <div className="user-profile">
       <div className="row">
-        <div className="col-12 col-md-6">
+        <div className="col-8 col-md-6">
           <h2>Profile Details</h2>
         </div>
-        <div className="col-12 col-md-6 text-right">
+        <div className="col-4 col-md-6 text-right">
           <button
             className="btn btn-round"
             title="Edit Profile"

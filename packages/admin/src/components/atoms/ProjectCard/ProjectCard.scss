@@ -15,6 +15,13 @@
     position: relative;
     overflow: hidden;
     border-radius: 4px;
+    img {
+      border-radius: 4px;
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+    }
     .badge {
       position: absolute;
       top: 10px;

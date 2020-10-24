@@ -238,30 +238,32 @@ const dataList ={
 
 }
 const UserPropertyList = () => {
-  return (
-    <div className="user-properties-list">
-      <div className="row">
-        <div className="col-12 col-md-6">
-          <h2>Listed Properties</h2>
+    const isUserSelectedProperty = true;
+    return (
+        <div className="user-properties-list">
+        <div className="row">
+            <div className="col-12 col-md-6">
+            <h2>Listed Properties</h2>
+            </div>
         </div>
-      </div>
-      <hr className="mb-4 pb-3" />
-      <div className="row user-profile_content">
-        <div className="col-12">
-          {dataList &&
-            dataList.results &&
-            dataList.results.map((val, key) => {
-              return (
-                <>
-                  <ProjectItem
-                    propertyTableId={`table${key}`}
-                    value={val}
-                  />
-                </>
-              );
-            })}
+        <hr className="mb-4 pb-3" />
+        <div className="row user-profile_content">
+            <div className="col-12">
+            {dataList &&
+                dataList.results &&
+                dataList.results.map((val, key) => {
+                return (
+                    <>
+                    <ProjectItem
+                        propertyTableId={`table${key}`}
+                        value={val}
+                        isUserSelectedProperty={isUserSelectedProperty}
+                    />
+                    </>
+                );
+                })}
+            </div>
         </div>
-      </div>
     </div>
   );
 };
