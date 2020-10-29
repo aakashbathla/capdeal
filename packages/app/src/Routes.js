@@ -15,6 +15,7 @@ import EditProfile from "components/molecules/UserProfile/EditProfile";
 import UserProperties from "components/molecules/UserProperties";
 import AddUserProperties from "components/molecules/UserProperties/AddUserProperties";
 import UserPropertyList from "components/molecules/UserPropertyList";
+import Tools from "pages/Tools";
 
 const Routes = () => {
   return (
@@ -28,6 +29,7 @@ const Routes = () => {
         <Route exact path="/project-detail/:id" component={ProjectDetail} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/user" component={UserJourney} />
+        <Route exact path="/tools/emi-calculator" component={Tools} />
         <Route exact path="/404" component={NoMatch} />
         <UserJourney>
           <Route

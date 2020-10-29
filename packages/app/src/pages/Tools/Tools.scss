@@ -1,0 +1,11 @@
+@import "../../styles/src/colors";
+@import "../../styles/src/typography";
+@import "../../styles/src/breakpoints";
+
+.tools {
+  &__wrap {
+    position: relative;
+    padding-top: 9rem;
+    padding-bottom: 30px;
+  }
+}
