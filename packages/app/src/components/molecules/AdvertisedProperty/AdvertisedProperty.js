@@ -27,7 +27,7 @@ const AdvertisedProperty = () => {
   });
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: isMobile ? 1 : 4,
     slidesToScroll: isMobile ? 1 : 4,
@@ -111,7 +111,13 @@ const AdvertisedProperty = () => {
                         </h6>
                         <div>
                           <div className="width-50 light-grey-background inline-block p1 text-center button">
-                            ShortList <img className="d-inline pl-3" src={LikeIcon} height="14" alt="like" />
+                            ShortList{" "}
+                            <img
+                              className="d-inline pl-3"
+                              src={LikeIcon}
+                              height="14"
+                              alt="like"
+                            />
                           </div>
                           <div
                             className="width-50 deep-purple-background  inline-block p1 text-center active button"

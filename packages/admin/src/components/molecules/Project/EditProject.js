@@ -31,6 +31,7 @@ const EditProject = (props) => {
     }
     if (data.media) {
       data.mediaFile = data.media;
+      delete data.media;
     }
     if (data && data.price_range) {
       data.price_range_min = parseFloat(data.price_range[0]);
@@ -39,11 +40,13 @@ const EditProject = (props) => {
     if (data.amenities) {
       for (var i = 0; i < data.amenities.length; i++) {
         data.amenities[i].mediaFile = data.amenities[i].media;
+        delete data.amenities[i].media;
       }
     }
     if (data.features) {
       for (var i = 0; i < data.features.length; i++) {
         data.features[i].mediaFile = data.features[i].media || undefined;
+        delete data.features[i].media;
       }
     }
     setUpdateFormDataValue(data);
@@ -57,6 +60,42 @@ const EditProject = (props) => {
   const errorHandler = (err) => {
     setLoaderIndicator(false);
     setError(errorGenerator(err));
+  };
+  const handleOnChange = ({ formData }) => {
+    for (const property in formData) {
+      console.log(`${property}: ${formData[property]}`);
+      if(formData[property] == null){
+        
+      }
+    }
+    console.log(formData);
+    if (formData.mediaFile) {
+      let id = [];
+      if (Array.isArray(formData.mediaFile)) {
+        const img = formData.mediaFile.map((val, key) => {
+          id.push(val.id.toString());
+          return val.media_file;
+        });
+        delete formData.mediaFile;
+        formData.media = id.toString();
+      }
+      // if (formData && formData.amenities) {
+      //   formData.amenities.map((val, key) => {
+      //     let id = [];
+      //     if (Array.isArray(val.mediaFile)) {
+      //       const img = val.mediaFile.map((val2, key) => {
+      //         id.push(val2.id.toString());
+      //         return val2.media_file;
+      //       });
+      //       delete formData.amenities.mediaFile;
+      //       formData.media = id.toString();
+      //     }
+      //   });
+      // }
+    }
+    console.log("bathla", formData);
+    setUpdateFormDataValue(formData);
+    console.log("aakash", formData);
   };
   useEffect(() => {
     if (props && props.match && props.match.params && props.match.params.id) {
@@ -92,6 +131,7 @@ const EditProject = (props) => {
           fields={fields}
           formData={updateFormDataValue}
           transformErrors={transformErrors}
+          onChange={(args) => handleOnChange(args)}
           noHtml5Validate={true}
           onSubmit={({ formData }, e) => {
             e.preventDefault();

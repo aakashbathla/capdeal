@@ -26,15 +26,9 @@ const MultipleMediaPreviewWidget = (props) => {
           id.push(val.id.toString());
           return val.media_file;
         });
-        props.onChange(
-          props.value
-            .map((val) => {
-              return val.id;
-            })
-            .toString()
-        );
-        setTimeout(() => {}, 0);
+        console.log(id.toString());
         setImages(img);
+        // props.onChange(id.toString());
       }
       if (
         props.value &&
@@ -44,13 +38,15 @@ const MultipleMediaPreviewWidget = (props) => {
         const img = [];
         img.push(props.value.media_file);
         setImages(img);
-        props.onChange(props.value.id.toString());
+        console.log(props.value.id.toString());
+        // props.onChange(props.value.id.toString());
       }
     }
   }, [props]);
   let imageIds = [];
   const uploadImages = () => {
     const length = Object.keys(images).length;
+    console.log(images);
     if (length > 0) {
       for (var i = 0; i < length; i++) {
         setLoaderIndicator(true);
@@ -58,7 +54,7 @@ const MultipleMediaPreviewWidget = (props) => {
         formData.append(
           "media_file",
           convertBase64ToBlob(images[i]),
-          `image.${imageType(images[i])}`
+          `image${imageType(images[i])}`
         );
         formData.append("media_type", "Image");
         let urlOptions = {
@@ -107,7 +103,7 @@ const MultipleMediaPreviewWidget = (props) => {
         setImages={setImages}
         cropConfig={{ crop, ruleOfThirds: true }}
         allowCrop={false}
-        max={props.options.number || 3}
+        max={props.options.number || 6}
       />
       <button type="button" onClick={uploadImages}>
         Upload All Images

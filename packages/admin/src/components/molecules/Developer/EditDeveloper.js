@@ -44,6 +44,9 @@ const EditDeveloper = (props) => {
       );
     }
   }, []);
+  const handleOnChange = ({ formData }) => {
+    console.log("aakash", formData);
+  };
   return (
     <div className="col-lg-6 col-md-6 col-sm-12">
       <span className="back-btn" onClick={() => history.goBack()}>
@@ -63,6 +66,7 @@ const EditDeveloper = (props) => {
           schema={schema}
           uiSchema={uiSchema}
           formData={updateFormDataValue}
+          onChange={(args) => handleOnChange(args)}
           transformErrors={transformErrors}
           noHtml5Validate={true}
           onSubmit={({ formData }, e) => {

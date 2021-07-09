@@ -185,10 +185,16 @@ export const convertBase64ToBlob = (base64Image) => {
   const parts = base64Image.split(";base64,");
 
   // Hold the content type
-  const imageType = parts[0].split(":")[1];
+  let imageType =
+    parts[0] && parts[1] ? parts[0].split(":")[1] : ext(base64Image);
+  if (imageType === ".png") {
+    imageType = "image/png";
+  } else if (imageType === ".jpg" || imageType === ".jpeg") {
+    imageType = "image/jpeg";
+  }
 
   // Decode Base64 string
-  const decodedData = window.atob(parts[1]);
+  const decodedData = parts && parts[1] ? window.atob(parts[1]) : base64Image;
 
   // Create UNIT8ARRAY of size same as row data length
   const uInt8Array = new Uint8Array(decodedData.length);
@@ -199,14 +205,35 @@ export const convertBase64ToBlob = (base64Image) => {
   }
 
   // Return BLOB image after conversion
-  return new Blob([uInt8Array], { type: imageType });
+  var blob =
+    parts && parts[1]
+      ? new Blob([uInt8Array], { type: imageType })
+      : new Blob(
+          fetch(base64Image).then(function(response) {
+            return response.blob();
+          }),
+          { type: imageType }
+        );
+  return blob;
 };
 
+function ext(url) {
+  return (url = url.substr(1 + url.lastIndexOf("/")).split("?")[0])
+    .split("#")[0]
+    .substr(url.lastIndexOf("."));
+}
+
 export const imageType = (base64Image) => {
-  return base64Image.substring(
-    "data:image/".length,
-    base64Image.indexOf(";base64")
-  );
+  const parts = base64Image.split(";base64,");
+  let imageType =
+    parts[0] && parts[1]
+      ? "." +
+        base64Image.substring(
+          "data:image/".length,
+          base64Image.indexOf(";base64")
+        )
+      : ext(base64Image);
+  return imageType;
 };
 
 export const errorGenerator = (err) => {
